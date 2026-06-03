@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wat doet Hallo Mia, alle modules op een rij</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.bigmods{display:flex;flex-direction:column;gap:18px;}
+.bmod{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding:30px 34px;}
+@media(max-width:760px){.bmod{grid-template-columns:1fr;gap:16px;padding:26px;}}
+.bmod .bi{width:54px;height:54px;border-radius:13px;background:rgba(0,255,204,0.08);border:1px solid rgba(0,255,204,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;align-self:flex-start;}
+.bmod .meta .top{display:flex;align-items:center;gap:12px;margin-bottom:8px;}
+.bmod .meta h3{font-size:23px;font-weight:600;letter-spacing:-0.02em;}
+.bmod .meta .num2{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;color:var(--ink-mute);letter-spacing:0.1em;}
+.bmod .meta p{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:62ch;margin-bottom:12px;}
+.bmod .meta .feats{display:flex;flex-wrap:wrap;gap:7px;}
+.bmod .meta .feats span{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;color:var(--ink-2);background:var(--bg-2);border:1px solid var(--line);border-radius:5px;padding:5px 9px;}
+.bmod .go{align-self:center;}
+@media(max-width:760px){.bmod .go{justify-self:start;}}
+
+.flow5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:s;}
+@media(max-width:900px){.flow5{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){.flow5{grid-template-columns:1fr;}}
+.flow5 .s{padding:22px;}
+.flow5 .s .n{width:32px;height:32px;border-radius:8px;background:rgba(0,255,204,0.1);border:1px solid rgba(0,255,204,0.2);color:var(--accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:13px;margin-bottom:14px;}
+.flow5 .s h3{font-size:16px;font-weight:600;margin-bottom:6px;letter-spacing:-0.01em;}
+.flow5 .s p{font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
+
+.miateaser{display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;}
+@media(max-width:880px){.miateaser{grid-template-columns:1fr;gap:32px;}}
+.miateaser h2{font-size:clamp(28px,3.6vw,44px);font-weight:600;letter-spacing:-0.03em;line-height:1.06;margin-bottom:16px;}
+.miateaser p{font-size:16px;color:var(--ink-2);line-height:1.6;margin-bottom:22px;max-width:48ch;}
+.thread{background:var(--bg-2);border:1px solid var(--line-2);border-radius:var(--r-lg);padding:20px;display:flex;flex-direction:column;gap:12px;}
+.tl{display:flex;gap:11px;align-items:flex-start;}
+.tl .av{width:30px;height:30px;border-radius:50%;overflow:hidden;flex:none;border:1px solid var(--line-2);}
+.tl .av img{width:100%;height:100%;object-fit:cover;}
+.tl .av.you{background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;border:0;}
+.tl .b{background:var(--surface);border:1px solid var(--line-2);border-radius:12px;padding:10px 13px;font-size:13.5px;color:var(--ink-2);line-height:1.5;}
+.tl .b b{color:var(--accent);}
+.tl.you .b{background:rgba(0,255,204,0.1);border-color:rgba(0,255,204,0.25);color:var(--ink);}
+
+.fc{padding:110px 0 120px;border-top:1px solid var(--line);position:relative;overflow:hidden;text-align:center;}
+.fc::after{content:"";position:absolute;width:680px;height:680px;border-radius:50%;left:50%;top:40%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,255,204,0.1),transparent 64%);}
+.fc-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;}
+.fc-in h2{font-size:clamp(36px,5vw,66px);font-weight:600;letter-spacing:-0.035em;line-height:1.0;max-width:16ch;}
+.fc-in p{margin:20px 0 28px;font-size:17px;color:var(--ink-soft);max-width:52ch;line-height:1.6;}
+.fc-in .note{margin-top:18px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);}
+</style>
+</head>
+<body data-depth="1" data-page="wat">
+<div id="site-nav"></div>
+
+<div class="wrap crumb"><a href="../">home</a> / wat doet het</div>
+
+<main>
+  <section class="wrap phero">
+    <h1>Eén platform voor alles wat je doet met marketing.</h1>
+    <p class="lede">Zes modules, aan elkaar geknoopt en allemaal gevoed door je bedrijfsprofiel. Mia loopt er als rode draad doorheen. Bekijk wat elke module voor je doet.</p>
+    <div class="acts"><a class="btn acc lg" href="../aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a><a class="btn ghost lg" href="#modules">Bekijk de modules</a></div>
+  </section>
+
+  <!-- MODULES -->
+  <section class="section" id="modules"><div class="wrap">
+    <div class="bigmods">
+      <div class="card bmod" id="mia">
+        <div class="bi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M17.7 6.3l1.4-1.4M4.9 19.1l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <div class="meta"><div class="top"><span class="num2">01</span><h3>Mia, je AI-collega</h3></div><p>De rode draad. Mia is in elke module aanwezig, scant je cijfers en kalender, doet voorstellen en levert werk in je review-inbox. Zij stelt voor, jij keurt goed.</p><div class="feats"><span>voorstellen</span><span>review-inbox</span><span>uitlegbaar</span><span>menselijke check</span></div></div>
+        <a class="btn ghost go" href="../mia/">Lees over Mia <span class="arrow">→</span></a>
+      </div>
+      <div class="card bmod" id="profiel">
+        <div class="bi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="meta"><div class="top"><span class="num2">02</span><h3>Bedrijfsprofiel</h3></div><p>Bij de eerste keer plak je je website-URL en bouwt Hallo Mia automatisch je profiel op: producten, doelgroep, tone of voice en doelen. Dat profiel is het vertrekpunt voor alle output.</p><div class="feats"><span>auto uit website</span><span>producten</span><span>doelgroep</span><span>tone of voice</span></div></div>
+        <a class="btn ghost go" href="../aanmelden/">Probeer <span class="arrow">→</span></a>
+      </div>
+      <div class="card bmod">
+        <div class="bi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></div>
+        <div class="meta"><div class="top"><span class="num2">03</span><h3>Dashboard</h3></div><p>Al je cijfers op één scherm: website, advertenties en webshop, plus een marketingkalender met feestdagen en events. Met een seintje van Mia als er iets opvalt.</p><div class="feats"><span>analytics</span><span>search console</span><span>kalender</span><span>alerts</span></div></div>
+        <a class="btn ghost go" href="../dashboard/">Bekijk <span class="arrow">→</span></a>
+      </div>
+      <div class="card bmod">
+        <div class="bi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div class="meta"><div class="top"><span class="num2">04</span><h3>Advertenties</h3></div><p>Maak en beheer advertenties voor Google en Meta. Hallo Mia schrijft de varianten op basis van je profiel en je cijfers, jij keurt goed. Alles in jouw stijl, niets gaat automatisch live.</p><div class="feats"><span>google ads</span><span>meta ads</span><span>varianten</span><span>jij keurt goed</span></div></div>
+        <a class="btn ghost go" href="../advertenties/">Bekijk <span class="arrow">→</span></a>
+      </div>
+      <div class="card bmod">
+        <div class="bi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="meta"><div class="top"><span class="num2">05</span><h3>Social posts</h3></div><p>Posts en beelden in jouw merkstijl voor Instagram, LinkedIn en Facebook. Optioneel met een vaste mascotte, vast model of vaste illustratiestijl. Jij kiest hoe vaak.</p><div class="feats"><span>instagram</span><span>linkedin</span><span>facebook</span><span>beeld + tekst</span></div></div>
+        <a class="btn ghost go" href="../social/">Bekijk <span class="arrow">→</span></a>
+      </div>
+      <div class="card bmod">
+        <div class="bi"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="meta"><div class="top"><span class="num2">06</span><h3>SEO &amp; GEO content</h3></div><p>Nieuwe website-teksten op basis van echte zoekwoorden uit Ahrefs. Gericht op vindbaarheid in Google (SEO) én in AI-zoekresultaten (GEO). Inclusief verbindingen met je databronnen.</p><div class="feats"><span>ahrefs zoekwoorden</span><span>seo</span><span>geo / ai-zoek</span><span>verbindingen</span></div></div>
+        <a class="btn ghost go" href="../seo-geo/">Bekijk <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- MIA RODE DRAAD -->
+  <section class="section"><div class="wrap">
+    <div class="miateaser">
+      <div>
+        <h2 style="margin-top:14px;">Mia werkt door alles heen.</h2>
+        <p>Eén AI-collega die je dashboard, je advertenties en je teksten kent en met je meedenkt. Geen losse tools die elkaar niet kennen, maar één omgeving die jouw bedrijf snapt.</p>
+        <a class="btn acc" href="../mia/">Lees alles over Mia <span class="arrow">→</span></a>
+      </div>
+      <div class="thread">
+        <div class="tl"><div class="av"><img src="../assets/mia-face.jpg" alt=""></div><div class="b"><b>Mia.</b> Je bezoekers stegen 12% deze week, vooral op de beugel-pagina. Zal ik daar een advertentie omheen bouwen?</div></div>
+        <div class="tl you"><div class="av you">J</div><div class="b">Ja, doe maar een voorstel.</div></div>
+        <div class="tl"><div class="av"><img src="../assets/mia-face.jpg" alt=""></div><div class="b"><b>Mia.</b> Klaar. Twee varianten in je review-inbox, met de zoekwoorden erbij. Goedkeuren of aanpassen?</div></div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ZO WERKT HET -->
+  <section class="section"><div class="wrap">
+    <div class="shead">
+      <div class="l"><h2>In vijf stappen draait je marketing.</h2></div>
+      
+    </div>
+    <div class="flow5">
+      <div class="card s"><div class="n">1</div><h3>Bedrijfsprofiel</h3><p>Plak je website-URL. Hallo Mia leest mee en bouwt je profiel.</p></div>
+      <div class="card s"><div class="n">2</div><h3>Search Console</h3><p>Koppel zodat Hallo Mia je zoekverkeer ziet.</p></div>
+      <div class="card s"><div class="n">3</div><h3>Analytics</h3><p>Koppel zodat Hallo Mia je cijfers binnenhaalt.</p></div>
+      <div class="card s"><div class="n">4</div><h3>Ad-accounts</h3><p>Google en Meta in één klik gekoppeld.</p></div>
+      <div class="card s"><div class="n">5</div><h3>Mia aan</h3><p>Je AI-collega gaat scannen en voorstellen doen.</p></div>
+    </div>
+  </div></section>
+
+  <!-- FINAL -->
+  <section class="fc"><div class="wrap fc-in">
+    <h2>Klaar om Hallo Mia te <em>proberen?</em></h2>
+    <p>Vraag beta-toegang aan. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="../aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a><a class="btn ghost lg" href="../prijzen/">Bekijk prijzen</a></div>
+  </div></section>
+</main>
+
+<div id="site-foot"></div>
+<script src="../assets/site-hm.js"></script>
+</body>
+</html>

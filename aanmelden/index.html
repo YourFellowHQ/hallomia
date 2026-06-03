@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beta aanvragen, gratis tot december 2026 | Hallo Mia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.signup{display:grid;grid-template-columns:0.92fr 1.08fr;gap:40px;align-items:start;padding:30px 0 80px;}
+@media(max-width:880px){.signup{grid-template-columns:1fr;gap:28px;}}
+
+/* left: dark hero card */
+.intro-card{background:linear-gradient(150deg,#101010,#0a0a0a);border:1px solid var(--line-2);border-radius:var(--r-lg);padding:38px;position:relative;overflow:hidden;}
+.intro-card::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-150px;top:-180px;background:radial-gradient(circle,rgba(0,255,204,0.16),transparent 64%);}
+.intro-card>*{position:relative;z-index:2;}
+.intro-card h1{font-size:clamp(32px,4vw,46px);font-weight:600;letter-spacing:-0.03em;line-height:1.05;margin:16px 0 0;}
+.intro-card .lede{margin-top:16px;font-size:16px;color:var(--ink-2);line-height:1.6;}
+.intro-card .lede b{color:var(--ink);font-weight:600;}
+.steps-next{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:0;}
+.steps-next li{display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line);align-items:flex-start;}
+.steps-next li:first-child{border-top:0;}
+.steps-next .n{width:28px;height:28px;border-radius:7px;background:rgba(0,255,204,0.1);border:1px solid rgba(0,255,204,0.2);color:var(--accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-weight:600;font-size:12px;display:flex;align-items:center;justify-content:center;flex:none;}
+.steps-next b{font-size:14.5px;display:block;margin-bottom:2px;}
+.steps-next span{font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
+.trust-mini{margin-top:28px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;color:var(--ink-mute);}
+.trust-mini .av{width:34px;height:34px;border-radius:50%;overflow:hidden;border:1px solid var(--line-2);}
+.trust-mini .av img{width:100%;height:100%;object-fit:cover;}
+
+/* right: form */
+.formcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:34px;}
+.formcard .fh{font-size:20px;font-weight:600;letter-spacing:-0.01em;margin-bottom:4px;}
+.formcard .fs{font-size:14px;color:var(--ink-soft);margin-bottom:24px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:520px){.frow{grid-template-columns:1fr;}}
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:13px;font-weight:500;color:var(--ink-2);margin-bottom:7px;}
+.field label .opt{color:var(--ink-mute);font-weight:400;}
+.field input,.field textarea{width:100%;background:var(--bg-2);border:1px solid var(--line-2);border-radius:10px;padding:12px 14px;font-family:inherit;font-size:14.5px;color:var(--ink);outline:none;transition:.15s;}
+.field input::placeholder,.field textarea::placeholder{color:var(--ink-mute);}
+.field input:focus,.field textarea:focus{border-color:var(--accent-deep);background:var(--surface);box-shadow:0 0 0 3px var(--accent-soft);}
+.field textarea{resize:vertical;min-height:80px;}
+.check{display:flex;gap:11px;align-items:flex-start;margin:6px 0 22px;cursor:pointer;}
+.check input{margin-top:2px;width:17px;height:17px;accent-color:var(--accent);flex:none;}
+.check span{font-size:13px;color:var(--ink-soft);line-height:1.5;}
+.check a{color:var(--accent);}
+.formcard .submit{width:100%;}
+.form-foot{margin-top:16px;text-align:center;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--ink-mute);}
+.form-foot a{color:var(--ink-soft);}
+
+/* success */
+.success{display:none;flex-direction:column;align-items:center;text-align:center;padding:20px 0;}
+.success.show{display:flex;}
+.success .ok{width:64px;height:64px;border-radius:50%;background:rgba(0,255,204,0.12);border:1px solid rgba(0,255,204,0.3);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.success h3{font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;}
+.success p{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:38ch;}
+
+.spar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 26px;}
+.spar .si{width:40px;height:40px;border-radius:10px;background:rgba(0,255,204,0.08);border:1px solid rgba(0,255,204,0.18);color:var(--accent);display:flex;align-items:center;justify-content:center;flex:none;}
+.spar b{font-size:15px;}.spar span{font-size:14px;color:var(--ink-soft);}
+.spar .btn{margin-left:auto;}
+</style>
+</head>
+<body data-depth="1" data-page="aanmelden">
+<div id="site-nav"></div>
+<div class="wrap crumb"><a href="../">home</a> / beta aanvragen</div>
+
+<main>
+  <section class="wrap signup">
+    <!-- LEFT -->
+    <div class="intro-card">
+      <h1>Vraag je beta-toegang aan.</h1>
+      <p class="lede">Laat je gegevens achter, dan zetten we je bedrijfsprofiel klaar en opent <b>Mia</b> het eerste gesprek. Tijdens de beta gebruik je Hallo Mia gratis.</p>
+      <ul class="steps-next">
+        <li><span class="n">1</span><div><b>Je hoort snel van ons</b><span>We nemen contact op en zetten je account klaar.</span></div></li>
+        <li><span class="n">2</span><div><b>Profiel in 10 minuten</b><span>Plak je website-URL, koppel je bronnen, klaar.</span></div></li>
+        <li><span class="n">3</span><div><b>Mia gaat aan de slag</b><span>Je eerste voorstellen staan klaar in je review-inbox.</span></div></li>
+      </ul>
+      <div class="trust-mini">
+        <div class="av"><img src="../assets/mia-face.jpg" alt="Mia"></div>
+        maandelijks opzegbaar · geen jaarcontract · Dutch Search Award 2025
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="formcard">
+      <form id="betaform" novalidate>
+        <div class="fh">Even je gegevens</div>
+        <div class="fs">Alleen het nodige. Geen verkoopgesprek, tenzij je daarom vraagt.</div>
+        <div class="frow">
+          <div class="field"><label for="naam">Naam</label><input id="naam" name="naam" type="text" placeholder="Voor- en achternaam" required></div>
+          <div class="field"><label for="bedrijf">Bedrijf</label><input id="bedrijf" name="bedrijf" type="text" placeholder="Bedrijfsnaam" required></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" placeholder="jij@bedrijf.nl" required></div>
+          <div class="field"><label for="tel">Telefoon <span class="opt">· optioneel</span></label><input id="tel" name="tel" type="tel" placeholder="06 …"></div>
+        </div>
+        <div class="field"><label for="site">Website <span class="opt">· optioneel</span></label><input id="site" name="site" type="text" placeholder="www.jouwbedrijf.nl"></div>
+        <div class="field"><label for="bericht">Waar wil je mee aan de slag? <span class="opt">· optioneel</span></label><textarea id="bericht" name="bericht" placeholder="Bijvoorbeeld: meer social posten, of beter gevonden worden in Google."></textarea></div>
+        <label class="check"><input id="akkoord" type="checkbox" required><span>Ik ga akkoord dat YourFellow contact met me opneemt over de beta. Je gegevens worden zorgvuldig verwerkt, conform de AVG.</span></label>
+        <button type="submit" class="btn acc lg submit">Vraag beta-toegang aan <span class="arrow">→</span></button>
+        <div class="form-foot">Al een account? <a href="#">Inloggen</a></div>
+      </form>
+      <div class="success" id="success">
+        <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Aanvraag verstuurd.</h3>
+        <p>Bedankt. We nemen snel contact op en zetten je bedrijfsprofiel klaar. Tot zo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:90px;">
+    <div class="spar">
+      <div class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div><b>Liever eerst even sparren?</b> <span>Geen probleem. Stel je vraag, we denken vrijblijvend mee.</span></div>
+      <a class="btn ghost" href="../vragen/">Naar de vragen <span class="arrow">→</span></a>
+    </div>
+  </section>
+</main>
+
+<div id="site-foot"></div>
+<script src="../assets/site-hm.js"></script>
+<script>
+(function(){
+  var form=document.getElementById('betaform'), succ=document.getElementById('success');
+  if(!form) return;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true;
+    ['naam','bedrijf','email'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(!el.value.trim()){el.style.borderColor='#f87171';ok=false;} else {el.style.borderColor='';}
+    });
+    var ak=document.getElementById('akkoord');
+    if(!ak.checked){ak.parentElement.style.color='#f87171';ok=false;} else {ak.parentElement.style.color='';}
+    if(!ok) return;
+    form.style.display='none';
+    succ.classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>

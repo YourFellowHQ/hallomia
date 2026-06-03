@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vragen, alles over Hallo Mia, kort beantwoord | Hallo Mia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.searchbar{position:relative;max-width:560px;margin-top:28px;}
+.searchbar input{width:100%;background:var(--surface);border:1px solid var(--line-2);border-radius:12px;padding:15px 16px 15px 46px;font-family:inherit;font-size:15px;color:var(--ink);outline:none;}
+.searchbar input::placeholder{color:var(--ink-mute);}
+.searchbar input:focus{border-color:var(--accent-deep);box-shadow:0 0 0 3px var(--accent-soft);}
+.searchbar svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--ink-mute);}
+
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:44px;}
+@media(max-width:880px){.cats{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.cats{grid-template-columns:1fr;}}
+.cat{display:flex;flex-direction:column;gap:10px;cursor:pointer;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;font-family:inherit;color:inherit;transition:.15s;}
+.cat:hover{border-color:var(--line-2);background:var(--surface-2);}
+.cat.on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;}
+.cat .ci{width:38px;height:38px;border-radius:10px;background:rgba(0,255,204,0.08);border:1px solid rgba(0,255,204,0.18);color:var(--accent);display:flex;align-items:center;justify-content:center;}
+.cat h3{font-size:15.5px;font-weight:600;letter-spacing:-0.01em;}
+.cat .cnt{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;color:var(--ink-mute);}
+
+.acc{border-top:1px solid var(--line);}
+.acc .item{border-bottom:1px solid var(--line);}
+.acc .item .head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 4px;background:transparent;border:0;cursor:pointer;font-family:inherit;text-align:left;color:var(--ink);}
+.acc .item .head h4{font-size:17.5px;font-weight:600;letter-spacing:-0.01em;}
+.acc .item .head .ctag{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10px;color:var(--ink-mute);letter-spacing:0.06em;text-transform:uppercase;margin-right:auto;margin-left:14px;border:1px solid var(--line-2);border-radius:4px;padding:2px 7px;}
+.acc .item .head .chev{flex:none;width:20px;height:20px;color:var(--ink-soft);transition:transform .2s;}
+.acc .item.open .head .chev{transform:rotate(180deg);color:var(--accent);}
+.acc .item .body{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+.acc .item .body p{font-size:15px;color:var(--ink-soft);line-height:1.65;padding:0 60px 24px 4px;max-width:72ch;}
+.acc .item.open .body{max-height:320px;}
+.noresult{padding:40px 4px;color:var(--ink-soft);font-size:15px;display:none;}
+
+.fc{padding:90px 0 110px;border-top:1px solid var(--line);text-align:center;}
+.fc-in{display:flex;flex-direction:column;align-items:center;}
+.fc-in h2{font-size:clamp(30px,4vw,50px);font-weight:600;letter-spacing:-0.03em;line-height:1.05;max-width:18ch;}
+.fc-in p{margin:16px 0 26px;font-size:16px;color:var(--ink-soft);max-width:50ch;line-height:1.6;}
+</style>
+</head>
+<body data-depth="1" data-page="vragen">
+<div id="site-nav"></div>
+<div class="wrap crumb"><a href="../">home</a> / vragen</div>
+
+<main>
+  <section class="wrap phero" style="padding-bottom:44px;">
+    <h1>Alles over Hallo Mia, kort beantwoord.</h1>
+    <p class="lede">Zoek je vraag op of kies een categorie. Korte, eerlijke antwoorden in gewone taal. Staat je vraag er niet bij? We denken graag even met je mee.</p>
+    <div class="searchbar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="q" type="text" placeholder="Zoek een vraag, bijvoorbeeld 'data' of 'opzeggen'…">
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:30px;">
+    <div class="cats" id="cats">
+      <button class="cat on" data-cat="all"><div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div><h3>Alle vragen</h3><span class="cnt">12 vragen</span></button>
+      <button class="cat" data-cat="algemeen"><div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><h3>Algemeen</h3><span class="cnt">4 vragen</span></button>
+      <button class="cat" data-cat="ai"><div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2"/><circle cx="12" cy="12" r="4"/></svg></div><h3>AI &amp; Mia</h3><span class="cnt">3 vragen</span></button>
+      <button class="cat" data-cat="privacy"><div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Privacy &amp; data</h3><span class="cnt">3 vragen</span></button>
+    </div>
+
+    <div class="acc" id="acc">
+      <!-- algemeen -->
+      <div class="item" data-cat="algemeen"><button class="head"><h4>Moet ik verstand hebben van marketing?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>Nee. Hallo Mia is juist gemaakt voor ondernemers die marketing erbij doen. Alles wordt uitgelegd in gewone taal, zonder jargon. Mia doet het uitzoekwerk en zet voorstellen klaar. Jij beslist wat eruit gaat.</p></div></div>
+      <div class="item" data-cat="algemeen"><button class="head"><h4>Kan ik maandelijks opzeggen?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>Ja. Alle pakketten zijn maandelijks opzegbaar. Geen jaarcontract en geen lange opzegtermijn. Je kunt ook elke maand upgraden of terugschakelen.</p></div></div>
+      <div class="item" data-cat="algemeen"><button class="head"><h4>Hoe lang duurt het opzetten?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>De eerste keer instellen kost ongeveer 10 minuten: je plakt je website-URL, koppelt je bronnen en zet Mia aan. Daarna draait het. In Uitleg vind je korte video's per stap.</p></div></div>
+      <div class="item" data-cat="algemeen"><button class="head"><h4>Voor wie is Hallo Mia bedoeld?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>Voor ondernemers die marketing erbij doen, voor de enkele marketeer binnen een klein bedrijf, en voor teams of bureaus met meerdere merken. De toon en functies zijn afgestemd op die eerste groep: helder, zonder marketing-cursus.</p></div></div>
+      <!-- ai -->
+      <div class="item" data-cat="ai"><button class="head"><h4>Maakt AI geen fouten?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>AI kan fouten maken, daar zijn we eerlijk over. Daarom keur jij alles goed voor het live gaat. Mia stelt voor, jij beslist. Niets wordt gepubliceerd zonder jouw klik.</p></div></div>
+      <div class="item" data-cat="ai"><button class="head"><h4>Wat is Mia precies?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>Mia is je AI-collega in Hallo Mia. Ze kent je bedrijfsprofiel, je cijfers en je doelen, en komt op basis daarvan met concrete voorstellen. Geen generieke chatbot, maar een meedenker die jouw bedrijf kent. Lees er alles over op de Mia-pagina.</p></div></div>
+      <div class="item" data-cat="ai"><button class="head"><h4>Welke AI-modellen gebruikt Hallo Mia?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>Hallo Mia combineert bestaande AI-modellen met jouw bedrijfscontext. Welk model we voor welk soort werk inzetten, leggen we open uit in Uitleg. Het verschil met losse tools zit niet in het model, maar in de context die Hallo Mia eraan meegeeft.</p></div></div>
+      <!-- privacy -->
+      <div class="item" data-cat="privacy" id="privacy"><button class="head"><h4>Wat gebeurt er met mijn bedrijfsgegevens?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>Wat jij koppelt en schrijft is voor jouw account. We trainen geen modellen op jouw bedrijfsdata en gebruiken die niet voor andere klanten. De verwerking voldoet aan de AVG en draait op servers in Europa.</p></div></div>
+      <div class="item" data-cat="privacy"><button class="head"><h4>Kan ik mijn data weer weghalen?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>Ja. Je kunt elke koppeling op elk moment losmaken. Stop je met Hallo Mia, dan gaat je data eruit. Jij houdt de sleutels.</p></div></div>
+      <div class="item" data-cat="privacy"><button class="head"><h4>Publiceert Mia zelf iets?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>Nee. Mia heeft geen knop die zelf publiceert. Iedere post, advertentie of pagina wacht op jouw goedkeuring. Geen verborgen publicaties, geen verrassingen.</p></div></div>
+      <div class="item" data-cat="algemeen"><button class="head"><h4>Werkt Hallo Mia alleen in het Nederlands?</h4><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button><div class="body"><p>Hallo Mia is nu volledig op de Nederlandse markt gericht. Of het platform later ook andere talen ondersteunt, staat nog open. We laten het je weten zodra daar een besluit over is.</p></div></div>
+      <div class="noresult" id="noresult">Geen vragen gevonden. Probeer een ander woord, of stel je vraag rechtstreeks via de aanmeldpagina.</div>
+    </div>
+  </section>
+
+  <section class="fc"><div class="wrap fc-in">
+    <h2>Staat je vraag er niet bij?</h2>
+    <p>We denken graag even met je mee, zonder verkooppraatje. Stel je vraag voor je je aanmeldt.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="../aanmelden/">Stel je vraag <span class="arrow">→</span></a><a class="btn ghost lg" href="../uitleg/">Bekijk de uitleg</a></div>
+  </div></section>
+</main>
+
+<div id="site-foot"></div>
+<script src="../assets/site-hm.js"></script>
+<script>
+(function(){
+  var cats=document.getElementById('cats'), acc=document.getElementById('acc'), q=document.getElementById('q'), nores=document.getElementById('noresult');
+  var items=[].slice.call(acc.querySelectorAll('.item'));
+  var curCat='all';
+  // accordion
+  acc.addEventListener('click',function(e){
+    var h=e.target.closest('.head'); if(!h) return;
+    var item=h.parentElement;
+    var body=item.querySelector('.body');
+    var isOpen=item.classList.toggle('open');
+    body.style.maxHeight=isOpen?(body.scrollHeight+'px'):'0px';
+  });
+  function apply(){
+    var term=(q.value||'').trim().toLowerCase();
+    var shown=0;
+    items.forEach(function(it){
+      var okCat=(curCat==='all'||it.getAttribute('data-cat')===curCat);
+      var okTerm=!term||it.textContent.toLowerCase().indexOf(term)>-1;
+      var vis=okCat&&okTerm;
+      it.style.display=vis?'':'none';
+      if(vis) shown++;
+    });
+    nores.style.display=shown?'none':'block';
+  }
+  cats.addEventListener('click',function(e){
+    var b=e.target.closest('.cat'); if(!b) return;
+    cats.querySelectorAll('.cat').forEach(function(x){x.classList.remove('on');});
+    b.classList.add('on'); curCat=b.getAttribute('data-cat'); apply();
+  });
+  q.addEventListener('input',apply);
+})();
+</script>
+</body>
+</html>

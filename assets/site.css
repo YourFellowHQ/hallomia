@@ -1,0 +1,130 @@
+/* ============================================================
+   YourFellow HQ, shared site stylesheet (dark, video-led)
+   Basis: concept 05. Gebruikt op alle pagina's van de site.
+   ============================================================ */
+:root{
+  --bg:#0F1216;
+  --bg-2:#0B0E11;
+  --bg-band:#151A21;
+  --surface:#1A1F27;
+  --surface-2:#212733;
+  --line:#2A313B;
+  --line-2:#39414D;
+  --ink:#FFFFFF;
+  --ink-2:#D7DBE0;
+  --ink-soft:#969CA6;
+  --ink-mute:#6A707B;
+  --accent:#00FFCC;
+  --accent-deep:#00CCB3;
+  --accent-soft:rgba(0,255,204,0.14);
+  --on-accent:#062B25;
+  --r:10px;
+  --r-lg:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);
+  font-size:16px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+.mono{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+.wrap-wide{max-width:1600px;margin:0 auto;padding:0 32px;}
+@media(max-width:600px){.wrap,.wrap-wide{padding:0 20px;}}
+
+/* ---------- type helpers ---------- */
+.kicker{display:inline-flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+.kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);}
+.num{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent);letter-spacing:0.16em;}
+em{font-style:normal;color:inherit;}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:14.5px;padding:13px 22px;border-radius:8px;font-family:inherit;cursor:pointer;border:0;transition:transform .15s, background .15s, border-color .15s;white-space:nowrap;}
+.btn.acc{background:var(--accent);color:var(--on-accent);}
+.btn.acc:hover{background:#00e6b8;transform:translateY(-1px);}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-2);}
+.btn.ghost:hover{border-color:#444;}
+.btn.lg{padding:16px 28px;font-size:15.5px;}
+.arrow{display:inline-block;transition:transform .15s;}
+.btn:hover .arrow{transform:translateX(2px);}
+.txt-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:var(--accent);}
+.txt-link:hover{gap:11px;}
+
+/* ---------- topbar / nav ---------- */
+.topbar{padding:18px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(15,18,22,0.85);backdrop-filter:blur(14px);z-index:60;}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--ink);font-weight:700;font-size:16px;letter-spacing:-0.01em;}
+.brand .mk{height:28px;padding:0 8px;border-radius:7px;background:var(--accent);color:#062B25;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;letter-spacing:0.02em;}
+.brand .wordmark{color:var(--ink);}
+.brand .wordmark b{color:var(--accent);font-weight:700;}
+.nav-links{display:flex;align-items:center;gap:2px;}
+.nav-links a{font-size:14px;font-weight:500;padding:8px 13px;border-radius:6px;color:var(--ink-2);transition:background .15s,color .15s;white-space:nowrap;}
+.nav-links a:hover{background:rgba(255,255,255,0.05);color:var(--ink);}
+.nav-links a.on{color:var(--accent);}
+.nav-r{display:flex;align-items:center;gap:10px;}
+.nav-r .ghost{font-size:14px;color:var(--ink-2);padding:8px 12px;}
+.nav-r .ghost:hover{color:var(--ink);}
+.nav-r .cta{font-size:14px;font-weight:600;padding:9px 16px;background:var(--accent);color:var(--on-accent);border-radius:6px;}
+.nav-r .cta:hover{background:#00e6b8;}
+.nav-burger{display:none;background:transparent;border:1px solid var(--line-2);border-radius:7px;padding:8px;color:var(--ink);cursor:pointer;}
+@media(max-width:920px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:8px;}
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:13px 14px;font-size:15px;}
+  .nav-r .ghost{display:none;}
+  .nav-burger{display:inline-flex;}
+}
+
+/* ---------- breadcrumb ---------- */
+.crumb{padding:26px 0 0;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);letter-spacing:0.04em;}
+.crumb a{color:var(--ink-soft);}
+.crumb a:hover{color:var(--accent);}
+
+/* ---------- generic page hero ---------- */
+.phero{padding:70px 0 30px;}
+.phero h1{font-size:clamp(38px,5.4vw,72px);font-weight:600;letter-spacing:-0.035em;line-height:1.0;max-width:20ch;margin-top:18px;text-wrap:balance;}
+.phero .lede{margin-top:20px;font-size:18px;color:var(--ink-2);max-width:56ch;line-height:1.55;}
+.phero .lede b{color:var(--ink);font-weight:600;}
+.phero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+.regie{display:inline-flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12.5px;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(0,255,204,0.22);border-radius:8px;padding:9px 14px;margin-top:24px;}
+
+/* ---------- section head ---------- */
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:44px;}
+.shead .l{display:flex;flex-direction:column;gap:14px;max-width:34ch;}
+.shead h2{font-size:clamp(30px,3.5vw,44px);font-weight:600;letter-spacing:-0.03em;line-height:1.05;text-wrap:balance;}
+.shead .r{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12.5px;color:var(--ink-soft);max-width:34ch;line-height:1.6;text-align:right;}
+@media(max-width:760px){.shead .r{text-align:left;}}
+.section{padding:90px 0;border-top:1px solid var(--line);background:var(--bg);}
+/* gentle alternating bands so each section reads as its own zone */
+main > section.section:nth-of-type(even){background:var(--bg-band);}
+
+/* ---------- cards ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;transition:background .15s,border-color .15s,transform .15s;}
+.card:hover{background:var(--surface-2);border-color:var(--line-2);}
+.tag{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;color:var(--accent);letter-spacing:0.08em;text-transform:uppercase;padding:4px 9px;background:rgba(0,255,204,0.08);border:1px solid rgba(0,255,204,0.18);border-radius:4px;align-self:flex-start;}
+
+/* ---------- footer ---------- */
+.site-foot{border-top:1px solid var(--line);background:var(--bg-2);}
+.site-foot .top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding:64px 0 48px;}
+@media(max-width:880px){.site-foot .top{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(max-width:520px){.site-foot .top{grid-template-columns:1fr;}}
+.site-foot .about .brand{margin-bottom:16px;}
+.site-foot .about p{font-size:14px;color:var(--ink-soft);max-width:34ch;line-height:1.6;}
+.site-foot .about .award{margin-top:18px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--ink-mute);letter-spacing:0.04em;line-height:1.8;}
+.site-foot .col h5{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;color:var(--ink-mute);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;}
+.site-foot .col a{display:block;font-size:14px;color:var(--ink-2);margin-bottom:11px;transition:color .15s;}
+.site-foot .col a:hover{color:var(--accent);}
+.site-foot .bottom{border-top:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--ink-mute);}
+.site-foot .bottom .links{display:flex;gap:20px;}
+.site-foot .bottom a:hover{color:var(--ink-soft);}
+
+/* ---------- misc ---------- */
+.glow-divider{height:1px;background:linear-gradient(90deg,transparent,var(--line-2),transparent);}
+
+/* heading balance */
+h1,h2,h3{text-wrap:balance;}

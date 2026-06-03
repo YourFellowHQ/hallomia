@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hallo Mia, dag marketing-stress</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--bg);border-bottom:1px solid var(--line);padding:54px 0 60px;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 50% 24%,rgba(0,255,204,0.10),transparent 60%),radial-gradient(700px 500px at 50% 100%,rgba(0,255,204,0.06),transparent 60%);pointer-events:none;}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:48px 48px;mask:radial-gradient(ellipse 80% 60% at 50% 46%,rgba(0,0,0,0.5),transparent 70%);-webkit-mask:radial-gradient(ellipse 80% 60% at 50% 46%,rgba(0,0,0,0.5),transparent 70%);pointer-events:none;}
+.hero-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:34px;}
+.hero-title{text-align:center;max-width:1000px;}
+.hero-title h1{font-size:clamp(33px,4.6vw,60px);font-weight:600;letter-spacing:-0.035em;line-height:1.02;}
+.hero-title p{margin:20px auto 0;font-size:18.5px;color:var(--ink-2);max-width:60ch;line-height:1.55;}
+.hero-title p b{color:var(--ink);font-weight:600;}
+.stage{position:relative;width:min(1140px,90vw);aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 0 0 1px var(--line-2),0 60px 120px -30px rgba(0,255,204,0.28),0 30px 60px -30px rgba(0,0,0,0.8);}
+.stage iframe{width:1920px;height:1080px;border:0;transform-origin:top left;}
+.stage-chrome{position:absolute;top:16px;left:16px;display:flex;align-items:center;gap:7px;z-index:5;}
+.stage-chrome .d{width:9px;height:9px;border-radius:50%;background:#E26D5C;}
+.stage-chrome .d.y{background:#E6B85C;}
+.stage-chrome .d.on{background:var(--accent);box-shadow:0 0 8px var(--accent);}
+.stage-chrome .lbl{margin-left:8px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;color:rgba(255,255,255,0.7);letter-spacing:0.08em;text-transform:uppercase;}
+.hero-bottom{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center;}
+.hero-note{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);}
+
+/* ---------- trust strip ---------- */
+.trust{border-bottom:1px solid var(--line);}
+.trust-in{display:flex;align-items:center;gap:30px;flex-wrap:wrap;padding:20px 0;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-soft);letter-spacing:0.04em;}
+.trust-in .lab{color:var(--ink-mute);}
+.trust-in b{color:var(--ink-2);font-weight:500;}
+.trust-in .sep{color:var(--line-2);}
+
+/* ---------- modules grid ---------- */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);}
+@media(max-width:980px){.mods{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:620px){.mods{grid-template-columns:1fr;}}
+.mod{padding:32px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:13px;min-height:188px;background:var(--surface);transition:background .15s;color:inherit;}
+.mod:hover{background:var(--surface-2);}
+.mod:nth-child(3n){border-right:0;}
+@media(max-width:980px){.mod:nth-child(3n){border-right:1px solid var(--line);}.mod:nth-child(2n){border-right:0;}}
+@media(max-width:620px){.mod{border-right:0;}}
+.mod .mi{width:40px;height:40px;border-radius:10px;background:rgba(0,255,204,0.08);border:1px solid rgba(0,255,204,0.18);color:var(--accent);display:flex;align-items:center;justify-content:center;}
+.mod h3{font-size:21px;font-weight:600;letter-spacing:-0.02em;line-height:1.2;}
+.mod p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin-top:auto;}
+.mod .go{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent);letter-spacing:0.06em;opacity:0;transform:translateX(-4px);transition:.15s;}
+.mod:hover .go{opacity:1;transform:translateX(0);}
+
+/* ---------- mia teaser ---------- */
+.miateaser{display:grid;grid-template-columns:0.85fr 1.15fr;gap:54px;align-items:center;}
+@media(max-width:880px){.miateaser{grid-template-columns:1fr;gap:32px;}}
+.mia-photo{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line-2);aspect-ratio:4/5;background:#111;}
+.mia-photo img{width:100%;height:100%;object-fit:cover;}
+.mia-photo::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 90px rgba(0,255,204,0.12);pointer-events:none;}
+.mia-photo .badge{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(10,10,10,0.78);backdrop-filter:blur(8px);border:1px solid var(--line-2);border-radius:8px;padding:8px 12px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--ink-2);}
+.mia-photo .badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);}
+.miateaser h2{font-size:clamp(30px,4vw,48px);font-weight:600;letter-spacing:-0.03em;line-height:1.04;margin-bottom:18px;}
+.miateaser p{font-size:16.5px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;max-width:50ch;}
+.mia-points{list-style:none;display:flex;flex-direction:column;gap:11px;margin:22px 0 28px;}
+.mia-points li{display:flex;gap:12px;font-size:15px;color:var(--ink-2);line-height:1.45;}
+.mia-points li svg{flex:none;width:18px;height:18px;color:var(--accent);margin-top:2px;}
+
+/* ---------- social proof ---------- */
+.proof{display:grid;grid-template-columns:1fr 0.78fr;gap:54px;align-items:center;}
+@media(max-width:880px){.proof{grid-template-columns:1fr;gap:36px;}}
+.review{justify-self:center;width:100%;max-width:400px;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 40px 90px -45px rgba(0,0,0,0.5);}
+.review-head{display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid var(--line);}
+.review-head .av{width:38px;height:38px;border-radius:50%;overflow:hidden;flex:none;border:1px solid var(--line-2);}
+.review-head .av img{width:100%;height:100%;object-fit:cover;}
+.review-head .who b{font-size:14px;font-weight:600;display:block;line-height:1.2;}
+.review-head .who span{font-size:11.5px;color:var(--ink-soft);}
+.review-head .st{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;color:var(--accent);}
+.review-head .st i{width:7px;height:7px;border-radius:50%;background:var(--accent);}
+.review-post{padding:16px 18px 0;}
+.post-frame{position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:1px solid var(--line-2);background:#000;}
+.post-frame iframe{width:1080px;height:1080px;border:0;transform-origin:top left;}
+.post-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.review-cap{padding:13px 18px 16px;font-size:13px;color:var(--ink-2);line-height:1.5;}
+.review-cap b{color:var(--ink);font-weight:600;}
+.review-acts{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--line);}
+.proof .copy h2{font-size:clamp(28px,3.6vw,44px);font-weight:600;letter-spacing:-0.03em;line-height:1.06;margin-bottom:16px;}
+.proof .copy p{font-size:16px;color:var(--ink-2);line-height:1.6;margin-bottom:22px;max-width:46ch;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chips span{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line-2);border-radius:6px;padding:7px 11px;}
+
+/* ---------- audience ---------- */
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:820px){.aud{grid-template-columns:1fr;}}
+.aud .a{display:flex;flex-direction:column;gap:10px;}
+.aud .a .n{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent);letter-spacing:0.1em;}
+.aud .a h3{font-size:19px;font-weight:600;letter-spacing:-0.01em;}
+.aud .a p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
+
+/* ---------- pricing teaser ---------- */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:880px){.tiers{grid-template-columns:1fr;}}
+.tier{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px;display:flex;flex-direction:column;gap:16px;position:relative;}
+.tier.featured{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(0,255,204,0.28);}
+.tier .pbadge{position:absolute;top:-11px;left:30px;background:var(--accent);color:var(--on-accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:0.12em;text-transform:uppercase;}
+.tier .nm{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent);letter-spacing:0.16em;text-transform:uppercase;font-weight:700;}
+.tier .price{font-size:46px;font-weight:600;letter-spacing:-0.03em;line-height:1;display:flex;align-items:baseline;gap:6px;}
+.tier .price small{font-size:14px;font-weight:500;color:var(--ink-soft);letter-spacing:0;}
+.tier .credits{font-size:14px;color:var(--ink-2);}
+.tier .credits b{color:var(--ink);}
+.tier .who{font-size:14px;color:var(--ink-soft);line-height:1.5;padding-bottom:16px;border-bottom:1px solid var(--line);}
+.tier ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--ink-2);flex:1;}
+.tier ul li{display:flex;gap:10px;line-height:1.45;}
+.tier ul li::before{content:"+";color:var(--accent);font-weight:600;}
+.tier .btn{width:100%;}
+
+/* ---------- faq teaser ---------- */
+.faq{border-top:1px solid var(--line);}
+.faq .q{padding:24px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:20px;}
+.faq .q .n{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--accent);padding-top:3px;}
+.faq .q h4{font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-bottom:7px;}
+.faq .q p{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:60ch;}
+
+/* ---------- final cta ---------- */
+.fc{padding:110px 0 120px;border-top:1px solid var(--line);position:relative;overflow:hidden;}
+.fc::after{content:"";position:absolute;width:680px;height:680px;border-radius:50%;left:50%;top:40%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,255,204,0.10),transparent 64%);pointer-events:none;}
+.fc-in{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;}
+.fc-in h2{font-size:clamp(38px,5.4vw,76px);font-weight:600;letter-spacing:-0.035em;line-height:0.98;max-width:16ch;}
+.fc-in p{margin:20px 0 30px;font-size:17px;color:var(--ink-soft);max-width:54ch;line-height:1.6;}
+.fc-in .note{margin-top:18px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);}
+</style>
+<style id="hm-var">
+.hero-title{max-width:760px}
+.hero-title h1{font-size:clamp(30px,4vw,52px)}
+.hero-title p{font-size:17px}
+.stage{width:min(1300px,94vw)}
+</style>
+</head>
+<body data-depth="0" data-page="home">
+<div id="site-nav"></div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap-wide hero-in">
+      <div class="hero-title">
+        <h1>Hallo Mia. <em>Dag marketing-stress.</em></h1>
+        <p>Mia kijkt elke ochtend mee, doet voorstellen en zet het werk voor je klaar. Jij keurt goed, zij plaatst. Zo blijft je marketing draaien terwijl jij onderneemt.</p>
+      </div>
+
+      <div class="stage" aria-label="Introductie van Mia">
+        <div class="stage-chrome"><span class="d"></span><span class="d y"></span><span class="d on"></span><span class="lbl">hallo mia · live demo</span></div>
+        <iframe src="assets/hero-hallomia-A.html" title="Maak kennis met Mia" loading="lazy"></iframe>
+      </div>
+
+      <div class="hero-bottom">
+        <a class="btn acc lg" href="aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a>
+        <a class="btn ghost lg" href="wat-doet-het/">Wat doet het</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MIA TEASER -->
+  <section class="section"><div class="wrap">
+    <div class="miateaser">
+      <div class="mia-photo">
+        <img src="assets/mia-photo.jpg" alt="Mia, de AI-collega in Hallo Mia">
+        <div class="badge"><span class="pulse"></span> Mia is online</div>
+      </div>
+      <div>
+        <h2 style="margin-top:14px;">Maak kennis met Mia.</h2>
+        <p>Mia is ingebouwd in Hallo Mia en kijkt mee in je dashboard, je profiel en je cijfers. Ze komt met concrete voorstellen, in jouw stem, voor jouw klanten.</p>
+        <ul class="mia-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Kent je bedrijfsprofiel, doelen en cijfers</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Zet posts, advertenties en webteksten voor je klaar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Stelt voor, jij keurt goed. Niets gaat zonder jou de deur uit</li>
+        </ul>
+        <a class="btn acc" href="mia/">Lees alles over Mia <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- WAT DOET HET -->
+  <section class="section"><div class="wrap">
+    <div class="shead">
+      <div class="l"><h2>Zes modules vanuit <em>één bedrijfsprofiel.</em></h2></div>
+      
+    </div>
+    <div class="mods">
+      <a class="mod" href="mia/">
+        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M17.7 6.3l1.4-1.4M4.9 19.1l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Mia, je AI-collega</h3>
+        <p>Aanwezig in alle modules. Scant je cijfers en kalender, doet voorstellen, levert werk in je review-inbox.</p>
+        <span class="go">lees over mia →</span>
+      </a>
+      <a class="mod" href="bedrijfsprofiel/">
+        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Bedrijfsprofiel</h3>
+        <p>Wordt automatisch opgebouwd uit je website. Producten, doelgroep, toon en doelen op één plek.</p>
+        <span class="go">bekijk →</span>
+      </a>
+      <a class="mod" href="dashboard/">
+        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></div>
+        <h3>Dashboard</h3>
+        <p>Marketingkalender plus je cijfers uit Google Analytics en Search Console op één scherm.</p>
+        <span class="go">bekijk dashboard →</span>
+      </a>
+      <a class="mod" href="advertenties/">
+        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Advertenties</h3>
+        <p>Advertenties voor Google en Meta. Mia schrijft de varianten, jij keurt goed. Alles in jouw stijl.</p>
+        <span class="go">bekijk advertenties →</span>
+      </a>
+      <a class="mod" href="social/">
+        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Social posts</h3>
+        <p>Posts en beelden in jouw stijl voor Instagram, LinkedIn en Facebook. Jij kiest hoe vaak.</p>
+        <span class="go">bekijk social →</span>
+      </a>
+      <a class="mod" href="seo-geo/">
+        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>SEO &amp; GEO content</h3>
+        <p>Website-teksten op echte zoekwoorden. Gericht op vindbaarheid in Google én in AI-zoek.</p>
+        <span class="go">bekijk seo &amp; geo →</span>
+      </a>
+    </div>
+  </div></section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="section"><div class="wrap">
+    <div class="proof">
+      <div class="review">
+        <div class="review-head">
+          <div class="av"><img src="assets/mia-face.jpg" alt="Mia"></div>
+          <div class="who"><b>Mia</b><span>Voorstel &middot; klaar om te plaatsen</span></div>
+          <span class="st"><i></i> online</span>
+        </div>
+        <div class="review-post">
+          <div class="post-frame"><img src="assets/mia-post-bonnio.png" alt="Door Mia gegenereerde Instagram-post met mascotte Bonnio"></div>
+        </div>
+        <div class="review-cap"><b>bonnio</b> De bouwvak is begonnen! ☀️ Terwijl jij op vakantie bent, verzamelt Bonnio netjes al je facturen, zodat jij zorgeloos kunt genieten.</div>
+        <div class="review-acts">
+          <a class="btn acc" style="flex:1;padding:11px;font-size:13.5px;">Goedkeuren</a>
+          <a class="btn ghost" style="padding:11px 16px;font-size:13.5px;">Aanpassen</a>
+        </div>
+      </div>
+      <div class="copy">
+        <h2 style="margin-top:14px;">Mia levert af. Jij hoeft alleen te kiezen.</h2>
+        <p>Een post in jouw merkstijl, met beeld erbij. Mia ziet de feestdag in je kalender, schrijft de tekst en zet het voorstel klaar in je review-inbox. Goedkeuren, aanpassen of overslaan.</p>
+        <div class="chips">
+          <span>social posts</span><span>advertentieteksten</span><span>website-pagina's</span><span>nieuwsbrieven</span><span>beeld in jouw stijl</span>
+        </div>
+        <div style="margin-top:26px;"><a class="txt-link" href="social/">Zo werkt de social-module →</a></div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- VOOR WIE -->
+  <section class="section"><div class="wrap">
+    <div class="shead">
+      <div class="l"><h2>Voor wie marketing erbij doet.</h2></div>
+      
+    </div>
+    <div class="aud">
+      <div class="a"><span class="n">01</span><h3>Je doet het er zelf bij</h3><p>Ondernemer die marketing erbij doet. Je wilt het geregeld krijgen zonder marketeer te worden of in te huren.</p></div>
+      <div class="a"><span class="n">02</span><h3>Eén of twee marketeers</h3><p>Je doet veel taken tegelijk. Hallo Mia helpt je sneller en consistenter content maken vanuit één plek.</p></div>
+      <div class="a"><span class="n">03</span><h3>Team of klein bureau</h3><p>Meerdere merken of klanten. Bedien ze efficiënt vanuit één omgeving, onder één login.</p></div>
+    </div>
+  </div></section>
+
+  <!-- PRIJZEN -->
+  <section class="section"><div class="wrap">
+    <div class="shead">
+      <div class="l"><h2>Eén vast bedrag. <em>Gratis tijdens de beta.</em></h2></div>
+      
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <div class="nm">Starter</div>
+        <div class="price">€49 <small>/ maand</small></div>
+        <div class="who">Samen met Mia je marketing opbouwen.</div>
+        <ul><li>Social media posts genereren</li><li>E-mail marketing</li><li>Brand kit + AI-assistent Mia</li></ul>
+        <a class="btn ghost" href="prijzen/">Bekijk Starter</a>
+      </div>
+      <div class="tier featured">
+        <div class="pbadge">Mia's keuze</div>
+        <div class="nm">Growth</div>
+        <div class="price">€149 <small>/ maand</small></div>
+        <div class="who">Voor wie al bezig is en door wil groeien.</div>
+        <ul><li>Alles van Starter</li><li>Website &amp; blog content + SEO</li><li>Search Console + zoekwoorden</li></ul>
+        <a class="btn acc" href="prijzen/">Bekijk Growth <span class="arrow">→</span></a>
+      </div>
+      <div class="tier">
+        <div class="nm">Pro</div>
+        <div class="price">€249 <small>/ maand</small></div>
+        <div class="who">Volledig pakket inclusief advertising.</div>
+        <ul><li>Alles van Growth</li><li>Meta Ads + Google Ads beheer</li><li>Campaign builder + dashboards</li></ul>
+        <a class="btn ghost" href="prijzen/">Bekijk Pro</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px;"><a class="txt-link" href="prijzen/">Vergelijk alle pakketten →</a></div>
+  </div></section>
+
+  <!-- VRAGEN -->
+  <section class="section"><div class="wrap">
+    <div class="shead" style="margin-bottom:30px;">
+      <div class="l"><h2>Wat we vaak gevraagd krijgen.</h2></div>
+      <div class="r"><a class="txt-link" href="vragen/">Alle vragen →</a></div>
+    </div>
+    <div class="faq">
+      <div class="q"><span class="n">Q1</span><div><h4>Moet ik verstand hebben van marketing?</h4><p>Nee. Hallo Mia legt alles uit in gewone taal en doet het uitzoekwerk. Jij beslist wat eruit gaat.</p></div></div>
+      <div class="q"><span class="n">Q2</span><div><h4>Maakt AI geen fouten?</h4><p>AI kan fouten maken, daarom keur jij alles goed voor het live gaat. Mia stelt voor, jij beslist.</p></div></div>
+      <div class="q"><span class="n">Q3</span><div><h4>Wat gebeurt er met mijn bedrijfsgegevens?</h4><p>Daar gaan we zorgvuldig mee om. We trainen geen modellen op jouw data en je kunt elke koppeling op elk moment losmaken.</p></div></div>
+    </div>
+  </div></section>
+
+  <!-- FINAL CTA -->
+  <section class="fc"><div class="wrap fc-in">
+    <h2>Klaar om met Mia te <em>beginnen?</em></h2>
+    <p>Vraag beta-toegang aan. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
+    <div class="hero-bottom"><a class="btn acc lg" href="aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a><a class="btn ghost lg" href="wat-doet-het/">Bekijk de modules</a></div>
+  </div></section>
+</main>
+
+<div id="site-foot"></div>
+
+<script src="assets/site-hm.js"></script>
+<script>
+// scale embedded animation iframes to their container
+(function(){
+  function fit(){
+    document.querySelectorAll('.stage iframe').forEach(function(f){
+      var w = f.parentElement.clientWidth; if(w) f.style.transform='scale('+(w/1920)+')';
+    });
+    document.querySelectorAll('.post-frame iframe').forEach(function(f){
+      var w = f.parentElement.clientWidth; if(w) f.style.transform='scale('+(w/1080)+')';
+    });
+  }
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if(document.readyState!=='loading') requestAnimationFrame(fit);
+  else document.addEventListener('DOMContentLoaded', fit);
+})();
+</script>
+</body>
+</html>
