@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HQ — Probeer HQ</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F5F3; --bg-soft:#ECEEEA; --surface:#FFFFFF; --dark:#0F0F0F;
+  --ink:#0F0F0F; --ink-2:#2A2A2A; --ink-soft:#555555; --ink-mute:#8A8A85;
+  --line:#E5E7E2; --line-soft:#EFF0ED;
+  --accent:#00FFCC; --accent-deep:#067A66; --accent-soft:#E1FBF4; --on-accent:#062b25;
+  --radius-sm:8px; --radius:14px; --radius-lg:20px; --radius-xl:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'General Sans',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-deep);}
+.btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:var(--on-accent);font-weight:600;font-size:16px;padding:14px 24px;border-radius:999px;transition:transform .15s,box-shadow .15s;border:none;cursor:pointer;font-family:inherit;}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px rgba(0,255,204,0.55);}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);font-weight:600;font-size:16px;padding:14px 22px;border-radius:999px;border:1px solid var(--line);}
+.btn-secondary:hover{border-color:#cfd2cb;}
+.arrow{transition:transform .15s;}.btn-primary:hover .arrow{transform:translateX(3px);}
+.link-more{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:15px;color:var(--accent-deep);}
+.link-more:hover{gap:11px;}
+.nav{position:sticky;top:0;z-index:40;background:rgba(244,245,243,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-0.01em;}
+.brand .mk{height:34px;padding:0 9px;border-radius:9px;background:var(--accent);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;letter-spacing:-0.01em;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:15px;font-weight:500;color:var(--ink-2);}
+.nav-links a.active{color:var(--ink);}.nav-links a:hover{color:var(--ink);}
+@media(max-width:900px){.nav-links{display:none;}}
+.crumb{padding-top:40px;font-size:13.5px;color:var(--ink-mute);font-weight:500;}
+.crumb a{color:var(--accent-deep);}
+
+/* HERO CARD */
+.hero-card{margin-top:30px;background:var(--dark);color:#fff;border-radius:var(--radius-xl);padding:64px 56px 56px;position:relative;overflow:hidden;}
+.hero-card::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-160px;top:-220px;background:radial-gradient(circle,rgba(0,255,204,0.28),transparent 64%);z-index:1;}
+.hero-card>*{position:relative;z-index:2;}
+.hero-card .eyebrow{color:var(--accent);}
+.hero-card h1{font-size:54px;font-weight:700;letter-spacing:-0.035em;line-height:1.05;margin:14px 0 0;max-width:760px;}
+.hero-card h1 .soft{color:#8e8e88;}
+.hero-card .sub{font-size:19px;color:#c6c6c0;max-width:600px;margin-top:20px;}
+.hero-card .row{display:flex;gap:30px;flex-wrap:wrap;margin-top:30px;}
+.hero-card .row .pt{display:flex;align-items:center;gap:9px;font-size:14.5px;color:#d4d4cf;}
+.hero-card .row .pt .c{flex:none;width:22px;height:22px;border-radius:50%;background:rgba(0,255,204,0.18);color:var(--accent);display:flex;align-items:center;justify-content:center;}
+@media(max-width:680px){.hero-card{padding:42px 28px;}.hero-card h1{font-size:36px;}.hero-card .sub{font-size:17px;}}
+
+/* FORM SECTION */
+.form-section{padding:60px 0 80px;}
+.form-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:36px;align-items:start;}
+@media(max-width:900px){.form-grid{grid-template-columns:1fr;gap:28px;}}
+
+.form-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);padding:38px 38px 32px;}
+@media(max-width:680px){.form-card{padding:28px;}}
+.form-card h2{font-size:24px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;}
+.form-card .lead{font-size:15px;color:var(--ink-soft);margin-bottom:26px;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:7px;}
+.field label .opt{color:var(--ink-mute);font-weight:500;font-size:12.5px;margin-left:5px;}
+.field input{width:100%;font-family:inherit;font-size:15.5px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:13px 16px;outline:none;transition:border-color .15s,box-shadow .15s;}
+.field input::placeholder{color:var(--ink-mute);}
+.field input:focus{border-color:var(--accent-deep);background:#fff;box-shadow:0 0 0 3px rgba(0,255,204,0.18);}
+.field .hint{font-size:12.5px;color:var(--ink-mute);margin-top:5px;}
+
+.check-row{display:flex;gap:11px;align-items:flex-start;margin:18px 0 24px;font-size:14px;color:var(--ink-2);line-height:1.5;}
+.check-row input[type=checkbox]{margin-top:3px;width:18px;height:18px;accent-color:var(--accent-deep);flex:none;}
+.check-row a{color:var(--accent-deep);font-weight:600;}
+.check-row a:hover{text-decoration:underline;}
+
+.submit-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.submit-row .micro{font-size:12.5px;color:var(--ink-mute);}
+
+/* SIDE PANEL */
+.side{display:flex;flex-direction:column;gap:14px;}
+.side .block{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px 24px 22px;}
+.side .block h3{font-size:16px;font-weight:700;letter-spacing:-0.01em;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.side .block h3 .ic{width:30px;height:30px;border-radius:9px;background:var(--accent-soft);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;}
+.side .block ul{list-style:none;}
+.side .block li{font-size:14px;color:var(--ink-2);padding:9px 0;display:flex;gap:11px;align-items:flex-start;line-height:1.5;border-top:1px solid var(--line-soft);}
+.side .block li:first-child{border-top:none;padding-top:4px;}
+.side .block li .n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--dark);color:var(--accent);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.side .block li b{display:block;font-weight:700;font-size:14.5px;color:var(--ink);}
+.side .block li span{font-size:13px;color:var(--ink-soft);display:block;margin-top:1px;}
+
+.spar-block{background:linear-gradient(180deg,#fff,#f7fdfc);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px;position:relative;overflow:hidden;}
+.spar-block::after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;right:-80px;top:-80px;background:radial-gradient(circle,rgba(0,255,204,0.14),transparent 70%);}
+.spar-block>*{position:relative;z-index:2;}
+.spar-block .lab{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-deep);background:var(--accent-soft);border:1px solid #c9f3e9;display:inline-block;padding:4px 10px;border-radius:999px;margin-bottom:10px;}
+.spar-block h3{font-size:18px;font-weight:700;letter-spacing:-0.01em;margin-bottom:6px;}
+.spar-block p{font-size:14.5px;color:var(--ink-soft);margin-bottom:14px;}
+.spar-block a{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;}
+.spar-block a:hover{border-color:#cfd2cb;}
+
+/* SUCCESS STATE */
+.success{display:none;text-align:center;padding:20px 0;}
+.success.show{display:block;}
+.success .ic{width:64px;height:64px;border-radius:50%;background:var(--accent-soft);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+.success h2{font-size:26px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px;}
+.success p{font-size:15.5px;color:var(--ink-soft);max-width:380px;margin:0 auto 20px;}
+
+/* FOOTER */
+.foot{padding:54px 0 40px;border-top:1px solid var(--line);margin-top:40px;}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;}
+.foot .tag{font-size:14.5px;color:var(--ink-soft);max-width:280px;}
+.foot .col b{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-mute);display:block;margin-bottom:12px;}
+.foot .col a{display:block;font-size:14.5px;color:var(--ink-2);margin-bottom:8px;}
+.foot .col a:hover{color:var(--ink);}
+
+/* === NAV V2 mega-menu (auto-injected) === */
+.nav{position:sticky;top:0;z-index:40;background:rgba(244,245,243,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft);}
+.nav-in{position:relative;display:flex;align-items:center;height:72px;gap:30px;}
+.nav-links{display:flex;align-items:center;gap:6px;flex:1;}
+.nav-links > a, .nav-links > .has-mega{font-size:14.5px;font-weight:500;color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;padding:9px 13px;border-radius:10px;transition:background .15s, color .15s;}
+.nav-links > a:hover, .nav-links > .has-mega:hover{background:var(--bg-soft);color:var(--ink);}
+.nav-links > a.active, .nav-links > .has-mega.active{color:var(--ink);background:var(--bg-soft);}
+.nav-links .chev{width:9px;height:9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-left:7px;margin-top:-3px;transition:transform .18s;display:inline-block;}
+.nav-links .has-mega:hover .chev{transform:rotate(-135deg);margin-top:2px;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-right .nav-over{font-size:14.5px;font-weight:600;color:var(--ink-2);padding:9px 16px;border-radius:10px;transition:background .15s, color .15s;}
+.nav-right .nav-over:hover, .nav-right .nav-over.active{background:var(--bg-soft);color:var(--ink);}
+.mega{position:absolute;top:calc(100% - 6px);left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:0 30px 70px -30px rgba(15,15,15,0.35);padding:24px;display:grid;grid-template-columns:2.2fr 1fr;gap:22px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s, transform .18s;z-index:50;}
+.has-mega:hover .mega, .has-mega:focus-within .mega{opacity:1;visibility:visible;transform:translateY(0);}
+.mega.mega-solo{grid-template-columns:1fr;}
+.mega .col-title{font-size:11.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:12px;}
+.mega-items{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mega-item{display:flex;gap:14px;padding:12px;border-radius:12px;align-items:flex-start;transition:background .15s;text-decoration:none;}
+.mega-item:hover{background:var(--bg-soft);}
+.mega-item .ic{flex:none;width:38px;height:38px;border-radius:10px;background:var(--dark);color:var(--accent);display:flex;align-items:center;justify-content:center;}
+.mega-item .ic svg{width:18px;height:18px;}
+.mega-item h4{font-size:14.5px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);margin-bottom:2px;}
+.mega-item p{font-size:13px;color:var(--ink-soft);line-height:1.4;}
+.mega-feat{background:var(--dark);color:#fff;border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.mega-feat::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-100px;top:-120px;background:radial-gradient(circle,rgba(0,255,204,0.28),transparent 64%);}
+.mega-feat > *{position:relative;z-index:1;}
+.mega-feat .lab{font-size:11.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.mega-feat h4{font-size:18px;font-weight:700;letter-spacing:-0.015em;margin-bottom:6px;}
+.mega-feat p{font-size:13.5px;color:#b6b6b0;line-height:1.5;margin-bottom:14px;}
+.mega-feat a{font-size:13.5px;font-weight:600;color:var(--accent);}
+@media(max-width:980px){.nav-links, .nav-right .nav-over{display:none;}}
+/* === END NAV V2 === */
+
+
+/* mega-hover-bridge v2 */
+.mega::before{content:"";position:absolute;top:-22px;left:0;right:0;height:22px;background:transparent;}
+
+</style>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#0F0F0F">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0F0F0F"/>
+    <circle cx="950" cy="200" r="260" fill="#00FFCC" opacity="0.18"/>
+    <rect x="180" y="280" width="520" height="34" rx="6" fill="#FFFFFF"/>
+    <rect x="180" y="332" width="380" height="34" rx="6" fill="#8e8e88"/>
+    <rect x="180" y="420" width="320" height="58" rx="29" fill="#00FFCC"/>
+    <text x="340" y="458" font-family="sans-serif" font-size="22" font-weight="700" fill="#062b25" text-anchor="middle">Probeer HQ</text>
+  </svg>
+</template>
+
+<header class="nav"><div class="wrap nav-in">
+  <a class="brand" href="index.html"><span class="mk">HQ</span> YourFellow</a>
+  <nav class="nav-links">
+    <div class="has-mega" tabindex="0">
+      <span>Wat HQ doet</span><span class="chev"></span>
+      <div class="mega">
+        <div>
+          <div class="col-title">Modules</div>
+          <div class="mega-items">
+            <a class="mega-item" href="hq_module_dashboard.html">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></div>
+              <div><h4>Dashboard</h4><p>Al je cijfers op een scherm, met een seintje als iets opvalt.</p></div>
+            </a>
+            <a class="mega-item" href="hq_module_advertenties.html">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <div><h4>Advertenties</h4><p>Google &amp; Meta - HQ schrijft, jij keurt goed.</p></div>
+            </a>
+            <a class="mega-item" href="hq_module_social.html">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <div><h4>Social posts</h4><p>Posts voor Instagram, LinkedIn en Facebook in jouw stijl.</p></div>
+            </a>
+            <a class="mega-item" href="hq_module_seo_geo.html">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+              <div><h4>SEO &amp; GEO</h4><p>Teksten waarmee je gevonden wordt. In Google en in AI.</p></div>
+            </a>
+          </div>
+        </div>
+        <div class="mega-feat">
+          <div>
+            <div class="lab">De rode draad</div>
+            <h4>Mia, je AI-collega</h4>
+            <p>Een collega die je dashboard, advertenties en teksten kent. Stelt voor, jij keurt goed.</p>
+          </div>
+          <a href="hq_mia.html">Lees alles over Mia &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <a href="hq_prijzen.html">Prijzen</a>
+    <div class="has-mega" tabindex="0">
+      <span>Uitleg</span><span class="chev"></span>
+      <div class="mega mega-solo">
+        <div>
+          <div class="col-title">Onderwerpen</div>
+          <div class="mega-items">
+            <a class="mega-item" href="hq_uitleg.html#start"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div><h4>Start hier</h4><p>HQ in 5 stappen opzetten, ongeveer een half uur.</p></div></a>
+            <a class="mega-item" href="hq_uitleg.html#tutorials"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div><h4>Tutorials</h4><p>Korte uitleg per module, een paar minuten per stuk.</p></div></a>
+            <a class="mega-item" href="hq_uitleg.html#ai"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div><div><h4>Hoe AI werkt</h4><p>Welke modellen, voor welk werk, en wat we niet doen.</p></div></a>
+            <a class="mega-item" href="hq_uitleg.html#privacy"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Privacy en data</h4><p>Wat we met je gegevens doen, en wat juist niet.</p></div></a>
+            <a class="mega-item" href="hq_uitleg.html#integrations"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div><h4>Integraties</h4><p>GA4, Search Console, Google Ads, Meta en je website.</p></div></a>
+            <a class="mega-item" href="hq_uitleg.html#updates"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Updates</h4><p>Wat er nieuw is in HQ, kort en bij.</p></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="hq_vragen.html">Vragen</a>
+  </nav>
+  <div class="nav-right">
+    <a class="nav-over" href="hq_over.html">Over ons</a>
+    <a class="btn-primary" href="hq_aanmelden.html">Probeer HQ <span class="arrow">&rarr;</span></a>
+  </div>
+</div></header>
+
+<div class="wrap crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Probeer HQ</div>
+
+<!-- HERO CARD -->
+<div class="wrap">
+  <div class="hero-card">
+    <span class="eyebrow">Aanmelden</span>
+    <h1>Maak je account aan.<br><span class="soft">In een paar minuten klaar.</span></h1>
+    <p class="sub">Laat hieronder je gegevens achter, dan zetten we je account op. Geen verkoop, geen wachtmuziek.</p>
+    <div class="row">
+      <div class="pt"><span class="c"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Gratis tijdens de beta</div>
+      <div class="pt"><span class="c"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Geen creditcard nodig</div>
+      <div class="pt"><span class="c"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Stop wanneer je wilt</div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<section class="form-section">
+  <div class="wrap">
+    <div class="form-grid">
+      <!-- FORMULIER -->
+      <div class="form-card">
+        <div id="form-view">
+          <h2>Jouw aanvraag.</h2>
+          <p class="lead">Drie velden om mee te beginnen. Telefoon is optioneel, maar maakt opvolgen makkelijker.</p>
+
+          <form id="beta-form" autocomplete="on" novalidate>
+            <div class="field">
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" placeholder="Voor- en achternaam" required>
+            </div>
+            <div class="field">
+              <label for="bedrijf">Bedrijfsnaam</label>
+              <input type="text" id="bedrijf" name="bedrijf" placeholder="Naam van je bedrijf" required>
+            </div>
+            <div class="field">
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" placeholder="jij@bedrijf.nl" required>
+              <div class="hint">We mailen je binnen een week op dit adres.</div>
+            </div>
+            <div class="field">
+              <label for="telefoon">Telefoon <span class="opt">(optioneel)</span></label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="06 12 34 56 78">
+            </div>
+
+            <label class="check-row">
+              <input type="checkbox" id="akkoord" required>
+              <span>Ik ga akkoord met de verwerking van mijn gegevens voor je aanmelding, volgens het <a href="#">privacybeleid</a>. We gebruiken je gegevens alleen voor contact rond de beta, niet voor andere doelen.</span>
+            </label>
+
+            <div class="submit-row">
+              <button type="submit" class="btn-primary">Verstuur aanvraag <span class="arrow">&rarr;</span></button>
+              <span class="micro">Reactie meestal binnen een week</span>
+            </div>
+          </form>
+        </div>
+
+        <!-- SUCCESS STATE (toggle via JS) -->
+        <div id="form-success" class="success">
+          <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h2>Bedankt, je staat op de lijst.</h2>
+          <p>We hebben je aanvraag ontvangen. Binnen een week krijg je een mailtje van Paul of Stefan. Tot dan.</p>
+          <a class="btn-secondary" href="index.html">Terug naar de home</a>
+        </div>
+      </div>
+
+      <!-- ZIJ-PANEEL -->
+      <aside class="side">
+        <div class="block">
+          <h3><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg></span>Wat gebeurt er hierna?</h3>
+          <ul>
+            <li><span class="n">1</span><div><b>Wij lezen je aanvraag</b><span>Geen formulier in de leegte. We bekijken aanvragen zelf, geen filter ertussen.</span></div></li>
+            <li><span class="n">2</span><div><b>Mailtje binnen een week</b><span>Of we toelaten of nog even moeten wachten, je krijgt het te horen. Geen ghosting.</span></div></li>
+            <li><span class="n">3</span><div><b>Korte kennismaking</b><span>Soms via mail, soms via een belletje. Met als doel: snel aan de slag.</span></div></li>
+          </ul>
+        </div>
+
+        <div class="spar-block">
+          <span class="lab">Liever even sparren?</span>
+          <h3>Eerst je vraag stellen.</h3>
+          <p>Niet zeker of HQ bij je past, of nog vragen voor je iets achterlaat? Een mailtje is ook prima.</p>
+          <a href="mailto:hq@yourfellow.nl">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            hq@yourfellow.nl
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="foot"><div class="wrap foot-grid"><div><a class="brand" href="index.html" style="margin-bottom:14px;"><span class="mk">HQ</span> YourFellow</a><p class="tag">HQ regelt je marketing, jij regelt je bedrijf. Powered by YourFellow.</p></div><div class="col"><b>Product</b><a href="hq_functies_overzicht.html">Wat HQ doet</a><a href="hq_mia.html">Mia</a><a href="hq_prijzen.html">Prijzen</a></div><div class="col"><b>Hulp</b><a href="hq_uitleg.html">Uitleg</a><a href="hq_vragen.html">Vragen</a><a href="hq_aanmelden.html">Probeer HQ</a></div></div></footer>
+
+<script>
+// Simpele client-side validatie + success-state. Echte verzending koppel je later (e-mail, FormSubmit, WordPress, etc).
+var f = document.getElementById('beta-form');
+f.addEventListener('submit', function(e){
+  e.preventDefault();
+  var naam = document.getElementById('naam').value.trim();
+  var bedrijf = document.getElementById('bedrijf').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var akkoord = document.getElementById('akkoord').checked;
+  if(!naam || !bedrijf || !email || !akkoord){
+    alert('Vul je naam, bedrijfsnaam, e-mail in en vink het akkoordvinkje aan.');
+    return;
+  }
+  // toon success-state
+  document.getElementById('form-view').style.display = 'none';
+  document.getElementById('form-success').classList.add('show');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
+</script>
+
+
+<!-- Mia chatbot widget -->
+<script src="assets/mia-chatbot.js" defer></script>
+</body>
+</html>

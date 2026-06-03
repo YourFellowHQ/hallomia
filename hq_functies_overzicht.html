@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>HQ — Wat HQ doet</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F5F3; --bg-soft:#ECEEEA; --surface:#FFFFFF; --dark:#0F0F0F;
+  --ink:#0F0F0F; --ink-2:#2A2A2A; --ink-soft:#555555; --ink-mute:#8A8A85;
+  --line:#E5E7E2; --line-soft:#EFF0ED;
+  --accent:#00FFCC; --accent-deep:#067A66; --accent-soft:#E1FBF4; --on-accent:#062b25;
+  --radius:14px; --radius-lg:20px; --radius-xl:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'General Sans',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px;}
+a{color:inherit;text-decoration:none;}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-deep);}
+.section{padding:80px 0;}
+.section-head{max-width:680px;margin-bottom:42px;}
+.section-title{font-size:32px;font-weight:700;letter-spacing:-0.02em;line-height:1.14;margin:12px 0 12px;}
+.section-sub{font-size:17px;color:var(--ink-soft);}
+.btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:var(--on-accent);font-weight:600;font-size:16px;padding:14px 24px;border-radius:999px;transition:transform .15s,box-shadow .15s;}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px rgba(0,255,204,0.55);}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);font-weight:600;font-size:16px;padding:14px 22px;border-radius:999px;border:1px solid var(--line);}
+.btn-secondary:hover{border-color:#cfd2cb;}
+.arrow{transition:transform .15s;}.btn-primary:hover .arrow{transform:translateX(3px);}
+.link-more{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:15px;color:var(--accent-deep);}
+.link-more:hover{gap:11px;}
+.nav{position:sticky;top:0;z-index:40;background:rgba(244,245,243,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-0.01em;}
+.brand .mk{height:34px;padding:0 9px;border-radius:9px;background:var(--accent);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;letter-spacing:-0.01em;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:15px;font-weight:500;color:var(--ink-2);}
+.nav-links a.active{color:var(--ink);}.nav-links a:hover{color:var(--ink);}
+@media(max-width:900px){.nav-links{display:none;}}
+.crumb{padding-top:40px;font-size:13.5px;color:var(--ink-mute);font-weight:500;}
+.crumb a{color:var(--accent-deep);}
+.mhero{padding:26px 0 50px;}
+.mhero h1{font-size:54px;font-weight:700;letter-spacing:-0.035em;line-height:1.05;max-width:800px;margin:14px 0 0;}
+.mhero .sub{font-size:20px;color:var(--ink-soft);max-width:620px;margin-top:20px;}
+.mhero .acts{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px;}
+@media(max-width:680px){.mhero h1{font-size:38px;}}
+.mock{margin-top:50px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-xl);overflow:hidden;box-shadow:0 40px 90px -50px rgba(15,15,15,0.4);}
+.dash-chrome{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;background:var(--bg-soft);border-bottom:1px solid var(--line);}
+.dash-dots{display:flex;gap:7px;}.dash-dots span{width:11px;height:11px;border-radius:50%;background:#d9dad3;}
+.dash-url{font-size:12.5px;color:var(--ink-mute);font-family:ui-monospace,monospace;background:#fff;padding:4px 12px;border-radius:7px;border:1px solid var(--line);}
+.mbody{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;padding:26px;}
+@media(max-width:760px){.mbody{grid-template-columns:1fr;}}
+.mtitle{font-size:18px;font-weight:700;letter-spacing:-0.01em;margin-bottom:14px;}
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+@media(max-width:760px){.feat-grid{grid-template-columns:1fr;}}
+.feat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;}
+.feat .ic{width:40px;height:40px;border-radius:11px;background:var(--accent-soft);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;margin-bottom:15px;}
+.feat h3{font-size:18px;font-weight:700;margin-bottom:7px;letter-spacing:-0.01em;}
+.feat p{font-size:15px;color:var(--ink-soft);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr;}}@media(max-width:520px){.steps{grid-template-columns:1fr;}}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px;}
+.step .n{width:34px;height:34px;border-radius:9px;background:var(--dark);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:13px;}
+.step h3{font-size:16px;font-weight:700;margin-bottom:6px;}.step p{font-size:14px;color:var(--ink-soft);}
+.show{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:820px){.show{grid-template-columns:1fr;}}
+.scard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:22px;}
+.scard .h{font-size:16px;font-weight:700;margin-bottom:4px;}.scard .s{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px;}
+.mini-bars{display:flex;align-items:flex-end;gap:5px;height:64px;}.mini-bars i{flex:1;background:linear-gradient(180deg,var(--accent),#0bb596);border-radius:4px 4px 0 0;}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;}
+.cal span{aspect-ratio:1;border-radius:6px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--ink-mute);}
+.cal span.on{background:var(--accent-soft);color:var(--accent-deep);font-weight:700;border:1px solid #b9f0e3;}
+.insight{background:#15132f;border-radius:var(--radius);padding:16px;color:#fff;}
+.insight .who{font-size:12px;color:#a99fe6;font-weight:600;margin-bottom:7px;}.insight p{font-size:13.5px;color:#e7e6f3;line-height:1.4;}
+.regie{display:inline-flex;align-items:center;gap:10px;font-size:14.5px;font-weight:500;color:var(--accent-deep);background:var(--accent-soft);border-radius:999px;padding:10px 18px;margin-top:8px;}
+/* mockup pieces */
+.adprev{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.adprev .img{height:120px;background:linear-gradient(135deg,#d7ddd9,#aeb6b0);position:relative;}
+.adprev .img .tag{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.9);font-size:10px;font-weight:700;color:var(--ink-2);padding:3px 8px;border-radius:6px;}
+.adprev .b{padding:13px 15px;}.adprev .b .u{font-size:11px;color:var(--ink-mute);}
+.adprev .b h4{font-size:15px;font-weight:700;margin:3px 0;}.adprev .b p{font-size:12.5px;color:var(--ink-soft);}
+.adprev .b .c{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--accent-deep);}
+.varlist .v{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 13px;margin-bottom:9px;font-size:13px;color:var(--ink-2);}
+.varlist .v.sel{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
+.varlist .pick{font-size:11px;font-weight:700;color:var(--accent-deep);}
+.postcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.postcard .top{display:flex;align-items:center;gap:9px;padding:11px 13px;}
+.postcard .av{width:28px;height:28px;border-radius:50%;background:var(--dark);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
+.postcard .nm{font-size:13px;font-weight:700;}
+.postcard .img{height:150px;background:linear-gradient(135deg,#d7ddd9,#b4bcb6);}
+.postcard .cap{padding:12px 14px;font-size:13px;color:var(--ink-2);}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.kw{font-size:12.5px;font-weight:600;background:var(--accent-soft);border:1px solid #c9f3e9;color:var(--accent-deep);border-radius:8px;padding:7px 11px;}
+.pagemock{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;}
+.pagemock h4{font-size:15px;font-weight:700;margin-bottom:10px;}
+.pagemock .ln{height:8px;border-radius:4px;background:#ededea;margin-bottom:7px;}.pagemock .ln.s{width:65%;}.pagemock .ln.m{width:88%;}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+.badge{font-size:12px;font-weight:700;background:var(--accent-soft);color:var(--accent-deep);border:1px solid #c9f3e9;border-radius:999px;padding:6px 12px;}
+/* overview module cards */
+.mod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+@media(max-width:760px){.mod-grid{grid-template-columns:1fr;}}
+.mod{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;transition:transform .15s,box-shadow .15s;}
+.mod:hover{transform:translateY(-3px);box-shadow:0 22px 50px -34px rgba(15,15,15,0.4);}
+.mod-ic{width:44px;height:44px;border-radius:12px;background:var(--dark);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.mod h3{font-size:20px;font-weight:700;letter-spacing:-0.01em;margin-bottom:8px;}
+.mod p{font-size:15px;color:var(--ink-soft);margin-bottom:16px;}
+/* mia teaser */
+.mia-teaser{background:radial-gradient(130% 130% at 82% 10%,#221a44 0%,#15132f 48%,#0a0a1a 100%);border-radius:var(--radius-xl);padding:50px 46px;color:#fff;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;overflow:hidden;}
+@media(max-width:820px){.mia-teaser{grid-template-columns:1fr;padding:38px 28px;}}
+.mia-teaser .eyebrow{color:#a99fe6;}
+.mia-teaser h2{font-size:30px;font-weight:700;letter-spacing:-0.02em;margin:12px 0 14px;line-height:1.14;}
+.mia-teaser p{font-size:16px;color:#bdb9d6;margin-bottom:22px;}.mia-teaser .link-more{color:#fff;}
+.orb{position:relative;justify-self:center;width:200px;height:200px;border-radius:50%;}
+.orb::before{content:"";position:absolute;inset:-22%;border-radius:50%;background:radial-gradient(circle at 50% 44%,rgba(0,255,204,0.45),rgba(139,92,246,0.42) 48%,transparent 72%);filter:blur(32px);z-index:0;}
+.orb .photo{position:absolute;inset:8%;border-radius:50%;overflow:hidden;background:#0a0a1a;box-shadow:0 30px 60px -20px rgba(0,0,0,0.55),inset 0 0 0 2px rgba(255,255,255,0.08);z-index:2;}
+.orb .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;}
+.orb .ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(139,92,246,0.45);z-index:1;}
+.orb .ring.r2{inset:-7%;border-color:rgba(0,255,204,0.32);}.orb .ring.r1{border-style:dashed;transform:rotate(16deg);}
+.final{background:var(--dark);border-radius:var(--radius-xl);padding:62px 48px;text-align:center;color:#fff;position:relative;overflow:hidden;}
+.final::after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;left:50%;top:58%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,255,204,0.32),transparent 64%);}
+.final>*{position:relative;z-index:2;}
+.final h2{font-size:36px;font-weight:700;letter-spacing:-0.025em;margin-bottom:14px;}
+.final p{font-size:17px;color:#b6b6b0;max-width:520px;margin:0 auto 26px;}.final .micro{font-size:13px;color:#7f7f79;margin-top:16px;}
+.foot{padding:54px 0 40px;border-top:1px solid var(--line);margin-top:30px;}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;}
+.foot .tag{font-size:14.5px;color:var(--ink-soft);max-width:280px;}
+.foot .col b{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-mute);display:block;margin-bottom:12px;}
+.foot .col a{display:block;font-size:14.5px;color:var(--ink-2);margin-bottom:8px;}.foot .col a:hover{color:var(--ink);}
+
+/* === NAV V2 mega-menu (auto-injected) === */
+.nav{position:sticky;top:0;z-index:40;background:rgba(244,245,243,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft);}
+.nav-in{position:relative;display:flex;align-items:center;height:72px;gap:30px;}
+.nav-links{display:flex;align-items:center;gap:6px;flex:1;}
+.nav-links > a, .nav-links > .has-mega{font-size:14.5px;font-weight:500;color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;padding:9px 13px;border-radius:10px;transition:background .15s, color .15s;}
+.nav-links > a:hover, .nav-links > .has-mega:hover{background:var(--bg-soft);color:var(--ink);}
+.nav-links > a.active, .nav-links > .has-mega.active{color:var(--ink);background:var(--bg-soft);}
+.nav-links .chev{width:9px;height:9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-left:7px;margin-top:-3px;transition:transform .18s;display:inline-block;}
+.nav-links .has-mega:hover .chev{transform:rotate(-135deg);margin-top:2px;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-right .nav-over{font-size:14.5px;font-weight:600;color:var(--ink-2);padding:9px 16px;border-radius:10px;transition:background .15s, color .15s;}
+.nav-right .nav-over:hover, .nav-right .nav-over.active{background:var(--bg-soft);color:var(--ink);}
+.mega{position:absolute;top:calc(100% - 6px);left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:0 30px 70px -30px rgba(15,15,15,0.35);padding:24px;display:grid;grid-template-columns:2.2fr 1fr;gap:22px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s, transform .18s;z-index:50;}
+.has-mega:hover .mega, .has-mega:focus-within .mega{opacity:1;visibility:visible;transform:translateY(0);}
+.mega.mega-solo{grid-template-columns:1fr;}
+.mega .col-title{font-size:11.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:12px;}
+.mega-items{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.mega-item{display:flex;gap:14px;padding:12px;border-radius:12px;align-items:flex-start;transition:background .15s;text-decoration:none;}
+.mega-item:hover{background:var(--bg-soft);}
+.mega-item .ic{flex:none;width:38px;height:38px;border-radius:10px;background:var(--dark);color:var(--accent);display:flex;align-items:center;justify-content:center;}
+.mega-item .ic svg{width:18px;height:18px;}
+.mega-item h4{font-size:14.5px;font-weight:700;letter-spacing:-0.01em;color:var(--ink);margin-bottom:2px;}
+.mega-item p{font-size:13px;color:var(--ink-soft);line-height:1.4;}
+.mega-feat{background:var(--dark);color:#fff;border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.mega-feat::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-100px;top:-120px;background:radial-gradient(circle,rgba(0,255,204,0.28),transparent 64%);}
+.mega-feat > *{position:relative;z-index:1;}
+.mega-feat .lab{font-size:11.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.mega-feat h4{font-size:18px;font-weight:700;letter-spacing:-0.015em;margin-bottom:6px;}
+.mega-feat p{font-size:13.5px;color:#b6b6b0;line-height:1.5;margin-bottom:14px;}
+.mega-feat a{font-size:13.5px;font-weight:600;color:var(--accent);}
+@media(max-width:980px){.nav-links, .nav-right .nav-over{display:none;}}
+/* === END NAV V2 === */
+
+
+/* mega-hover-bridge v2 */
+.mega::before{content:"";position:absolute;top:-22px;left:0;right:0;height:22px;background:transparent;}
+
+</style></head><body><header class="nav"><div class="wrap nav-in">
+  <a class="brand" href="index.html"><span class="mk">HQ</span> YourFellow</a>
+  <nav class="nav-links">
+    <div class="has-mega active" tabindex="0">
+      <span>Wat HQ doet</span><span class="chev"></span>
+      <div class="mega">
+        <div>
+          <div class="col-title">Modules</div>
+          <div class="mega-items">
+            <a class="mega-item" href="hq_module_dashboard.html">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></div>
+              <div><h4>Dashboard</h4><p>Al je cijfers op een scherm, met een seintje als iets opvalt.</p></div>
+            </a>
+            <a class="mega-item" href="hq_module_advertenties.html">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <div><h4>Advertenties</h4><p>Google &amp; Meta - HQ schrijft, jij keurt goed.</p></div>
+            </a>
+            <a class="mega-item" href="hq_module_social.html">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <div><h4>Social posts</h4><p>Posts voor Instagram, LinkedIn en Facebook in jouw stijl.</p></div>
+            </a>
+            <a class="mega-item" href="hq_module_seo_geo.html">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+              <div><h4>SEO &amp; GEO</h4><p>Teksten waarmee je gevonden wordt. In Google en in AI.</p></div>
+            </a>
+          </div>
+        </div>
+        <div class="mega-feat">
+          <div>
+            <div class="lab">De rode draad</div>
+            <h4>Mia, je AI-collega</h4>
+            <p>Een collega die je dashboard, advertenties en teksten kent. Stelt voor, jij keurt goed.</p>
+          </div>
+          <a href="hq_mia.html">Lees alles over Mia &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <a href="hq_prijzen.html">Prijzen</a>
+    <div class="has-mega" tabindex="0">
+      <span>Uitleg</span><span class="chev"></span>
+      <div class="mega mega-solo">
+        <div>
+          <div class="col-title">Onderwerpen</div>
+          <div class="mega-items">
+            <a class="mega-item" href="hq_uitleg.html#start"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div><div><h4>Start hier</h4><p>HQ in 5 stappen opzetten, ongeveer een half uur.</p></div></a>
+            <a class="mega-item" href="hq_uitleg.html#tutorials"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><div><h4>Tutorials</h4><p>Korte uitleg per module, een paar minuten per stuk.</p></div></a>
+            <a class="mega-item" href="hq_uitleg.html#ai"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div><div><h4>Hoe AI werkt</h4><p>Welke modellen, voor welk werk, en wat we niet doen.</p></div></a>
+            <a class="mega-item" href="hq_uitleg.html#privacy"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h4>Privacy en data</h4><p>Wat we met je gegevens doen, en wat juist niet.</p></div></a>
+            <a class="mega-item" href="hq_uitleg.html#integrations"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><div><h4>Integraties</h4><p>GA4, Search Console, Google Ads, Meta en je website.</p></div></a>
+            <a class="mega-item" href="hq_uitleg.html#updates"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Updates</h4><p>Wat er nieuw is in HQ, kort en bij.</p></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="hq_vragen.html">Vragen</a>
+  </nav>
+  <div class="nav-right">
+    <a class="nav-over" href="hq_over.html">Over ons</a>
+    <a class="btn-primary" href="hq_aanmelden.html">Probeer HQ <span class="arrow">&rarr;</span></a>
+  </div>
+</div></header>
+<div class="wrap crumb">Functies</div>
+<section class="mhero"><div class="wrap">
+<span class="eyebrow">Wat HQ doet</span>
+<h1>Eén platform voor alles wat je doet met marketing.</h1>
+<p class="sub">Vier modules, aan elkaar geknoopt en allemaal gevoed door je bedrijfsprofiel. Bekijk wat elke module voor je doet.</p>
+<div class="acts"><a class="btn-primary" href="hq_aanmelden.html">Probeer HQ <span class="arrow">&rarr;</span></a></div>
+</div></section>
+
+<section class="section" style="padding-top:0;"><div class="wrap">
+<div class="mod-grid">
+<a class="mod" href="hq_module_dashboard.html"><div class="mod-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></div><h3>Je dashboard</h3><p>Al je cijfers op één scherm. Website, advertenties, webshop en je kalender, met een seintje als er iets opvalt.</p><span class="link-more">Bekijk dashboard &rarr;</span></a>
+<a class="mod" href="hq_module_advertenties.html"><div class="mod-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><h3>Advertenties op Google en Meta</h3><p>Maak en beheer advertenties op Google, Facebook en Instagram. HQ schrijft, jij keurt goed.</p><span class="link-more">Bekijk advertenties &rarr;</span></a>
+<a class="mod" href="hq_module_social.html"><div class="mod-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Posts voor social</h3><p>Posts voor Instagram, LinkedIn en Facebook, met afbeelding erbij in jouw merkstijl.</p><span class="link-more">Bekijk social &rarr;</span></a>
+<a class="mod" href="hq_module_seo_geo.html"><div class="mod-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3>Teksten waarmee je gevonden wordt</h3><p>Nieuwe pagina's die mensen vinden in Google én in AI-zoekresultaten. Op basis van echte zoekwoorden.</p><span class="link-more">Bekijk SEO &amp; GEO &rarr;</span></a>
+</div></div></section>
+
+<section class="section" style="padding-top:10px;"><div class="wrap"><div class="mia-teaser">
+<div><span class="eyebrow">De rode draad</span><h2>Mia werkt door alles heen.</h2><p>Eén AI-collega die je dashboard, je advertenties en je teksten kent en met je meedenkt. Zij stelt voor, jij keurt goed.</p><a class="link-more" href="#">Lees alles over Mia &rarr;</a></div>
+<div class="orb"><div class="ring r1"></div><div class="ring r2"></div><div class="photo"><img src="assets/mia.jpeg" alt="Mia" /></div></div>
+</div></div></section>
+
+<section class="section" style="padding-top:20px;"><div class="wrap">
+<div class="section-head"><span class="eyebrow">Zo werkt het</span><h2 class="section-title">In vijf stappen draait je marketing.</h2><p class="section-sub">Geen onboarding van weken. Stap voor stap zet je HQ op, en dan loopt het.</p></div>
+<div class="steps" style="grid-template-columns:repeat(5,1fr);">
+<div class="step"><div class="n">1</div><h3>Bedrijfsprofiel</h3><p>Plak je website-URL. HQ leest mee.</p></div>
+<div class="step"><div class="n">2</div><h3>Search Console</h3><p>Koppel zodat HQ je zoekverkeer ziet.</p></div>
+<div class="step"><div class="n">3</div><h3>Analytics</h3><p>Koppel zodat HQ je cijfers binnenhaalt.</p></div>
+<div class="step"><div class="n">4</div><h3>Advertentie-accounts</h3><p>Google en Meta in één klik gekoppeld.</p></div>
+<div class="step"><div class="n">5</div><h3>Mia aan</h3><p>Je AI-collega gaat scannen en adviseren.</p></div>
+</div></div></section>
+<section class="section" id="probeer" style="padding-top:10px;"><div class="wrap"><div class="final">
+<h2>Klaar om HQ te proberen?</h2><p>Maak een account en ga aan de slag. Eerste keer instellen kost ongeveer een half uur, daarna draait het.</p>
+<a class="btn-primary" href="hq_aanmelden.html">Probeer HQ <span class="arrow">&rarr;</span></a>
+<div class="micro">Maandelijks opzegbaar &middot; geen jaarcontract</div></div></div></section>
+<footer class="foot"><div class="wrap foot-grid"><div><a class="brand" href="index.html" style="margin-bottom:14px;"><span class="mk">HQ</span> YourFellow</a><p class="tag">HQ regelt je marketing, jij regelt je bedrijf. Powered by YourFellow.</p></div><div class="col"><b>Product</b><a href="hq_functies_overzicht.html">Wat HQ doet</a><a href="hq_mia.html">Mia</a><a href="index.html#voor-wie">Voor wie</a><a href="hq_prijzen.html">Prijzen</a></div><div class="col"><b>Hulp</b><a href="hq_uitleg.html">Uitleg</a><a href="hq_vragen.html">Vragen</a><a href="hq_aanmelden.html">Probeer HQ</a></div></div></footer>
+<!-- Mia chatbot widget -->
+<script src="assets/mia-chatbot.js" defer></script>
+</body></html>
