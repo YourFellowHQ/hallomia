@@ -1,0 +1,81 @@
+/* ============================================================
+   Wit/licht thema voor de hele "Hallo Mia"-site.
+   Wordt in elke *-light pagina ná site.css en ná de inline <style>
+   geladen, zodat deze regels winnen. De meeste kleuren gebruiken
+   CSS-variabelen; door :root hier te overschrijven wordt alles licht.
+   Daarnaast maken we de hardgecodeerde donkere decoraties (foto-kaders,
+   glows, badges, CTA-banden) netjes licht.
+   ============================================================ */
+
+:root{
+  --bg:#FDFBF8;          /* bijna wit, warme beige zweem */
+  --bg-2:#F6F2EA;        /* footer / iets dieper */
+  --bg-band:#FDFBF8;
+  --surface:#FFFFFF;     /* kaarten */
+  --surface-2:#F4EFE6;   /* hover / lichte vlakken */
+  --line:#EDE8DD;        /* warme lichte rand */
+  --line-2:#DED7C9;
+  --ink:#211E18;         /* warm bijna-zwart */
+  --ink-2:#47433A;
+  --ink-soft:#76705F;
+  --ink-mute:#9D9683;
+  --accent:#0E9C86;      /* dieper, rustiger teal — leesbaar op licht */
+  --accent-deep:#0A7E6D;
+  --accent-soft:rgba(14,156,134,0.12);
+  --on-accent:#FFFFFF;
+}
+
+/* sticky nav: licht doorschijnend i.p.v. donker */
+.topbar{background:rgba(253,251,248,0.85);}
+.nav-links a:hover{background:rgba(0,0,0,0.05);}
+
+/* ---- donkere foto-/scherm-kaders → licht (beelden bedekken ze toch) ---- */
+.stage,.post-frame,.mia-photo,.portrait,.mia-msg,
+.shot,.demo,.screenshot,.framed{
+  background:var(--surface-2)!important;
+}
+.stage{box-shadow:0 0 0 1px var(--line-2),0 40px 90px -40px rgba(40,34,20,0.28)!important;}
+
+/* ---- donkere doorschijnende badges/chips óp beeld → licht, donkere tekst ---- */
+.portrait .chip,.portrait .badge,.mia-photo .badge,
+.mia-msg figcaption,.glass,.badge-dark{
+  background:rgba(255,255,255,0.92)!important;
+  border-color:var(--line-2)!important;
+}
+.portrait .chip span,.portrait .badge,.mia-photo .badge{color:var(--ink-2)!important;}
+
+/* ---- donkere CTA-band (.payoff) → lichte band met inkt-tekst ---- */
+.payoff{
+  background:var(--surface-2)!important;
+  border-color:var(--line-2)!important;
+}
+.payoff h2,.payoff p,.payoff li,.payoff .lead,.payoff strong{color:var(--ink)!important;}
+
+/* zachte teal-gloed i.p.v. felle cyaan voor de grote schaduwen */
+.tier.featured{box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(14,156,134,0.22)!important;}
+.review{box-shadow:0 30px 70px -45px rgba(40,34,20,0.30)!important;}
+
+/* ---- pagina-specifieke donkere vlakken → licht & leesbaar ---- */
+/* foto-kaders (beeld bedekt ze; licht voor het geval er ruimte overblijft) */
+.mia-portrait,.tm .ph{background:var(--surface-2)!important;}
+/* mock-/placeholder-vlakken met donkere gradient */
+.mock-card .img,.shot .ph{background:var(--surface-2)!important;}
+.shot .ph,.shot .ph span,.shot .ph .ico{color:var(--ink-soft)!important;border-color:var(--line-2)!important;}
+/* donkere "intro"-kaart op de aanmeldpagina → licht, tekst flipt mee via vars */
+.intro-card{background:var(--surface-2)!important;border-color:var(--line-2)!important;}
+/* gestreepte placeholder-tegels licht */
+.mtile .bg.ph{background:repeating-linear-gradient(135deg,#EFEAE0 0,#EFEAE0 12px,#F6F2EA 12px,#F6F2EA 24px)!important;}
+.mtile .bg.ph .lab{background:rgba(255,255,255,0.9)!important;color:var(--ink-soft)!important;}
+.mtile .scrim{background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,0.04) 100%)!important;}
+/* telefoon-mockup: licht scherm in (realistische) donkere bezel */
+.phone .screen2{background:#FFFFFF!important;}
+.phone .igbar{background:#FFFFFF!important;border-bottom:1px solid var(--line)!important;}
+/* donkere "regie"-band (Mia-pagina) → licht met inkt-tekst */
+.regie-band{background:var(--surface-2)!important;border-color:var(--line-2)!important;}
+.regie-band h2,.regie-band h3,.regie-band p,.regie-band li{color:var(--ink)!important;}
+/* portret-badge (over-ons) → licht met donkere tekst */
+.mia-portrait figcaption{background:rgba(255,255,255,0.92)!important;border-color:var(--line-2)!important;color:var(--ink-2)!important;}
+/* gedeelde donkere "mia-band" (module.css) → licht met inkt-tekst */
+.mia-band{background:var(--surface-2)!important;border-color:var(--line-2)!important;}
+.mia-band h2,.mia-band h3,.mia-band p,.mia-band li{color:var(--ink)!important;}
+.mia-band .av{border-color:var(--accent)!important;box-shadow:0 0 0 3px var(--accent-soft)!important;}

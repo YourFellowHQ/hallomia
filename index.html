@@ -3,11 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hallo Mia, dag marketing-stress</title>
+<title>Hallo Mia, je marketing-collega</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<meta name="description" content="Mia kijkt de hele dag met je mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst: social, advertenties, SEO en meer vanuit één bedrijfsprofiel.">
+<link rel="canonical" href="https://hallomia.ai/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hallo Mia">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Hallo Mia, je marketing-collega">
+<meta property="og:description" content="Mia kijkt de hele dag met je mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst: social, advertenties, SEO en meer vanuit één bedrijfsprofiel.">
+<meta property="og:url" content="https://hallomia.ai/">
+<meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hallo Mia, je marketing-collega">
+<meta name="twitter:description" content="Mia kijkt de hele dag met je mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst: social, advertenties, SEO en meer vanuit één bedrijfsprofiel.">
+<meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"YourFellow HQ","alternateName":"Hallo Mia","url":"https://hallomia.ai/","logo":"https://hallomia.ai/assets/logo.png","image":"https://hallomia.ai/assets/og-image.png","description":"Mia is je AI-marketingcollega in YourFellow HQ: ze kijkt mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst social, advertenties en SEO vanuit één bedrijfsprofiel.","parentOrganization":{"@type":"Organization","name":"YourFellow"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Hallo Mia","url":"https://hallomia.ai/","inLanguage":"nl-NL","publisher":{"@type":"Organization","name":"YourFellow HQ"}}
+</script>
 <style>
 /* ---------- hero ---------- */
 .hero{position:relative;background:var(--bg);border-bottom:1px solid var(--line);padding:54px 0 60px;overflow:hidden;}
@@ -120,10 +140,11 @@
 .faq .q p{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:60ch;}
 
 /* ---------- final cta ---------- */
-.fc{padding:110px 0 120px;border-top:1px solid var(--line);position:relative;overflow:hidden;}
+.fc{padding:64px 0 72px;border-top:1px solid var(--line);position:relative;overflow:hidden;}
 .fc::after{content:"";position:absolute;width:680px;height:680px;border-radius:50%;left:50%;top:40%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,255,204,0.10),transparent 64%);pointer-events:none;}
 .fc-in{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;}
-.fc-in h2{font-size:clamp(38px,5.4vw,76px);font-weight:600;letter-spacing:-0.035em;line-height:0.98;max-width:16ch;}
+.fc-in h2{font-size:clamp(38px,5.4vw,76px);font-weight:600;letter-spacing:-0.035em;line-height:0.98;max-width:none;white-space:nowrap;}
+@media(max-width:560px){.fc-in h2{white-space:normal;max-width:18ch;}}
 .fc-in p{margin:20px 0 30px;font-size:17px;color:var(--ink-soft);max-width:54ch;line-height:1.6;}
 .fc-in .note{margin-top:18px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);}
 </style>
@@ -133,27 +154,216 @@
 .hero-title p{font-size:17px}
 .stage{width:min(1300px,94vw)}
 </style>
+
+<!-- ===== LIGHT / WARM-BEIGE THEME OVERRIDE ===== -->
+<style id="light-theme">
+:root{
+  --bg:#FDFBF8;          /* almost white, faint warm beige */
+  --bg-2:#F6F2EA;        /* footer, slightly deeper */
+  --bg-band:#FDFBF8;
+  --surface:#FFFFFF;     /* cards, clean white */
+  --surface-2:#F8F4EC;   /* card hover */
+  --line:#EDE8DD;        /* warm light border */
+  --line-2:#DED7C9;
+  --ink:#211E18;         /* warm near-black */
+  --ink-2:#47433A;
+  --ink-soft:#76705F;
+  --ink-mute:#9D9683;
+  --accent:#0E9C86;      /* deeper, muted teal — readable on light */
+  --accent-deep:#0A7E6D;
+  --accent-soft:rgba(14,156,134,0.12);
+  --on-accent:#FFFFFF;   /* white text on the teal button */
+}
+/* sticky nav bar: light translucent instead of dark */
+.topbar{background:rgba(253,251,248,0.85);}
+.nav-links a:hover{background:rgba(0,0,0,0.05);}
+/* hero decorative layers tuned for a light backdrop */
+.hero::before{background:radial-gradient(900px 600px at 50% 24%,rgba(14,156,134,0.07),transparent 60%),radial-gradient(700px 500px at 50% 100%,rgba(14,156,134,0.05),transparent 60%);}
+.hero::after{background-image:linear-gradient(rgba(0,0,0,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.035) 1px,transparent 1px);}
+/* demo screen: neutral soft shadow instead of teal glow */
+.stage{box-shadow:0 0 0 1px var(--line-2),0 40px 90px -40px rgba(40,34,20,0.28);}
+.review{box-shadow:0 30px 70px -45px rgba(40,34,20,0.3);}
+.tier.featured{box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(14,156,134,0.22);}
+.fc::after{background:radial-gradient(circle,rgba(14,156,134,0.07),transparent 64%);}
+.mia-photo::after{box-shadow:inset 0 0 90px rgba(14,156,134,0.10);}
+/* typewriter in black for the light version */
+.hero-title h1 .typed-line{color:var(--ink);}
+.hero-title h1 .caret{background:var(--ink);}
+</style>
+<style>
+/* ===== split hero: links Mia vraagt (1/3), rechts output (2/3) ===== */
+.split{display:grid;grid-template-columns:1fr 2fr;min-height:0;}
+@media(max-width:900px){.split{grid-template-columns:1fr;min-height:0;}}
+
+/* ---- links: Mia vraagt ---- */
+.ask{position:relative;display:flex;flex-direction:column;justify-content:center;gap:22px;
+  padding:48px 52px;border-right:1px solid var(--line);overflow:hidden;}
+@media(max-width:900px){.ask{border-right:0;border-bottom:1px solid var(--line);padding:44px 28px;}}
+.ask::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(560px 460px at 22% 26%,rgba(14,156,134,0.06),transparent 60%);}
+.ask > *{position:relative;z-index:1;}
+
+/* Mia-identiteit */
+.ask .mia-id{display:flex;align-items:center;gap:13px;}
+.ask .mia-id .av{width:50px;height:50px;border-radius:50%;overflow:hidden;flex:none;
+  border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--accent),0 8px 18px -10px rgba(14,156,134,0.5);}
+.ask .mia-id .av img{width:100%;height:100%;object-fit:cover;object-position:center 14%;}
+.ask .mia-id .who b{display:block;font-size:16px;font-weight:700;letter-spacing:-0.01em;line-height:1.15;}
+.ask .mia-id .who .role{font-size:13px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:7px;}
+.ask .mia-id .who .role .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+
+/* Kop + chat-invoerveld (alsof je Mia een vraag typt) */
+.ask-title{font-size:clamp(24px,2.7vw,36px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;color:var(--ink);}
+.ask-title em{font-style:normal;color:var(--accent);}
+
+.composer{position:relative;display:flex;align-items:center;gap:12px;
+  background:var(--surface);border:1px solid var(--line-2);border-radius:16px;
+  padding:13px 13px 13px 18px;box-shadow:0 10px 26px -20px rgba(40,34,20,0.20);}
+.composer .qwrap{flex:1;min-width:0;}
+.composer .label{display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px;}
+.composer .qline{display:block;white-space:normal;word-break:break-word;}
+.composer .q{font-size:clamp(16px,1.5vw,21px);font-weight:600;color:var(--ink);
+  letter-spacing:-0.015em;line-height:1.3;
+  opacity:0;transition:opacity .4s var(--ease,cubic-bezier(.16,1,.3,1));}
+.composer .q.in{opacity:1;}
+.composer .caret{display:inline-block;width:2px;height:1em;vertical-align:-0.14em;margin-left:2px;background:var(--accent);border-radius:2px;animation:cb 1.05s steps(1,end) infinite;}
+@keyframes cb{0%,49%{opacity:1}50%,100%{opacity:0}}
+.composer .send{flex:none;width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;border:0;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -6px rgba(14,156,134,0.55);transition:transform .2s,background .2s;}
+.composer .send:hover{background:var(--accent-deep);transform:translateY(-1px);}
+.composer .send svg{width:19px;height:19px;}
+@media(prefers-reduced-motion:reduce){.composer .caret{animation:none;}}
+
+/* Live status onder de invoer (sluit aan op de rechterkant) */
+.making{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+  font-size:13.5px;color:var(--ink-soft);font-weight:500;}
+.making .sp{width:14px;height:14px;border:2px solid var(--line-2);border-top-color:var(--accent);
+  border-radius:50%;animation:spin .8s linear infinite;}
+.making b{color:var(--ink-2);font-weight:700;}
+
+.ask .sub{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:36ch;}
+
+/* ---- rechts: wat Mia toont (jouw 2/3-HTML komt hier) ---- */
+.show{position:relative;display:flex;align-items:center;justify-content:center;padding:34px;background:var(--bg-2);}
+@media(max-width:900px){.show{padding:28px;min-height:0;}}
+.show-frame{position:relative;width:100%;max-width:720px;
+  background:var(--surface);border:1px solid var(--line-2);border-radius:18px;overflow:hidden;
+  box-shadow:0 40px 90px -45px rgba(40,34,20,0.28);}
+.show-bar{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line);background:var(--surface);}
+.show-bar .work{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft);font-weight:500;}
+.show-bar .work .sp{width:14px;height:14px;border:2px solid var(--line-2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.show-bar .tag{margin-left:auto;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:var(--ink-mute);}
+
+/* panels: één tegelijk zichtbaar, wisselt mee met Mia's vraag */
+.panels{position:relative;width:100%;aspect-ratio:16/10;}
+.panel{position:absolute;inset:0;opacity:0;transform:translateY(10px) scale(0.995);
+  transition:opacity .5s var(--ease,cubic-bezier(.16,1,.3,1)),transform .5s cubic-bezier(.16,1,.3,1);
+  pointer-events:none;}
+.panel.active{opacity:1;transform:none;pointer-events:auto;}
+.panel iframe{width:100%;height:100%;border:0;display:block;}
+/* placeholder tot jouw HTML er in komt */
+.ph-out{width:100%;height:100%;display:flex;align-items:flex-end;
+  background:repeating-linear-gradient(135deg,#F3EFE6,#F3EFE6 12px,#EDE8DD 12px,#EDE8DD 24px);}
+.ph-out .lab{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--ink-soft);
+  background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:8px 12px;margin:16px;}
+</style>
+<style id="meet-var">
+/* ===== Maak kennis met Mia — het gesprek loopt door vanuit de hero ===== */
+.meet{position:relative;overflow:hidden;padding-top:74px;}
+.meet::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(680px 480px at 82% 26%,var(--accent-soft),transparent 62%);}
+.meet .wrap{position:relative;z-index:1;}
+
+/* overgangs-aanwijzing: pakt direct de draad op vanuit de demo hierboven */
+.meet-cuewrap{display:flex;justify-content:center;}
+.meet-cue{display:inline-flex;align-items:center;gap:13px;margin-bottom:46px;
+  padding:8px 20px 8px 8px;border:1px solid var(--line-2);border-radius:999px;background:var(--surface);
+  font-size:14px;color:var(--ink-soft);line-height:1.3;box-shadow:0 16px 34px -24px rgba(40,34,20,0.28);}
+.meet-cue .av{width:34px;height:34px;border-radius:50%;overflow:hidden;flex:none;
+  border:1.5px solid var(--surface);box-shadow:0 0 0 1.5px var(--accent);}
+.meet-cue .av img{width:100%;height:100%;object-fit:cover;object-position:center 14%;}
+.meet-cue b{color:var(--ink);font-weight:600;}
+
+.meet-grid{display:grid;grid-template-columns:1.04fr 0.96fr;gap:56px;align-items:center;}
+@media(max-width:880px){.meet-grid{grid-template-columns:1fr;gap:34px;}}
+
+/* links: Mia stelt zich voor — zelfde chat-taal als de composer in de hero */
+.meet-say .mia-id{display:flex;align-items:center;gap:13px;margin-bottom:16px;}
+.meet-say .mia-id .av{width:46px;height:46px;border-radius:50%;overflow:hidden;flex:none;
+  border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--accent),0 8px 18px -10px rgba(14,156,134,0.5);}
+.meet-say .mia-id .av img{width:100%;height:100%;object-fit:cover;object-position:center 14%;}
+.meet-say .mia-id .who b{display:block;font-size:15.5px;font-weight:700;letter-spacing:-0.01em;line-height:1.15;}
+.meet-say .mia-id .who .role{font-size:13px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:7px;}
+.meet-say .mia-id .who .role .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+
+.meet-bubble{position:relative;background:var(--surface);border:1px solid var(--line-2);
+  border-radius:18px;border-top-left-radius:6px;padding:24px 26px;
+  box-shadow:0 20px 44px -30px rgba(40,34,20,0.32);}
+.meet-bubble::before{content:"";position:absolute;top:-1px;left:-9px;width:18px;height:18px;
+  background:var(--surface);border-left:1px solid var(--line-2);border-top:1px solid var(--line-2);
+  border-top-left-radius:5px;transform:skew(-12deg) rotate(-2deg);clip-path:polygon(0 0,100% 0,0 100%);}
+.meet-bubble h2{font-size:clamp(27px,3.3vw,42px);font-weight:700;letter-spacing:-0.03em;line-height:1.04;margin-bottom:14px;}
+.meet-bubble h2 em{font-style:normal;color:var(--accent);}
+.meet-bubble p{font-size:16px;color:var(--ink-2);line-height:1.6;}
+.meet-bubble p b{color:var(--ink);font-weight:600;}
+
+.meet-say .mia-points{margin:22px 0 26px;}
+
+/* rechts: de foto, als kennismaking aan het eind van het gesprek */
+.meet-portrait{position:relative;}
+.meet-portrait .frame{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line-2);
+  aspect-ratio:4/5;background:#111;box-shadow:0 56px 110px -55px rgba(40,34,20,0.45);}
+.meet-portrait .frame img{width:100%;height:100%;object-fit:cover;}
+.meet-portrait .frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 90px rgba(14,156,134,0.10);pointer-events:none;}
+.meet-portrait .badge{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.86);backdrop-filter:blur(8px);border:1px solid var(--line-2);border-radius:9px;
+  padding:8px 13px;font-size:12px;color:var(--ink-2);font-weight:500;}
+.meet-portrait .badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);}
+
+/* berichten komen binnen alsof het gesprek doorloopt */
+.meet .reveal{opacity:0;transform:translateY(18px);
+  transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);}
+.meet .reveal.seen{opacity:1;transform:none;}
+.meet .reveal.d1{transition-delay:.1s;}
+.meet .reveal.d2{transition-delay:.2s;}
+@media(prefers-reduced-motion:reduce){.meet .reveal{opacity:1;transform:none;transition:none;}}
+</style>
 </head>
 <body data-depth="0" data-page="home">
 <div id="site-nav"></div>
 
 <main>
   <!-- HERO -->
-  <section class="hero">
-    <div class="wrap-wide hero-in">
-      <div class="hero-title">
-        <h1>Hallo Mia. <em>Dag marketing-stress.</em></h1>
-        <p>Mia kijkt elke ochtend mee, doet voorstellen en zet het werk voor je klaar. Jij keurt goed, zij plaatst. Zo blijft je marketing draaien terwijl jij onderneemt.</p>
+  <section class="split">
+    <!-- LINKS — Mia vraagt -->
+    <div class="ask">
+      <div class="mia-id">
+        <span class="av"><img src="assets/mia-face.jpg" alt="Mia"></span>
+        <span class="who"><b>Mia</b><span class="role"><span class="dot"></span>je AI-collega</span></span>
       </div>
-
-      <div class="stage" aria-label="Introductie van Mia">
-        <div class="stage-chrome"><span class="d"></span><span class="d y"></span><span class="d on"></span><span class="lbl">hallo mia · live demo</span></div>
-        <iframe src="assets/hero-hallomia-A.html" title="Maak kennis met Mia" loading="lazy"></iframe>
+      <h1 class="ask-title">Vraag het <em>Mia.</em></h1>
+      <div class="composer live">
+        <div class="qwrap">
+          <span class="label">Hallo Mia,</span>
+          <span class="qline"><span class="q in" id="miaTyped">hoe staan we ervoor?</span><span class="caret"></span></span>
+        </div>
+        <button class="send" aria-label="Verstuur naar Mia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
       </div>
+      <div class="making"><span class="sp"></span><span>Mia maakt <b id="makeTag">je dashboard</b></span></div>
+      <p class="sub">Jij vraagt, Mia maakt het meteen. Rechts zie je haar voorstel — jij keurt goed.</p>
+    </div>
 
-      <div class="hero-bottom">
-        <a class="btn acc lg" href="aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a>
-        <a class="btn ghost lg" href="wat-doet-het/">Wat doet het</a>
+    <!-- RECHTS — wat Mia toont (jouw 2/3-HTML komt hier) -->
+    <div class="show">
+      <div class="show-frame">
+        <div class="panels" id="panels">
+          <div class="panel active" data-out="dash"><iframe data-src="assets/out-dash.html" title="Mia toont het dashboard" scrolling="no"></iframe></div>
+          <div class="panel" data-out="social"><iframe data-src="assets/out-social.html" title="Mia maakt een social post" scrolling="no"></iframe></div>
+          <div class="panel" data-out="ads"><iframe data-src="assets/out-ads.html" title="Mia scherpt een advertentie aan" scrolling="no"></iframe></div>
+          <div class="panel" data-out="seo"><iframe data-src="assets/out-seo.html" title="Mia verbetert een SEO-tekst" scrolling="no"></iframe></div>
+          <div class="panel" data-out="news"><iframe data-src="assets/out-news.html" title="Mia zet de nieuwsbrief klaar" scrolling="no"></iframe></div>
+        </div>
       </div>
     </div>
   </section>
@@ -163,12 +373,11 @@
   <section class="section"><div class="wrap">
     <div class="miateaser">
       <div class="mia-photo">
-        <img src="assets/mia-photo.jpg" alt="Mia, de AI-collega in Hallo Mia">
-        <div class="badge"><span class="pulse"></span> Mia is online</div>
+        <img src="assets/mia-photo.jpg" alt="Mia, de AI-collega in YourFellow HQ">
       </div>
       <div>
         <h2 style="margin-top:14px;">Maak kennis met Mia.</h2>
-        <p>Mia is ingebouwd in Hallo Mia en kijkt mee in je dashboard, je profiel en je cijfers. Ze komt met concrete voorstellen, in jouw stem, voor jouw klanten.</p>
+        <p>Mia is ingebouwd in YourFellow HQ en kijkt mee in je dashboard, je profiel en je cijfers. Ze komt met concrete voorstellen, in jouw stem, voor jouw klanten.</p>
         <ul class="mia-points">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Kent je bedrijfsprofiel, doelen en cijfers</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Zet posts, advertenties en webteksten voor je klaar</li>
@@ -225,24 +434,29 @@
     </div>
   </div></section>
 
+  <!-- YOURFELLOW HQ -->
+  <section class="section hqband"><div class="wrap">
+    <div class="hqband-in">
+      <div class="kicker"><span class="dot"></span> Eén werkplek</div>
+      <h2>Alles draait in <em>YourFellow HQ.</em></h2>
+      <p>Hallo Mia is je kennismaking. Het echte werk gebeurt straks in YourFellow HQ, op app.yourfellow.nl: je bedrijfsprofiel, alle modules en Mia als je vaste assistent, bij elkaar op één plek.</p>
+      <div class="hq-browser">
+        <div class="hq-bar"><span class="d"></span><span class="d y"></span><span class="d g"></span><span class="hq-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>app.yourfellow.nl</span></div>
+        <div class="hq-screen">
+          <div class="hq-brand"><span class="mk"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#062B25" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg></span>YourFellow <b>HQ</b></div>
+          <div class="hq-chips"><span>Bedrijfsprofiel</span><span>Dashboard</span><span>Social</span><span>Advertenties</span><span>SEO &amp; GEO</span><span>Mail</span><span class="mia"><span class="dot2"></span>Mia is online</span></div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
   <!-- SOCIAL PROOF -->
   <section class="section"><div class="wrap">
     <div class="proof">
-      <div class="review">
-        <div class="review-head">
-          <div class="av"><img src="assets/mia-face.jpg" alt="Mia"></div>
-          <div class="who"><b>Mia</b><span>Voorstel &middot; klaar om te plaatsen</span></div>
-          <span class="st"><i></i> online</span>
-        </div>
-        <div class="review-post">
-          <div class="post-frame"><img src="assets/mia-post-bonnio.png" alt="Door Mia gegenereerde Instagram-post met mascotte Bonnio"></div>
-        </div>
-        <div class="review-cap"><b>bonnio</b> De bouwvak is begonnen! ☀️ Terwijl jij op vakantie bent, verzamelt Bonnio netjes al je facturen, zodat jij zorgeloos kunt genieten.</div>
-        <div class="review-acts">
-          <a class="btn acc" style="flex:1;padding:11px;font-size:13.5px;">Goedkeuren</a>
-          <a class="btn ghost" style="padding:11px 16px;font-size:13.5px;">Aanpassen</a>
-        </div>
-      </div>
+      <figure class="shot">
+        <img src="assets/mia-editor.png" alt="Mia heeft een complete Instagram-post klaargezet in de editor: beeld, bijschrift en hashtags, klaar om te plaatsen of aan te passen">
+        <figcaption>Mia's voorstel — beeld, bijschrift en hashtags, klaar in de editor.</figcaption>
+      </figure>
       <div class="copy">
         <h2 style="margin-top:14px;">Mia levert af. Jij hoeft alleen te kiezen.</h2>
         <p>Een post in jouw merkstijl, met beeld erbij. Mia ziet de feestdag in je kalender, schrijft de tekst en zet het voorstel klaar in je review-inbox. Goedkeuren, aanpassen of overslaan.</p>
@@ -251,19 +465,6 @@
         </div>
         <div style="margin-top:26px;"><a class="txt-link" href="social/">Zo werkt de social-module →</a></div>
       </div>
-    </div>
-  </div></section>
-
-  <!-- VOOR WIE -->
-  <section class="section"><div class="wrap">
-    <div class="shead">
-      <div class="l"><h2>Voor wie marketing erbij doet.</h2></div>
-      
-    </div>
-    <div class="aud">
-      <div class="a"><span class="n">01</span><h3>Je doet het er zelf bij</h3><p>Ondernemer die marketing erbij doet. Je wilt het geregeld krijgen zonder marketeer te worden of in te huren.</p></div>
-      <div class="a"><span class="n">02</span><h3>Eén of twee marketeers</h3><p>Je doet veel taken tegelijk. Hallo Mia helpt je sneller en consistenter content maken vanuit één plek.</p></div>
-      <div class="a"><span class="n">03</span><h3>Team of klein bureau</h3><p>Meerdere merken of klanten. Bedien ze efficiënt vanuit één omgeving, onder één login.</p></div>
     </div>
   </div></section>
 
@@ -307,7 +508,7 @@
       <div class="r"><a class="txt-link" href="vragen/">Alle vragen →</a></div>
     </div>
     <div class="faq">
-      <div class="q"><span class="n">Q1</span><div><h4>Moet ik verstand hebben van marketing?</h4><p>Nee. Hallo Mia legt alles uit in gewone taal en doet het uitzoekwerk. Jij beslist wat eruit gaat.</p></div></div>
+      <div class="q"><span class="n">Q1</span><div><h4>Moet ik verstand hebben van marketing?</h4><p>Nee. YourFellow HQ legt alles uit in gewone taal en doet het uitzoekwerk. Jij beslist wat eruit gaat.</p></div></div>
       <div class="q"><span class="n">Q2</span><div><h4>Maakt AI geen fouten?</h4><p>AI kan fouten maken, daarom keur jij alles goed voor het live gaat. Mia stelt voor, jij beslist.</p></div></div>
       <div class="q"><span class="n">Q3</span><div><h4>Wat gebeurt er met mijn bedrijfsgegevens?</h4><p>Daar gaan we zorgvuldig mee om. We trainen geen modellen op jouw data en je kunt elke koppeling op elk moment losmaken.</p></div></div>
     </div>
@@ -339,6 +540,75 @@
   window.addEventListener('resize', fit);
   if(document.readyState!=='loading') requestAnimationFrame(fit);
   else document.addEventListener('DOMContentLoaded', fit);
+})();
+</script>
+<script>
+(function(){
+  // Mia cyclet door 5 vragen. Links typt ze de vraag, rechts wisselt het
+  // bijbehorende app-scherm mee. Belangrijk: er draait maar één scherm tegelijk.
+  // Het actieve iframe wordt vers geladen (start z'n opbouw gelijk met de vraag);
+  // de andere vier staan op about:blank zodat hun animatie-lussen de pagina niet
+  // afremmen. Alle timing via setTimeout/setInterval (niet rAF) zodat het ook
+  // soepel blijft lopen naast de iframe-animaties.
+  var VARIANTS = [
+    { q:'hoe staan we ervoor?',        make:'je dashboard',    out:'dash'   },
+    { q:'maak een social post.',       make:'een social post', out:'social' },
+    { q:"scherp m'n advertentie aan.", make:'je advertentie',  out:'ads'    },
+    { q:"verbeter m'n SEO-tekst.",     make:'je SEO-tekst',    out:'seo'    },
+    { q:'zet de nieuwsbrief klaar.',   make:'je nieuwsbrief',  out:'news'   }
+  ];
+  var SLOT_MS = 5200, SWAP_MS = 380;
+
+  var qEl    = document.getElementById('miaTyped');
+  var makeEl = document.getElementById('makeTag');
+  var panels = Array.prototype.slice.call(document.querySelectorAll('#panels .panel'));
+  if(!qEl || !panels.length) return;
+
+  // Toon één paneel: laad dat iframe vers, blank de rest (stopt hun rAF-lussen).
+  function activate(name){
+    panels.forEach(function(p){
+      var on = p.getAttribute('data-out') === name;
+      p.classList.toggle('active', on);
+      var fr = p.querySelector('iframe');
+      if(!fr) return;
+      if(on){
+        var src = fr.getAttribute('data-src');
+        if(fr.getAttribute('src') !== src) fr.setAttribute('src', src);
+      } else if(fr.getAttribute('src') && fr.getAttribute('src') !== 'about:blank'){
+        fr.setAttribute('src', 'about:blank');
+      }
+    });
+  }
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){
+    var v0 = VARIANTS[0];
+    qEl.textContent = v0.q; qEl.classList.add('in');
+    if(makeEl) makeEl.textContent = v0.make; activate(v0.out);
+    return;
+  }
+
+  // Toon variant 0 direct; daarna vloeiend wisselen.
+  function show(v){
+    qEl.textContent = v.q;
+    if(makeEl) makeEl.textContent = v.make;
+    activate(v.out);
+  }
+  show(VARIANTS[0]); qEl.classList.add('in');
+
+  var i = 1;
+  function run(){
+    var v = VARIANTS[i];
+    qEl.classList.remove('in');             // vraag uit-faden
+    setTimeout(function(){
+      show(v);                              // tekst + paneel wisselen samen
+      void qEl.offsetWidth;
+      qEl.classList.add('in');              // weer in-faden
+    }, SWAP_MS);
+    i = (i + 1) % VARIANTS.length;
+    setTimeout(run, SLOT_MS);
+  }
+  setTimeout(run, SLOT_MS);
 })();
 </script>
 </body>
