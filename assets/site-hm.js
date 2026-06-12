@@ -7,17 +7,20 @@
 (function(){
   var body = document.body;
   var page = body.getAttribute('data-page') || '';
-  var R = body.getAttribute('data-depth') === '0' ? '' : '../';
-  var HOME = R === '' ? './' : '../';
+  var depth = parseInt(body.getAttribute('data-depth') || '1', 10);
+  if (isNaN(depth) || depth < 0) depth = 1;
+  var R = depth === 0 ? '' : new Array(depth + 1).join('../');
+  var HOME = R === '' ? './' : R;
 
   var BRAND = '<a class="brand" href="' + HOME + '">'
-    + '<span class="mk"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#062B25" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg></span>'
-    + '<span class="wordmark">YourFellow&nbsp;<b>HQ</b></span></a>';
+    + '<span class="mk">HQ</span>'
+    + '<span class="wordmark">YourFellow</span></a>';
 
   var links = [
     {id:'wat',     slug:'wat-doet-het', label:'Wat doet het'},
     {id:'mia',     slug:'mia',          label:'Mia'},
     {id:'prijzen', slug:'prijzen',      label:'Prijzen'},
+    {id:'blog',    slug:'blog',         label:'Blogs'},
     {id:'vragen',  slug:'vragen',       label:'Vragen'},
     {id:'over',    slug:'over-ons',     label:'Over ons'}
   ];
@@ -31,7 +34,8 @@
           }).join('')
     +   '</nav>'
     +   '<div class="nav-r">'
-    +     '<a class="cta" href="'+R+'aanmelden/">Beta aanvragen</a>'
+    +     '<a class="ghost" href="'+R+'aanmelden/">Plan demo</a>'
+    +     '<a class="cta" href="https://app.yourfellow.nl/">Registreren</a>'
     +     '<button class="nav-burger" id="navBurger" aria-label="Menu">'
     +       '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>'
     +     '</button>'
@@ -58,17 +62,18 @@
     +     '<div class="col"><h5>Hulp</h5>'
     +       '<a href="'+R+'prijzen/">Prijzen</a>'
     +       '<a href="'+R+'vragen/">Vragen</a>'
+    +       '<a href="'+R+'begrippenlijst/">Begrippenlijst</a>'
     +       '<a href="'+R+'over-ons/">Over ons</a>'
-    +       '<a href="'+R+'aanmelden/">Beta aanvragen</a>'
+    +       '<a href="'+R+'aanmelden/">Plan demo</a>'
     +     '</div>'
     +     '<div class="col"><h5>Aan de slag</h5>'
-    +       '<a href="'+R+'aanmelden/">Vraag beta-toegang</a>'
+    +       '<a href="https://app.yourfellow.nl/">Registreren</a>'
     +       '<a href="'+R+'aanmelden/">Inloggen</a>'
     +       '<a href="'+R+'vragen/#privacy">Privacy &amp; data</a>'
     +     '</div>'
     +   '</div>'
     +   '<div class="bottom">'
-    +     '<div>&copy; 2026 Hallo Mia, gratis tijdens de beta</div>'
+    +     '<div>&copy; 2026 Hallo Mia, gratis te starten</div>'
     +     '<div class="links"><a href="'+R+'vragen/">Privacy</a><a href="'+R+'vragen/">Voorwaarden</a><a href="'+HOME+'">Home</a></div>'
     +   '</div>'
     + '</div></footer>';

@@ -112,6 +112,61 @@
 .priv h3{font-size:16.5px;font-weight:600;margin-bottom:8px;letter-spacing:-0.01em;}
 .priv p{font-size:14px;color:var(--ink-soft);line-height:1.55;}
 
+/* ===== De taken van Mia, takenbord ===== */
+.taak-intro{font-size:16px;color:var(--ink-soft);max-width:62ch;line-height:1.6;margin-bottom:28px;}
+.taak-intro b{color:var(--ink-2);font-weight:600;}
+.taak-board{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;}
+@media(max-width:900px){.taak-board{grid-template-columns:1fr;}}
+.taak-col{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:15px;}
+.taak-col .col-h{display:flex;align-items:center;gap:9px;margin-bottom:13px;padding:2px 3px;}
+.taak-col .col-h .dot{width:9px;height:9px;border-radius:50%;flex:none;}
+.taak-col .col-h h3{font-size:13.5px;font-weight:600;letter-spacing:-0.01em;}
+.taak-col .col-h .cnt{margin-left:auto;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;font-weight:600;color:var(--ink-soft);background:var(--surface);border:1px solid var(--line-2);border-radius:20px;padding:2px 9px;}
+.taak-col.sug .dot{background:#D9952B;}
+.taak-col.review .dot{background:var(--accent);}
+.taak-col.done .dot{background:#B0A892;}
+.taak{background:var(--surface);border:1px solid var(--line-2);border-radius:11px;padding:13px 14px;margin-bottom:10px;}
+.taak:last-child{margin-bottom:0;}
+.taak .t-tag{display:inline-block;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent);background:rgba(14,156,134,0.08);border:1px solid rgba(14,156,134,0.2);border-radius:5px;padding:2px 7px;margin-bottom:9px;}
+.taak h4{font-size:14px;font-weight:600;letter-spacing:-0.01em;line-height:1.3;margin-bottom:6px;}
+.taak p{font-size:12.5px;color:var(--ink-soft);line-height:1.5;}
+.taak .t-foot{display:flex;align-items:center;gap:7px;margin-top:12px;}
+.taak .mini-approve{flex:1;background:var(--accent);color:var(--on-accent);text-align:center;font-size:11px;font-weight:600;padding:7px 0;border-radius:7px;}
+.taak .mini-adjust{flex:none;background:var(--surface);border:1px solid var(--line-2);color:var(--ink-2);font-size:11px;font-weight:600;padding:7px 11px;border-radius:7px;}
+.taak.is-sug .mini-approve{background:rgba(14,156,134,0.1);border:1px solid rgba(14,156,134,0.25);color:var(--accent-deep);}
+.taak.is-done{opacity:0.78;}
+.taak .t-done{display:flex;align-items:center;gap:7px;margin-top:11px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;color:var(--accent-deep);line-height:1.3;}
+.taak .t-done svg{flex:none;}
+.taak-note{margin-top:22px;display:flex;align-items:center;gap:11px;font-size:13.5px;color:var(--ink-soft);}
+.taak-note .lock{width:30px;height:30px;border-radius:8px;flex:none;background:rgba(14,156,134,0.08);border:1px solid rgba(14,156,134,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;}
+.taak-note b{color:var(--ink-2);font-weight:600;}
+
+/* ===== ritme: warme band om het witte vlak te breken ===== */
+.section.band{background:var(--surface-2);}
+
+/* ===== "Wat Mia is" — redactionele split i.p.v. twee kaarten ===== */
+.wmi{display:grid;grid-template-columns:0.82fr 1.18fr;gap:64px;align-items:start;}
+@media(max-width:880px){.wmi{grid-template-columns:1fr;gap:36px;}}
+.wmi-aside{position:sticky;top:104px;}
+@media(max-width:880px){.wmi-aside{position:static;}}
+.wmi-aside .who{display:flex;align-items:center;gap:13px;margin-bottom:24px;}
+.wmi-aside .who .av{width:52px;height:52px;border-radius:50%;overflow:hidden;flex:none;border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--accent);}
+.wmi-aside .who .av img{width:100%;height:100%;object-fit:cover;object-position:center 14%;}
+.wmi-aside .who .nm b{display:block;font-size:15px;font-weight:700;letter-spacing:-0.01em;line-height:1.2;}
+.wmi-aside .who .nm span{font-size:13px;color:var(--ink-soft);}
+.wmi-aside h2{font-size:clamp(28px,3.3vw,42px);font-weight:600;letter-spacing:-0.03em;line-height:1.05;margin-bottom:16px;text-wrap:balance;}
+.wmi-aside .lead{font-size:16px;color:var(--ink-soft);line-height:1.6;max-width:34ch;}
+.wmi-lists{display:grid;gap:30px;}
+.wmi-list .lh{display:flex;align-items:center;gap:10px;margin-bottom:2px;}
+.wmi-list .lh .dot{width:9px;height:9px;border-radius:50%;flex:none;}
+.wmi-list.pos .lh .dot{background:var(--accent);}
+.wmi-list.neg .lh .dot{background:#CE8E86;}
+.wmi-list .lh h3{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap;}
+.wmi-list ul{list-style:none;margin:0;padding:0;}
+.wmi-list li{display:flex;gap:13px;align-items:flex-start;padding:13px 2px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink-2);line-height:1.45;}
+.wmi-list.neg li{color:var(--ink-soft);}
+.wmi-list .ic-yes,.wmi-list .ic-no{margin-top:1px;}
+
 /* section title forced to one line */
 .shead h2.oneline{white-space:nowrap;}
 .shead .l:has(.oneline){max-width:none;}
@@ -140,8 +195,8 @@
       <h1>Je hoeft Mia niks te <em>vragen.</em></h1>
       <p class="lede">Mia is geen AI-assistent die wacht op een opdracht of een prompt. Ze is je marketing-collega: ze kijkt mee in je cijfers, je kalender en je profiel, ziet zelf wat er speelt en schrijft en regelt het werk. <b>Het enige wat jij doet, is goedkeuren.</b></p>
       <div class="acts">
-        <a class="btn acc lg" href="../aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a>
-        <a class="btn ghost lg" href="#hoe">Hoe werkt Mia?</a>
+        <a class="btn acc lg" href="https://app.yourfellow.nl/">Registreren <span class="arrow">→</span></a>
+        <a class="btn ghost lg" href="#taken">Hoe werkt Mia?</a>
       </div>
     </div>
     <figure class="mia-msg">
@@ -152,36 +207,95 @@
 
   <!-- WAT MIA IS -->
   <section class="section"><div class="wrap">
+    <div class="wmi">
+      <div class="wmi-aside">
+        <div class="who"><span class="av"><img src="../assets/mia-face.jpg" alt="Mia"></span><span class="nm"><b>Mia</b><span>je marketing-collega</span></span></div>
+        <h2>Een collega, geen tool om aan te sturen.</h2>
+        <p class="lead">Geen promptveld, geen chatbot, geen autopilot. Mia werkt uit zichzelf mee, jij houdt de regie en keurt goed.</p>
+      </div>
+      <div class="wmi-lists">
+        <div class="wmi-list pos">
+          <div class="lh"><span class="dot"></span><h3>Wat Mia wél doet</h3></div>
+          <ul>
+            <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Werkt op eigen initiatief: ze ziet het werk en zet het klaar, zonder dat jij iets vraagt</li>
+            <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Houdt zelf haar takenlijst bij onder Suggesties, Review en Afgerond, zodat jij in één oogopslag ziet wat er speelt</li>
+            <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Schrijft én regelt posts, advertenties en webteksten in jouw stem</li>
+            <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Kent je bedrijfsprofiel, je doelen en je cijfers, en let op wat stijgt of daalt</li>
+            <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Legt alles uit in gewone taal, zonder jargon, en denkt vooruit rond feestdagen</li>
+          </ul>
+        </div>
+        <div class="wmi-list neg">
+          <div class="lh"><span class="dot"></span><h3>Wat Mia níét is</h3></div>
+          <ul>
+            <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen assistent of chatbot die wacht tot jij een opdracht of prompt typt</li>
+            <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen lege takenlijst die jij eerst moet vullen; Mia zet de taken zelf op een rij</li>
+            <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen knop die zelf publiceert; alles wacht op jouw goedkeuring</li>
+            <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen vervanger van jouw oordeel of merkgevoel; zij kan fouten maken, jij beslist</li>
+            <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen los abonnement, ze zit standaard in YourFellow HQ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- DE TAKEN VAN MIA -->
+  <section class="section band" id="taken"><div class="wrap">
     <div class="shead">
-      <div class="l"><h2 class="oneline">Een collega, geen tool om aan te sturen.</h2></div>
-      
+      <div class="l"><h2 class="oneline">De taken van Mia.</h2></div>
     </div>
-    <div class="split">
-      <div class="card">
-        <h3>Wat Mia wel is</h3>
-        <p class="lead">De collega die uit zichzelf meekijkt, beslist wat nodig is en het werk klaarzet, zonder dat jij het hoeft te vragen.</p>
-        <ul>
-          <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Werkt op eigen initiatief: ze ziet het werk en zet het klaar, zonder dat jij iets vraagt</li>
-          <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Houdt zelf haar takenlijst bij: ze zet het werk klaar onder Review, Suggesties of Afgerond, zodat jij in één oogopslag ziet wat er speelt</li>
-          <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Schrijft én regelt posts, advertenties en webteksten in jouw stem</li>
-          <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Kent je bedrijfsprofiel, je doelen en je cijfers, en let op wat stijgt of daalt</li>
-          <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Legt alles uit in gewone taal, zonder jargon</li>
-          <li><span class="ic-yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Denkt vooruit rond feestdagen en relevante momenten</li>
-        </ul>
+    <p class="taak-intro">Mia houdt haar eigen takenlijst bij. Ze ziet zelf wat er speelt, stelt het werk voor en zet het klaar, maar <b>niets gaat de deur uit zonder jouw goedkeuring.</b> In één overzicht zie je wat ze voorstelt, wat klaarstaat om te beoordelen en wat al af is.</p>
+    <div class="taak-board">
+      <div class="taak-col sug">
+        <div class="col-h"><span class="dot"></span><h3>Suggesties</h3><span class="cnt">2</span></div>
+        <div class="taak is-sug">
+          <span class="t-tag">e-mail</span>
+          <h4>Heractiveer 38 oude leads</h4>
+          <p>Mia ziet leads die al drie maanden stil zijn. Een herinneringsmail klaarzetten?</p>
+          <div class="t-foot"><div class="mini-approve">Oppakken</div><div class="mini-adjust">Later</div></div>
+        </div>
+        <div class="taak is-sug">
+          <span class="t-tag">reviews</span>
+          <h4>Reageer op 3 nieuwe reviews</h4>
+          <p>Drie verse Google-reviews binnen. Mia heeft passende antwoorden voorbereid.</p>
+          <div class="t-foot"><div class="mini-approve">Oppakken</div><div class="mini-adjust">Later</div></div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Wat Mia niet is</h3>
-        <p class="lead">Geen promptveld, geen chatbot, geen autopilot. Je stuurt haar niet aan en je vervangt je oordeel niet.</p>
-        <ul>
-          <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen assistent die wacht op een opdracht of een prompt</li>
-          <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen lege takenlijst die jij eerst moet vullen; Mia zet de taken zelf op een rij</li>
-          <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen chatbot waar jij eerst moet typen wat je wilt</li>
-          <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen knop die zelf publiceert. Alles wacht op jouw goedkeuring</li>
-          <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen vervanger van jouw oordeel of merkgevoel; zij kan fouten maken, jij beslist</li>
-          <li><span class="ic-no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Geen los abonnement, ze zit standaard in YourFellow HQ</li>
-        </ul>
+      <div class="taak-col review">
+        <div class="col-h"><span class="dot"></span><h3>Review</h3><span class="cnt">3</span></div>
+        <div class="taak">
+          <span class="t-tag">post</span>
+          <h4>Moederdag-post voor Instagram</h4>
+          <p>Klaargezet in de stem van Bracefox, met beeld. Wacht op jouw akkoord.</p>
+          <div class="t-foot"><div class="mini-approve">Goedkeuren</div><div class="mini-adjust">Aanpassen</div></div>
+        </div>
+        <div class="taak">
+          <span class="t-tag">advertentie</span>
+          <h4>Advertentie 'onzichtbare beugel'</h4>
+          <p>Nieuwe variant op een zoekwoord waar je vorige maand vertoningen misliep.</p>
+          <div class="t-foot"><div class="mini-approve">Goedkeuren</div><div class="mini-adjust">Aanpassen</div></div>
+        </div>
+        <div class="taak">
+          <span class="t-tag">seo / geo</span>
+          <h4>Pagina: beugel volwassenen kosten</h4>
+          <p>480 zoekopdrachten per maand. Het concept staat klaar om te plaatsen.</p>
+          <div class="t-foot"><div class="mini-approve">Goedkeuren</div><div class="mini-adjust">Aanpassen</div></div>
+        </div>
+      </div>
+      <div class="taak-col done">
+        <div class="col-h"><span class="dot"></span><h3>Afgerond</h3><span class="cnt">2</span></div>
+        <div class="taak is-done">
+          <span class="t-tag">linkedin</span>
+          <h4>Weekpost over een patiëntverhaal</h4>
+          <p class="t-done"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Goedgekeurd en geplaatst, dinsdag 09:00</p>
+        </div>
+        <div class="taak is-done">
+          <span class="t-tag">rapport</span>
+          <h4>Maandoverzicht verstuurd</h4>
+          <p class="t-done"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Door jou goedgekeurd, afgelopen vrijdag</p>
+        </div>
       </div>
     </div>
+    <div class="taak-note"><span class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span>Elke taak, of Mia hem nu voorstelt of al heeft klaargezet, passeert <b>jouw goedkeuring</b>. Niets wordt automatisch gepubliceerd.</span></div>
   </div></section>
 
   <!-- VOORBEELDEN -->
@@ -238,26 +352,11 @@
   </div></section>
 
   <!-- PRIVACY -->
-  <section class="section" id="privacy"><div class="wrap">
-    <div class="shead">
-      <div class="l"><h2>Je bedrijfsdata is van jou.</h2></div>
-      
-    </div>
-    <div class="priv-grid">
-      <div class="card priv"><div class="pi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>Niet voor andere klanten gebruikt</h3><p>Wat jij koppelt en schrijft is voor jouw account. We trainen geen modellen op jouw bedrijfsdata.</p></div>
-      <div class="card priv"><div class="pi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Hosting in Europa</h3><p>Servers in Europa. Verwerking voldoet aan de AVG. Geen verrassingen over waar je data staat.</p></div>
-      <div class="card priv"><div class="pi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><h3>Jij houdt de sleutels</h3><p>Je kunt elke koppeling op elk moment losmaken. Stoppen met YourFellow HQ betekent dat je data eruit gaat.</p></div>
-      <div class="card priv"><div class="pi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><h3>Geen verborgen publicaties</h3><p>Mia heeft geen knop die zelf publiceert. Iedere post en advertentie wacht op jouw goedkeuring.</p></div>
-      <div class="card priv"><div class="pi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Eerlijk over modellen</h3><p>Mia gebruikt bestaande AI-modellen. Welke en waarvoor leggen we open en eerlijk uit.</p></div>
-      <div class="card priv"><div class="pi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div><h3>Vragen open? Stel ze.</h3><p>Twijfel je of iets veilig genoeg is? Vraag het ons voor je koppelt. Eerlijk antwoord, geen verkoop.</p></div>
-    </div>
-  </div></section>
-
   <!-- FINAL -->
   <section class="fc"><div class="wrap fc-in">
     <h2>Wil je Mia aan het werk <em>zien?</em></h2>
-    <p>Vraag beta-toegang aan. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek.</p>
-    <div class="acts" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="../aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a><a class="btn ghost lg" href="../wat-doet-het/">Bekijk wat Mia doet</a></div>
+    <p>Registreren is gratis. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek.</p>
+    <div class="acts" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="https://app.yourfellow.nl/">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="../wat-doet-het/">Bekijk wat Mia doet</a></div>
   </div></section>
 </main>
 

@@ -3,95 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wat doet Hallo Mia, alle modules op een rij</title>
+<title>Wat doet Hallo Mia, het bedrijfsprofiel en de modules</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
-<meta name="description" content="Zes modules: social, advertenties, SEO en GEO, e-mail en dashboards, gevoed door één bedrijfsprofiel. Mia loopt er als rode draad doorheen.">
+<meta name="description" content="Eerst je bedrijfsprofiel als opstart, daarna vijf modules die het werk doen: dashboard, advertenties, Google- en Meta-ads-beheer, social en SEO. Mia loopt er als rode draad doorheen.">
 <link rel="canonical" href="https://hallomia.ai/wat-doet-het/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hallo Mia">
 <meta property="og:locale" content="nl_NL">
-<meta property="og:title" content="Wat doet Hallo Mia &middot; alle modules op een rij">
-<meta property="og:description" content="Zes modules: social, advertenties, SEO en GEO, e-mail en dashboards, gevoed door één bedrijfsprofiel. Mia loopt er als rode draad doorheen.">
+<meta property="og:title" content="Wat doet Hallo Mia &middot; het bedrijfsprofiel en de modules">
+<meta property="og:description" content="Eerst je bedrijfsprofiel als opstart, daarna vijf modules die het werk doen. Mia loopt er als rode draad doorheen.">
 <meta property="og:url" content="https://hallomia.ai/wat-doet-het/">
 <meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Wat doet Hallo Mia &middot; alle modules op een rij">
-<meta name="twitter:description" content="Zes modules: social, advertenties, SEO en GEO, e-mail en dashboards, gevoed door één bedrijfsprofiel. Mia loopt er als rode draad doorheen.">
+<meta name="twitter:title" content="Wat doet Hallo Mia &middot; het bedrijfsprofiel en de modules">
+<meta name="twitter:description" content="Eerst je bedrijfsprofiel als opstart, daarna vijf modules die het werk doen. Mia loopt er als rode draad doorheen.">
 <meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
 <style>
-/* modules — beeld voorop */
-.modgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-@media(max-width:760px){.modgrid{grid-template-columns:1fr;}}
-.mtile{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line-2);min-height:400px;display:flex;align-items:flex-end;color:inherit;transition:border-color .18s,transform .18s;}
-.mtile:hover{border-color:var(--accent);transform:translateY(-3px);}
-.mtile .bg{position:absolute;inset:0;}
-.mtile .bg img{width:100%;height:100%;object-fit:cover;}
-.mtile .bg.ph{position:absolute;inset:0;background:repeating-linear-gradient(135deg,#EAE5DB,#EAE5DB 12px,#F2EDE3 12px,#F2EDE3 24px);display:flex;align-items:flex-start;justify-content:flex-start;}
-.mtile .bg.ph .lab{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:var(--ink-soft);background:rgba(11,14,17,0.72);border:1px solid var(--line-2);border-radius:6px;padding:5px 9px;margin:14px;}
-.mtile .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,17,0) 24%,rgba(11,14,17,0.55) 52%,rgba(11,14,17,0.95) 100%);}
-.mtile .tx{position:relative;z-index:2;padding:28px 30px 28px;width:100%;}
-.mtile .no{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--accent);letter-spacing:0.08em;margin-bottom:10px;}
-.mtile h3{font-size:32px;font-weight:700;letter-spacing:-0.03em;line-height:1.02;}
-.mtile p{margin-top:11px;font-size:15.5px;color:var(--ink-2);line-height:1.55;max-width:42ch;}
-/* profiel-tegel: kernband in een app-venster bovenin */
-.mtile.profiel{background:var(--surface);}
-.mtile.profiel .win{position:absolute;left:20px;right:20px;top:22px;border:1px solid var(--line-2);border-radius:11px;overflow:hidden;background:var(--bg-2);box-shadow:0 20px 44px -24px rgba(0,0,0,0.75);}
-.mtile.profiel .winbar{display:flex;align-items:center;gap:6px;padding:9px 13px;background:var(--surface-2);border-bottom:1px solid var(--line);}
-.mtile.profiel .winbar i{width:8px;height:8px;border-radius:50%;background:#E26D5C;flex:none;}
-.mtile.profiel .winbar i:nth-child(2){background:#E6B85C;}
-.mtile.profiel .winbar i:nth-child(3){background:var(--accent);}
-.mtile.profiel .winbar span{margin-left:8px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ink-soft);}
-.mtile.profiel .win img{display:block;width:100%;height:auto;}
-.mtile.profiel .scrim{display:none;}
-.mtile.profiel .tx{position:relative;z-index:2;}
-.mtile .go{margin-top:16px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--accent);opacity:0;transform:translateY(4px);transition:.18s;}
-.mtile:hover .go{opacity:1;transform:translateY(0);}
-@media(max-width:760px){.mtile .go{opacity:1;transform:none;}.mtile h3{font-size:27px;}}
+/* ============================================================
+   oefen-4 (schoon) — rustig, simpel, met placeholders
+   geen browser-chrome, geen eyebrow-labels, geen verzonnen cijfers
+   ============================================================ */
 
-/* foto-overlay tegel (Mia): witte tekst leesbaar op de donkere scrim */
-.mtile.photo .tx{color:#fff;}
-.mtile.photo .tx p{color:rgba(255,255,255,0.82);}
+/* speelse placeholder voor een nog te leveren screenshot */
+.ph{aspect-ratio:16/10;border:1.5px dashed var(--line-2);border-radius:18px;background:var(--surface-2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:24px;
+  transition:transform .2s ease, box-shadow .2s ease;}
+.row:hover .ph{transform:translateY(-3px);box-shadow:0 24px 50px -36px rgba(40,34,20,0.45);}
+.ph .box{width:52px;height:52px;border-radius:14px;background:var(--accent-soft);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;}
+.ph .box svg{width:24px;height:24px;}
+.ph b{font-size:15.5px;font-weight:600;color:var(--ink-2);}
+.ph small{font-size:12.5px;color:var(--ink-mute);}
+/* om en om een warme en een teal-getinte placeholder, voor wat leven */
+.row.flip .ph{background:rgba(14,156,134,0.06);border-color:rgba(14,156,134,0.28);}
 
-/* screenshot-tegels: app-beeld bovenin, tekst eronder op witte kaart */
-.mtile.shot{flex-direction:column;align-items:stretch;background:var(--surface);}
-.mtile.shot .shotwrap{height:248px;overflow:hidden;border-bottom:1px solid var(--line);background:var(--surface-2);}
-.mtile.shot .shotwrap img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block;}
-.mtile.shot .scrim{display:none;}
-.mtile.shot .tx{position:relative;z-index:2;padding:24px 30px 28px;}
-.mtile.shot h3{font-size:28px;}
+/* gedeelde rij: tekst naast beeld, om en om */
+.row{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center;padding:54px 0;border-top:1px solid var(--line);}
+.row:first-child{border-top:0;padding-top:8px;}
+@media(max-width:860px){.row{grid-template-columns:1fr;gap:26px;padding:38px 0;}}
+/* echte om-en-om: bij .flip gaat de tekst naar rechts en het beeld naar links */
+.row.flip .txt{order:2;}
+@media(max-width:860px){.row.flip .txt{order:0;}}
+.row .txt{max-width:46ch;}
+.row h2{font-size:clamp(26px,3.1vw,38px);font-weight:700;letter-spacing:-0.03em;line-height:1.06;display:flex;align-items:center;gap:13px;}
+.row h2 .n{flex:none;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--on-accent);
+  font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.row .lead{margin-top:14px;font-size:18px;color:var(--ink);line-height:1.5;font-weight:500;text-wrap:pretty;}
+.row .sub{margin-top:10px;font-size:16px;color:var(--ink-soft);line-height:1.6;text-wrap:pretty;}
+.row ul{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:11px;}
+.row li{display:flex;align-items:flex-start;gap:11px;font-size:15.5px;color:var(--ink-2);line-height:1.45;}
+.row li svg{width:18px;height:18px;color:var(--accent);flex:none;margin-top:2px;}
 
-.flow5{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:s;}
-@media(max-width:900px){.flow5{grid-template-columns:1fr 1fr;}}
-@media(max-width:520px){.flow5{grid-template-columns:1fr;}}
-.flow5 .s{padding:22px;}
-.flow5 .s .n{width:32px;height:32px;border-radius:8px;background:rgba(14,156,134,0.1);border:1px solid rgba(14,156,134,0.2);color:var(--accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:13px;margin-bottom:14px;}
-.flow5 .s h3{font-size:16px;font-weight:600;margin-bottom:6px;letter-spacing:-0.01em;}
-.flow5 .s p{font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
+/* introtekst boven de modules */
+.lead-in{max-width:56ch;margin:0 0 4px;}
+.lead-in h2{font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;}
+.lead-in p{margin-top:14px;font-size:17px;color:var(--ink-2);line-height:1.6;text-wrap:pretty;}
 
-.miateaser{display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;}
-@media(max-width:880px){.miateaser{grid-template-columns:1fr;gap:32px;}}
-.miateaser h2{font-size:clamp(28px,3.6vw,44px);font-weight:600;letter-spacing:-0.03em;line-height:1.06;margin-bottom:16px;}
-.miateaser p{font-size:16px;color:var(--ink-2);line-height:1.6;margin-bottom:22px;max-width:48ch;}
-.thread{background:var(--bg-2);border:1px solid var(--line-2);border-radius:var(--r-lg);padding:20px;display:flex;flex-direction:column;gap:12px;}
-.tl{display:flex;gap:11px;align-items:flex-start;}
-.tl .av{width:30px;height:30px;border-radius:50%;overflow:hidden;flex:none;border:1px solid var(--line-2);}
-.tl .av img{width:100%;height:100%;object-fit:cover;}
-.tl .av.you{background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;border:0;}
-.tl .b{background:var(--surface);border:1px solid var(--line-2);border-radius:12px;padding:10px 13px;font-size:13.5px;color:var(--ink-2);line-height:1.5;}
-.tl .b b{color:var(--accent);}
-.tl.you .b{background:rgba(14,156,134,0.1);border-color:rgba(14,156,134,0.25);color:var(--ink);}
+/* Mia, één regel */
+.miastrip{display:flex;align-items:center;gap:18px;margin-top:48px;padding:22px 24px;border:1px solid var(--line-2);border-radius:14px;background:var(--bg-2);}
+.miastrip .av{width:48px;height:48px;border-radius:50%;overflow:hidden;flex:none;border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--accent);}
+.miastrip .av img{width:100%;height:100%;object-fit:cover;object-position:center 14%;}
+.miastrip p{font-size:15px;color:var(--ink-2);line-height:1.55;}
+.miastrip p b{color:var(--ink);font-weight:600;}
+.miastrip a{margin-left:auto;flex:none;}
+@media(max-width:680px){.miastrip{flex-direction:column;align-items:flex-start;gap:14px;}.miastrip a{margin-left:0;}}
 
-.fc{padding:64px 0 72px;border-top:1px solid var(--line);position:relative;overflow:hidden;text-align:center;}
-.fc::after{content:"";position:absolute;width:680px;height:680px;border-radius:50%;left:50%;top:40%;transform:translateX(-50%);background:radial-gradient(circle,rgba(14,156,134,0.1),transparent 64%);}
-.fc-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;}
-.fc-in h2{font-size:clamp(36px,5vw,66px);font-weight:600;letter-spacing:-0.035em;line-height:1.0;max-width:none;white-space:nowrap;}
-@media(max-width:560px){.fc-in h2{white-space:normal;max-width:18ch;}}
-.fc-in p{margin:20px 0 28px;font-size:17px;color:var(--ink-soft);max-width:52ch;line-height:1.6;}
-.fc-in .note{margin-top:18px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);}
+/* slot-CTA */
+.fc{padding:64px 0 72px;border-top:1px solid var(--line);text-align:center;}
+.fc-in{display:flex;flex-direction:column;align-items:center;}
+.fc-in h2{font-size:clamp(32px,4.4vw,56px);font-weight:600;letter-spacing:-0.035em;line-height:1.02;max-width:18ch;}
+.fc-in h2 em{font-style:normal;color:var(--accent);}
+.fc-in p{margin:18px 0 26px;font-size:17px;color:var(--ink-soft);max-width:52ch;line-height:1.6;}
 </style>
 <link rel="stylesheet" href="../assets/site-light.css">
 </head>
@@ -102,63 +88,154 @@
 
 <main>
   <section class="wrap phero">
-    <h1>Eén platform voor alles wat je doet met marketing.</h1>
-    <p class="lede">Zes modules, aan elkaar geknoopt en allemaal gevoed door je bedrijfsprofiel. Mia loopt er als rode draad doorheen. Bekijk wat elke module voor je doet.</p>
-    <div class="acts"><a class="btn acc lg" href="../aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a><a class="btn ghost lg" href="#modules">Bekijk de modules</a></div>
+    <h1>Eén platform voor je hele marketing.</h1>
+    <p class="lede">Geen losse tools die elkaar niet kennen. Je begint met je bedrijfsprofiel, dat stel je één keer in. Daarna draaien vijf modules op datzelfde profiel, en Mia loopt er als rode draad doorheen.</p>
+    <div class="acts"><a class="btn acc lg" href="https://app.yourfellow.nl/">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="#modules">Bekijk de modules</a></div>
   </section>
 
-  <!-- MODULES -->
-  <section class="section" id="modules"><div class="wrap">
-    <div class="modgrid">
-      <a class="mtile photo" id="mia" href="../mia/">
-        <div class="bg"><img src="../assets/mia-real.jpg" alt="Mia, je AI-collega" style="object-position:50% 48%;"></div>
-        <div class="scrim"></div>
-        <div class="tx"><div class="no">01</div><h3>Mia, je AI-collega</h3><p>In elke module aanwezig. Scant je cijfers, doet voorstellen en levert werk in je review-inbox. Zij stelt voor, jij keurt goed.</p><span class="go">Lees over Mia →</span></div>
-      </a>
-      <a class="mtile profiel" id="profiel" href="../bedrijfsprofiel/">
-        <div class="win"><div class="winbar"><i></i><i></i><i></i><span>app.yourfellow.nl/profiel</span></div><img src="../assets/profiel-band.png" alt="Het bedrijfsprofiel: plak je website-URL en Mia bouwt je profiel"></div>
-        <div class="tx"><div class="no">02</div><h3>Bedrijfsprofiel</h3><p>Plak je website-URL — Mia bouwt automatisch je profiel.</p><span class="go">Bekijk →</span></div>
-      </a>
-      <a class="mtile shot" href="../dashboard/">
-        <div class="shotwrap"><img src="../assets/screen-dash.png" alt="Screenshot van het dashboard in YourFellow HQ"></div>
-        <div class="tx"><div class="no">03</div><h3>Dashboard</h3><p>Al je cijfers op één scherm — website, advertenties en webshop — plus een marketingkalender. Met een seintje van Mia als iets opvalt.</p><span class="go">Bekijk →</span></div>
-      </a>
-      <a class="mtile shot" href="../advertenties/">
-        <div class="shotwrap"><img src="../assets/screen-ads.png" alt="Screenshot van de advertenties-module in YourFellow HQ"></div>
-        <div class="tx"><div class="no">04</div><h3>Advertenties</h3><p>Advertenties voor Google en Meta. Mia schrijft de varianten op je cijfers, jij keurt goed. Niets gaat automatisch live.</p><span class="go">Bekijk →</span></div>
-      </a>
-      <a class="mtile shot" href="../social/">
-        <div class="shotwrap"><img src="../assets/screen-social.png" alt="Screenshot van de social media-module in YourFellow HQ"></div>
-        <div class="tx"><div class="no">05</div><h3>Social posts</h3><p>Posts en beeld in jouw merkstijl voor Instagram, LinkedIn en Facebook. Jij kiest hoe vaak, Mia maakt ze.</p><span class="go">Bekijk →</span></div>
-      </a>
-      <a class="mtile shot" href="../seo-geo/">
-        <div class="shotwrap"><img src="../assets/screen-seo.png" alt="Screenshot van de SEO- en GEO-module in YourFellow HQ"></div>
-        <div class="tx"><div class="no">06</div><h3>SEO &amp; GEO content</h3><p>Website-teksten op echte zoekwoorden. Gericht op vindbaarheid in Google én in AI-zoekresultaten.</p><span class="go">Bekijk →</span></div>
-      </a>
+  <!-- OPSTART: BEDRIJFSPROFIEL -->
+  <section class="section"><div class="wrap">
+    <div class="row">
+      <div class="txt">
+        <h2>Eerst je bedrijfsprofiel.</h2>
+        <p class="lead">Dit stel je één keer in. Daarna weet elke module al wie je bent.</p>
+        <p class="sub">Je plakt je website en Mia leest hem uit: wat je verkoopt, voor wie, en in welke toon. Zo hoef je het nergens opnieuw uit te leggen. Het kost ongeveer 10 minuten.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Leest je website automatisch uit</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Herkent je huisstijl, toon en doelgroep</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Geeft elke module dezelfde basis</span></li>
+        </ul>
+      </div>
+      <div class="pic">
+        <div class="ph">
+          <div class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div>
+          <b>Bedrijfsprofiel</b>
+          <small>Screenshot volgt</small>
+        </div>
+      </div>
     </div>
   </div></section>
 
-  <!-- MIA RODE DRAAD -->
-  <section class="section"><div class="wrap">
-    <div class="miateaser">
-      <div>
-        <h2 style="margin-top:14px;">Mia werkt door alles heen.</h2>
-        <p>Eén AI-collega die je dashboard, je advertenties en je teksten kent en met je meedenkt. Geen losse tools die elkaar niet kennen, maar één omgeving die jouw bedrijf snapt.</p>
-        <a class="btn acc" href="../mia/">Lees alles over Mia <span class="arrow">→</span></a>
+  <!-- MODULES -->
+  <section class="section" id="modules"><div class="wrap">
+    <div class="lead-in">
+      <h2>En dit doen de vijf modules.</h2>
+      <p>Allemaal gevoed door je bedrijfsprofiel. We beginnen bij het dashboard, je startscherm, en lopen daarna de vier werk-modules langs.</p>
+    </div>
+
+    <!-- 1 DASHBOARD -->
+    <div class="row flip">
+      <div class="txt">
+        <h2><span class="n">1</span> Dashboard</h2>
+        <p class="lead">Je startscherm met al je cijfers op één plek.</p>
+        <p class="sub">Geen vijf tabbladen meer. Je website, je advertenties en je webshop staan bij elkaar, plus wat er op dit moment loopt. Mia houdt het scherm voor je bij en zet bovenaan waar je vandaag op moet letten.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Je belangrijkste cijfers bovenaan</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Bezoekers op je site, zonder Analytics te openen</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>De status van elke taak: bezig, wacht op jou of klaar</span></li>
+        </ul>
       </div>
-      <div class="thread">
-        <div class="tl"><div class="av"><img src="../assets/mia-face.jpg" alt=""></div><div class="b"><b>Mia.</b> Je bezoekers stegen 12% deze week, vooral op de beugel-pagina. Zal ik daar een advertentie omheen bouwen?</div></div>
-        <div class="tl you"><div class="av you">J</div><div class="b">Ja, doe maar een voorstel.</div></div>
-        <div class="tl"><div class="av"><img src="../assets/mia-face.jpg" alt=""></div><div class="b"><b>Mia.</b> Klaar. Twee varianten in je review-inbox, met de zoekwoorden erbij. Goedkeuren of aanpassen?</div></div>
+      <div class="pic">
+        <div class="ph">
+          <div class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div>
+          <b>Dashboard</b>
+          <small>Screenshot volgt</small>
+        </div>
       </div>
     </div>
+
+    <!-- 2 ADVERTENTIES -->
+    <div class="row">
+      <div class="txt">
+        <h2><span class="n">2</span> Advertenties</h2>
+        <p class="lead">Advertenties voor Google en Meta.</p>
+        <p class="sub">Mia kijkt naar wat bij jou al werkt en schrijft daar varianten op, in jouw eigen toon. Jij legt ze naast elkaar, kiest de beste en keurt goed. Je budget en je timing houd je zelf in de hand, en niets gaat zonder jou live.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Voor Google en Meta</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Varianten geschreven door Mia</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Jij keurt goed, altijd</span></li>
+        </ul>
+      </div>
+      <div class="pic">
+        <div class="ph">
+          <div class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+          <b>Advertenties</b>
+          <small>Screenshot volgt</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 SOCIAL -->
+    <div class="row flip">
+      <div class="txt">
+        <h2><span class="n">3</span> Social posts</h2>
+        <p class="lead">Posts en beeld in jouw merkstijl.</p>
+        <p class="sub">Voor Instagram, LinkedIn en Facebook. Jij kiest een ritme, bijvoorbeeld twee posts per week, en Mia vult de agenda alvast. Tekst én beeld zitten erbij, in jouw merkstijl, zodat je alleen nog hoeft te bekijken en te plaatsen.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Instagram, LinkedIn en Facebook</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>In jouw merkstijl</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Beeld zit erbij inbegrepen</span></li>
+        </ul>
+      </div>
+      <div class="pic">
+        <div class="ph">
+          <div class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg></div>
+          <b>Social posts</b>
+          <small>Screenshot volgt</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 SEO -->
+    <div class="row">
+      <div class="txt">
+        <h2><span class="n">4</span> SEO en GEO content</h2>
+        <p class="lead">Teksten die je vindbaar maken.</p>
+        <p class="sub">Mia zoekt de woorden waar jouw klanten écht op zoeken en schrijft of verbetert daar je pagina's mee. Gericht op Google, maar ook op AI-antwoorden zoals ChatGPT, zodat je ook dáár als antwoord naar voren komt. Een score en checklist laten zien wat al goed staat en wat nog beter kan.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Op echte zoekwoorden</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Vindbaar in Google én AI</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Met score en checklist erbij</span></li>
+        </ul>
+      </div>
+      <div class="pic">
+        <div class="ph">
+          <div class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg></div>
+          <b>SEO en GEO content</b>
+          <small>Screenshot volgt</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 GOOGLE & META ADS-BEHEER -->
+    <div class="row flip">
+      <div class="txt">
+        <h2><span class="n">5</span> Google &amp; Meta ads-beheer</h2>
+        <p class="lead">Je lopende campagnes beheerd en bijgestuurd.</p>
+        <p class="sub">Mia houdt je Google- en Meta-campagnes in de gaten: ze ziet wat oplevert en wat alleen geld kost, en stelt bijsturingen voor. Jij beslist wat er verandert, zodat je budget naar de beste campagnes gaat.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Google Ads en Meta Ads op één plek</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Mia signaleert en stelt bijsturing voor</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Jij houdt de knoppen in handen</span></li>
+        </ul>
+      </div>
+      <div class="pic">
+        <div class="ph">
+          <div class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
+          <b>Google &amp; Meta ads-beheer</b>
+          <small>Screenshot volgt</small>
+        </div>
+      </div>
+    </div>
+
   </div></section>
 
   <!-- FINAL -->
   <section class="fc"><div class="wrap fc-in">
-    <h2>Klaar om YourFellow HQ te <em>proberen?</em></h2>
-    <p>Vraag beta-toegang aan. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="../aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a><a class="btn ghost lg" href="../prijzen/">Bekijk prijzen</a></div>
+    <h2>Eén profiel. <em>
+ Vijf modules. Eén Mia.</em></h2>
+    <p>De eerste keer instellen kost ongeveer 10 minuten. Daarna draait het.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="https://app.yourfellow.nl/">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="../prijzen/">Bekijk prijzen</a></div>
   </div></section>
 </main>
 

@@ -70,6 +70,29 @@
 .mod .go{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent);letter-spacing:0.06em;opacity:0;transform:translateX(-4px);transition:.15s;}
 .mod:hover .go{opacity:1;transform:translateX(0);}
 
+/* ---------- modules: editorial ---------- */
+.mx-head{max-width:32ch;}
+.mx-head h2{font-size:clamp(30px,3.5vw,44px);font-weight:600;letter-spacing:-0.03em;line-height:1.05;}
+.mx-head h2 em{font-style:normal;color:var(--accent);}
+.mx-lead{margin-top:16px;font-size:17px;color:var(--ink-2);line-height:1.6;max-width:62ch;text-wrap:pretty;}
+.mx-start{display:grid;grid-template-columns:0.4fr 0.6fr;gap:40px;align-items:center;padding:26px 4px;margin-top:30px;border-top:1px solid var(--line-2);}
+@media(max-width:760px){.mx-start{grid-template-columns:1fr;gap:8px;}}
+.mx-start .mx-tt{display:flex;align-items:center;gap:15px;}
+.mx-start .mx-n0{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;}
+.mx-start .mx-n0 svg{width:17px;height:17px;}
+.mx-start .mx-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.mx-start h3{font-size:22px;font-weight:600;letter-spacing:-0.02em;line-height:1.1;}
+.mx-start p{font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
+.mx-list{display:flex;flex-direction:column;}
+.mx-row{display:grid;grid-template-columns:0.4fr 0.6fr;gap:40px;align-items:center;padding:20px 4px;border-top:1px solid var(--line);}
+@media(max-width:760px){.mx-row{grid-template-columns:1fr;gap:5px;}}
+.mx-row .mx-tt{display:flex;align-items:center;gap:15px;}
+.mx-row .mx-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums;}
+.mx-row h3{font-size:18px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;transition:color .15s;}
+.mx-row p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
+.mx-cta{display:flex;align-items:center;gap:9px;padding:22px 4px;border-top:1px solid var(--line);font-size:15px;font-weight:600;color:var(--accent);}
+.mx-cta:hover{gap:13px;}
+
 /* ---------- mia teaser ---------- */
 .miateaser{display:grid;grid-template-columns:0.85fr 1.15fr;gap:54px;align-items:center;}
 @media(max-width:880px){.miateaser{grid-template-columns:1fr;gap:32px;}}
@@ -244,9 +267,9 @@
 .ask .sub{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:36ch;}
 
 /* ---- rechts: wat Mia toont (jouw 2/3-HTML komt hier) ---- */
-.show{position:relative;display:flex;align-items:center;justify-content:center;padding:34px;background:var(--bg-2);}
-@media(max-width:900px){.show{padding:28px;min-height:0;}}
-.show-frame{position:relative;width:100%;max-width:720px;
+.show{position:relative;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--bg-2);}
+@media(max-width:900px){.show{padding:22px;min-height:0;}}
+.show-frame{position:relative;width:100%;max-width:1080px;
   background:var(--surface);border:1px solid var(--line-2);border-radius:18px;overflow:hidden;
   box-shadow:0 40px 90px -45px rgba(40,34,20,0.28);}
 .show-bar{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line);background:var(--surface);}
@@ -390,47 +413,24 @@
 
   <!-- WAT DOET HET -->
   <section class="section"><div class="wrap">
-    <div class="shead">
-      <div class="l"><h2>Zes modules vanuit <em>één bedrijfsprofiel.</em></h2></div>
-      
+    <div class="mx-head">
+      <h2>Eerst je profiel. <em>Dan de modules.</em></h2>
     </div>
-    <div class="mods">
-      <a class="mod" href="mia/">
-        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6.3 6.3 4.9 4.9M19.1 19.1l-1.4-1.4M17.7 6.3l1.4-1.4M4.9 19.1l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg></div>
-        <h3>Mia, je AI-collega</h3>
-        <p>Aanwezig in alle modules. Scant je cijfers en kalender, doet voorstellen, levert werk in je review-inbox.</p>
-        <span class="go">lees over mia →</span>
-      </a>
-      <a class="mod" href="bedrijfsprofiel/">
-        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <h3>Bedrijfsprofiel</h3>
-        <p>Wordt automatisch opgebouwd uit je website. Producten, doelgroep, toon en doelen op één plek.</p>
-        <span class="go">bekijk →</span>
-      </a>
-      <a class="mod" href="dashboard/">
-        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg></div>
-        <h3>Dashboard</h3>
-        <p>Marketingkalender plus je cijfers uit Google Analytics en Search Console op één scherm.</p>
-        <span class="go">bekijk dashboard →</span>
-      </a>
-      <a class="mod" href="advertenties/">
-        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <h3>Advertenties</h3>
-        <p>Advertenties voor Google en Meta. Mia schrijft de varianten, jij keurt goed. Alles in jouw stijl.</p>
-        <span class="go">bekijk advertenties →</span>
-      </a>
-      <a class="mod" href="social/">
-        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>Social posts</h3>
-        <p>Posts en beelden in jouw stijl voor Instagram, LinkedIn en Facebook. Jij kiest hoe vaak.</p>
-        <span class="go">bekijk social →</span>
-      </a>
-      <a class="mod" href="seo-geo/">
-        <div class="mi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-        <h3>SEO &amp; GEO content</h3>
-        <p>Website-teksten op echte zoekwoorden. Gericht op vindbaarheid in Google én in AI-zoek.</p>
-        <span class="go">bekijk seo &amp; geo →</span>
-      </a>
+    <p class="mx-lead">Je bedrijfsprofiel maak je als eerste, samen met Mia. Daarna gebruik je de modules: ze draaien allemaal op datzelfde profiel en op Mia, die voorstelt terwijl jij goedkeurt.</p>
+    <div class="mx-start">
+      <div class="mx-tt">
+        <span class="mx-n0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <div><span class="mx-tag">Eerst &middot; met Mia</span><h3>Bedrijfsprofiel</h3></div>
+      </div>
+      <p>Samen met Mia bouw je je bedrijfsprofiel uit je website: producten, doelgroep en toon. Dit is de basis onder alle modules hieronder.</p>
+    </div>
+    <div class="mx-list">
+      <div class="mx-row"><div class="mx-tt"><span class="mx-n">01</span><h3>Dashboard</h3></div><p>Je kalender en cijfers op één scherm. Mia zet bovenaan waar je op moet letten.</p></div>
+      <div class="mx-row"><div class="mx-tt"><span class="mx-n">02</span><h3>Advertenties</h3></div><p>Voor Google en Meta. Mia schrijft de varianten, jij keurt goed.</p></div>
+      <div class="mx-row"><div class="mx-tt"><span class="mx-n">03</span><h3>Social posts</h3></div><p>Posts en beeld in jouw stijl. Mia zet ze klaar voor Instagram, LinkedIn en Facebook.</p></div>
+      <div class="mx-row"><div class="mx-tt"><span class="mx-n">04</span><h3>SEO &amp; GEO content</h3></div><p>Mia schrijft teksten op echte zoekwoorden. Vindbaar in Google én AI.</p></div>
+      <div class="mx-row"><div class="mx-tt"><span class="mx-n">05</span><h3>Google &amp; Meta ads-beheer</h3></div><p>Mia bewaakt je lopende campagnes en stelt bijsturingen voor.</p></div>
+      <a class="mx-cta" href="wat-doet-het/">Bekijk wat het doet <span class="arrow">→</span></a>
     </div>
   </div></section>
 
@@ -471,7 +471,7 @@
   <!-- PRIJZEN -->
   <section class="section"><div class="wrap">
     <div class="shead">
-      <div class="l"><h2>Eén vast bedrag. <em>Gratis tijdens de beta.</em></h2></div>
+      <div class="l"><h2>Eén vast bedrag. <em>Gratis starten.</em></h2></div>
       
     </div>
     <div class="tiers">
@@ -498,7 +498,7 @@
         <a class="btn ghost" href="prijzen/">Bekijk Pro</a>
       </div>
     </div>
-    <div style="text-align:center;margin-top:28px;"><a class="txt-link" href="prijzen/">Vergelijk alle pakketten →</a></div>
+    <div style="text-align:center;margin-top:28px;"><a class="txt-link" href="prijzen/">Vergelijk alle functies →</a></div>
   </div></section>
 
   <!-- VRAGEN -->
@@ -516,9 +516,9 @@
 
   <!-- FINAL CTA -->
   <section class="fc"><div class="wrap fc-in">
-    <h2>Klaar om met Mia te <em>beginnen?</em></h2>
-    <p>Vraag beta-toegang aan. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
-    <div class="hero-bottom"><a class="btn acc lg" href="aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a><a class="btn ghost lg" href="wat-doet-het/">Bekijk de modules</a></div>
+    <h2 style="font-size: 44px">Klaar om met Mia te <em>beginnen?</em></h2>
+    <p>Registreren is gratis. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
+    <div class="hero-bottom"><a class="btn acc lg" href="https://app.yourfellow.nl/">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="aanmelden/">Plan demo</a></div>
   </div></section>
 </main>
 
@@ -611,5 +611,7 @@
   setTimeout(run, SLOT_MS);
 })();
 </script>
+
+
 </body>
 </html>

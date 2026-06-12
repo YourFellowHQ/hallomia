@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prijzen, gratis tijdens de beta | Hallo Mia</title>
+<title>Prijzen, gratis starten | Hallo Mia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
-<meta name="description" content="Drie pakketten vanaf €49 per maand, maandelijks opzegbaar. Geen jaarcontract, geen afrekenen per gebruiker. Gratis tijdens de beta tot december 2026.">
+<meta name="description" content="Drie pakketten vanaf €49 per maand, maandelijks opzegbaar. Geen jaarcontract, geen afrekenen per gebruiker. Gratis te starten met een beperkt aantal credits.">
 <link rel="canonical" href="https://hallomia.ai/prijzen/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hallo Mia">
 <meta property="og:locale" content="nl_NL">
-<meta property="og:title" content="Prijzen &middot; gratis tijdens de beta">
-<meta property="og:description" content="Drie pakketten vanaf €49 per maand, maandelijks opzegbaar. Geen jaarcontract, geen afrekenen per gebruiker. Gratis tijdens de beta tot december 2026.">
+<meta property="og:title" content="Prijzen &middot; gratis starten">
+<meta property="og:description" content="Drie pakketten vanaf €49 per maand, maandelijks opzegbaar. Geen jaarcontract, geen afrekenen per gebruiker. Gratis te starten met een beperkt aantal credits.">
 <meta property="og:url" content="https://hallomia.ai/prijzen/">
 <meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Prijzen &middot; gratis tijdens de beta">
-<meta name="twitter:description" content="Drie pakketten vanaf €49 per maand, maandelijks opzegbaar. Geen jaarcontract, geen afrekenen per gebruiker. Gratis tijdens de beta tot december 2026.">
+<meta name="twitter:title" content="Prijzen &middot; gratis starten">
+<meta name="twitter:description" content="Drie pakketten vanaf €49 per maand, maandelijks opzegbaar. Geen jaarcontract, geen afrekenen per gebruiker. Gratis te starten met een beperkt aantal credits.">
 <meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
 <style>
 .beta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:rgba(14,156,134,0.06);border:1px solid rgba(14,156,134,0.22);border-radius:12px;padding:16px 20px;margin-top:28px;}
@@ -35,30 +35,71 @@
 .tier.featured{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(14,156,134,0.28);}
 .tier .pbadge{position:absolute;top:-11px;left:30px;background:var(--accent);color:var(--on-accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:0.12em;text-transform:uppercase;}
 .tier .nm{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:13px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;}
+/* per-plan color identity (echoes the app's colored tiles) */
+.tier .pico{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex:none;}
+.tier .pico svg{width:24px;height:24px;}
+.tier-starter .pico{background:rgba(14,156,134,0.12);color:#0E9C86;}
+.tier-starter .nm{color:#0E9C86;}
+.tier-growth .pico{background:rgba(47,109,181,0.13);color:#2F6DB5;}
+.tier-growth .nm{color:#2F6DB5;}
+.tier-pro .pico{background:rgba(176,125,18,0.16);color:#A9760F;}
+.tier-pro .nm{color:#A9760F;}
 .tier .price{font-size:50px;font-weight:600;letter-spacing:-0.03em;line-height:1;display:flex;align-items:baseline;gap:6px;}
 .tier .price small{font-size:14px;font-weight:500;color:var(--ink-soft);letter-spacing:0;}
 .tier .credits{font-size:14.5px;color:var(--ink-2);}
 .tier .credits b{color:var(--ink);}
 .tier .who{font-size:14px;color:var(--ink-soft);line-height:1.5;padding-bottom:18px;border-bottom:1px solid var(--line);}
-.tier ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--ink-2);flex:1;}
-.tier ul li{display:flex;gap:10px;line-height:1.45;}
-.tier ul li::before{content:"+";color:var(--accent);font-weight:600;}
+.tier ul{list-style:none;display:flex;flex-direction:column;gap:12px;font-size:14.5px;color:var(--ink-2);}
+.tier ul li{display:flex;gap:11px;align-items:flex-start;line-height:1.45;}
+.tier ul li::before{content:"\2713";flex:none;width:19px;height:19px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.tier ul li.allof{color:var(--ink);font-weight:600;}
+.tier ul li.allof::before{background:var(--accent);color:var(--on-accent);}
+.tier .ups{margin-top:auto;display:flex;flex-direction:column;gap:11px;padding-top:18px;border-top:1px dashed var(--line-2);}
+.tier .up{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--ink-soft);line-height:1.4;}
+.tier .up::before{content:"";flex:none;width:16px;height:16px;margin-top:1px;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 15l-6-6-6 6'/%3E%3C/svg%3E") center/14px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 15l-6-6-6 6'/%3E%3C/svg%3E") center/14px no-repeat;}
+.tier .up b{color:var(--ink-2);font-weight:700;}
 .tier .btn{width:100%;}
+.tier ul + .btn{margin-top:auto;}
+.tier .ups + .btn{margin-top:16px;}
 .tier .beta-note{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;color:var(--ink-mute);text-align:center;}
 
-/* comparison */
-.cmp{width:100%;border-collapse:collapse;font-size:14px;}
-.cmp th,.cmp td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line);}
-.cmp thead th{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;color:var(--ink-mute);letter-spacing:0.08em;text-transform:uppercase;font-weight:500;}
-.cmp tbody th{font-weight:500;color:var(--ink-2);}
-.cmp td{text-align:center;color:var(--ink-2);}
-.cmp td:first-child,.cmp th:first-child{text-align:left;}
-.cmp .yes{color:var(--accent);}
-.cmp .no{color:var(--ink-mute);}
-.cmp .colhi{color:var(--accent);}
-.cmp-wrap{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:visible;}
-@media(max-width:760px){.cmp-wrap{overflow-x:auto;}}
+/* comparison — grouped & column-highlighted */
+.cmp-wrap{border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:8px 16px 16px;box-shadow:0 30px 70px -50px rgba(40,34,20,0.30);}
+.cmp{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed;}
+.cmp col.cfeat{width:40%;}
+.cmp th,.cmp td{padding:14px 16px;text-align:center;vertical-align:middle;}
+.cmp th.feat-h,.cmp td.feat-h{text-align:left;}
+/* header */
+.cmp thead th{padding:16px 16px 18px;border-bottom:1px solid var(--line);vertical-align:bottom;}
+.cmp thead .ph{display:flex;flex-direction:column;align-items:center;gap:5px;}
+.cmp .pname{font-size:16.5px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;}
+.cmp .pprice{font-size:12.5px;color:var(--ink-soft);font-weight:500;}
+.cmp .lead-h .pname{color:var(--accent);}
+.cmp .tagm{font-size:9.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:3px 9px;border-radius:999px;margin-bottom:2px;}
+/* highlighted Growth band */
+.cmp .hl{background:var(--accent-soft);}
+.cmp thead th.hl{border-bottom-color:transparent;border-top-left-radius:16px;border-top-right-radius:16px;}
+.cmp tbody tr:last-child td.hl{border-bottom-left-radius:16px;border-bottom-right-radius:16px;}
+/* group rows */
+.cmp .grp th{padding:28px 16px 11px;}
+.cmp .grp td{padding:0;}
+.cmp .grp .gl{display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;}
+.cmp .g-content .gl{color:#0A7E6D;background:rgba(14,156,134,0.11);}
+.cmp .g-web .gl{color:#2F6DB5;background:rgba(47,109,181,0.11);}
+.cmp .g-ads .gl{color:#A9760F;background:rgba(176,125,18,0.13);}
+.cmp .grp .gs{margin-left:12px;font-size:12px;color:var(--ink-soft);letter-spacing:0;text-transform:none;font-weight:500;}
+/* feature rows */
+.cmp .frow th{font-weight:500;color:var(--ink-2);font-size:14.5px;}
+.cmp .frow th,.cmp .frow td{border-top:1px solid var(--line);}
+.cmp .frow:hover th,.cmp .frow:hover td:not(.hl){background:var(--surface-2);}
+/* value marks */
+.cmp .v{display:inline-flex;align-items:center;justify-content:center;}
+.cmp .v.y{width:23px;height:23px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:12px;font-weight:800;}
+.cmp .hl .v.y{box-shadow:0 0 0 4px rgba(14,156,134,0.12);}
+.cmp .v.n{width:14px;height:2px;border-radius:2px;background:var(--line-2);}
+@media(max-width:760px){.cmp-wrap{overflow-x:auto;}.cmp{min-width:640px;}}
 .shead .l{max-width:none;}
+.shead .sh-sub{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:48ch;}
 .shead h2{white-space:nowrap;}
 @media(max-width:560px){.shead h2{white-space:normal;}}
 
@@ -101,7 +142,8 @@
 
   <section class="wrap" style="padding-bottom:90px;">
     <div class="tiers">
-      <div class="tier">
+      <div class="tier tier-starter">
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
         <div class="nm">Starter</div>
         <div class="price">€49 <small>/ maand</small></div>
         <div class="who">Samen met Mia je marketing opbouwen.</div>
@@ -112,29 +154,38 @@
           <li><span class="ft">AI-assistent Mia</span></li>
           <li><span class="ft">Onbeperkt content maken</span></li>
         </ul>
+        <div class="ups">
+          <div class="up"><span><b>Website &amp; SEO</b> bij upgrade naar Growth</span></div>
+          <div class="up"><span><b>Advertising</b> bij upgrade naar Pro</span></div>
+        </div>
         <a class="btn ghost" href="../aanmelden/">Kies Starter</a>
       </div>
-      <div class="tier featured">
+      <div class="tier featured tier-growth">
         <div class="pbadge">Mia's keuze</div>
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
         <div class="nm">Growth</div>
         <div class="price">€149 <small>/ maand</small></div>
         <div class="who">Voor wie al bezig is en door wil groeien.</div>
         <ul>
-          <li>Alles van Starter</li>
+          <li class="allof">Alles van Starter</li>
           <li><span class="ft">Website &amp; blog content</span></li>
           <li><span class="ft">SEO-optimalisatie</span></li>
           <li><span class="ft">Search Console koppeling</span></li>
           <li><span class="ft">Zoekwoordonderzoek</span></li>
           <li><span class="ft">Content kalender</span></li>
         </ul>
+        <div class="ups">
+          <div class="up"><span><b>Advertising</b> bij upgrade naar Pro</span></div>
+        </div>
         <a class="btn acc" href="../aanmelden/">Kies Growth <span class="arrow">→</span></a>
       </div>
-      <div class="tier">
+      <div class="tier tier-pro">
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
         <div class="nm">Pro</div>
         <div class="price">€249 <small>/ maand</small></div>
         <div class="who">Volledig pakket inclusief advertising.</div>
         <ul>
-          <li>Alles van Growth</li>
+          <li class="allof">Alles van Growth</li>
           <li><span class="ft">Meta Ads beheer</span></li>
           <li><span class="ft">Google Ads beheer</span></li>
           <li><span class="ft">Campaign builder</span></li>
@@ -148,26 +199,37 @@
 
   <!-- COMPARISON -->
   <section class="section"><div class="wrap">
-    <div class="shead"><div class="l"><h2>Wat zit er in welk pakket?</h2></div></div>
+    <div class="shead"><div class="l"><h2>Wat zit er in welk pakket?</h2><p class="sh-sub">Elk pakket bouwt voort op het vorige. Zo zie je in één oogopslag wat je krijgt en wat erbij komt als je doorgroeit.</p></div></div>
     <div class="cmp-wrap">
       <table class="cmp">
-        <thead><tr><th>Functie</th><th>Starter</th><th class="colhi">Growth</th><th>Pro</th></tr></thead>
+        <colgroup><col class="cfeat"><col><col><col></colgroup>
+        <thead><tr>
+          <th class="feat-h"></th>
+          <th><div class="ph"><span class="pname">Starter</span><span class="pprice">€49 / mnd</span></div></th>
+          <th class="hl lead-h"><div class="ph"><span class="tagm">Mia&rsquo;s keuze</span><span class="pname">Growth</span><span class="pprice">€149 / mnd</span></div></th>
+          <th><div class="ph"><span class="pname">Pro</span><span class="pprice">€249 / mnd</span></div></th>
+        </tr></thead>
         <tbody>
-          <tr><th>Social media posts genereren <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia maakt kant-en-klare berichten voor je social media. Jij hoeft alleen nog ja te zeggen.</span></span></th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th>E-mail marketing <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia schrijft je nieuwsbrieven en mailtjes aan klanten en verstuurt ze op het juiste moment.</span></span></th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th>Brand kit (kleuren, logo, fonts) <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Je huisstijl op één plek: je kleuren, je logo en je lettertype. Mia houdt zich er altijd aan.</span></span></th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th>AI-assistent Mia <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Je digitale collega die meekijkt, het werk voorbereidt en alles voor je klaarzet.</span></span></th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th>Onbeperkt content maken <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Laat zoveel posts en teksten maken als je wilt. Er zit geen limiet op.</span></span></th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th>Website &amp; blog content <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia schrijft teksten voor je website en blogartikelen die bij je merk passen.</span></span></th><td class="no">-</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th>SEO-optimalisatie <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia zorgt dat je beter gevonden wordt in Google.</span></span></th><td class="no">-</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th>Search Console koppeling <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia kijkt mee met je Google-cijfers en ziet waarop mensen je vinden.</span></span></th><td class="no">-</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th>Zoekwoordonderzoek <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia zoekt uit op welke woorden jouw klanten naar je producten zoeken.</span></span></th><td class="no">-</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th>Content kalender <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Een overzicht van wat er wanneer gepost wordt, zodat je niks vergeet.</span></span></th><td class="no">-</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><th>Meta Ads beheer <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia maakt en beheert je advertenties op Facebook en Instagram.</span></span></th><td class="no">-</td><td class="no">-</td><td class="yes">✓</td></tr>
-          <tr><th>Google Ads beheer <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia maakt en beheert je advertenties in Google.</span></span></th><td class="no">-</td><td class="no">-</td><td class="yes">✓</td></tr>
-          <tr><th>Campaign builder <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia zet complete reclamecampagnes voor je op, van begin tot eind.</span></span></th><td class="no">-</td><td class="no">-</td><td class="yes">✓</td></tr>
-          <tr><th>Competitor spy <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia houdt in de gaten wat je concurrenten doen, zodat jij kunt bijsturen.</span></span></th><td class="no">-</td><td class="no">-</td><td class="yes">✓</td></tr>
-          <tr><th>Performance dashboards <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Eén scherm met al je cijfers, zodat je in één oogopslag ziet wat werkt.</span></span></th><td class="no">-</td><td class="no">-</td><td class="yes">✓</td></tr>
+          <tr class="grp g-content"><th class="feat-h"><span class="gl">Content &amp; social</span><span class="gs">In elk pakket</span></th><td></td><td class="hl"></td><td></td></tr>
+          <tr class="frow"><th class="feat-h">Social media posts genereren <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia maakt kant-en-klare berichten voor je social media. Jij hoeft alleen nog ja te zeggen.</span></span></th><td><span class="v y">✓</span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">E-mail marketing <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia schrijft je nieuwsbrieven en mailtjes aan klanten en verstuurt ze op het juiste moment.</span></span></th><td><span class="v y">✓</span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Brand kit (kleuren, logo, fonts) <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Je huisstijl op één plek: je kleuren, je logo en je lettertype. Mia houdt zich er altijd aan.</span></span></th><td><span class="v y">✓</span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">AI-assistent Mia <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Je digitale collega die meekijkt, het werk voorbereidt en alles voor je klaarzet.</span></span></th><td><span class="v y">✓</span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Onbeperkt content maken <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Laat zoveel posts en teksten maken als je wilt. Er zit geen limiet op.</span></span></th><td><span class="v y">✓</span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+
+          <tr class="grp g-web"><th class="feat-h"><span class="gl">Website &amp; SEO</span><span class="gs">Vanaf Growth</span></th><td></td><td class="hl"></td><td></td></tr>
+          <tr class="frow"><th class="feat-h">Website &amp; blog content <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia schrijft teksten voor je website en blogartikelen die bij je merk passen.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">SEO-optimalisatie <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia zorgt dat je beter gevonden wordt in Google.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Search Console koppeling <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia kijkt mee met je Google-cijfers en ziet waarop mensen je vinden.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Zoekwoordonderzoek <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia zoekt uit op welke woorden jouw klanten naar je producten zoeken.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Content kalender <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Een overzicht van wat er wanneer gepost wordt, zodat je niks vergeet.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+
+          <tr class="grp g-ads"><th class="feat-h"><span class="gl">Advertising &amp; groei</span><span class="gs">Alleen in Pro</span></th><td></td><td class="hl"></td><td></td></tr>
+          <tr class="frow"><th class="feat-h">Meta Ads beheer <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia maakt en beheert je advertenties op Facebook en Instagram.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Google Ads beheer <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia maakt en beheert je advertenties in Google.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Campaign builder <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia zet complete reclamecampagnes voor je op, van begin tot eind.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Competitor spy <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia houdt in de gaten wat je concurrenten doen, zodat jij kunt bijsturen.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Performance dashboards <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Eén scherm met al je cijfers, zodat je in één oogopslag ziet wat werkt.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -179,15 +241,15 @@
     <div class="pfaq">
       <div class="q"><h4>Wat betekent onbeperkt content maken?</h4><p>Je kunt zoveel posts, teksten en concepten laten maken als je wilt. Mia zet de voorstellen klaar; jij bepaalt wat je goedkeurt en wat er daadwerkelijk uitgaat.</p></div>
       <div class="q"><h4>Kan ik maandelijks opzeggen?</h4><p>Ja. Alle pakketten zijn maandelijks opzegbaar. Geen jaarcontract, geen opzegtermijn van maanden. Je kunt ook elke maand upgraden of terugschakelen.</p></div>
-      <div class="q"><h4>Wat gebeurt er na de beta?</h4><p>Tijdens de beta (juni tot december 2026) is YourFellow HQ gratis voor early access-gebruikers. Daarna gaan de prijzen hierboven in. Je beslist dan zelf of je doorgaat, niets wordt automatisch doorbelast zonder dat je het weet.</p></div>
+      <div class="q"><h4>Wat kost het om te starten?</h4><p>Registreren is gratis. Je start met een beperkt aantal credits, zodat je alles rustig kunt uitproberen. Wil je meer maken, dan kies je een van de pakketten hierboven. Maandelijks opzegbaar, en niets wordt automatisch doorbelast zonder dat je het weet.</p></div>
       <div class="q"><h4>Reken ik per gebruiker af?</h4><p>Nee. Je betaalt één vast bedrag per maand voor het pakket, niet per gebruiker en niet per los gebruik. Dat was een duidelijke wens uit onze validatie.</p></div>
     </div>
   </div></section>
 
   <section class="fc"><div class="wrap fc-in">
-    <h2>Begin gratis tijdens de <em>beta.</em></h2>
-    <p>Vraag beta-toegang aan en gebruik YourFellow HQ tot december 2026 zonder kosten.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="../aanmelden/">Vraag beta-toegang <span class="arrow">→</span></a><a class="btn ghost lg" href="../wat-doet-het/">Bekijk de modules</a></div>
+    <h2 style="font-size: 44px">Begin <em>gratis!</em></h2>
+    <p>Registreren is gratis: je start met een beperkt aantal credits. Wil je meer, kies dan een pakket.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="https://app.yourfellow.nl/">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="../wat-doet-het/">Bekijk de modules</a></div>
   </div></section>
 </main>
 

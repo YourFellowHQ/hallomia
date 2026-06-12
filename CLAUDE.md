@@ -23,8 +23,12 @@ uit `assets/site-hm.js` verwijderen om strakke URL's (`/mia/`) te behouden.
   meta description, `<link rel="canonical">`, robots, Open Graph + Twitter-tags. Deelafbeelding:
   `assets/og-image.png` (1200×630); logo: `assets/logo.png` (512×512).
 - JSON-LD: Organization + WebSite op `index.html`; SoftwareApplication + 3 Offers op `prijzen/`;
-  FAQPage op `vragen/`. Bij prijswijziging → de Offer-prijzen in de JSON-LD op prijzen bijwerken.
+  FAQPage op `vragen/`; Blog op `blog/` en BlogPosting op elke `blog/<slug>/`. Bij prijswijziging → de Offer-prijzen in de JSON-LD op prijzen bijwerken.
 - `sitemap.xml` + `robots.txt` staan in de root. **Bij een nieuwe pagina:** voeg een `<url>` toe
   aan `sitemap.xml` én plak het meta-blok in de `<head>` van die pagina.
 - De homepage (`index.html`) is de witte versie met de vloeiende hero → “Maak kennis met Mia”-overgang.
   `over-ons/index-print.html` is alleen voor PDF-print; niet bedoeld om te indexeren/deployen.
+- **Blog**: `blog/index.html` is de blog-overzichtspagina; elke post is `blog/<slug>/index.html` (diepte 2).
+  Gedeelde artikel-/indexstijl: `assets/blog.css`. Posts zijn gegenereerd uit Markdown. `assets/site-hm.js`
+  is depth-aware (`data-depth="2"` op posts) zodat nav/footer/brand-links vanaf diepte 2 kloppen.
+  Nav-volgorde: … Prijzen · **Blog** · Vragen … (in `site-hm.js`).
