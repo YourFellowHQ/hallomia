@@ -104,20 +104,18 @@
       <h1>Kijk <em>live</em> mee.</h1>
       <p class="eb-lead">In ongeveer een half uur laat ik je zien hoe ik met je meekijk en voorstellen voor je klaarzet. Stel gerust al je vragen. <b>Elke woensdag</b>, kies hieronder de datum die jou uitkomt.</p>
 
-      <form class="eb-form" id="wbForm" data-webinar-form data-webinar-done="#wbDone" novalidate>
-        <div class="eb-pick-h">Kies een datum</div>
-        <div class="wb-dates" data-webinar-dates aria-label="Kies een datum"></div>
-        <div class="eb-row">
-          <input type="email" name="email" placeholder="jouw@e-mail.nl" autocomplete="email" required>
-          <button type="submit" class="btn acc">Meld me aan <span class="arrow">→</span></button>
-        </div>
+      <div class="eb-form" id="wbForm">
+        <!-- SharpSpring Form for HQ webinar aanmelding -->
+        <script type="text/javascript">
+            var ss_form = {'account': 'MzawMLE0MTGzAAA', 'formID': 'szS0NEszMzXQNTYzTNM1MTJI1bU0SkzTtUgxSEw1N001MEkxBAA'};
+            ss_form.width = '100%';
+            ss_form.domain = 'app-3QNTLCGLQ4.marketingautomation.services';
+            // ss_form.hidden = {'field_id': 'value'}; // Modify this for sending hidden variables, or overriding values
+            // ss_form.target_id = 'target'; // Optional parameter: forms will be placed inside the element with the specified id
+            // ss_form.polling = true; // Optional parameter: set to true ONLY if your page loads dynamically and the id needs to be polled continually.
+        </script>
+        <script type="text/javascript" src="https://koi-3QNTLCGLQ4.marketingautomation.services/client/form.js?ver=2.0.1"></script>
         <p class="eb-fine">Je krijgt de deelnamelink per mail. Afmelden kan altijd met één klik.</p>
-      </form>
-
-      <div class="eb-done" id="wbDone">
-        <span class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-        <h3>Je bent aangemeld</h3>
-        <p>Mooi! Ik stuur je de deelnamelink voor <b data-webinar-chosen>het webinar</b> per mail. Tot dan.</p>
       </div>
 
     </div></div>

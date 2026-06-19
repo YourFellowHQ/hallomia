@@ -598,20 +598,18 @@
     <h2 id="wbTitle">Kijk <em>live</em> mee.</h2>
     <p class="wm-lead">In ongeveer een half uur laat Mia zien hoe ze met je meekijkt en voorstellen voor je klaarzet. Kies hieronder een woensdag die jou uitkomt.</p>
 
-    <!-- alle komende sessies, klikbaar (gevuld door assets/webinar.js) -->
-    <form class="wm-form" id="wbForm" data-webinar-form data-webinar-done="#wbDone" novalidate>
-      <div class="wb-dates" data-webinar-dates aria-label="Kies een datum"></div>
-      <div class="wm-row">
-        <input type="email" name="email" placeholder="jouw@e-mail.nl" autocomplete="email" required>
-        <button type="submit" class="btn acc">Meld me aan <span class="arrow">→</span></button>
-      </div>
+    <div class="wm-form" id="wbForm">
+      <!-- SharpSpring Form for HQ webinar aanmelding -->
+      <script type="text/javascript">
+          var ss_form = {'account': 'MzawMLE0MTGzAAA', 'formID': 'szS0NEszMzXQNTYzTNM1MTJI1bU0SkzTtUgxSEw1N001MEkxBAA'};
+          ss_form.width = '100%';
+          ss_form.domain = 'app-3QNTLCGLQ4.marketingautomation.services';
+          // ss_form.hidden = {'field_id': 'value'}; // Modify this for sending hidden variables, or overriding values
+          // ss_form.target_id = 'target'; // Optional parameter: forms will be placed inside the element with the specified id
+          // ss_form.polling = true; // Optional parameter: set to true ONLY if your page loads dynamically and the id needs to be polled continually.
+      </script>
+      <script type="text/javascript" src="https://koi-3QNTLCGLQ4.marketingautomation.services/client/form.js?ver=2.0.1"></script>
       <p class="wm-fine">Je krijgt de deelnamelink per mail. Afmelden kan altijd met één klik.</p>
-    </form>
-
-    <div class="wm-done" id="wbDone">
-      <span class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-      <h3>Je bent aangemeld</h3>
-      <p>Mooi! Mia stuurt je de deelnamelink voor <b data-webinar-chosen>het webinar</b> per mail. Tot dan.</p>
     </div>
   </div>
 </div>
