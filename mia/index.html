@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mia, de collega die je marketing regelt. Jij keurt alleen goed</title>
+<title>Mia, de collega die je marketing regelt | YourFellow HQ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -28,10 +28,11 @@
 .mhero h1{font-size:clamp(40px,5.4vw,72px);font-weight:600;letter-spacing:-0.035em;line-height:0.98;margin:16px 0 0;}
 .mhero .lede{margin-top:20px;font-size:18.5px;color:var(--ink-2);line-height:1.55;max-width:50ch;}
 .mhero .lede b{color:var(--ink);font-weight:600;}
+.mhero .ident{display:inline-flex;align-items:center;gap:9px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--accent-deep);background:rgba(14,156,134,0.08);border:1px solid rgba(14,156,134,0.22);border-radius:30px;padding:7px 14px;}
+.mhero .ident .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);}
 .mhero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
 .portrait{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line-2);aspect-ratio:4/5;background:#F1ECE2;box-shadow:0 50px 120px -40px rgba(14,156,134,0.25);}
 .portrait img{width:100%;height:100%;object-fit:cover;}
-.portrait::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 110px rgba(14,156,134,0.14);pointer-events:none;}
 .portrait .chip{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.8);backdrop-filter:blur(8px);border:1px solid var(--line-2);border-radius:9px;padding:10px 13px;max-width:200px;}
 .portrait .chip b{display:block;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;}
 .portrait .chip span{font-size:12.5px;color:var(--ink-2);line-height:1.35;}
@@ -69,6 +70,7 @@
 .ex h3{font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-bottom:8px;}
 .ex .lead{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px;line-height:1.5;}
 .ex-mock{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:auto;}
+.ex-shot{margin-top:auto;width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line-2);box-shadow:0 18px 36px -28px rgba(40,34,20,0.4);}
 .mia-line{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px;}
 .mia-line .av{width:28px;height:28px;border-radius:50%;overflow:hidden;flex:none;border:1px solid var(--line-2);}
 .mia-line .av img{width:100%;height:100%;object-fit:cover;}
@@ -116,6 +118,7 @@
 .taak-intro{font-size:16px;color:var(--ink-soft);max-width:62ch;line-height:1.6;margin-bottom:28px;}
 .taak-intro b{color:var(--ink-2);font-weight:600;}
 .taak-board{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;}
+.taak-shot{width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--line-2);box-shadow:0 30px 60px -42px rgba(40,34,20,0.45);}
 @media(max-width:900px){.taak-board{grid-template-columns:1fr;}}
 .taak-col{background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:15px;}
 .taak-col .col-h{display:flex;align-items:center;gap:9px;margin-bottom:13px;padding:2px 3px;}
@@ -180,6 +183,9 @@
 .fc-in .note{margin-top:18px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);}
 </style>
 <link rel="stylesheet" href="../assets/site-light.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hallomia.ai/"},{"@type":"ListItem","position":2,"name":"Mia","item":"https://hallomia.ai/mia/"}]}
+</script>
 </head>
 <body data-depth="1" data-page="mia">
 <template id="__bundler_thumbnail">
@@ -195,15 +201,24 @@
       <h1>Je hoeft Mia niks te <em>vragen.</em></h1>
       <p class="lede">Mia is geen AI-assistent die wacht op een opdracht of een prompt. Ze is je marketing-collega: ze kijkt mee in je cijfers, je kalender en je profiel, ziet zelf wat er speelt en schrijft en regelt het werk. <b>Het enige wat jij doet, is goedkeuren.</b></p>
       <div class="acts">
-        <a class="btn acc lg" href="https://app.yourfellow.nl/">Registreren <span class="arrow">→</span></a>
-        <a class="btn ghost lg" href="#taken">Hoe werkt Mia?</a>
+        <a class="btn acc lg" href="../early-access/">Early access <span class="arrow">→</span></a>
+        <a class="btn ghost lg" href="#taken">Bekijk haar taken</a>
       </div>
     </div>
-    <figure class="mia-msg">
-      <img src="../assets/mia-chat.png" alt="Mia stuurt uit zichzelf een bericht aan Paul: ze heeft LinkedIn-posts klaargezet en een concurrentieanalyse gemaakt, klaar om goed te keuren">
-      <figcaption><span class="pulse"></span> Mia begint zelf, ongevraagd. Jij hoeft alleen goed te keuren.</figcaption>
+    <figure class="portrait">
+      <img src="../assets/mia-photo.jpg" alt="Mia, je marketing-collega">
     </figure>
   </section>
+
+  <!-- DE TAKEN VAN MIA -->
+  <section class="section band" id="taken"><div class="wrap">
+    <div class="shead">
+      <div class="l"><h2 class="oneline">De taken van Mia.</h2></div>
+    </div>
+    <p class="taak-intro">Mia houdt haar eigen takenlijst bij. Ze ziet zelf wat er speelt, stelt het werk voor en zet het klaar, maar <b>niets gaat de deur uit zonder jouw goedkeuring.</b> In één overzicht zie je wat ze voorstelt, wat klaarstaat om te beoordelen en wat al af is.</p>
+    <img class="taak-shot" src="../assets/mia-social-screenshot.png" alt="Het posts-overzicht in YourFellow HQ: concept-posts die Mia klaarzette voor Instagram en Facebook, klaar om te beoordelen en in te plannen">
+    <div class="taak-note"><span class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span>Elke taak, of Mia hem nu voorstelt of al heeft klaargezet, passeert <b>jouw goedkeuring</b>. Niets wordt automatisch gepubliceerd.</span></div>
+  </div></section>
 
   <!-- WAT MIA IS -->
   <section class="section"><div class="wrap">
@@ -238,66 +253,6 @@
     </div>
   </div></section>
 
-  <!-- DE TAKEN VAN MIA -->
-  <section class="section band" id="taken"><div class="wrap">
-    <div class="shead">
-      <div class="l"><h2 class="oneline">De taken van Mia.</h2></div>
-    </div>
-    <p class="taak-intro">Mia houdt haar eigen takenlijst bij. Ze ziet zelf wat er speelt, stelt het werk voor en zet het klaar, maar <b>niets gaat de deur uit zonder jouw goedkeuring.</b> In één overzicht zie je wat ze voorstelt, wat klaarstaat om te beoordelen en wat al af is.</p>
-    <div class="taak-board">
-      <div class="taak-col sug">
-        <div class="col-h"><span class="dot"></span><h3>Suggesties</h3><span class="cnt">2</span></div>
-        <div class="taak is-sug">
-          <span class="t-tag">e-mail</span>
-          <h4>Heractiveer 38 oude leads</h4>
-          <p>Mia ziet leads die al drie maanden stil zijn. Een herinneringsmail klaarzetten?</p>
-          <div class="t-foot"><div class="mini-approve">Oppakken</div><div class="mini-adjust">Later</div></div>
-        </div>
-        <div class="taak is-sug">
-          <span class="t-tag">reviews</span>
-          <h4>Reageer op 3 nieuwe reviews</h4>
-          <p>Drie verse Google-reviews binnen. Mia heeft passende antwoorden voorbereid.</p>
-          <div class="t-foot"><div class="mini-approve">Oppakken</div><div class="mini-adjust">Later</div></div>
-        </div>
-      </div>
-      <div class="taak-col review">
-        <div class="col-h"><span class="dot"></span><h3>Review</h3><span class="cnt">3</span></div>
-        <div class="taak">
-          <span class="t-tag">post</span>
-          <h4>Moederdag-post voor Instagram</h4>
-          <p>Klaargezet in de stem van Bracefox, met beeld. Wacht op jouw akkoord.</p>
-          <div class="t-foot"><div class="mini-approve">Goedkeuren</div><div class="mini-adjust">Aanpassen</div></div>
-        </div>
-        <div class="taak">
-          <span class="t-tag">advertentie</span>
-          <h4>Advertentie 'onzichtbare beugel'</h4>
-          <p>Nieuwe variant op een zoekwoord waar je vorige maand vertoningen misliep.</p>
-          <div class="t-foot"><div class="mini-approve">Goedkeuren</div><div class="mini-adjust">Aanpassen</div></div>
-        </div>
-        <div class="taak">
-          <span class="t-tag">seo / geo</span>
-          <h4>Pagina: beugel volwassenen kosten</h4>
-          <p>480 zoekopdrachten per maand. Het concept staat klaar om te plaatsen.</p>
-          <div class="t-foot"><div class="mini-approve">Goedkeuren</div><div class="mini-adjust">Aanpassen</div></div>
-        </div>
-      </div>
-      <div class="taak-col done">
-        <div class="col-h"><span class="dot"></span><h3>Afgerond</h3><span class="cnt">2</span></div>
-        <div class="taak is-done">
-          <span class="t-tag">linkedin</span>
-          <h4>Weekpost over een patiëntverhaal</h4>
-          <p class="t-done"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Goedgekeurd en geplaatst, dinsdag 09:00</p>
-        </div>
-        <div class="taak is-done">
-          <span class="t-tag">rapport</span>
-          <h4>Maandoverzicht verstuurd</h4>
-          <p class="t-done"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Door jou goedgekeurd, afgelopen vrijdag</p>
-        </div>
-      </div>
-    </div>
-    <div class="taak-note"><span class="lock"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><span>Elke taak, of Mia hem nu voorstelt of al heeft klaargezet, passeert <b>jouw goedkeuring</b>. Niets wordt automatisch gepubliceerd.</span></div>
-  </div></section>
-
   <!-- VOORBEELDEN -->
   <section class="section"><div class="wrap">
     <div class="shead">
@@ -306,47 +261,22 @@
     </div>
     <div class="ex-grid">
       <div class="card ex">
-        <div class="ex-head"><span class="tag">post</span></div>
-        <h3>Een post rond Moederdag</h3>
-        <p class="lead">Mia ziet de feestdag in je kalender en stelt een post voor in de stem van Bracefox.</p>
-        <div class="ex-mock">
-          <div class="mia-line"><div class="av"><img src="../assets/mia-face.jpg" alt=""></div><div class="bub"><b>Mia.</b> Moederdag is over 9 dagen. Een post voor Instagram klaarzetten? Hier een eerste opzet.</div></div>
-          <div class="mock-card">
-            <div class="top"><div class="av-sm">B</div><div class="nm">bracefox.nl</div></div>
-            <div class="img"></div>
-            <div class="cap">Een mooie glimlach is misschien wel het mooiste cadeau. Deze Moederdag: de eerste 10 moeders een gratis intake.</div>
-          </div>
-          <div class="approve-row"><div class="b">Goedkeuren</div><div class="b alt">Aanpassen</div></div>
-        </div>
+        <div class="ex-head"><span class="tag">instagram</span></div>
+        <h3>Een Vaderdag-post voor Instagram</h3>
+        <p class="lead">Mia ziet de feestdag in je kalender en zet een post klaar in jouw stem, met beeld en bijschrift er al bij.</p>
+        <img class="ex-shot" src="../assets/mia-vb-1.png" alt="Concept Instagram-post die Mia klaarzette voor Vaderdag, met foto, bijschrift en de knop Inplannen">
       </div>
       <div class="card ex">
-        <div class="ex-head"><span class="tag">advertentie</span></div>
-        <h3>Een advertentie voor Google</h3>
-        <p class="lead">Mia merkt dat je op "onzichtbare beugel" weinig vertoningen hebt en schrijft een variant.</p>
-        <div class="ex-mock">
-          <div class="mia-line"><div class="av"><img src="../assets/mia-face.jpg" alt=""></div><div class="bub"><b>Mia.</b> Op "onzichtbare beugel" liep je vorige maand mis op vertoningen. Deze variant testen?</div></div>
-          <div class="mock-card ad-mock">
-            <span class="lbl">Adv</span>
-            <div class="url">bracefox.nl · Onzichtbare beugel</div>
-            <div class="ttl">Onzichtbare beugel zonder gedoe | Gratis intake</div>
-            <div class="d">Persoonlijk plan, vaste prijs en korte lijntjes. Boek je gratis intake online.</div>
-          </div>
-          <div class="approve-row"><div class="b">Goedkeuren</div><div class="b alt">Aanpassen</div></div>
-        </div>
+        <div class="ex-head"><span class="tag">facebook</span></div>
+        <h3>Dezelfde dag, andere toon</h3>
+        <p class="lead">Voor Facebook schrijft Mia een variant die bij dat kanaal past. Jij hoeft alleen nog goed te keuren.</p>
+        <img class="ex-shot" src="../assets/mia-vb-2.png" alt="Concept Facebook-post van Mia met een persoonlijke Vaderdag-boodschap en de knop Inplannen">
       </div>
       <div class="card ex">
-        <div class="ex-head"><span class="tag">seo / geo</span></div>
-        <h3>Een pagina op echte zoekwoorden</h3>
-        <p class="lead">Mia ziet vraag naar "beugel volwassenen kosten" en stelt een nieuwe webpagina voor.</p>
-        <div class="ex-mock">
-          <div class="mia-line"><div class="av"><img src="../assets/mia-face.jpg" alt=""></div><div class="bub"><b>Mia.</b> 480 zoekopdrachten per maand, jij staat nog niet in de top 20. Pagina klaargezet.</div></div>
-          <div class="mock-card seo-mock">
-            <h5>Beugel voor volwassenen, wat kost dat?</h5>
-            <div class="ln l"></div><div class="ln m"></div><div class="ln s"></div>
-            <div class="kws"><span class="kw">beugel volwassenen kosten</span><span class="kw">onzichtbare beugel prijs</span></div>
-          </div>
-          <div class="approve-row"><div class="b">Goedkeuren</div><div class="b alt">Aanpassen</div></div>
-        </div>
+        <div class="ex-head"><span class="tag">facebook</span></div>
+        <h3>Een persoonlijke insteek</h3>
+        <p class="lead">Een lichtere post voor fietsende vaders, met hashtags die je publiek echt gebruikt.</p>
+        <img class="ex-shot" src="../assets/mia-vb-3.png" alt="Concept Facebook-post van Mia voor fietsende vaders, met foto, hashtags en de knop Inplannen">
       </div>
     </div>
   </div></section>
@@ -354,9 +284,9 @@
   <!-- PRIVACY -->
   <!-- FINAL -->
   <section class="fc"><div class="wrap fc-in">
-    <h2>Wil je Mia aan het werk <em>zien?</em></h2>
-    <p>Registreren is gratis. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek.</p>
-    <div class="acts" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="https://app.yourfellow.nl/">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="../wat-doet-het/">Bekijk wat Mia doet</a></div>
+    <h2 style="font-size: 44px;">Wil je Mia aan het werk <em>zien?</em></h2>
+    <p>Je start vanaf €49 per maand. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek.</p>
+    <div class="acts" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="../early-access/">Early access <span class="arrow">→</span></a><a class="btn ghost lg" href="../wat-doet-het/">Bekijk wat Mia doet</a></div>
   </div></section>
 </main>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hallo Mia, je marketing-collega</title>
+<title>Hallo Mia, je marketing-collega | YourFellow HQ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -90,6 +90,12 @@
 .mx-row .mx-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums;}
 .mx-row h3{font-size:18px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;transition:color .15s;}
 .mx-row p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
+.mx-h{display:flex;align-items:center;gap:11px;flex-wrap:wrap;}
+.mlab{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;white-space:nowrap;}
+.mlab.now{color:var(--accent);background:var(--accent-soft);}
+.mlab.soon{color:var(--ink-mute);background:var(--surface-2);border:1px solid var(--line-2);}
+.mx-row.soon .mx-n{background:var(--surface-2);color:var(--ink-mute);}
+.mx-row.soon h3{color:var(--ink-2);}
 .mx-cta{display:flex;align-items:center;gap:9px;padding:22px 4px;border-top:1px solid var(--line);font-size:15px;font-weight:600;color:var(--accent);}
 .mx-cta:hover{gap:13px;}
 
@@ -154,6 +160,17 @@
 .tier ul li{display:flex;gap:10px;line-height:1.45;}
 .tier ul li::before{content:"+";color:var(--accent);font-weight:600;}
 .tier .btn{width:100%;}
+/* launch: alleen Starter live */
+.launch-note{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:9px 16px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:13.5px;font-weight:600;}
+.launch-note::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent);}
+.tier .nowbadge{position:absolute;top:-11px;left:30px;background:var(--accent);color:var(--on-accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;}
+.tier .soonbadge{position:absolute;top:-11px;left:30px;background:var(--ink-2);color:#fff;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;}
+.tier.live{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(14,156,134,0.22);}
+.tier.soon{opacity:0.86;}
+.tier.soon .nm,.tier.soon ul{filter:grayscale(0.5);}
+.tier.soon .price{font-size:30px;font-weight:600;color:var(--ink-mute);}
+.tier.soon .btn{background:transparent;color:var(--ink-2);border:1px solid var(--line-2);box-shadow:none;}
+.tier.soon .btn:hover{border-color:var(--accent);color:var(--accent);}
 
 /* ---------- faq teaser ---------- */
 .faq{border-top:1px solid var(--line);}
@@ -170,6 +187,11 @@
 @media(max-width:560px){.fc-in h2{white-space:normal;max-width:18ch;}}
 .fc-in p{margin:20px 0 30px;font-size:17px;color:var(--ink-soft);max-width:54ch;line-height:1.6;}
 .fc-in .note{margin-top:18px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);}
+/* placeholder voor een nog te leveren afbeelding */
+.imgph{aspect-ratio:16/10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;text-align:center;padding:30px;background:repeating-linear-gradient(135deg,#F0EBE1,#F0EBE1 11px,#F7F3EB 11px,#F7F3EB 22px);color:var(--ink-mute);}
+.imgph .tag{align-self:center;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft);background:rgba(255,255,255,0.88);border:1px solid var(--line-2);border-radius:6px;padding:6px 11px;}
+.imgph b{font-size:15.5px;color:var(--ink-2);font-weight:600;letter-spacing:-0.01em;}
+.imgph small{font-size:13px;color:var(--ink-mute);max-width:44ch;line-height:1.5;}
 </style>
 <style id="hm-var">
 .hero-title{max-width:760px}
@@ -191,7 +213,7 @@
   --ink:#211E18;         /* warm near-black */
   --ink-2:#47433A;
   --ink-soft:#76705F;
-  --ink-mute:#9D9683;
+  --ink-mute:#6F6957;
   --accent:#0E9C86;      /* deeper, muted teal — readable on light */
   --accent-deep:#0A7E6D;
   --accent-soft:rgba(14,156,134,0.12);
@@ -212,6 +234,48 @@
 /* typewriter in black for the light version */
 .hero-title h1 .typed-line{color:var(--ink);}
 .hero-title h1 .caret{background:var(--ink);}
+</style>
+<style>
+/* ===== webinar-aanmeldvenster (modal) ===== */
+.wm-overlay{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+  padding:24px;background:rgba(20,17,12,0.55);backdrop-filter:blur(3px);}
+.wm-overlay.open{display:flex;}
+.wm-card{position:relative;width:100%;max-width:460px;background:var(--surface);border:1px solid var(--line);
+  border-radius:18px;padding:36px 34px;box-shadow:0 40px 90px -40px rgba(40,34,20,0.5);
+  max-height:calc(100vh - 48px);overflow:auto;}
+@media(max-width:520px){.wm-card{padding:30px 22px;}}
+.wm-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:9px;border:1px solid var(--line-2);
+  background:var(--bg);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;
+  transition:border-color .15s,color .15s;}
+.wm-close:hover{border-color:var(--accent);color:var(--ink);}
+.wm-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+.wm-eyebrow::before{content:"";width:22px;height:1.5px;background:var(--accent);display:inline-block;}
+.wm-card h2{font-size:26px;font-weight:600;letter-spacing:-0.025em;line-height:1.05;margin:14px 0 0;}
+.wm-card h2 em{font-style:normal;color:var(--accent);}
+.wm-lead{margin:12px 0 0;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+.wm-when{margin:20px 0 0;display:flex;align-items:flex-start;gap:13px;padding:15px 16px;
+  background:var(--accent-soft);border:1px solid rgba(14,156,134,0.25);border-radius:12px;}
+.wm-when svg{width:20px;height:20px;color:var(--accent);flex:none;margin-top:1px;}
+.wm-when b{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;}
+.wm-when small{display:block;margin-top:3px;font-size:12.5px;color:var(--ink-soft);}
+.wm-form{margin:20px 0 0;display:flex;flex-direction:column;gap:11px;}
+.wm-row{display:flex;gap:10px;}
+@media(max-width:520px){.wm-row{flex-direction:column;}}
+.wm-row input{flex:1;font-family:inherit;font-size:16px;color:var(--ink);background:var(--bg);
+  border:1px solid var(--line-2);border-radius:10px;padding:15px 17px;transition:border-color .15s,box-shadow .15s;}
+.wm-row input::placeholder{color:var(--ink-mute);}
+.wm-row input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+.wm-row .btn{padding:15px 24px;font-size:15.5px;white-space:nowrap;}
+.wm-fine{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:2px 0 0;}
+.wm-form .wb-dates{max-height:226px;overflow:auto;margin-bottom:13px;padding-right:3px;}
+.wm-done{margin:18px 0 0;display:none;flex-direction:column;gap:10px;
+  background:var(--bg);border:1px solid var(--line);border-radius:15px;padding:24px 22px;}
+.wm-done.show{display:flex;}
+.wm-done .check{width:42px;height:42px;border-radius:50%;background:var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--accent);}
+.wm-done h3{font-size:20px;font-weight:600;letter-spacing:-0.01em;}
+.wm-done p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;max-width:42ch;}
 </style>
 <style>
 /* ===== split hero: links Mia vraagt (1/3), rechts output (2/3) ===== */
@@ -352,6 +416,25 @@
 .meet .reveal.d2{transition-delay:.2s;}
 @media(prefers-reduced-motion:reduce){.meet .reveal{opacity:1;transform:none;transition:none;}}
 </style>
+<style id="intro-var">
+/* ===== Wat is dit? — context + platform, direct onder de hero ===== */
+.intro{background:var(--bg-2);}
+.intro .intro-top{max-width:64ch;margin:0 auto;text-align:center;}
+.intro .kicker{justify-content:center;}
+.intro .intro-h{font-size:clamp(28px,3.6vw,46px);font-weight:600;letter-spacing:-0.03em;line-height:1.06;margin:14px 0 0;text-wrap:balance;}
+.intro .intro-h em{font-style:normal;color:var(--accent);}
+.intro .intro-lead{margin:18px auto 0;font-size:17.5px;color:var(--ink-2);line-height:1.62;max-width:62ch;text-wrap:pretty;}
+.intro .intro-lead b{color:var(--ink);font-weight:600;}
+.intro .hq-browser{margin:42px auto 0;}
+.intro .intro-steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:20px;align-items:stretch;margin-top:40px;}
+.intro .istep{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 24px 26px;display:flex;flex-direction:column;gap:9px;}
+.intro .istep-n{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--accent);font-weight:500;letter-spacing:0.1em;}
+.intro .istep h3{font-size:18.5px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;}
+.intro .istep p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
+.intro .iarrow{display:flex;align-items:center;justify-content:center;color:var(--ink-mute);}
+.intro .iarrow svg{width:22px;height:22px;}
+@media(max-width:820px){.intro .intro-steps{grid-template-columns:1fr;gap:13px;}.intro .iarrow{display:none;}}
+</style>
 </head>
 <body data-depth="0" data-page="home">
 <div id="site-nav"></div>
@@ -374,7 +457,7 @@
         <button class="send" aria-label="Verstuur naar Mia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
       </div>
       <div class="making"><span class="sp"></span><span>Mia maakt <b id="makeTag">je dashboard</b></span></div>
-      <p class="sub">Jij vraagt, Mia maakt het meteen. Rechts zie je haar voorstel — jij keurt goed.</p>
+      <p class="sub">Jij vraagt, Mia maakt het meteen. Rechts zie je haar voorstel, jij keurt goed.</p>
     </div>
 
     <!-- RECHTS — wat Mia toont (jouw 2/3-HTML komt hier) -->
@@ -391,12 +474,26 @@
     </div>
   </section>
 
+  <!-- WAT IS DIT -->
+  <section class="section intro" data-screen-label="Wat is dit"><div class="wrap">
+    <div class="intro-top">
+      <h2 class="intro-h">Dit is YourFellow HQ,
+ één werkplek voor al je marketing.</h2>
+      <p class="intro-lead"><b>Hallo Mia</b> is hoe je kennismaakt met <b>YourFellow HQ</b>: het marketingplatform met Mia, je AI-collega, ingebouwd. Geen losse tools die elkaar niet kennen. Je vult &eacute;&eacute;n keer je bedrijfsprofiel in, en daarna kent het hele platform je bedrijf. Mia werkt vanuit dat profiel: ze kijkt mee in je cijfers en je kalender, komt uit zichzelf met voorstellen en zet het werk klaar. Social posts, advertenties, SEO-teksten en meer. <b>Jij keurt goed, en pas daarna gaat het de deur uit.</b></p>
+    </div>
+    <div class="hq-browser" style="width:min(1040px,100%);">
+      <div class="hq-screen" style="padding:0;">
+        <img src="assets/screenshot-hq.png" alt="Het YourFellow HQ dashboard: de taken die Mia klaarzette voor review, de chat met Mia, het weekrapport en je Google Analytics-cijfers in één overzicht" style="display:block;width:100%;height:auto;"/>
+      </div>
+    </div>
+  </div></section>
+
 
   <!-- MIA TEASER -->
   <section class="section"><div class="wrap">
     <div class="miateaser">
       <div class="mia-photo">
-        <img src="assets/mia-photo.jpg" alt="Mia, de AI-collega in YourFellow HQ">
+        <img src="assets/mia-photo.jpg" alt="Mia, de AI-collega van YourFellow HQ" loading="lazy">
       </div>
       <div>
         <h2 style="margin-top:14px;">Maak kennis met Mia.</h2>
@@ -420,82 +517,49 @@
     <div class="mx-start">
       <div class="mx-tt">
         <span class="mx-n0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-        <div><span class="mx-tag">Eerst &middot; met Mia</span><h3>Bedrijfsprofiel</h3></div>
+        <div><span class="mx-tag">Eerst &middot; met Mia</span><div class="mx-h"><h3>Bedrijfsprofiel</h3><span class="mlab now">Nu beschikbaar</span></div></div>
       </div>
       <p>Samen met Mia bouw je je bedrijfsprofiel uit je website: producten, doelgroep en toon. Dit is de basis onder alle modules hieronder.</p>
     </div>
     <div class="mx-list">
-      <div class="mx-row"><div class="mx-tt"><span class="mx-n">01</span><h3>Dashboard</h3></div><p>Je kalender en cijfers op één scherm. Mia zet bovenaan waar je op moet letten.</p></div>
-      <div class="mx-row"><div class="mx-tt"><span class="mx-n">02</span><h3>Advertenties</h3></div><p>Voor Google en Meta. Mia schrijft de varianten, jij keurt goed.</p></div>
-      <div class="mx-row"><div class="mx-tt"><span class="mx-n">03</span><h3>Social posts</h3></div><p>Posts en beeld in jouw stijl. Mia zet ze klaar voor Instagram, LinkedIn en Facebook.</p></div>
-      <div class="mx-row"><div class="mx-tt"><span class="mx-n">04</span><h3>SEO &amp; GEO content</h3></div><p>Mia schrijft teksten op echte zoekwoorden. Vindbaar in Google én AI.</p></div>
-      <div class="mx-row"><div class="mx-tt"><span class="mx-n">05</span><h3>Google &amp; Meta ads-beheer</h3></div><p>Mia bewaakt je lopende campagnes en stelt bijsturingen voor.</p></div>
+      <div class="mx-row"><div class="mx-tt"><span class="mx-n">01</span><div class="mx-h"><h3>Dashboard</h3><span class="mlab now">Nu beschikbaar</span></div></div><p>Je kalender en cijfers op één scherm. Mia zet bovenaan waar je op moet letten.</p></div>
+      <div class="mx-row"><div class="mx-tt"><span class="mx-n">02</span><div class="mx-h"><h3>Social posts</h3><span class="mlab now">Nu beschikbaar</span></div></div><p>Posts en beeld in jouw stijl. Mia zet ze klaar voor Instagram, LinkedIn en Facebook.</p></div>
+      <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">03</span><div class="mx-h"><h3>Advertenties</h3><span class="mlab soon">Binnenkort</span></div></div><p>Voor Google en Meta. Mia schrijft de varianten, jij keurt goed.</p></div>
+      <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">04</span><div class="mx-h"><h3>SEO &amp; GEO content</h3><span class="mlab soon">Binnenkort</span></div></div><p>Mia schrijft teksten op echte zoekwoorden. Vindbaar in Google én AI.</p></div>
+      <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">05</span><div class="mx-h"><h3>Google &amp; Meta ads-beheer</h3><span class="mlab soon">Binnenkort</span></div></div><p>Mia bewaakt je lopende campagnes en stelt bijsturingen voor.</p></div>
       <a class="mx-cta" href="wat-doet-het/">Bekijk wat het doet <span class="arrow">→</span></a>
-    </div>
-  </div></section>
-
-  <!-- YOURFELLOW HQ -->
-  <section class="section hqband"><div class="wrap">
-    <div class="hqband-in">
-      <div class="kicker"><span class="dot"></span> Eén werkplek</div>
-      <h2>Alles draait in <em>YourFellow HQ.</em></h2>
-      <p>Hallo Mia is je kennismaking. Het echte werk gebeurt straks in YourFellow HQ, op app.yourfellow.nl: je bedrijfsprofiel, alle modules en Mia als je vaste assistent, bij elkaar op één plek.</p>
-      <div class="hq-browser">
-        <div class="hq-bar"><span class="d"></span><span class="d y"></span><span class="d g"></span><span class="hq-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>app.yourfellow.nl</span></div>
-        <div class="hq-screen">
-          <div class="hq-brand"><span class="mk"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#062B25" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg></span>YourFellow <b>HQ</b></div>
-          <div class="hq-chips"><span>Bedrijfsprofiel</span><span>Dashboard</span><span>Social</span><span>Advertenties</span><span>SEO &amp; GEO</span><span>Mail</span><span class="mia"><span class="dot2"></span>Mia is online</span></div>
-        </div>
-      </div>
-    </div>
-  </div></section>
-
-  <!-- SOCIAL PROOF -->
-  <section class="section"><div class="wrap">
-    <div class="proof">
-      <figure class="shot">
-        <img src="assets/mia-editor.png" alt="Mia heeft een complete Instagram-post klaargezet in de editor: beeld, bijschrift en hashtags, klaar om te plaatsen of aan te passen">
-        <figcaption>Mia's voorstel — beeld, bijschrift en hashtags, klaar in de editor.</figcaption>
-      </figure>
-      <div class="copy">
-        <h2 style="margin-top:14px;">Mia levert af. Jij hoeft alleen te kiezen.</h2>
-        <p>Een post in jouw merkstijl, met beeld erbij. Mia ziet de feestdag in je kalender, schrijft de tekst en zet het voorstel klaar in je review-inbox. Goedkeuren, aanpassen of overslaan.</p>
-        <div class="chips">
-          <span>social posts</span><span>advertentieteksten</span><span>website-pagina's</span><span>nieuwsbrieven</span><span>beeld in jouw stijl</span>
-        </div>
-        <div style="margin-top:26px;"><a class="txt-link" href="social/">Zo werkt de social-module →</a></div>
-      </div>
     </div>
   </div></section>
 
   <!-- PRIJZEN -->
   <section class="section"><div class="wrap">
     <div class="shead">
-      <div class="l"><h2>Eén vast bedrag. <em>Gratis starten.</em></h2></div>
-      
+      <div class="l"><h2>Heldere prijzen, <em>geen verrassingen.</em></h2><div class="launch-note">Live vanaf juli met Starter. Growth en Pro volgen later dit jaar.</div></div>
     </div>
     <div class="tiers">
-      <div class="tier">
+      <div class="tier live">
+        <span class="nowbadge">Nu beschikbaar</span>
         <div class="nm">Starter</div>
         <div class="price">€49 <small>/ maand</small></div>
         <div class="who">Samen met Mia je marketing opbouwen.</div>
-        <ul><li>Social media posts genereren</li><li>E-mail marketing</li><li>Brand kit + AI-assistent Mia</li></ul>
-        <a class="btn ghost" href="prijzen/">Bekijk Starter</a>
+        <ul><li>Social media posts genereren</li><li>Onbeperkt content maken</li><li>Brand kit + AI-assistent Mia</li></ul>
+        <a class="btn acc" href="prijzen/">Bekijk Starter</a>
       </div>
-      <div class="tier featured">
-        <div class="pbadge">Mia's keuze</div>
+      <div class="tier soon">
+        <span class="soonbadge">Binnenkort</span>
         <div class="nm">Growth</div>
-        <div class="price">€149 <small>/ maand</small></div>
+        <div class="price">Binnenkort</div>
         <div class="who">Voor wie al bezig is en door wil groeien.</div>
         <ul><li>Alles van Starter</li><li>Website &amp; blog content + SEO</li><li>Search Console + zoekwoorden</li></ul>
-        <a class="btn acc" href="prijzen/">Bekijk Growth <span class="arrow">→</span></a>
+        <a class="btn" href="early-access/?interesse=growth">Hou me op de hoogte</a>
       </div>
-      <div class="tier">
+      <div class="tier soon">
+        <span class="soonbadge">Binnenkort</span>
         <div class="nm">Pro</div>
-        <div class="price">€249 <small>/ maand</small></div>
+        <div class="price">Binnenkort</div>
         <div class="who">Volledig pakket inclusief advertising.</div>
         <ul><li>Alles van Growth</li><li>Meta Ads + Google Ads beheer</li><li>Campaign builder + dashboards</li></ul>
-        <a class="btn ghost" href="prijzen/">Bekijk Pro</a>
+        <a class="btn" href="early-access/?interesse=pro">Hou me op de hoogte</a>
       </div>
     </div>
     <div style="text-align:center;margin-top:28px;"><a class="txt-link" href="prijzen/">Vergelijk alle functies →</a></div>
@@ -511,16 +575,46 @@
       <div class="q"><span class="n">Q1</span><div><h4>Moet ik verstand hebben van marketing?</h4><p>Nee. YourFellow HQ legt alles uit in gewone taal en doet het uitzoekwerk. Jij beslist wat eruit gaat.</p></div></div>
       <div class="q"><span class="n">Q2</span><div><h4>Maakt AI geen fouten?</h4><p>AI kan fouten maken, daarom keur jij alles goed voor het live gaat. Mia stelt voor, jij beslist.</p></div></div>
       <div class="q"><span class="n">Q3</span><div><h4>Wat gebeurt er met mijn bedrijfsgegevens?</h4><p>Daar gaan we zorgvuldig mee om. We trainen geen modellen op jouw data en je kunt elke koppeling op elk moment losmaken.</p></div></div>
+      <div class="q"><span class="n">Q4</span><div><h4>Wat is het verschil tussen Hallo Mia en YourFellow HQ?</h4><p>YourFellow HQ is het platform: je werkplek met je bedrijfsprofiel en alle modules. Mia is je AI-collega die daarin meekijkt en het werk voorstelt. "Hallo Mia" is simpelweg de naam waarmee we het naar buiten brengen. Eén plek, één collega.</p></div></div>
     </div>
   </div></section>
 
   <!-- FINAL CTA -->
   <section class="fc"><div class="wrap fc-in">
     <h2 style="font-size: 44px">Klaar om met Mia te <em>beginnen?</em></h2>
-    <p>Registreren is gratis. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
-    <div class="hero-bottom"><a class="btn acc lg" href="https://app.yourfellow.nl/">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="aanmelden/">Plan demo</a></div>
+    <p>Je start vanaf €49 per maand, maandelijks opzegbaar. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
+    <div class="hero-bottom"><a class="btn acc lg" href="early-access/">Early access <span class="arrow">→</span></a><button type="button" class="btn ghost lg" id="wbOpen">Plan een webinar <span class="arrow">→</span></button></div>
+    <p class="note" id="wbNote">Live webinar, elke woensdag. Eerstvolgende: <b data-webinar-next>…</b>.</p>
   </div></section>
 </main>
+
+<!-- WEBINAR-AANMELDVENSTER -->
+<div class="wm-overlay" id="wbModal" aria-hidden="true">
+  <div class="wm-card" role="dialog" aria-modal="true" aria-labelledby="wbTitle">
+    <button class="wm-close" id="wbClose" type="button" aria-label="Sluiten">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <span class="wm-eyebrow">Live webinar</span>
+    <h2 id="wbTitle">Kijk <em>live</em> mee.</h2>
+    <p class="wm-lead">In ongeveer een half uur laat Mia zien hoe ze met je meekijkt en voorstellen voor je klaarzet. Kies hieronder een woensdag die jou uitkomt.</p>
+
+    <!-- alle komende sessies, klikbaar (gevuld door assets/webinar.js) -->
+    <form class="wm-form" id="wbForm" data-webinar-form data-webinar-done="#wbDone" novalidate>
+      <div class="wb-dates" data-webinar-dates aria-label="Kies een datum"></div>
+      <div class="wm-row">
+        <input type="email" name="email" placeholder="jouw@e-mail.nl" autocomplete="email" required>
+        <button type="submit" class="btn acc">Meld me aan <span class="arrow">→</span></button>
+      </div>
+      <p class="wm-fine">Je krijgt de deelnamelink per mail. Afmelden kan altijd met één klik.</p>
+    </form>
+
+    <div class="wm-done" id="wbDone">
+      <span class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <h3>Je bent aangemeld</h3>
+      <p>Mooi! Mia stuurt je de deelnamelink voor <b data-webinar-chosen>het webinar</b> per mail. Tot dan.</p>
+    </div>
+  </div>
+</div>
 
 <div id="site-foot"></div>
 
@@ -611,6 +705,27 @@
   setTimeout(run, SLOT_MS);
 })();
 </script>
+
+<script>
+(function(){
+  /* Modal open/sluiten. Datumkeuze + verzenden gebeurt in assets/webinar.js. */
+  var modal = document.getElementById('wbModal'),
+      open  = document.getElementById('wbOpen'),
+      close = document.getElementById('wbClose');
+  function setOpen(on){
+    if(!modal) return;
+    modal.classList.toggle('open', on);
+    modal.setAttribute('aria-hidden', on ? 'false' : 'true');
+    document.body.style.overflow = on ? 'hidden' : '';
+    if(on){ var inp = modal.querySelector('input[type=email]'); if(inp) inp.focus(); }
+  }
+  if(open)  open.addEventListener('click', function(){ setOpen(true); });
+  if(close) close.addEventListener('click', function(){ setOpen(false); });
+  if(modal) modal.addEventListener('click', function(e){ if(e.target === modal) setOpen(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setOpen(false); });
+})();
+</script>
+<script src="assets/webinar.js"></script>
 
 
 </body>

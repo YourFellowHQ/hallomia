@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webinar: kijk live mee met Mia | YourFellow HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<meta name="description" content="Kijk live mee met Mia in een gratis webinar van een half uur. Elke woensdag, kies de datum die jou uitkomt en meld je aan.">
+<link rel="canonical" href="https://hallomia.ai/webinar/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hallo Mia">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Webinar: kijk live mee met Mia">
+<meta property="og:description" content="Gratis live webinar van een half uur, elke woensdag. Kies je datum en meld je aan.">
+<meta property="og:url" content="https://hallomia.ai/webinar/">
+<meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Webinar: kijk live mee met Mia">
+<meta name="twitter:description" content="Gratis live webinar van een half uur, elke woensdag. Kies je datum en meld je aan.">
+<meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
+<style>
+/* ====== webinar · split layout (zelfde opzet als early-access) ====== */
+.eb{position:relative;}
+.eb-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:calc(100vh - 76px);}
+@media(max-width:880px){.eb-grid{grid-template-columns:1fr;min-height:0;}}
+
+/* ---- links: Mia's foto ---- */
+.eb-photo{position:relative;overflow:hidden;background:#1c1a16;}
+.eb-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.18);transform-origin:50% 36%;}
+@media(max-width:880px){.eb-photo{aspect-ratio:4/3;}}
+@media(max-width:520px){.eb-photo{aspect-ratio:1/1;}}
+.eb-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(20,17,12,0.62),transparent 42%);}
+.eb-tag{position:absolute;z-index:2;left:32px;bottom:30px;display:flex;align-items:center;gap:12px;color:#fff;}
+@media(max-width:520px){.eb-tag{left:20px;bottom:20px;}}
+.eb-tag .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 4px rgba(14,156,134,0.35);flex:none;}
+.eb-tag .who{font-weight:700;font-size:17px;letter-spacing:-0.01em;line-height:1.1;}
+.eb-tag .role{font-size:12.5px;font-weight:500;opacity:0.85;margin-top:2px;}
+
+/* ---- rechts: inhoud ---- */
+.eb-body{display:flex;flex-direction:column;justify-content:center;padding:64px 64px;position:relative;background:var(--surface);}
+@media(max-width:1100px){.eb-body{padding:56px 44px;}}
+@media(max-width:880px){.eb-body{padding:52px 28px 68px;}}
+@media(max-width:520px){.eb-body{padding:42px 20px 56px;}}
+.eb-body::before{content:"";position:absolute;z-index:0;width:520px;height:520px;border-radius:50%;
+  right:-180px;top:-160px;background:radial-gradient(circle,rgba(14,156,134,0.13),transparent 64%);pointer-events:none;}
+.eb-inner{position:relative;z-index:1;width:100%;max-width:520px;}
+
+.eb-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+.eb-eyebrow::before{content:"";width:22px;height:1.5px;background:var(--accent);display:inline-block;}
+.eb h1{font-size:clamp(38px,5vw,60px);font-weight:600;letter-spacing:-0.04em;line-height:1.0;
+  margin:18px 0 0;text-wrap:balance;}
+.eb h1 em{font-style:normal;color:var(--accent);}
+.eb-lead{margin:18px 0 0;font-size:clamp(16px,1.5vw,18px);color:var(--ink-2);line-height:1.6;max-width:46ch;text-wrap:pretty;}
+.eb-lead b{color:var(--ink);font-weight:600;}
+
+.eb-pick-h{margin:30px 0 12px;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.eb .wb-dates{max-height:300px;overflow:auto;padding-right:3px;}
+
+.eb-form{margin:22px 0 0;display:flex;flex-direction:column;gap:11px;}
+.eb-row{display:flex;gap:10px;}
+@media(max-width:520px){.eb-row{flex-direction:column;}}
+.eb-row input{flex:1;font-family:inherit;font-size:16px;color:var(--ink);background:var(--bg);
+  border:1px solid var(--line-2);border-radius:10px;padding:15px 17px;transition:border-color .15s,box-shadow .15s;}
+.eb-row input::placeholder{color:var(--ink-mute);}
+.eb-row input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+.eb-row .btn{padding:15px 24px;font-size:15.5px;white-space:nowrap;}
+.eb-fine{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:2px 0 0;}
+
+.eb-done{margin:24px 0 0;display:none;flex-direction:column;gap:10px;
+  background:var(--bg);border:1px solid var(--line);border-radius:15px;padding:26px 24px;}
+.eb-done.show{display:flex;}
+.eb-done .check{width:42px;height:42px;border-radius:50%;background:var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--accent);}
+.eb-done h3{font-size:20px;font-weight:600;letter-spacing:-0.01em;}
+.eb-done p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;max-width:42ch;}
+</style>
+<link rel="stylesheet" href="../assets/site-light.css">
+</head>
+<body data-depth="1" data-page="webinar">
+<div id="site-nav"></div>
+
+<main>
+  <section class="eb"><div class="eb-grid">
+
+    <!-- LINKS: Mia -->
+    <figure class="eb-photo">
+      <img src="../assets/mia-photo.jpg" alt="Mia, je marketing-collega">
+      <figcaption class="eb-tag">
+        <span class="dot"></span>
+        <span><span class="who">Mia</span><br><span class="role">je marketing-collega</span></span>
+      </figcaption>
+    </figure>
+
+    <!-- RECHTS: inhoud -->
+    <div class="eb-body"><div class="eb-inner">
+      <span class="eb-eyebrow">Live webinar</span>
+      <h1>Kijk <em>live</em> mee.</h1>
+      <p class="eb-lead">In ongeveer een half uur laat ik je zien hoe ik met je meekijk en voorstellen voor je klaarzet. Stel gerust al je vragen. <b>Elke woensdag</b>, kies hieronder de datum die jou uitkomt.</p>
+
+      <form class="eb-form" id="wbForm" data-webinar-form data-webinar-done="#wbDone" novalidate>
+        <div class="eb-pick-h">Kies een datum</div>
+        <div class="wb-dates" data-webinar-dates aria-label="Kies een datum"></div>
+        <div class="eb-row">
+          <input type="email" name="email" placeholder="jouw@e-mail.nl" autocomplete="email" required>
+          <button type="submit" class="btn acc">Meld me aan <span class="arrow">→</span></button>
+        </div>
+        <p class="eb-fine">Je krijgt de deelnamelink per mail. Afmelden kan altijd met één klik.</p>
+      </form>
+
+      <div class="eb-done" id="wbDone">
+        <span class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <h3>Je bent aangemeld</h3>
+        <p>Mooi! Ik stuur je de deelnamelink voor <b data-webinar-chosen>het webinar</b> per mail. Tot dan.</p>
+      </div>
+
+    </div></div>
+
+  </div></section>
+</main>
+
+<div id="site-foot"></div>
+<script src="../assets/site-hm.js"></script>
+<script src="../assets/webinar.js"></script>
+</body>
+</html>

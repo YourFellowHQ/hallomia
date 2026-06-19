@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Early access — Mia komt eraan | YourFellow HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<meta name="description" content="Mia komt eraan. Laat je e-mail achter en krijg als eerste toegang tot YourFellow HQ. De beta voor maar &euro;49 per maand.">
+<link rel="canonical" href="https://hallomia.ai/early-access/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hallo Mia">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Mia komt eraan · early access">
+<meta property="og:description" content="Laat je e-mail achter en wees er als eerste bij. De beta voor maar &euro;49 per maand.">
+<meta property="og:url" content="https://hallomia.ai/early-access/">
+<meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mia komt eraan · early access">
+<meta name="twitter:description" content="Laat je e-mail achter en wees er als eerste bij. De beta voor maar &euro;49 per maand.">
+<meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
+<style>
+/* ====== early-access · split variant ====== */
+.eb{position:relative;}
+.eb-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:calc(100vh - 76px);}
+@media(max-width:880px){.eb-grid{grid-template-columns:1fr;min-height:0;}}
+
+/* ---- left: Mia's photo ---- */
+.eb-photo{position:relative;overflow:hidden;background:#1c1a16;}
+.eb-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.18);transform-origin:50% 36%;}
+@media(max-width:880px){.eb-photo{aspect-ratio:4/3;}}
+@media(max-width:520px){.eb-photo{aspect-ratio:1/1;}}
+/* warm gradient at the bottom so the name tag sits cleanly */
+.eb-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(20,17,12,0.62),transparent 42%);}
+.eb-tag{position:absolute;z-index:2;left:32px;bottom:30px;display:flex;align-items:center;gap:12px;color:#fff;}
+@media(max-width:520px){.eb-tag{left:20px;bottom:20px;}}
+.eb-tag .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 4px rgba(14,156,134,0.35);flex:none;}
+.eb-tag .who{font-weight:700;font-size:17px;letter-spacing:-0.01em;line-height:1.1;}
+.eb-tag .role{font-size:12.5px;font-weight:500;opacity:0.85;margin-top:2px;}
+
+/* ---- right: content ---- */
+.eb-body{display:flex;flex-direction:column;justify-content:center;padding:72px 64px;position:relative;
+  background:var(--surface);}
+@media(max-width:1100px){.eb-body{padding:60px 44px;}}
+@media(max-width:880px){.eb-body{padding:56px 28px 72px;}}
+@media(max-width:520px){.eb-body{padding:44px 20px 60px;}}
+.eb-body::before{content:"";position:absolute;z-index:0;width:520px;height:520px;border-radius:50%;
+  right:-180px;top:-160px;background:radial-gradient(circle,rgba(14,156,134,0.13),transparent 64%);pointer-events:none;}
+.eb-inner{position:relative;z-index:1;width:100%;max-width:520px;}
+
+.eb-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+.eb-eyebrow::before{content:"";width:22px;height:1.5px;background:var(--accent);display:inline-block;}
+.eb h1{font-size:clamp(40px,5.4vw,68px);font-weight:600;letter-spacing:-0.04em;line-height:1.0;
+  margin:18px 0 0;text-wrap:balance;}
+.eb h1 em{font-style:normal;color:var(--accent);}
+.eb-lead{margin:20px 0 0;font-size:clamp(16px,1.5vw,18px);color:var(--ink-2);line-height:1.62;
+  max-width:46ch;text-wrap:pretty;}
+.eb-lead b{color:var(--ink);font-weight:600;}
+
+/* countdown — compact inline row */
+.eb-cd{display:flex;gap:10px;margin:34px 0 0;}
+.eb-cd .unit{flex:1 1 0;background:var(--bg);border:1px solid var(--line);border-radius:13px;
+  padding:16px 6px 12px;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.eb-cd .n{font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:600;
+  font-size:clamp(30px,4vw,42px);line-height:1;letter-spacing:-0.02em;color:var(--ink);font-variant-numeric:tabular-nums;}
+.eb-cd .l{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+
+.eb-form{margin:28px 0 0;display:flex;flex-direction:column;gap:11px;}
+.eb-row{display:flex;gap:10px;}
+@media(max-width:520px){.eb-row{flex-direction:column;}}
+.eb-row input{flex:1;font-family:inherit;font-size:16px;color:var(--ink);background:var(--bg);
+  border:1px solid var(--line-2);border-radius:10px;padding:15px 17px;transition:border-color .15s,box-shadow .15s;}
+.eb-row input::placeholder{color:var(--ink-mute);}
+.eb-row input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+.eb-row .btn{padding:15px 24px;font-size:15.5px;white-space:nowrap;}
+.eb-fine{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:2px 0 0;}
+.eb-fine b{color:var(--ink-2);font-weight:600;}
+
+.eb-done{margin:28px 0 0;display:none;flex-direction:column;gap:10px;
+  background:var(--bg);border:1px solid var(--line);border-radius:15px;padding:26px 24px;}
+.eb-done.show{display:flex;}
+.eb-done .check{width:42px;height:42px;border-radius:50%;background:var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--accent);}
+.eb-done h3{font-size:20px;font-weight:600;letter-spacing:-0.01em;}
+.eb-done p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;max-width:42ch;}
+
+.eb-live{display:none;margin:28px 0 0;}
+.eb-live.show{display:flex;}
+
+/* ---- demo / webinar CTA (altijd zichtbaar onder het formulier) ---- */
+.eb-demo{margin:30px 0 0;padding-top:26px;border-top:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;}
+.eb-demo-txt .k{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);}
+.eb-demo-txt p{margin:7px 0 0;font-size:14px;color:var(--ink-2);line-height:1.5;max-width:36ch;}
+.eb-demo-txt p b{color:var(--ink);font-weight:600;}
+.eb-demo .btn{white-space:nowrap;}
+
+/* ---- webinar-aanmeldvenster (modal) ---- */
+.wm-overlay{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+  padding:24px;background:rgba(20,17,12,0.55);backdrop-filter:blur(3px);}
+.wm-overlay.open{display:flex;}
+.wm-card{position:relative;width:100%;max-width:460px;background:var(--surface);border:1px solid var(--line);
+  border-radius:18px;padding:36px 34px;box-shadow:0 40px 90px -40px rgba(40,34,20,0.5);
+  max-height:calc(100vh - 48px);overflow:auto;}
+@media(max-width:520px){.wm-card{padding:30px 22px;}}
+.wm-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:9px;border:1px solid var(--line-2);
+  background:var(--bg);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;
+  transition:border-color .15s,color .15s;}
+.wm-close:hover{border-color:var(--accent);color:var(--ink);}
+.wm-card h2{font-size:26px;font-weight:600;letter-spacing:-0.025em;line-height:1.05;margin:14px 0 0;}
+.wm-card h2 em{font-style:normal;color:var(--accent);}
+.wm-lead{margin:12px 0 0;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
+.wm-when{margin:20px 0 0;display:flex;align-items:flex-start;gap:13px;padding:15px 16px;
+  background:var(--accent-soft);border:1px solid rgba(14,156,134,0.25);border-radius:12px;}
+.wm-when svg{width:20px;height:20px;color:var(--accent);flex:none;margin-top:1px;}
+.wm-when b{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;}
+.wm-when small{display:block;margin-top:3px;font-size:12.5px;color:var(--ink-soft);}
+.wm-card .eb-form{margin-top:20px;}
+
+/* ---- SharpSpring / Constant Contact embed, op de huisstijl afgestemd ---- */
+.ss-embed{margin-top:28px;}
+#ssEarlyForm input[type=text],#ssEarlyForm input[type=email],#ssEarlyForm input[type=tel],
+#ssEarlyForm textarea,#ssEarlyForm select{font-family:inherit;font-size:16px;color:var(--ink);
+  background:var(--bg);border:1px solid var(--line-2);border-radius:10px;padding:14px 16px;
+  width:100%;box-sizing:border-box;margin-top:6px;transition:border-color .15s,box-shadow .15s;}
+#ssEarlyForm input:focus,#ssEarlyForm textarea:focus,#ssEarlyForm select:focus{outline:none;
+  border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+#ssEarlyForm label,#ssEarlyForm .field-label{font-size:13px;font-weight:600;color:var(--ink-2);}
+#ssEarlyForm .__field{margin-bottom:14px;}
+#ssEarlyForm input[type=submit],#ssEarlyForm button[type=submit],#ssEarlyForm .sib-form-block button{
+  font-family:inherit;font-weight:600;font-size:15.5px;background:var(--accent);color:var(--on-accent);
+  border:0;border-radius:8px;padding:15px 26px;cursor:pointer;transition:background .15s,transform .15s;}
+#ssEarlyForm input[type=submit]:hover,#ssEarlyForm button[type=submit]:hover{background:#00e6b8;transform:translateY(-1px);}
+/* geruststelling: Mia neemt je mee door de aanmelding */
+.eb-reassure{display:flex;align-items:flex-start;gap:12px;margin-top:16px;padding:14px 16px;
+  background:var(--accent-soft);border-radius:12px;}
+.eb-reassure img{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none;}
+.eb-reassure p{margin:0;font-size:13.5px;line-height:1.5;color:var(--ink-2);}
+.eb-reassure b{color:var(--ink);font-weight:600;}
+</style>
+<link rel="stylesheet" href="../assets/site-light.css">
+</head>
+<body data-depth="1" data-page="early">
+<div id="site-nav"></div>
+
+<main>
+  <section class="eb"><div class="eb-grid">
+
+    <!-- LEFT: Mia -->
+    <figure class="eb-photo">
+      <img src="../assets/mia-photo.jpg" alt="Mia, je marketing-collega">
+      <figcaption class="eb-tag">
+        <span class="dot"></span>
+        <span><span class="who">Mia</span><br><span class="role">je marketing-collega</span></span>
+      </figcaption>
+    </figure>
+
+    <!-- RIGHT: content -->
+    <div class="eb-body"><div class="eb-inner">
+      <span class="eb-eyebrow">Early access</span>
+      <h1>Ik kom <em>eraan.</em></h1>
+      <p class="eb-lead">Nog heel even, dan kijk ik met je mee. Laat je e-mail achter, dan geef ik je als eerste een seintje zodra ik aan de slag kan. <b>In early access voor maar &euro;49 per maand.</b> Na de lancering gaat dit tarief omhoog, dus wie er nu bij is, zit het voordeligst.</p>
+
+      <!-- COUNTDOWN -->
+      <div class="eb-cd" id="cd" role="timer" aria-live="off">
+        <div class="unit"><span class="n" id="cd-d">00</span><span class="l">dagen</span></div>
+        <div class="unit"><span class="n" id="cd-h">00</span><span class="l">uren</span></div>
+        <div class="unit"><span class="n" id="cd-m">00</span><span class="l">min</span></div>
+        <div class="unit"><span class="n" id="cd-s">00</span><span class="l">sec</span></div>
+      </div>
+
+      <!-- AANMELDFORMULIER: echte Constant Contact (SharpSpring) embed.
+           Het formulier wordt door form.js in #ssEarlyForm geladen; de
+           verzending + bevestigingsmail lopen rechtstreeks via Constant Contact.
+           (config + script staan onderaan deze pagina) -->
+      <div id="ssEarlyForm" class="ss-embed"></div>
+
+      <!-- GERUSTSTELLING: Mia neemt je mee door de aanmelding -->
+      <div class="eb-reassure">
+        <img src="../assets/mia-photo.jpg" alt="Mia">
+        <p>Zodra je je registreert, neem ik je <b>stap voor stap mee door de aanmelding</b>. Je hoeft zelf niets uit te zoeken, ik wijs je de weg.</p>
+      </div>
+
+      <!-- LIVE -->
+      <div class="eb-live" id="eaLive">
+        <a class="btn acc lg" href="https://app.yourfellow.nl/">Ik ben live, kom binnen <span class="arrow">→</span></a>
+      </div>
+
+      <!-- DEMO / WEBINAR CTA -->
+      <div class="eb-demo">
+        <div class="eb-demo-txt">
+          <span class="k">Liever eerst zien?</span>
+          <p>Kom naar de live demo, elke woensdag.
+Eerstvolgende: Woensdag 22 juli, 14:00 uur.</p>
+        </div>
+        <button type="button" class="btn ghost" id="wbOpen">Meld je aan voor de demo <span class="arrow">→</span></button>
+      </div>
+
+    </div></div>
+
+  </div></section>
+</main>
+
+<!-- WEBINAR-AANMELDVENSTER -->
+<div class="wm-overlay" id="wbModal" aria-hidden="true">
+  <div class="wm-card" role="dialog" aria-modal="true" aria-labelledby="wbTitle">
+    <button class="wm-close" id="wbClose" type="button" aria-label="Sluiten">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <span class="eb-eyebrow">Demo-webinar</span>
+    <h2 id="wbTitle">Kijk <em>live</em> mee.</h2>
+    <p class="wm-lead">In ongeveer een half uur laat ik zien hoe ik met je meekijk en voorstellen voor je klaarzet. Kies hieronder een woensdag die jou uitkomt.</p>
+
+    <!-- alle komende sessies, klikbaar (gevuld door assets/webinar.js) -->
+    <form class="eb-form" id="wbForm" data-webinar-form data-webinar-done="#wbDone" novalidate>
+      <div class="wb-dates" data-webinar-dates aria-label="Kies een datum" style="max-height:230px;overflow:auto;padding-right:3px;margin-bottom:2px;"></div>
+      <div class="eb-row">
+        <input type="email" name="email" placeholder="jouw@e-mail.nl" autocomplete="email" required>
+        <button type="submit" class="btn acc">Meld me aan <span class="arrow">→</span></button>
+      </div>
+      <p class="eb-fine">Je krijgt de deelnamelink per mail. Afmelden kan altijd met één klik.</p>
+    </form>
+
+    <div class="eb-done" id="wbDone" style="margin-top:18px;">
+      <span class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+      <h3>Je bent aangemeld</h3>
+      <p>Mooi! Ik stuur je de deelnamelink voor <b data-webinar-chosen>de demo</b> per mail. Tot dan.</p>
+    </div>
+  </div>
+</div>
+
+<div id="site-foot"></div>
+<script src="../assets/site-hm.js"></script>
+<script>
+(function(){
+  var TARGET = new Date('2026-07-06T00:00:00');
+  var d=document.getElementById('cd-d'), h=document.getElementById('cd-h'),
+      m=document.getElementById('cd-m'), s=document.getElementById('cd-s');
+  var cd=document.getElementById('cd'), live=document.getElementById('eaLive');
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var diff = TARGET - new Date();
+    if(diff <= 0){
+      d.textContent=h.textContent=m.textContent=s.textContent='00';
+      clearInterval(timer);
+      // Timer afgelopen: Mia is live. Stuur door naar de live-pagina.
+      window.location.replace('../live/');
+      return;
+    }
+    var days = Math.floor(diff/86400000);
+    var hrs  = Math.floor(diff%86400000/3600000);
+    var mins = Math.floor(diff%3600000/60000);
+    var secs = Math.floor(diff%60000/1000);
+    d.textContent=pad(days); h.textContent=pad(hrs); m.textContent=pad(mins); s.textContent=pad(secs);
+  }
+  tick();
+  var timer = setInterval(tick, 1000);
+
+  /* ---- demo-webinar: alleen het venster openen/sluiten.
+     De datumkeuze en het versturen gebeuren in assets/webinar.js. ---- */
+  var modal = document.getElementById('wbModal'),
+      open  = document.getElementById('wbOpen'),
+      close = document.getElementById('wbClose');
+  function setOpen(on){
+    if(!modal) return;
+    modal.classList.toggle('open', on);
+    modal.setAttribute('aria-hidden', on ? 'false' : 'true');
+    document.body.style.overflow = on ? 'hidden' : '';
+    if(on){ var inp = modal.querySelector('input[type=email]'); if(inp) inp.focus(); }
+  }
+  if(open)  open.addEventListener('click', function(){ setOpen(true); });
+  if(close) close.addEventListener('click', function(){ setOpen(false); });
+  if(modal) modal.addEventListener('click', function(e){ if(e.target === modal) setOpen(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setOpen(false); });
+})();
+</script>
+<script src="../assets/webinar.js"></script>
+
+<!-- SharpSpring / Constant Contact: early access aanmeldformulier.
+     form.js plaatst het formulier in #ssEarlyForm (ss_form.target_id). -->
+<script type="text/javascript">
+    var ss_form = {'account': 'MzawMLE0MTGzAAA', 'formID': 'S0kzMjM1TEnWTTRLNdQ1SUkx1rVMNjLRNUgzMDRMSko2sjBMBQA'};
+    ss_form.width = '100%';
+    ss_form.domain = 'app-3QNTLCGLQ4.marketingautomation.services';
+    ss_form.target_id = 'ssEarlyForm'; // formulier in deze container laden
+    // ss_form.hidden = {'field_id': 'value'};
+    // ss_form.polling = true;
+</script>
+<script type="text/javascript" src="https://koi-3QNTLCGLQ4.marketingautomation.services/client/form.js?ver=2.0.1"></script>
+</body>
+</html>

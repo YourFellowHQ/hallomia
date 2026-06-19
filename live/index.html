@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mia is live | YourFellow HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<meta name="description" content="Mia is live. Meld je aan en ga direct aan de slag met je nieuwe marketing-collega, of plan eerst een kennismaking in.">
+<link rel="canonical" href="https://hallomia.ai/live/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hallo Mia">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Mia is live">
+<meta property="og:description" content="Meld je aan en ga direct aan de slag, of plan eerst een kennismaking in.">
+<meta property="og:url" content="https://hallomia.ai/live/">
+<meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mia is live">
+<meta name="twitter:description" content="Meld je aan en ga direct aan de slag, of plan eerst een kennismaking in.">
+<meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
+<style>
+/* ====== live · split variant (zusje van early-access) ====== */
+.lb{position:relative;}
+.lb-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:calc(100vh - 76px);}
+@media(max-width:880px){.lb-grid{grid-template-columns:1fr;min-height:0;}}
+
+/* ---- left: Mia's photo ---- */
+.lb-photo{position:relative;overflow:hidden;background:#1c1a16;}
+.lb-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.18);transform-origin:50% 36%;}
+@media(max-width:880px){.lb-photo{aspect-ratio:4/3;}}
+@media(max-width:520px){.lb-photo{aspect-ratio:1/1;}}
+.lb-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(20,17,12,0.62),transparent 42%);}
+.lb-tag{position:absolute;z-index:2;left:32px;bottom:30px;display:flex;align-items:center;gap:12px;color:#fff;}
+@media(max-width:520px){.lb-tag{left:20px;bottom:20px;}}
+.lb-tag .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 4px rgba(14,156,134,0.35);flex:none;animation:lbPulse 2s ease-in-out infinite;}
+@keyframes lbPulse{0%,100%{box-shadow:0 0 0 4px rgba(14,156,134,0.35);}50%{box-shadow:0 0 0 9px rgba(14,156,134,0.10);}}
+@media (prefers-reduced-motion: reduce){.lb-tag .dot{animation:none;}}
+.lb-tag .who{font-weight:700;font-size:17px;letter-spacing:-0.01em;line-height:1.1;}
+.lb-tag .role{font-size:12.5px;font-weight:500;opacity:0.85;margin-top:2px;}
+
+/* ---- right: content ---- */
+.lb-body{display:flex;flex-direction:column;justify-content:center;padding:72px 64px;position:relative;
+  background:var(--surface);}
+@media(max-width:1100px){.lb-body{padding:60px 44px;}}
+@media(max-width:880px){.lb-body{padding:56px 28px 72px;}}
+@media(max-width:520px){.lb-body{padding:44px 20px 60px;}}
+.lb-body::before{content:"";position:absolute;z-index:0;width:520px;height:520px;border-radius:50%;
+  right:-180px;top:-160px;background:radial-gradient(circle,rgba(14,156,134,0.13),transparent 64%);pointer-events:none;}
+.lb-inner{position:relative;z-index:1;width:100%;max-width:520px;}
+
+.lb-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+.lb-eyebrow .live-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);flex:none;animation:lbPulse2 2s ease-in-out infinite;}
+@keyframes lbPulse2{0%,100%{box-shadow:0 0 0 3px var(--accent-soft);}50%{box-shadow:0 0 0 7px rgba(14,156,134,0.05);}}
+@media (prefers-reduced-motion: reduce){.lb-eyebrow .live-dot{animation:none;}}
+.lb h1{font-size:clamp(40px,5.4vw,68px);font-weight:600;letter-spacing:-0.04em;line-height:1.0;
+  margin:18px 0 0;text-wrap:balance;}
+.lb h1 em{font-style:normal;color:var(--accent);}
+.lb-lead{margin:20px 0 0;font-size:clamp(16px,1.5vw,18px);color:var(--ink-2);line-height:1.62;
+  max-width:46ch;text-wrap:pretty;}
+.lb-lead b{color:var(--ink);font-weight:600;}
+
+/* ---- registratie-formulier ---- */
+.lb-form{margin:32px 0 0;display:flex;flex-direction:column;gap:11px;}
+.lb-row{display:flex;gap:10px;}
+@media(max-width:520px){.lb-row{flex-direction:column;}}
+.lb-row input{flex:1;font-family:inherit;font-size:16px;color:var(--ink);background:var(--bg);
+  border:1px solid var(--line-2);border-radius:10px;padding:15px 17px;transition:border-color .15s,box-shadow .15s;}
+.lb-row input::placeholder{color:var(--ink-mute);}
+.lb-row input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+.lb-row .btn{padding:15px 24px;font-size:15.5px;white-space:nowrap;}
+.lb-fine{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:2px 0 0;}
+.lb-fine b{color:var(--ink-2);font-weight:600;}
+.lb-form .btn.lg{width:100%;}
+.lb-or{display:flex;align-items:center;gap:14px;margin:4px 0;color:var(--ink-mute);
+  font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;}
+.lb-or::before,.lb-or::after{content:"";flex:1;height:1px;background:var(--line);}
+
+/* ---- succes: twee routes ---- */
+.lb-done{margin:32px 0 0;display:none;flex-direction:column;gap:18px;
+  background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:28px 26px;}
+.lb-done.show{display:flex;}
+.lb-done .head{display:flex;align-items:flex-start;gap:14px;}
+.lb-done .check{width:42px;height:42px;border-radius:50%;background:var(--accent-soft);flex:none;
+  display:flex;align-items:center;justify-content:center;color:var(--accent);}
+.lb-done h3{font-size:21px;font-weight:600;letter-spacing:-0.01em;}
+.lb-done .head p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;max-width:42ch;margin-top:4px;}
+.lb-routes{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+@media(max-width:520px){.lb-routes{grid-template-columns:1fr;}}
+.lb-route{display:flex;flex-direction:column;gap:5px;padding:16px 17px;border-radius:12px;
+  border:1px solid var(--line-2);background:var(--surface);transition:border-color .15s,transform .15s,background .15s;}
+.lb-route:hover{border-color:var(--accent);transform:translateY(-1px);}
+.lb-route .rt{font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);display:flex;align-items:center;gap:7px;}
+.lb-route .rt .arrow{color:var(--accent);}
+.lb-route .rd{font-size:12.5px;color:var(--ink-soft);line-height:1.45;}
+.lb-route.primary{background:var(--accent-soft);border-color:rgba(14,156,134,0.3);}
+
+/* ---- vertrouwens-rij ---- */
+.lb-trust{margin:26px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;}
+.lb-trust span{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-soft);}
+.lb-trust svg{width:15px;height:15px;color:var(--accent);flex:none;}
+</style>
+<link rel="stylesheet" href="../assets/site-light.css">
+</head>
+<body data-depth="1" data-page="live">
+<div id="site-nav"></div>
+
+<main>
+  <section class="lb"><div class="lb-grid">
+
+    <!-- LEFT: Mia -->
+    <figure class="lb-photo">
+      <img src="../assets/mia-photo.jpg" alt="Mia, je marketing-collega">
+      <figcaption class="lb-tag">
+        <span class="dot"></span>
+        <span><span class="who">Mia</span><br><span class="role">je marketing-collega</span></span>
+      </figcaption>
+    </figure>
+
+    <!-- RIGHT: content -->
+    <div class="lb-body"><div class="lb-inner">
+      <span class="lb-eyebrow"><span class="live-dot"></span> We zijn live</span>
+      <h1>Ik ben <em>live.</em></h1>
+      <p class="lb-lead">Het wachten is voorbij. Vanaf nu kijk ik met je mee. Meld je aan, dan kom je in aanmerking voor een <b>persoonlijke kennismaking</b> waarin ik je op weg help. Liever meteen los? Registreer dan direct in de app.</p>
+
+      <!-- AANMELDEN = kennismaking, gekoppeld via de centrale CRM-laag in assets/site-hm.js.
+           Versturen naar Constant Contact + de e-mailflow (welkomstmail → kennismaking)
+           regel je daar op één plek. Tot dat ingevuld is: demo-modus. -->
+      <form class="lb-form" id="regForm" data-crm-form data-crm-done="#regDone" data-crm-source="self-serve" data-crm-list="early-access" novalidate>
+        <div class="lb-row">
+          <input type="email" id="regEmail" name="email" placeholder="jouw@e-mail.nl" autocomplete="email" required>
+          <button type="submit" class="btn acc">Aanmelden <span class="arrow">&rarr;</span></button>
+        </div>
+        <p class="lb-fine">Je meldt je aan voor een <b>gratis kennismaking</b>. Daarna de beta voor &euro;49 per maand, maandelijks opzegbaar.</p>
+        <div class="lb-or"><span>of</span></div>
+        <a class="btn ghost lg" href="https://app.yourfellow.nl/">Direct registreren in de app <span class="arrow">&rarr;</span></a>
+      </form>
+
+      <!-- SUCCES -->
+      <div class="lb-done" id="regDone">
+        <div class="head">
+          <span class="check"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <div>
+            <h3>Top, je staat genoteerd!</h3>
+            <p>Ik heb je een bevestigingsmail gestuurd, klik even op de link. Daarna kom je in aanmerking voor een persoonlijke kennismaking en neem ik snel contact op. Wil je niet wachten?</p>
+          </div>
+        </div>
+        <a class="btn acc lg" href="https://app.yourfellow.nl/">Meteen aan de slag in de app <span class="arrow">&rarr;</span></a>
+      </div>
+
+      <!-- vertrouwens-rij -->
+      <div class="lb-trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Direct toegang</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Geen setup-kosten</span>
+      </div>
+
+    </div></div>
+
+  </div></section>
+</main>
+
+<div id="site-foot"></div>
+<script src="../assets/site-hm.js"></script>
+</body>
+</html>

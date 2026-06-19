@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRM-koppeling, wat er is gebeurd en wat er nog moet</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDFBF8; --surface:#FFFFFF; --surface-2:#F4EFE6;
+  --line:#EDE8DD; --line-2:#DED7C9;
+  --ink:#211E18; --ink-2:#47433A; --ink-soft:#76705F; --ink-mute:#9A9384;
+  --accent:#0E9C86; --accent-deep:#0A7E6D; --accent-soft:rgba(14,156,134,0.12);
+  --amber:#B57A12; --amber-soft:rgba(181,122,18,0.10);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+.page{max-width:840px;margin:0 auto;padding:64px 32px 100px;}
+@media(max-width:600px){.page{padding:40px 20px 72px;}}
+
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:11.5px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+h1{font-size:clamp(30px,4.4vw,42px);font-weight:600;letter-spacing:-0.03em;line-height:1.05;margin:16px 0 0;text-wrap:balance;}
+.sub{margin:16px 0 0;font-size:17px;color:var(--ink-2);line-height:1.6;max-width:60ch;text-wrap:pretty;}
+.meta{margin:22px 0 0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--ink-mute);
+  display:flex;flex-wrap:wrap;gap:6px 20px;}
+
+section{margin:52px 0 0;}
+.sh{display:flex;align-items:center;gap:13px;margin-bottom:22px;}
+.sh .n{width:30px;height:30px;border-radius:8px;background:var(--ink);color:var(--bg);flex:none;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;}
+.sh h2{font-size:22px;font-weight:600;letter-spacing:-0.02em;}
+.sh.acc .n{background:var(--accent);color:#fff;}
+.sh.amber .n{background:var(--amber);color:#fff;}
+
+ul.checks{list-style:none;display:flex;flex-direction:column;gap:11px;}
+ul.checks li{display:flex;gap:13px;align-items:flex-start;padding:15px 18px;background:var(--surface);
+  border:1px solid var(--line);border-radius:12px;}
+ul.checks li .ic{flex:none;width:21px;height:21px;margin-top:1px;}
+ul.checks li b{font-weight:600;color:var(--ink);}
+ul.checks li .t{font-size:14.5px;color:var(--ink-2);line-height:1.55;}
+ul.checks li .t small{display:block;margin-top:3px;font-size:12.5px;color:var(--ink-soft);}
+code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:0.86em;background:var(--surface-2);
+  border:1px solid var(--line-2);border-radius:5px;padding:1px 6px;color:var(--accent-deep);}
+
+/* numbered todo cards */
+ol.steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:12px;}
+ol.steps li{counter-increment:s;display:flex;gap:15px;align-items:flex-start;padding:16px 18px;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;}
+ol.steps li::before{content:counter(s);flex:none;width:26px;height:26px;border-radius:7px;
+  background:var(--accent-soft);color:var(--accent-deep);font-weight:700;font-size:14px;
+  display:flex;align-items:center;justify-content:center;margin-top:1px;}
+ol.steps li .t{font-size:14.5px;color:var(--ink-2);line-height:1.55;}
+ol.steps li .t b{color:var(--ink);font-weight:600;}
+ol.steps li .t small{display:block;margin-top:3px;font-size:12.5px;color:var(--ink-soft);}
+
+/* paul amber list */
+ul.paul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+ul.paul li{display:flex;gap:13px;align-items:flex-start;padding:15px 18px;background:var(--amber-soft);
+  border:1px solid rgba(181,122,18,0.25);border-radius:12px;}
+ul.paul li .num{flex:none;width:22px;height:22px;border-radius:6px;background:var(--amber);color:#fff;
+  font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+ul.paul li .t{font-size:14.5px;color:var(--ink-2);line-height:1.55;}
+ul.paul li .t b{color:var(--ink);font-weight:600;}
+ul.paul li .t small{display:block;margin-top:3px;font-size:12.5px;color:var(--ink-soft);}
+
+.callout{margin:18px 0 0;padding:16px 18px;border-radius:12px;border:1px solid var(--line-2);
+  background:var(--surface-2);font-size:13.5px;color:var(--ink-2);line-height:1.6;}
+.callout b{color:var(--ink);font-weight:600;}
+.callout .lab{display:inline-block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;
+  font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:5px;}
+
+.filebar{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12.5px;color:var(--ink-soft);
+  background:var(--surface-2);border:1px solid var(--line-2);border-radius:8px;padding:9px 13px;
+  display:inline-flex;align-items:center;gap:9px;margin-top:4px;}
+.filebar svg{width:14px;height:14px;color:var(--accent);flex:none;}
+
+hr.div{border:0;height:1px;background:var(--line);margin:0;}
+.foot{margin:60px 0 0;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-mute);line-height:1.6;}
+
+@media print{
+  body{background:#fff;}
+  ul.checks li,ol.steps li,ul.paul li,.callout{break-inside:avoid;}
+  section{break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <span class="eyebrow"><span class="dot"></span> Interne notitie</span>
+  <h1>CRM-koppeling: wat er gebeurd is en wat er nog moet</h1>
+  <p class="sub">Korte overdracht voor de aanmeldformulieren op hallomia.ai en de koppeling met Constant Contact (Lead Gen &amp; CRM, voorheen SharpSpring). De site werkt nu al; de echte verzending zet je aan met vier gegevens.</p>
+  <div class="meta">
+    <span>Versie 1 &middot; 18 juni 2026</span>
+    <span>Tool: Constant Contact (ex-SharpSpring)</span>
+    <span>Formulieren: early-access, live, aanmelden</span>
+  </div>
+
+  <!-- 1. WAT IS ER GEBEURD -->
+  <section>
+    <div class="sh acc"><span class="n">1</span><h2>Wat er al gedaan is</h2></div>
+    <ul class="checks">
+      <li>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#0E9C86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 9 11 14.5 8 11.5"/></svg>
+        <span class="t"><b>Eén centrale koppel-laag gebouwd.</b> Alle aanmeldformulieren lopen via dezelfde code in <code>assets/site-hm.js</code>. Je stelt de koppeling op één plek in, niet per pagina.</span>
+      </li>
+      <li>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#0E9C86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 9 11 14.5 8 11.5"/></svg>
+        <span class="t"><b>Drie formulieren aangesloten:</b> de wachtlijst (<code>/early-access/</code>), de live-pagina (<code>/live/</code>) en de aanmeldpagina (<code>/aanmelden/</code>). Elk stuurt een bron-tag mee (nu <code>self-serve</code>).</span>
+      </li>
+      <li>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#0E9C86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 9 11 14.5 8 11.5"/></svg>
+        <span class="t"><b>Demo-modus tot je koppelt.</b> Zolang de endpoint leeg is, tonen formulieren netjes hun bevestiging zonder iets te versturen. De site is dus nu al toonbaar en breekt niet.</span>
+      </li>
+      <li>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#0E9C86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 9 11 14.5 8 11.5"/></svg>
+        <span class="t"><b>GTM voorbereid.</b> Container <code>GTM-MNL39P7S</code> staat klaar in <code>site-hm.js</code> en elk formulier vuurt een event <code>crm_signup</code> af. GTM laadt pas als je het aanzet (staat nu uit i.v.m. cookie/consent).</span>
+      </li>
+      <li>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#0E9C86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 9 11 14.5 8 11.5"/></svg>
+        <span class="t"><b>Double opt-in verwerkt in de teksten.</b> De wachtlijst-bevestigingen zeggen nu "check je mail om te bevestigen", passend bij de bevestigingsmail (Mail 1).</span>
+      </li>
+      <li>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#0E9C86" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 9 11 14.5 8 11.5"/></svg>
+        <span class="t"><b>Live-pagina + timer-doorverwijzing.</b> Als de countdown op 0 staat, gaat <code>/early-access/</code> automatisch naar <code>/live/</code>. De header-knop wisselt op de livegang van "Early access" naar "Registreren" + "Kennismaking".</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 2. WAT JIJ IN CONSTANT CONTACT DOET -->
+  <section>
+    <div class="sh"><span class="n">2</span><h2>Wat jij in Constant Contact (SharpSpring) doet</h2></div>
+    <ol class="steps">
+      <li><span class="t"><b>Bouw het aanmeldformulier</b> in Constant Contact met de velden e-mail, voornaam en het bestaande veld "Waar wil je mee aan de slag". <small>Dit levert de form-ID, endpoint-URL en de exacte veldnamen op, precies de vier dingen die de site nodig heeft.</small></span></li>
+      <li><span class="t"><b>Zet double opt-in aan</b> zodat de bevestigingsmail (Mail 1) automatisch uitgaat. Iemand komt pas op de lijst na de klik. <small>Sluit aan op de site-tekst "check je mail om te bevestigen".</small></span></li>
+      <li><span class="t"><b>Maak de lijsten</b> uit het bouwdoc: Early access wachtlijst, Self-serve met rust, Self-serve op weg helpen, Bestaande klanten, en de Koude lijst (strikt gescheiden).</span></li>
+      <li><span class="t"><b>Hang de e-mailflows</b> aan de juiste lijst: bevestiging, welkomstmail met keuzevraag, countdown/livegang, welkom na account, en de win-backs. De teksten staan in je bouwdoc.</span></li>
+      <li><span class="t"><b>Geef mij (of plak zelf) de vier gegevens.</b> Daarna staat het in één plek in <code>site-hm.js</code> en verstuurt de hele site direct echt. <small>Zie het kader hieronder.</small></span></li>
+    </ol>
+
+    <div class="callout">
+      <span class="lab">De 4 gegevens, in te vullen in assets/site-hm.js (blok "var CRM")</span>
+      <b>endpoint</b> (de form-URL waar de aanmelding heen gaat) &middot; <b>formId</b> &middot; <b>trackingId</b> &middot; <b>fieldMap</b> (de exacte veldnamen zoals Constant Contact ze verwacht). Meer hoeft niet; de rest is al bedraad.
+    </div>
+  </section>
+
+  <!-- 3. WAT HANDIG IS VOOR PAUL -->
+  <section>
+    <div class="sh amber"><span class="n">3</span><h2>Wat handig is voor Paul (zet de site live)</h2></div>
+    <ul class="paul">
+      <li><span class="num">A</span><span class="t"><b>Eén regel verwijderen vóór upload.</b> Onderaan <code>assets/site-hm.js</code> staat een blok <code>previewLinkFix</code> met de tekst "VERWIJDER DIT BLOK vóór het uploaden". Dat is alleen voor de voorvertoning; weghalen geeft strakke URL's (<code>/mia/</code> in plaats van <code>/mia/index.html</code>).</span></li>
+      <li><span class="num">B</span><span class="t"><b>Clean-URL hosting (al goed op GitHub Pages).</b> Elke sectie is een map met <code>index.html</code>. GitHub Pages opent die vanzelf, dus de links en de timer-doorverwijzing naar <code>/live/</code> werken zonder extra config.</span></li>
+      <li><span class="num">C</span><span class="t"><b>Registratie-URL van de app aanleveren.</b> De knoppen "Maak je account aan" en "Registreren" wijzen nu naar <code>app.yourfellow.nl</code>. Klopt die, of moet er een specifieke registratiepagina in?</span></li>
+      <li><span class="num">D</span><span class="t"><b>Livegang-datum bevestigen.</b> De countdown en de header-omschakeling staan op <code>2026-07-06</code>. Eén datum aanpassen in <code>early-access/index.html</code> (en in <code>site-hm.js</code> voor de header) als die wijzigt.</span></li>
+      <li><span class="num">E</span><span class="t"><b>Form-gegevens uit het CRM doorgeven</b> (als Paul de Constant Contact-kant beheert): form-ID, endpoint-URL, veldnamen en tracking-ID. Dat zijn dezelfde vier als hierboven.</span></li>
+      <li><span class="num">F</span><span class="t"><b>App-signalen voor later</b> (geen blokkade voor livegang): wanneer is een account aangemaakt, wat telt als actief gebruik, hoe zie je inactiviteit, en de betaalstatus. Nodig om Bord 2 en de win-backs automatisch te laten lopen.</span></li>
+      <li><span class="num">G</span><span class="t"><b>Supabase-regio (EU?) bevestigen.</b> Claim "EU/AVG" pas op de site als dat zeker is. GTM staat daarom nu nog uit tot de cookie/consent rond is.</span></li>
+    </ul>
+  </section>
+
+  <!-- 4. BESTANDEN -->
+  <section>
+    <div class="sh"><span class="n">4</span><h2>Waar het zit</h2></div>
+    <ul class="checks">
+      <li>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#76705F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+        <span class="t"><b>assets/site-hm.js</b> <small>De CRM-config (blok "var CRM"), GTM, en de gedeelde formulier-handler. Hier vul je de vier gegevens in.</small></span>
+      </li>
+      <li>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#76705F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+        <span class="t"><b>early-access/ &middot; live/ &middot; aanmelden/</b> <small>De drie formulieren, elk met <code>data-crm-form</code> en een bron-tag. Geen losse koppel-code meer per pagina.</small></span>
+      </li>
+    </ul>
+  </section>
+
+  <p class="foot">Niets aan de formulieren of teksten breekt zolang de koppeling nog niet staat: de site draait in demo-modus. Zodra de vier gegevens erin staan, gaat alles in één keer echt versturen. Vragen? Dan kijken we er samen even naar.</p>
+
+</div>
+</body>
+</html>
