@@ -59,8 +59,8 @@
   var isLive = new Date() >= LIVE_DATE;
   var navCTA = isLive
     ? '<a class="cta ghost" href="'+R+'webinar/">Webinar</a>'
-      + '<a class="cta ghost" href="'+R+'live/">Kennismaking</a>'
-      + '<a class="cta" href="https://app.yourfellow.nl/">Registreren</a>'
+      + '<a class="cta ghost" href="'+R+'contact/">Contact</a>'
+      + '<a class="cta" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>'
     : '<a class="cta ghost" href="'+R+'webinar/">Webinar</a>'
       + '<a class="cta" href="'+R+'early-access/">Early access</a>';
 
@@ -103,7 +103,7 @@
     +   '<div class="top">'
     +     '<div class="about">'
     +       BRAND
-    +       '<p class="hq-note">Hallo Mia is onze kennismaking. Het platform heet straks <b>YourFellow HQ</b>, op <a href="https://app.yourfellow.nl/" target="_blank" rel="noopener">app.yourfellow.nl</a>, met Mia als je assistent.</p>'
+    +       '<p class="hq-note">Hallo Mia is onze kennismaking. Het platform heet straks <b>YourFellow HQ</b>, op <a href="https://app.yourfellow.nl/?bron=site-footer" target="_blank" rel="noopener">app.yourfellow.nl</a>, met Mia als je assistent.</p>'
     +       '<div class="award">Gemaakt door <a class="yflink" href="https://yourfellow.nl/" target="_blank" rel="noopener">YourFellow</a>, performance marketing uit Zevenbergen</div>'
     +     '</div>'
     +     '<div class="col"><h5>Product</h5>'
@@ -120,6 +120,7 @@
     +     '</div>'
     +     '<div class="col"><h5>Aan de slag</h5>'
     +       '<a href="'+R+'early-access/">Schrijf je in</a>'
+    +       '<a href="'+R+'contact/">Contact</a>'
     +       '<a href="'+R+'aanmelden/">Inloggen</a>'
     +       '<a href="'+R+'vragen/#privacy">Privacy &amp; data</a>'
     +     '</div>'

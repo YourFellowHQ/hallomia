@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact opnemen | YourFellow HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<meta name="description" content="Even sparren of een vraag? Stuur ons een bericht, dan reageert het team van YourFellow HQ snel. Of mail rechtstreeks naar info@hallomia.ai.">
+<link rel="canonical" href="https://hallomia.ai/contact/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hallo Mia">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Contact opnemen">
+<meta property="og:description" content="Even sparren of een vraag? Stuur ons een bericht, dan reageren we snel.">
+<meta property="og:url" content="https://hallomia.ai/contact/">
+<meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact opnemen">
+<meta name="twitter:description" content="Even sparren of een vraag? Stuur ons een bericht, dan reageren we snel.">
+<meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
+<style>
+/* ====== contact · split variant (zusje van early-access / live) ====== */
+.cb{position:relative;}
+.cb-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:calc(100vh - 76px);}
+@media(max-width:880px){.cb-grid{grid-template-columns:1fr;min-height:0;}}
+
+/* ---- left: Mia's photo ---- */
+.cb-photo{position:relative;overflow:hidden;background:#1c1a16;}
+.cb-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;transform:scale(1.18);transform-origin:50% 36%;}
+@media(max-width:880px){.cb-photo{aspect-ratio:4/3;}}
+@media(max-width:520px){.cb-photo{aspect-ratio:1/1;}}
+.cb-photo::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(20,17,12,0.62),transparent 42%);}
+.cb-tag{position:absolute;z-index:2;left:32px;bottom:30px;display:flex;align-items:center;gap:12px;color:#fff;}
+@media(max-width:520px){.cb-tag{left:20px;bottom:20px;}}
+.cb-tag .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 4px rgba(14,156,134,0.35);flex:none;}
+.cb-tag .who{font-weight:700;font-size:17px;letter-spacing:-0.01em;line-height:1.1;}
+.cb-tag .role{font-size:12.5px;font-weight:500;opacity:0.85;margin-top:2px;}
+
+/* ---- right: content ---- */
+.cb-body{display:flex;flex-direction:column;justify-content:center;padding:72px 64px;position:relative;
+  background:var(--surface);}
+@media(max-width:1100px){.cb-body{padding:60px 44px;}}
+@media(max-width:880px){.cb-body{padding:56px 28px 72px;}}
+@media(max-width:520px){.cb-body{padding:44px 20px 60px;}}
+.cb-body::before{content:"";position:absolute;z-index:0;width:520px;height:520px;border-radius:50%;
+  right:-180px;top:-160px;background:radial-gradient(circle,rgba(14,156,134,0.13),transparent 64%);pointer-events:none;}
+.cb-inner{position:relative;z-index:1;width:100%;max-width:520px;}
+
+.cb-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+.cb-eyebrow::before{content:"";width:22px;height:1.5px;background:var(--accent);display:inline-block;}
+.cb h1{font-size:clamp(40px,5.4vw,62px);font-weight:600;letter-spacing:-0.04em;line-height:1.0;
+  margin:18px 0 0;text-wrap:balance;}
+.cb h1 em{font-style:normal;color:var(--accent);}
+.cb-lead{margin:20px 0 0;font-size:clamp(16px,1.5vw,18px);color:var(--ink-2);line-height:1.62;
+  max-width:46ch;text-wrap:pretty;}
+.cb-lead b{color:var(--ink);font-weight:600;}
+
+/* ---- formulier ---- */
+.cb-form{margin:30px 0 0;display:flex;flex-direction:column;gap:11px;}
+.cb-row{display:flex;gap:10px;}
+@media(max-width:520px){.cb-row{flex-direction:column;}}
+.cb-form input,.cb-form textarea{flex:1;width:100%;box-sizing:border-box;font-family:inherit;font-size:16px;
+  color:var(--ink);background:var(--bg);border:1px solid var(--line-2);border-radius:10px;padding:15px 17px;
+  transition:border-color .15s,box-shadow .15s;}
+.cb-form textarea{min-height:120px;resize:vertical;line-height:1.5;}
+.cb-form input::placeholder,.cb-form textarea::placeholder{color:var(--ink-mute);}
+.cb-form input:focus,.cb-form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+.cb-form .btn{padding:15px 24px;font-size:15.5px;white-space:nowrap;align-self:flex-start;}
+.cb-fine{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:2px 0 0;}
+.cb-fine b{color:var(--ink-2);font-weight:600;}
+.cb-fine a{color:var(--accent);font-weight:600;text-decoration:none;}
+.cb-fine a:hover{text-decoration:underline;}
+
+/* ---- succes ---- */
+.cb-done{margin:30px 0 0;display:none;flex-direction:column;gap:10px;
+  background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:28px 26px;}
+.cb-done.show{display:flex;}
+.cb-done .check{width:42px;height:42px;border-radius:50%;background:var(--accent-soft);flex:none;
+  display:flex;align-items:center;justify-content:center;color:var(--accent);}
+.cb-done h3{font-size:21px;font-weight:600;letter-spacing:-0.01em;}
+.cb-done p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;max-width:42ch;}
+
+/* ---- Constant Contact / SharpSpring embed, op de huisstijl afgestemd ---- */
+.ss-embed{margin:30px 0 0;}
+#ssContactForm input[type=text],#ssContactForm input[type=email],#ssContactForm input[type=tel],
+#ssContactForm textarea,#ssContactForm select{font-family:inherit;font-size:16px;color:var(--ink);
+  background:var(--bg);border:1px solid var(--line-2);border-radius:10px;padding:14px 16px;
+  width:100%;box-sizing:border-box;margin-top:6px;transition:border-color .15s,box-shadow .15s;}
+#ssContactForm textarea{min-height:120px;resize:vertical;line-height:1.5;}
+#ssContactForm input:focus,#ssContactForm textarea:focus,#ssContactForm select:focus{outline:none;
+  border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+#ssContactForm label,#ssContactForm .field-label{font-size:13px;font-weight:600;color:var(--ink-2);}
+#ssContactForm .__field{margin-bottom:14px;}
+#ssContactForm input[type=submit],#ssContactForm button[type=submit],#ssContactForm .sib-form-block button{
+  font-family:inherit;font-weight:600;font-size:15.5px;background:var(--accent);color:var(--on-accent);
+  border:0;border-radius:8px;padding:15px 26px;cursor:pointer;transition:background .15s,transform .15s;}
+#ssContactForm input[type=submit]:hover,#ssContactForm button[type=submit]:hover{background:#00e6b8;transform:translateY(-1px);}
+
+/* ---- directe routes onder het formulier ---- */
+.cb-alt{margin:30px 0 0;padding-top:24px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;}
+.cb-alt a{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;
+  color:var(--ink-2);text-decoration:none;transition:color .15s;}
+.cb-alt a:hover{color:var(--accent);}
+.cb-alt svg{width:16px;height:16px;color:var(--accent);flex:none;}
+</style>
+<link rel="stylesheet" href="../assets/site-light.css">
+</head>
+<body data-depth="1" data-page="contact">
+<div id="site-nav"></div>
+
+<main>
+  <section class="cb"><div class="cb-grid">
+
+    <!-- LEFT: Mia -->
+    <figure class="cb-photo">
+      <img src="../assets/mia-photo.jpg" alt="Mia, je marketing-collega">
+      <figcaption class="cb-tag">
+        <span class="dot"></span>
+        <span><span class="who">Mia</span><br><span class="role">je marketing-collega</span></span>
+      </figcaption>
+    </figure>
+
+    <!-- RIGHT: content -->
+    <div class="cb-body"><div class="cb-inner">
+      <span class="cb-eyebrow">Contact</span>
+      <h1>Even <em>sparren?</em></h1>
+      <p class="cb-lead">Een vraag, een idee of gewoon benieuwd of we bij je passen? Laat een bericht achter, dan reageren we <b>meestal binnen twee werkdagen</b>. Geen verkooppraatje, gewoon een echt antwoord.</p>
+
+      <!-- CONTACTFORMULIER: echte Constant Contact (SharpSpring) embed.
+           form.js plaatst het formulier in #ssContactForm (ss_form.target_id).
+           Verzending + e-mailflow lopen rechtstreeks via Constant Contact.
+           Config + script staan onderaan deze pagina. -->
+      <div id="ssContactForm" class="ss-embed"></div>
+
+      <!-- DIRECTE ROUTES -->
+      <div class="cb-alt">
+        <a href="../webinar/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg> Plan een webinar</a>
+        <a href="../early-access/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg> Naar early access</a>
+      </div>
+
+    </div></div>
+
+  </div></section>
+</main>
+
+<div id="site-foot"></div>
+<script src="../assets/site-hm.js"></script>
+
+<!-- SharpSpring / Constant Contact: contactformulier.
+     form.js plaatst het formulier in #ssContactForm (ss_form.target_id). -->
+<script type="text/javascript">
+    var ss_form = {'account': 'MzawMLE0MTGzAAA', 'formID': 's7A0M0kzNLHUNTcwSNU1MTQ317VINTXVtTRJTTZNSzNPTDM2AQA'};
+    ss_form.width = '100%';
+    ss_form.domain = 'app-3QNTLCGLQ4.marketingautomation.services';
+    ss_form.target_id = 'ssContactForm'; // formulier in deze container laden
+    // ss_form.hidden = {'field_id': 'value'};
+    // ss_form.polling = true;
+</script>
+<script type="text/javascript" src="https://koi-3QNTLCGLQ4.marketingautomation.services/client/form.js?ver=2.0.1"></script>
+</body>
+</html>

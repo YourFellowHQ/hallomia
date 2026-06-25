@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prijzen, vanaf €49 per maand | YourFellow HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<meta name="description" content="Drie pakketten vanaf €49 per maand, maandelijks of per jaar. Geen afrekenen per gebruiker.">
+<link rel="canonical" href="https://hallomia.ai/prijzen/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hallo Mia">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Prijzen &middot; vanaf €49 per maand">
+<meta property="og:description" content="Drie pakketten vanaf €49 per maand, maandelijks of per jaar. Geen afrekenen per gebruiker.">
+<meta property="og:url" content="https://hallomia.ai/prijzen/">
+<meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prijzen &middot; vanaf €49 per maand">
+<meta name="twitter:description" content="Drie pakketten vanaf €49 per maand, maandelijks of per jaar. Geen afrekenen per gebruiker.">
+<meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
+<style>
+.beta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:rgba(14,156,134,0.06);border:1px solid rgba(14,156,134,0.22);border-radius:12px;padding:16px 20px;margin-top:28px;}
+.beta .b-ic{width:34px;height:34px;border-radius:9px;background:var(--accent);color:var(--on-accent);display:flex;align-items:center;justify-content:center;flex:none;}
+.beta b{font-size:15px;}
+.beta span{font-size:14px;color:var(--ink-soft);}
+.beta .b-tag{margin-left:auto;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;color:var(--accent);letter-spacing:0.06em;}
+
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:880px){.tiers{grid-template-columns:1fr;}}
+.tier{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:32px 30px;display:flex;flex-direction:column;gap:18px;position:relative;}
+.tier.featured{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(14,156,134,0.28);}
+.tier .pbadge{position:absolute;top:-11px;left:30px;background:var(--accent);color:var(--on-accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:0.12em;text-transform:uppercase;}
+.tier .nm{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:13px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;font-weight:700;}
+/* per-plan color identity (echoes the app's colored tiles) */
+.tier .pico{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex:none;}
+.tier .pico svg{width:24px;height:24px;}
+.tier-starter .pico{background:rgba(14,156,134,0.12);color:#0E9C86;}
+.tier-starter .nm{color:#0E9C86;}
+.tier-growth .pico{background:rgba(47,109,181,0.13);color:#2F6DB5;}
+.tier-growth .nm{color:#2F6DB5;}
+.tier-pro .pico{background:rgba(176,125,18,0.16);color:#A9760F;}
+.tier-pro .nm{color:#A9760F;}
+.tier .price{font-size:50px;font-weight:600;letter-spacing:-0.03em;line-height:1;display:flex;align-items:baseline;gap:6px;}
+.tier .price small{font-size:14px;font-weight:500;color:var(--ink-soft);letter-spacing:0;}
+.tier .credits{font-size:14.5px;color:var(--ink-2);}
+.tier .credits b{color:var(--ink);}
+.tier .who{font-size:14px;color:var(--ink-soft);line-height:1.5;padding-bottom:18px;border-bottom:1px solid var(--line);}
+.tier ul{list-style:none;display:flex;flex-direction:column;gap:12px;font-size:14.5px;color:var(--ink-2);min-height:216px;justify-content:space-between;}
+.tier ul li{display:flex;gap:11px;align-items:flex-start;line-height:1.45;}
+.tier ul li::before{content:"\2713";flex:none;width:19px;height:19px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.tier ul li.allof{color:var(--ink);font-weight:600;}
+.tier ul li.allof::before{background:var(--accent);color:var(--on-accent);}
+.tier .ups{margin-top:18px;display:flex;flex-direction:column;gap:11px;padding-top:18px;border-top:1px dashed var(--line-2);}
+.tier .up{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--ink-soft);line-height:1.4;}
+.tier .up::before{content:"";flex:none;width:16px;height:16px;margin-top:1px;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 15l-6-6-6 6'/%3E%3C/svg%3E") center/14px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 15l-6-6-6 6'/%3E%3C/svg%3E") center/14px no-repeat;}
+.tier .up b{color:var(--ink-2);font-weight:700;}
+.tier .btn{width:100%;}
+.tier ul + .btn{margin-top:auto;}
+.tier .ups + .btn{margin-top:auto;}
+.tier .beta-note{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;color:var(--ink-mute);text-align:center;}
+
+/* comparison — grouped & column-highlighted */
+.cmp-wrap{border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:8px 16px 16px;box-shadow:0 30px 70px -50px rgba(40,34,20,0.30);}
+.cmp{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed;}
+.cmp col.cfeat{width:40%;}
+.cmp th,.cmp td{padding:14px 16px;text-align:center;vertical-align:middle;}
+.cmp th.feat-h,.cmp td.feat-h{text-align:left;}
+/* header */
+.cmp thead th{padding:16px 16px 18px;border-bottom:1px solid var(--line);vertical-align:bottom;}
+.cmp thead .ph{display:flex;flex-direction:column;align-items:center;gap:5px;}
+.cmp .pname{font-size:16.5px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;}
+.cmp .pprice{font-size:12.5px;color:var(--ink-soft);font-weight:500;}
+.cmp .lead-h .pname{color:var(--ink);}
+.cmp .tagm{font-size:9.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--on-accent);background:var(--accent);padding:3px 9px;border-radius:999px;margin-bottom:2px;}
+/* Growth column — plain, no highlight band */
+.cmp .hl{background:transparent;}
+/* group rows */
+.cmp .grp th{padding:28px 16px 11px;}
+.cmp .grp td{padding:0;}
+.cmp .grp .gl{display:inline-flex;align-items:center;font-size:11.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;}
+.cmp .g-content .gl{color:#0A7E6D;background:rgba(14,156,134,0.11);}
+.cmp .g-web .gl{color:#2F6DB5;background:rgba(47,109,181,0.11);}
+.cmp .g-ads .gl{color:#A9760F;background:rgba(176,125,18,0.13);}
+.cmp .grp .gs{margin-left:12px;font-size:12px;color:var(--ink-soft);letter-spacing:0;text-transform:none;font-weight:500;}
+/* feature rows */
+.cmp .frow th{font-weight:500;color:var(--ink-2);font-size:14.5px;}
+.cmp .frow th,.cmp .frow td{border-top:1px solid var(--line);}
+/* value marks */
+.cmp .v{display:inline-flex;align-items:center;justify-content:center;}
+.cmp .v.y{width:23px;height:23px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:12px;font-weight:800;}
+.cmp .v.n{width:14px;height:2px;border-radius:2px;background:var(--line-2);}
+@media(max-width:760px){.cmp-wrap{overflow-x:auto;}.cmp{min-width:640px;}}
+.shead .l{max-width:none;}
+.shead .sh-sub{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:48ch;}
+.shead h2{white-space:nowrap;}
+@media(max-width:560px){.shead h2{white-space:normal;}}
+
+.pfaq{border-top:1px solid var(--line);}
+.pfaq .q{padding:24px 0;border-bottom:1px solid var(--line);}
+.pfaq .q h4{font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-bottom:7px;}
+.pfaq .q p{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:64ch;}
+
+.fc{padding:64px 0 72px;border-top:1px solid var(--line);position:relative;overflow:hidden;text-align:center;}
+.fc::after{content:"";position:absolute;width:640px;height:640px;border-radius:50%;left:50%;top:40%;transform:translateX(-50%);background:radial-gradient(circle,rgba(14,156,134,0.1),transparent 64%);}
+.fc-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;}
+.fc-in h2{font-size:clamp(34px,4.6vw,60px);font-weight:600;letter-spacing:-0.035em;line-height:1.0;max-width:none;white-space:nowrap;}
+@media(max-width:560px){.fc-in h2{white-space:normal;max-width:18ch;}}
+.fc-in p{margin:18px 0 26px;font-size:16.5px;color:var(--ink-soft);max-width:52ch;line-height:1.6;}
+.fc-in .note{margin-top:18px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);}
+.annual-note{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:34px;text-align:center;font-size:14.5px;color:var(--ink-soft);}
+.annual-note b{color:var(--ink);font-weight:600;}
+.annual-note .yr-tag{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 10px;}
+
+/* feature tooltips */
+.tier ul li .ft{display:inline;}
+.tip{position:relative;display:inline-flex;vertical-align:middle;margin-left:5px;}
+.tip .q{width:16px;height:16px;border-radius:50%;border:1px solid var(--line-2);color:var(--ink-soft);font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:10.5px;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:help;line-height:1;transition:.15s;}
+.tip .q:hover,.tip:focus-within .q{border-color:var(--accent);color:var(--accent);}
+.tip .bub{position:absolute;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%);width:230px;max-width:62vw;background:var(--surface-2);border:1px solid var(--line-2);border-radius:9px;padding:11px 13px;font-size:12.5px;font-weight:400;color:var(--ink-2);line-height:1.5;box-shadow:0 16px 36px -12px rgba(0,0,0,0.65);opacity:0;visibility:hidden;transition:opacity .15s,visibility .15s;z-index:40;text-align:left;letter-spacing:0;text-transform:none;}
+.tip:hover .bub,.tip:focus-within .bub{opacity:1;visibility:visible;}
+.tip .bub::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--line-2);}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YourFellow HQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://hallomia.ai/","offers":[{"@type":"Offer","name":"Starter","price":"49","priceCurrency":"EUR","url":"https://hallomia.ai/prijzen/"}]}
+</script>
+<link rel="stylesheet" href="../assets/site-light.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hallomia.ai/"},{"@type":"ListItem","position":2,"name":"Prijzen","item":"https://hallomia.ai/prijzen/"}]}
+</script>
+</head>
+<body data-depth="1" data-page="prijzen">
+<div id="site-nav"></div>
+<div class="wrap crumb"><a href="../">home</a> / prijzen</div>
+
+<main>
+  <style>
+  /* preview: launch met alleen Starter */
+  .launch-note{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:9px 16px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:13.5px;font-weight:600;}
+  .launch-note::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent);}
+  .tier{position:relative;}
+  /* Starter = nu beschikbaar */
+  .tier.live{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(14,156,134,0.28);}
+  .tier .nowbadge{position:absolute;top:-11px;left:30px;background:var(--accent);color:var(--on-accent);font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;}
+  /* Growth & Pro = binnenkort */
+  .tier.soon{opacity:0.82;}
+  .tier.soon .pico,.tier.soon .nm,.tier.soon ul{filter:grayscale(0.65);}
+  .tier.soon .price{font-size:30px;font-weight:600;color:var(--ink-mute);}
+  .tier .soonbadge{position:absolute;top:-11px;left:30px;background:var(--ink-2);color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;}
+  .tier.soon .btn{background:transparent;color:var(--ink-2);border:1px solid var(--line-2);box-shadow:none;}
+  .tier.soon .btn:hover{border-color:var(--accent);color:var(--accent);}
+  /* tabel: binnenkort-tag in kolomkop */
+  .ph .soon-tag{display:inline-flex;align-items:center;gap:5px;margin-top:4px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:600;color:var(--ink-mute);}
+  .ph .soon-tag::before{content:"";width:11px;height:11px;flex:none;background:var(--ink-mute);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpolyline points='12 7 12 12 15 14'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpolyline points='12 7 12 12 15 14'/%3E%3C/svg%3E") center/contain no-repeat;}
+  /* tabel: Growth & Pro kolommen gedimd (binnenkort) */
+  .cmp thead th:nth-child(3) .pname,.cmp thead th:nth-child(4) .pname,
+  .cmp thead th:nth-child(3) .pprice,.cmp thead th:nth-child(4) .pprice{color:var(--ink-mute);}
+  .cmp .frow td:nth-child(3),.cmp .frow td:nth-child(4){opacity:0.55;}
+  .cmp .frow td:nth-child(3) .v.y,.cmp .frow td:nth-child(4) .v.y{background:var(--ink-mute);color:#fff;}
+
+  /* STARTER SPOTLIGHT — social posts module uitgelicht */
+  .sp-wrap{background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .sp-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:7px 14px;border-radius:999px;margin-bottom:18px;}
+  .sp-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent);}
+  .sp-head h2{font-size:clamp(30px,3.9vw,48px);font-weight:600;letter-spacing:-0.033em;line-height:1.04;max-width:none;}
+  .sp-head h2 em{font-style:normal;color:var(--accent);}
+  .sp-sub{margin-top:16px;font-size:16.5px;color:var(--ink-soft);line-height:1.6;max-width:62ch;}
+  .sp-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+  @media(max-width:880px){.sp-steps{grid-template-columns:1fr;gap:34px;}}
+  .sp-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 70px -50px rgba(40,34,20,0.30);}
+  .sp-shot{height:236px;background:var(--bg);display:flex;align-items:flex-start;justify-content:center;border-bottom:1px solid var(--line);overflow:hidden;}
+  .sp-shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+  .sp-card figcaption{padding:26px 24px 28px;display:flex;flex-direction:column;gap:6px;position:relative;}
+  .sp-n{position:absolute;top:-19px;left:24px;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px -5px rgba(14,156,134,0.65);}
+  .sp-card figcaption b{margin-top:6px;font-size:18.5px;font-weight:600;letter-spacing:-0.012em;color:var(--ink);}
+  .sp-card figcaption span{font-size:14px;color:var(--ink-soft);line-height:1.5;}
+  .sp-foot{margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;}
+  .sp-tags{display:flex;flex-wrap:wrap;gap:10px;}
+  .sp-tags span{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 15px;}
+  .sp-tags span::before{content:"";width:15px;height:15px;flex:none;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;}
+  </style>
+  <section class="wrap phero" style="padding-bottom:50px;">
+    <h1>Eén helder bedrag. <em>Geen verrassingen.</em></h1>
+    <p class="lede">Drie pakketten, maandelijks of per jaar. Geen afrekenen per gebruiker. Kies wat past bij waar je nu staat, upgraden of terugschakelen kan elke maand.</p>
+    <div class="launch-note">Live vanaf juli met Starter. Growth en Pro volgen later dit jaar.</div>
+    </section>
+
+  <section class="wrap" style="padding-bottom:90px;">
+    <div class="tiers">
+      <div class="tier tier-starter live">
+        <span class="nowbadge">Nu beschikbaar</span>
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
+        <div class="nm">Starter</div>
+        <div class="price">€49 <small>/ maand</small></div>
+        <div class="who">Samen met Mia je marketing opbouwen.</div>
+        <ul>
+          <li><span class="ft">Social media posts genereren</span></li>
+          <li><span class="ft">Automatisch inplannen &amp; publiceren</span></li>
+          <li><span class="ft">Brand kit (kleuren, logo, fonts)</span></li>
+          <li><span class="ft">AI-assistent Mia</span></li>
+          <li><span class="ft">Onbeperkt content maken</span></li>
+          <li><span class="ft">Voor Instagram, LinkedIn &amp; Facebook</span></li>
+        </ul>
+        <a class="btn acc" href="../early-access/">Kies Starter</a>
+      </div>
+      <div class="tier tier-growth soon">
+        <span class="soonbadge">Binnenkort</span>
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+        <div class="nm">Growth</div>
+        <div class="price">Binnenkort</div>
+        <div class="who">Voor wie al bezig is en door wil groeien.</div>
+        <ul>
+          <li class="allof">Alles van Starter</li>
+          <li><span class="ft">Website &amp; blog content</span></li>
+          <li><span class="ft">SEO-optimalisatie</span></li>
+          <li><span class="ft">Search Console koppeling</span></li>
+          <li><span class="ft">Zoekwoordonderzoek</span></li>
+          <li><span class="ft">Content kalender</span></li>
+        </ul>
+        <a class="btn" href="../early-access/?interesse=growth">Hou me op de hoogte</a>
+      </div>
+      <div class="tier tier-pro soon">
+        <span class="soonbadge">Binnenkort</span>
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+        <div class="nm">Pro</div>
+        <div class="price">Binnenkort</div>
+        <div class="who">Volledig pakket inclusief advertising.</div>
+        <ul>
+          <li class="allof">Alles van Growth</li>
+          <li><span class="ft">Meta Ads beheer</span></li>
+          <li><span class="ft">Google Ads beheer</span></li>
+          <li><span class="ft">Campaign builder</span></li>
+          <li><span class="ft">Competitor spy</span></li>
+          <li><span class="ft">Performance dashboards</span></li>
+        </ul>
+        <a class="btn" href="../early-access/?interesse=pro">Hou me op de hoogte</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STARTER SPOTLIGHT: SOCIAL POSTS -->
+  <section class="section sp-wrap"><div class="wrap">
+    <div class="sp-head">
+      <span class="sp-eyebrow">Nu beschikbaar in Starter</span>
+      <h2>Het begint bij je <em>social posts</em>.</h2>
+      <p class="sp-sub">Dit is wat je vanaf dag één met Starter doet. Mia bedenkt de posts, jij keurt goed, en ze gaan live op je socials. Onbeperkt, altijd in jouw merkstijl.</p>
+    </div>
+    <div class="sp-steps">
+      <figure class="sp-card">
+        <div class="sp-shot"><img src="../assets/screenshot-social-focus.png" alt="Mia schrijft een social post in jouw merkstijl, met een content-score die meekijkt"></div>
+        <figcaption><span class="sp-n">1</span><b>Mia schrijft de post</b><span>Tekst én beeld in jouw merkstijl, met een content-score die meteen meekijkt.</span></figcaption>
+      </figure>
+      <figure class="sp-card">
+        <div class="sp-shot"><img src="../assets/social-goedkeuren.png" alt="Postvoorstel goedkeuren: inplannen op het juiste moment of direct publiceren"></div>
+        <figcaption><span class="sp-n">2</span><b>Jij keurt goed</b><span>Eén klik. Inplannen op het juiste moment, of meteen publiceren.</span></figcaption>
+      </figure>
+      <figure class="sp-card">
+        <div class="sp-shot"><img src="../assets/social-live.png" alt="Een gepubliceerde post in jouw merkstijl, live op je socials"></div>
+        <figcaption><span class="sp-n">3</span><b>Live op je socials</b><span>Voor Instagram, LinkedIn en Facebook. Jij hoeft alleen ja te zeggen.</span></figcaption>
+      </figure>
+    </div>
+    <div class="sp-foot">
+      <div class="sp-tags">
+        <span>Onbeperkt content maken</span>
+        <span>Automatisch inplannen</span>
+        <span>Brand kit</span>
+        <span>AI-assistent Mia</span>
+      </div>
+      <a class="txt-link" href="../wat-doet-het/">Bekijk de social posts module <span class="arrow">&rarr;</span></a>
+    </div>
+  </div></section>
+
+  <!-- COMPARISON -->
+  <section class="section"><div class="wrap">
+    <div class="shead"><div class="l"><h2>Wat zit er in welk pakket?</h2><p class="sh-sub">Elk pakket bouwt voort op het vorige. Zo zie je in één oogopslag wat je krijgt en wat erbij komt als je doorgroeit.</p></div></div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <colgroup><col class="cfeat"><col><col><col></colgroup>
+        <thead><tr>
+          <th class="feat-h"></th>
+          <th><div class="ph"><span class="pname">Starter</span><span class="pprice">€49 / mnd</span></div></th>
+          <th class="hl lead-h"><div class="ph"><span class="pname">Growth</span><span class="soon-tag">Binnenkort</span></div></th>
+          <th><div class="ph"><span class="pname">Pro</span><span class="soon-tag">Binnenkort</span></div></th>
+        </tr></thead>
+        <tbody>
+          <tr class="grp g-content"><th class="feat-h"><span class="gl">Content &amp; social</span></th><td></td><td class="hl"></td><td></td></tr>
+          <tr class="frow"><th class="feat-h">Social media posts genereren <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia maakt kant-en-klare berichten voor je social media. Jij hoeft alleen nog ja te zeggen.</span></span></th><td><span class="v y">✓</span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Automatisch inplannen &amp; publiceren <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Keur je een post goed, dan plant Mia 'm automatisch in en publiceert 'm op het juiste moment, met jouw toestemming.</span></span></th><td><span class="v y">✓</span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Brand kit (kleuren, logo, fonts) <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Je huisstijl op één plek: je kleuren, je logo en je lettertype. Mia houdt zich er altijd aan.</span></span></th><td><span class="v y">✓</span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">AI-assistent Mia <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Je digitale collega die meekijkt, het werk voorbereidt en alles voor je klaarzet.</span></span></th><td><span class="v y">✓</span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Onbeperkt content maken <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Laat zoveel posts en teksten maken als je wilt. Er zit geen limiet op.</span></span></th><td><span class="v y">✓</span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+
+          <tr class="grp g-web"><th class="feat-h"><span class="gl">Website &amp; SEO</span></th><td></td><td class="hl"></td><td></td></tr>
+          <tr class="frow"><th class="feat-h">Website &amp; blog content <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia schrijft teksten voor je website en blogartikelen die bij je merk passen.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">SEO-optimalisatie <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia zorgt dat je beter gevonden wordt in Google.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Search Console koppeling <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia kijkt mee met je Google-cijfers en ziet waarop mensen je vinden.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Zoekwoordonderzoek <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia zoekt uit op welke woorden jouw klanten naar je producten zoeken.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Content kalender <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Een overzicht van wat er wanneer gepost wordt, zodat je niks vergeet.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+
+          <tr class="grp g-ads"><th class="feat-h"><span class="gl">Advertising &amp; groei</span></th><td></td><td class="hl"></td><td></td></tr>
+          <tr class="frow"><th class="feat-h">Meta Ads beheer <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia maakt en beheert je advertenties op Facebook en Instagram.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Google Ads beheer <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia maakt en beheert je advertenties in Google.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Campaign builder <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia zet complete reclamecampagnes voor je op, van begin tot eind.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Competitor spy <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia houdt in de gaten wat je concurrenten doen, zodat jij kunt bijsturen.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Performance dashboards <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Eén scherm met al je cijfers, zodat je in één oogopslag ziet wat werkt.</span></span></th><td><span class="v n"></span></td><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div></section>
+
+  <!-- PRICING FAQ -->
+  <section class="section"><div class="wrap">
+    <div class="shead" style="margin-bottom:30px;"><div class="l"><h2>Over de prijzen.</h2></div><div class="r"><a class="txt-link" href="../vragen/">Alle vragen →</a></div></div>
+    <div class="pfaq">
+      <div class="q"><h4>Wat betekent onbeperkt content maken?</h4><p>Je kunt zoveel posts, teksten en concepten laten maken als je wilt. Mia zet de voorstellen klaar; jij bepaalt wat je goedkeurt en wat er daadwerkelijk uitgaat.</p></div>
+      <div class="q"><h4>Kan ik maandelijks of per jaar afrekenen?</h4><p>Allebei kan. Kies je voor maandelijks, dan ben je maandelijks opzegbaar zonder lange opzegtermijn. Liever een jaarcontract? Dat komt eraan: de prijzen daarvoor volgen binnenkort. Upgraden of terugschakelen kan elke maand.</p></div>
+      <div class="q"><h4>Wat kost het om te starten?</h4><p>Je start vanaf €49 per maand met het Starter-pakket. Je rekent maandelijks of per jaar af, je bent maandelijks opzegbaar, en niets wordt automatisch doorbelast zonder dat je het weet.</p></div>
+      <div class="q"><h4>Reken ik per gebruiker af?</h4><p>Nee. Je betaalt één vast bedrag per maand voor het pakket, niet per gebruiker en niet per los gebruik. Dat was een duidelijke wens uit onze validatie.</p></div>
+    </div>
+  </div></section>
+
+  <section class="fc"><div class="wrap fc-in">
+    <h2 style="font-size: 44px">Klaar om te <em>beginnen?</em></h2>
+    <p>Je start vanaf €49 per maand, maandelijks opzegbaar. Kies een pakket dat past bij waar je nu staat.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="../early-access/">Early access <span class="arrow">→</span></a><a class="btn ghost lg" href="../wat-doet-het/">Bekijk de modules</a></div>
+  </div></section>
+</main>
+
+<div id="site-foot"></div>
+<script src="../assets/site-hm.js"></script>
+</body>
+</html>
