@@ -19,10 +19,10 @@
   --ink-2:#47433A;
   --ink-soft:#76705F;
   --ink-mute:#6F6957;
-  --accent:#0E9C86;      /* dieper, rustiger teal — leesbaar op licht */
-  --accent-deep:#0A7E6D;
-  --accent-soft:rgba(14,156,134,0.12);
-  --on-accent:#FFFFFF;
+  --accent:#00FFCC;      /* dieper, rustiger teal — leesbaar op licht */
+  --accent-deep:#141A18;   /* donkere tekstkleur, mint blijft voor vlakken */
+  --accent-soft:rgba(0,255,204,0.12);
+  --on-accent:#062B25;
 }
 
 /* sticky nav: licht doorschijnend i.p.v. donker */
@@ -52,7 +52,7 @@
 .payoff h2,.payoff p,.payoff li,.payoff .lead,.payoff strong{color:var(--ink)!important;}
 
 /* zachte teal-gloed i.p.v. felle cyaan voor de grote schaduwen */
-.tier.featured{box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(14,156,134,0.22)!important;}
+.tier.featured{box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(0,255,204,0.22)!important;}
 .review{box-shadow:0 30px 70px -45px rgba(40,34,20,0.30)!important;}
 
 /* ---- pagina-specifieke donkere vlakken → licht & leesbaar ---- */

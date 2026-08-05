@@ -38,8 +38,8 @@
 .lb-tag{position:absolute;z-index:2;left:32px;bottom:30px;display:flex;align-items:center;gap:12px;color:#fff;}
 @media(max-width:520px){.lb-tag{left:20px;bottom:20px;}}
 .lb-tag .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);
-  box-shadow:0 0 0 4px rgba(14,156,134,0.35);flex:none;animation:lbPulse 2s ease-in-out infinite;}
-@keyframes lbPulse{0%,100%{box-shadow:0 0 0 4px rgba(14,156,134,0.35);}50%{box-shadow:0 0 0 9px rgba(14,156,134,0.10);}}
+  box-shadow:0 0 0 4px rgba(0,255,204,0.35);flex:none;animation:lbPulse 2s ease-in-out infinite;}
+@keyframes lbPulse{0%,100%{box-shadow:0 0 0 4px rgba(0,255,204,0.35);}50%{box-shadow:0 0 0 9px rgba(0,255,204,0.10);}}
 @media (prefers-reduced-motion: reduce){.lb-tag .dot{animation:none;}}
 .lb-tag .who{font-weight:700;font-size:17px;letter-spacing:-0.01em;line-height:1.1;}
 .lb-tag .role{font-size:12.5px;font-weight:500;opacity:0.85;margin-top:2px;}
@@ -51,14 +51,14 @@
 @media(max-width:880px){.lb-body{padding:56px 28px 72px;}}
 @media(max-width:520px){.lb-body{padding:44px 20px 60px;}}
 .lb-body::before{content:"";position:absolute;z-index:0;width:520px;height:520px;border-radius:50%;
-  right:-180px;top:-160px;background:radial-gradient(circle,rgba(14,156,134,0.13),transparent 64%);pointer-events:none;}
+  right:-180px;top:-160px;background:radial-gradient(circle,rgba(0,255,204,0.13),transparent 64%);pointer-events:none;}
 .lb-inner{position:relative;z-index:1;width:100%;max-width:520px;}
 
 .lb-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',ui-monospace,monospace;
   font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
 .lb-eyebrow .live-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);
   box-shadow:0 0 0 3px var(--accent-soft);flex:none;animation:lbPulse2 2s ease-in-out infinite;}
-@keyframes lbPulse2{0%,100%{box-shadow:0 0 0 3px var(--accent-soft);}50%{box-shadow:0 0 0 7px rgba(14,156,134,0.05);}}
+@keyframes lbPulse2{0%,100%{box-shadow:0 0 0 3px var(--accent-soft);}50%{box-shadow:0 0 0 7px rgba(0,255,204,0.05);}}
 @media (prefers-reduced-motion: reduce){.lb-eyebrow .live-dot{animation:none;}}
 .lb h1{font-size:clamp(40px,5.4vw,68px);font-weight:600;letter-spacing:-0.04em;line-height:1.0;
   margin:18px 0 0;text-wrap:balance;}
@@ -100,7 +100,7 @@
 .lb-route .rt{font-weight:600;font-size:15px;letter-spacing:-0.01em;color:var(--ink);display:flex;align-items:center;gap:7px;}
 .lb-route .rt .arrow{color:var(--accent);}
 .lb-route .rd{font-size:12.5px;color:var(--ink-soft);line-height:1.45;}
-.lb-route.primary{background:var(--accent-soft);border-color:rgba(14,156,134,0.3);}
+.lb-route.primary{background:var(--accent-soft);border-color:rgba(0,255,204,0.3);}
 
 /* ---- vertrouwens-rij ---- */
 .lb-trust{margin:26px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;}
@@ -138,7 +138,7 @@
           <input type="email" id="regEmail" name="email" placeholder="jouw@e-mail.nl" autocomplete="email" required>
           <button type="submit" class="btn acc">Aanmelden <span class="arrow">&rarr;</span></button>
         </div>
-        <p class="lb-fine">Je meldt je aan voor een <b>gratis kennismaking</b>. Daarna de beta voor &euro;49 per maand, maandelijks opzegbaar.</p>
+        <p class="lb-fine">Je meldt je aan voor een <b>gratis kennismaking</b>. Daarna &euro;79 per maand, maandelijks opzegbaar.</p>
         <div class="lb-or"><span>of</span></div>
         <a class="btn ghost lg" href="https://app.yourfellow.nl/?bron=site-live">Direct registreren in de app <span class="arrow">&rarr;</span></a>
       </form>

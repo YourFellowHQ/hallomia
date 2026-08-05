@@ -32,10 +32,25 @@
     // GTM-container (al aangemaakt, zie bouwdoc). Zet loadGTM op true zodra
     // de cookie/consent-afhandeling rond is (AVG-punt in het bouwdoc).
     gtmId:   'GTM-MNL39P7S',
-    loadGTM: false
+    loadGTM: false,
+    // GA4-property "Hallo Mia". Zet loadGA op false om het meten te stoppen.
+    gaId:    'G-QB20D38EG3',
+    loadGA:  true
   };
   window.CRM_CONFIG = CRM;
   window.dataLayer = window.dataLayer || [];
+
+  /* GA4 laden, alleen als ingeschakeld (loadGA:true). Anoniem: geen advertentie-
+     signalen, IP-adres verkort, en de bezoeker wordt niet over sites gevolgd. */
+  if(CRM.gaId && CRM.loadGA){
+    var gs=document.createElement('script');
+    gs.async=true;gs.src='https://www.googletagmanager.com/gtag/js?id='+CRM.gaId;
+    document.head.appendChild(gs);
+    window.gtag=function(){window.dataLayer.push(arguments);};
+    gtag('js',new Date());
+    gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});
+    gtag('config',CRM.gaId,{anonymize_ip:true,allow_google_signals:false,allow_ad_personalization_signals:false});
+  }
 
   /* GTM laden, alleen als ingeschakeld (loadGTM:true) */
   if(CRM.gtmId && CRM.loadGTM){
@@ -52,9 +67,7 @@
   var R = depth === 0 ? '' : new Array(depth + 1).join('../');
   var HOME = R === '' ? './' : R;
 
-  /* Livegang-datum, gelijk aan de countdown op early-access.
-     Vóór deze datum: "Early access"-knop. Erna: "Registreren" (naar de app)
-     + een "Kennismaking"-knop (naar de live-pagina / aanmelden). */
+  /* Livegang-datum. Erna: "Registreren" (naar de app) + "Contact". */
   var LIVE_DATE = new Date('2026-07-06T00:00:00');
   var isLive = new Date() >= LIVE_DATE;
   var navCTA = isLive
@@ -62,7 +75,7 @@
       + '<a class="cta ghost" href="'+R+'contact/">Contact</a>'
       + '<a class="cta" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>'
     : '<a class="cta ghost" href="'+R+'webinar/">Webinar</a>'
-      + '<a class="cta" href="'+R+'early-access/">Early access</a>';
+      + '<a class="cta" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>';
 
   var BRAND = '<a class="brand" href="' + HOME + '">'
     + '<span class="mk">HQ</span>'
@@ -76,6 +89,7 @@
   var links = [
     {id:'wat',     slug:'wat-doet-het', label:'Wat doet het'},
     {id:'mia',     slug:'mia',          label:'Mia'},
+    {id:'voor',    slug:'voor-wie',     label:'Voor wie'},
     {id:'prijzen', slug:'prijzen',      label:'Prijzen'},
     {id:'blog',    slug:'blog',         label:'Blogs'},
     {id:'vragen',  slug:'vragen',       label:'Vragen'},
@@ -87,7 +101,18 @@
     +   BRAND_HEADER
     +   '<nav class="nav-links" id="navLinks">'
     +     links.map(function(l){
-            return '<a href="'+R+l.slug+'/"'+(page===l.id?' class="on"':'')+'>'+l.label+'</a>';
+            if(!l.dd) return '<a href="'+R+l.slug+'/"'+(page===l.id?' class="on"':'')+'>'+l.label+'</a>';
+            var on = l.items.some(function(it){ return page===it.id; });
+            return '<div class="nav-dd'+(on?' on':'')+'">'
+              + '<button type="button" class="nav-dd-t" aria-expanded="false">'+l.label
+              + '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>'
+              + '<div class="nav-dd-m">'
+              +   l.items.map(function(it){
+                    return '<a href="'+R+it.slug+'/"'+(page===it.id?' class="on"':'')+'><b>'+it.label+'</b>'
+                      + (it.note?'<span>'+it.note+'</span>':'')+'</a>';
+                  }).join('')
+              +   '<span class="nav-dd-soon">Meer branches volgen</span>'
+              + '</div></div>';
           }).join('')
     +   '</nav>'
     +   '<div class="nav-r">'
@@ -109,6 +134,7 @@
     +     '<div class="col"><h5>Product</h5>'
     +       '<a href="'+R+'wat-doet-het/">Wat doet het</a>'
     +       '<a href="'+R+'mia/">Mia</a>'
+    +       '<a href="'+R+'voor-wie/">Voor wie</a>'
     +     '</div>'
     +     '<div class="col"><h5>Hulp</h5>'
     +       '<a href="'+R+'prijzen/">Prijzen</a>'
@@ -116,17 +142,16 @@
     +       '<a href="'+R+'blog/">Blogs</a>'
     +       '<a href="'+R+'begrippenlijst/">Begrippenlijst</a>'
     +       '<a href="'+R+'over-ons/">Over ons</a>'
-    +       '<a href="'+R+'early-access/">Early access</a>'
     +     '</div>'
     +     '<div class="col"><h5>Aan de slag</h5>'
-    +       '<a href="'+R+'early-access/">Schrijf je in</a>'
+    +       '<a href="https://app.yourfellow.nl/?bron=site-footer">Registreren</a>'
     +       '<a href="'+R+'contact/">Contact</a>'
     +       '<a href="'+R+'aanmelden/">Inloggen</a>'
     +       '<a href="'+R+'vragen/#privacy">Privacy &amp; data</a>'
     +     '</div>'
     +   '</div>'
     +   '<div class="bottom">'
-    +     '<div>&copy; 2026 Hallo Mia, de beta voor &euro;49 p/m</div>'
+    +     '<div>&copy; 2026 Hallo Mia, vanaf &euro;79 p/m</div>'
     +     '<div class="links"><a href="'+R+'vragen/">Privacy</a><a href="'+R+'vragen/">Voorwaarden</a><a href="'+HOME+'">Home</a></div>'
     +   '</div>'
     + '</div></footer>';
@@ -135,6 +160,25 @@
   var footMount = document.getElementById('site-foot');
   if(navMount) navMount.innerHTML = navHTML;
   if(footMount) footMount.innerHTML = footHTML;
+
+  /* dropdowns in de nav: klik om te openen, klik buiten om te sluiten */
+  document.querySelectorAll('.nav-dd').forEach(function(dd){
+    var t = dd.querySelector('.nav-dd-t');
+    if(!t) return;
+    t.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = !dd.classList.contains('open');
+      document.querySelectorAll('.nav-dd.open').forEach(function(o){ o.classList.remove('open'); });
+      dd.classList.toggle('open', open);
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.nav-dd.open').forEach(function(o){
+      o.classList.remove('open');
+      var t = o.querySelector('.nav-dd-t'); if(t) t.setAttribute('aria-expanded','false');
+    });
+  });
 
   var burger = document.getElementById('navBurger');
   var navLinks = document.getElementById('navLinks');
@@ -175,6 +219,7 @@
         var source = form.getAttribute('data-crm-source') || '';
         var list   = form.getAttribute('data-crm-list') || '';
         window.dataLayer.push({event:'crm_signup', crm_source:source, crm_list:list});
+        if(window.gtag) gtag('event','crm_signup',{crm_source:source, crm_list:list});
         function finish(){ form.style.display='none'; if(done) done.classList.add('show'); }
         if(!CRM.endpoint){ finish(); return; }   // demo-modus tot Paul de gegevens levert
         var fd = new FormData(), map = CRM.fieldMap || {};
@@ -188,6 +233,41 @@
         fetch(CRM.endpoint, {method:'POST', mode:'no-cors', body:fd}).then(finish, finish);
       });
     });
+  })();
+
+  /* Campagne-tracking: UTM's van de advertentie vasthouden en doorgeven aan de app,
+     plus een dataLayer-event bij elke klik op een CTA. */
+  (function utmPass(){
+    var KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid','wbraid','msclkid'];
+    var K = 'hm-campagne';
+    var store = {};
+    try { store = JSON.parse(sessionStorage.getItem(K) || '{}'); } catch(e){}
+    var q = new URLSearchParams(location.search), fresh = false;
+    KEYS.forEach(function(k){ var v = q.get(k); if(v){ store[k] = v; fresh = true; } });
+    if(fresh){ try { sessionStorage.setItem(K, JSON.stringify(store)); } catch(e){} }
+
+    document.querySelectorAll('a[href*="app.yourfellow.nl"]').forEach(function(a){
+      var u;
+      try { u = new URL(a.href); } catch(e){ return; }
+      Object.keys(store).forEach(function(k){ if(!u.searchParams.has(k)) u.searchParams.set(k, store[k]); });
+      if(!u.searchParams.has('lp')) u.searchParams.set('lp', location.pathname.replace(/\/index\.html$/,'/'));
+      a.href = u.toString();
+    });
+
+    window.dataLayer = window.dataLayer || [];
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a[href]');
+      if(!a) return;
+      var h = a.getAttribute('href') || '';
+      var type = h.indexOf('app.yourfellow.nl') > -1 ? 'aanmelden'
+               : /\/contact\//.test(h) ? 'demo'
+               : /\/webinar\//.test(h) ? 'webinar' : null;
+      if(!type) return;
+      var bron = '';
+      try { bron = new URL(a.href, location.href).searchParams.get('bron') || ''; } catch(err){}
+      window.dataLayer.push({event:'cta_click', cta_type:type, cta_bron:bron, cta_pagina:location.pathname});
+      if(window.gtag) gtag('event','cta_click',{cta_type:type, cta_bron:bron, cta_pagina:location.pathname});
+    }, true);
   })();
 
 })();

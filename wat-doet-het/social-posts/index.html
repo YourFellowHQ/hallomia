@@ -56,9 +56,17 @@
 /* slot-CTA (wit) */
 .fc{padding:64px 0 72px;border-top:1px solid var(--line);text-align:center;}
 .fc-in{display:flex;flex-direction:column;align-items:center;}
-.fc-in h2{font-size:clamp(30px,4vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.04;max-width:20ch;}
+.fc-in h2{font-size:clamp(30px,4vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.04;max-width:28ch;}
 .fc-in h2 em{font-style:normal;color:var(--accent);}
 .fc-in p{margin:18px 0 26px;font-size:17px;color:var(--ink-soft);max-width:52ch;line-height:1.6;}
+.note{margin-top:14px;font-size:14.5px;line-height:1.6;color:var(--ink-mute);max-width:58ch;}
+.zoomshot{position:relative;cursor:zoom-in;}
+.zoomshot::after{content:"Klik om te vergroten";position:absolute;top:9px;right:9px;font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.06em;color:#fff;background:rgba(20,17,12,.72);padding:5px 9px;border-radius:99px;opacity:0;transition:.15s;pointer-events:none;}
+.zoomshot:hover::after{opacity:1;}
+.zoomlaag{position:fixed;inset:0;z-index:200;background:rgba(20,17,12,.86);display:none;align-items:center;justify-content:center;padding:32px;cursor:zoom-out;}
+.zoomlaag.on{display:flex;}
+.zoomlaag img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);}
+.zoomlaag .sluit{position:absolute;top:18px;right:22px;font-size:26px;line-height:1;color:#fff;background:none;border:0;cursor:pointer;font-family:inherit;}
 </style>
 <link rel="stylesheet" href="../../assets/site-light.css">
 <script type="application/ld+json">
@@ -75,56 +83,53 @@
     <span class="mkick">Module 02</span>
     <h1>Social posts, zonder dat jij erbij hoeft na te denken.</h1>
     <p class="lede">Mia kijkt in je kalender en zet de posts klaar in jouw merkstijl. <b>Jij keurt goed</b>, Mia plant ze in of plaatst ze zelf. Voor Instagram, LinkedIn en Facebook.</p>
-    <div class="acts"><a class="btn acc lg" href="../../early-access/">Early access <span class="arrow">→</span></a><a class="btn ghost lg" href="../">Alle modules</a></div>
+    <p class="note">De schermen hieronder komen uit HQ zelf. Klik erop om ze groot te bekijken. In dit voorbeeld zie je een bloemenzaak, in jouw HQ staat je eigen bedrijf.</p>
+    <div class="acts"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-social-posts">Begin bij YourFellow HQ <span class="arrow">→</span></a><a class="btn ghost lg" href="../">Alle modules</a></div>
   </section>
 
   <section class="section"><div class="wrap">
 
-    <!-- 1 VOORSTEL -->
     <div class="row">
       <div class="txt">
         <h2><span class="n">1</span> Mia stelt voor</h2>
         <p class="lead">Op basis van je kalender zet Mia posts klaar.</p>
-        <p class="sub">Feestdagen, acties of vaste momenten: Mia bedenkt waar een post bij past en zet het voorstel klaar bij je taken, met tekst en beeld er al bij. Jij hoeft niet te bedenken wat je moet plaatsen.</p>
+        <p class="sub">Feestdagen, acties of vaste momenten: Mia bedenkt waar een post bij past en zet het voorstel klaar bij je taken, met de invalshoek erbij. Jij hoeft niet te bedenken wat je moet plaatsen.</p>
       </div>
       <div class="pic">
-        <img class="shot" src="../../assets/social-review.png" alt="Taken in YourFellow HQ: Mia zet twee Facebook-posts klaar om te reviewen, met de knoppen Openen, Goed en Afkeuren">
+        <div class="zoomshot"><img class="shot" src="../../assets/hq/v-suggesties.png" alt="Suggesties in YourFellow HQ: Mia zet posts klaar met de invalshoek erbij" loading="lazy"></div>
       </div>
     </div>
 
-    <!-- 2 GOEDKEUREN -->
     <div class="row flip">
       <div class="txt">
-        <h2><span class="n">2</span> Jij keurt goed</h2>
-        <p class="lead">Eén klik op Goed. Meer hoef je niet te doen.</p>
-        <p class="sub">Klopt het? Dan kies je of Mia 'm inplant of meteen publiceert. Niet goed? Eén klik op Afkeuren en Mia komt met een nieuw voorstel. Niets gaat online zonder jouw akkoord.</p>
+        <h2><span class="n">2</span> Jij controleert</h2>
+        <p class="lead">Links de tekst, rechts een score.</p>
+        <p class="sub">Mia schrijft in jouw toon en let op bereik. Een contentscore laat zien of de post sterk genoeg is, met punten als een goede hook, de juiste lengte en passende hashtags. Naast stilstaand beeld kan ze van je eigen foto’s ook een korte video maken. Wil je iets anders, dan pas je het aan met een klik.</p>
       </div>
       <div class="pic">
-        <img class="shot" src="../../assets/social-goedkeuren.png" alt="Goedkeuren in YourFellow HQ: na een klik op Goed verschijnen de opties Inplannen en Direct publiceren">
+        <div class="zoomshot"><img class="shot" src="../../assets/hq/v-editor.png" alt="Posteditor in YourFellow HQ met de posttekst links en de contentscore rechts" loading="lazy"></div>
       </div>
     </div>
 
-    <!-- 3 INPLANNEN -->
     <div class="row">
       <div class="txt">
-        <h2><span class="n">3</span> Inplannen of direct live</h2>
-        <p class="lead">Mia zet 'm klaar op het juiste moment.</p>
-        <p class="sub">Laat Mia een slim moment kiezen, of pak zelf de datum en tijd. Wil je 'm meteen online? Dan publiceert Mia direct op je socials. Daarna hoef je er niet meer naar om te kijken.</p>
+        <h2><span class="n">3</span> Jij keurt goed</h2>
+        <p class="lead">Eén klik op Goed. Meer hoef je niet te doen.</p>
+        <p class="sub">Klopt het? Dan kies je of Mia ’m inplant of meteen publiceert. Niet goed? Eén klik op Afkeuren en Mia komt met een nieuw voorstel. Niets gaat online zonder jouw akkoord.</p>
       </div>
       <div class="pic">
-        <img class="shot" src="../../assets/social-inplannen.png" alt="Inplannen in YourFellow HQ: een kalender waarin je datum en tijd kiest waarop de post live gaat op Facebook">
+        <div class="zoomshot"><img class="shot" src="../../assets/hq/v-goedkeuren.png" alt="Goedkeuren in YourFellow HQ: na een klik op Goed verschijnen de opties inplannen of direct publiceren" loading="lazy"></div>
       </div>
     </div>
 
-    <!-- 4 MERKSTIJL -->
     <div class="row flip">
       <div class="txt">
-        <h2><span class="n">4</span> Altijd in jouw merkstijl</h2>
-        <p class="lead">Tekst en beeld die bij je passen.</p>
-        <p class="sub">Mia schrijft in jouw toon en let op bereik. Een content-score laat zien of de post sterk genoeg is, met punten als een goede hook, de juiste lengte en passende hashtags.</p>
+        <h2><span class="n">4</span> Mia plant in</h2>
+        <p class="lead">Op het juiste moment, of meteen.</p>
+        <p class="sub">Laat Mia een slim moment kiezen, of pak zelf de datum en tijd. In de kalender zie je in één oogopslag wat er staat en waar nog een gat zit. Daarna hoef je er niet meer naar om te kijken.</p>
       </div>
       <div class="pic">
-        <img class="shot" src="../../assets/screenshot-social-focus.png" alt="Editor in YourFellow HQ: een postvoorstel met tekst, beeld en hashtags, naast Mia's content-score van 100">
+        <div class="zoomshot"><img class="shot" src="../../assets/hq/v-kalender.png" alt="Content-kalender in YourFellow HQ met ingeplande en gepubliceerde posts per dag" loading="lazy"></div>
       </div>
     </div>
 
@@ -142,12 +147,15 @@
   <!-- FINAL -->
   <section class="fc"><div class="wrap fc-in">
     <h2>Mia doet je social. <em>Jij keurt goed.</em></h2>
-    <p>Probeer het in de beta, vanaf €49 per maand. De eerste keer instellen kost ongeveer 10 minuten.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="../../early-access/">Early access <span class="arrow">→</span></a><a class="btn ghost lg" href="../../prijzen/">Bekijk prijzen</a></div>
+    <p>Aan de slag vanaf €79 per maand. De eerste keer instellen kost ongeveer 10 minuten.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-social-posts">Begin bij YourFellow HQ <span class="arrow">→</span></a><a class="btn ghost lg" href="../../prijzen/">Bekijk prijzen</a></div>
   </div></section>
 </main>
 
 <div id="site-foot"></div>
 <script src="../../assets/site-hm.js"></script>
+<script>
+(function(){var laag=document.createElement("div");laag.className="zoomlaag";laag.innerHTML='<button class="sluit" type="button" aria-label="Sluiten">&times;</button><img alt="">';document.body.appendChild(laag);var groot=laag.querySelector("img");document.addEventListener("click",function(e){var z=e.target.closest&&e.target.closest(".zoomshot");if(z){var im=z.querySelector("img");if(im){groot.src=im.src;groot.alt=im.alt;laag.classList.add("on");}return;}if(e.target.closest&&e.target.closest(".zoomlaag"))laag.classList.remove("on");});document.addEventListener("keydown",function(e){if(e.key==="Escape")laag.classList.remove("on");});})();
+</script>
 </body>
 </html>

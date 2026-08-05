@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
-<meta name="description" content="Eerst je bedrijfsprofiel als opstart, daarna vijf modules die het werk doen: dashboard, social posts, advertenties voor Google en Meta, en SEO. Mia loopt er als rode draad doorheen.">
+<meta name="description" content="Eerst je bedrijfsprofiel, daarna vijf modules: dashboard, social posts, advertenties voor Google en Meta, en SEO. Mia loopt er als rode draad doorheen.">
 <link rel="canonical" href="https://hallomia.ai/wat-doet-het/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
@@ -83,7 +83,7 @@
   box-shadow:0 30px 60px -42px rgba(40,34,20,0.45);transition:transform .2s ease, box-shadow .2s ease;}
 .row:hover .shot{transform:translateY(-3px);box-shadow:0 36px 70px -38px rgba(40,34,20,0.5);}
 /* om en om een warme en een teal-getinte placeholder, voor wat leven */
-.row.flip .ph{background:rgba(14,156,134,0.06);border-color:rgba(14,156,134,0.28);}
+.row.flip .ph{background:rgba(0,255,204,0.06);border-color:rgba(0,255,204,0.28);}
 
 /* gedeelde rij: tekst naast beeld, om en om */
 .row{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center;padding:54px 0;border-top:1px solid var(--line);}
@@ -129,7 +129,7 @@
 /* slot-CTA */
 .fc{padding:64px 0 72px;border-top:1px solid var(--line);text-align:center;}
 .fc-in{display:flex;flex-direction:column;align-items:center;}
-.fc-in h2{font-size:clamp(32px,4.4vw,56px);font-weight:600;letter-spacing:-0.035em;line-height:1.02;max-width:18ch;}
+.fc-in h2{font-size:clamp(32px,4.4vw,56px);font-weight:600;letter-spacing:-0.035em;line-height:1.02;max-width:26ch;}
 .fc-in h2 em{font-style:normal;color:var(--accent);}
 .fc-in p{margin:18px 0 26px;font-size:17px;color:var(--ink-soft);max-width:52ch;line-height:1.6;}
 
@@ -140,6 +140,14 @@
 .row h2 .mlab.now{color:var(--accent);background:var(--accent-soft);}
 .row h2 .mlab.soon{color:var(--ink-mute);background:var(--surface-2);border:1px solid var(--line-2);}
 
+.zoomshot{position:relative;cursor:zoom-in;}
+.zoomshot::after{content:"Klik om te vergroten";position:absolute;top:9px;right:9px;font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.06em;color:#fff;background:rgba(20,17,12,.72);padding:5px 9px;border-radius:99px;opacity:0;transition:.15s;pointer-events:none;}
+.zoomshot:hover::after{opacity:1;}
+.shot-cap{margin-top:10px;font-size:12.5px;color:var(--ink-mute);}
+.zoomlaag{position:fixed;inset:0;z-index:200;background:rgba(20,17,12,.86);display:none;align-items:center;justify-content:center;padding:32px;cursor:zoom-out;}
+.zoomlaag.on{display:flex;}
+.zoomlaag img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);}
+.zoomlaag .sluit{position:absolute;top:18px;right:22px;font-size:26px;line-height:1;color:#fff;background:none;border:0;cursor:pointer;font-family:inherit;}
 </style>
 <link rel="stylesheet" href="../assets/site-light.css">
 <script type="application/ld+json">
@@ -155,7 +163,7 @@
   <section class="wrap phero">
     <h1>Eén platform voor je hele marketing.</h1>
     <p class="lede">Geen losse tools die elkaar niet kennen. Je begint met je bedrijfsprofiel, dat stel je één keer in. Daarna draaien vijf modules op datzelfde profiel, en Mia loopt er als rode draad doorheen.</p>
-    <div class="acts"><a class="btn acc lg" href="../early-access/">Early access <span class="arrow">→</span></a><a class="btn ghost lg" href="#modules">Bekijk de modules</a></div>
+    <div class="acts"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-wat-doet-het">Begin bij YourFellow HQ <span class="arrow">→</span></a><a class="btn ghost lg" href="#modules">Bekijk de modules</a></div>
   </section>
 
   <!-- OPSTART: BEDRIJFSPROFIEL -->
@@ -164,15 +172,16 @@
       <div class="txt">
         <h2>Eerst je bedrijfsprofiel. <span class="mlab now">Nu beschikbaar</span></h2>
         <p class="lead">Dit stel je één keer in. Daarna weet elke module al wie je bent.</p>
-        <p class="sub">Je plakt je website en Mia leest hem uit: wat je verkoopt, voor wie, en in welke toon. Zo hoef je het nergens opnieuw uit te leggen. Het kost ongeveer 10 minuten.</p>
+        <p class="sub">Je plakt je website en Mia leest hem uit: wat je verkoopt, voor wie, en in welke toon. Heb je een brand guide of andere documenten, dan voeg je die toe als kennisdocument, zodat Mia die ook meeleest. Zo hoef je het nergens opnieuw uit te leggen. Het kost ongeveer 10 minuten.</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Leest je website automatisch uit</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Herkent je huisstijl, toon en doelgroep</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Brand guide en eigen documenten toevoegen</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Geeft elke module dezelfde basis</span></li>
         </ul>
       </div>
       <div class="pic">
-        <img class="shot" src="../assets/screenshot-bedrijfsprofiel.png" alt="Bedrijfsprofiel in YourFellow HQ: merkkleuren en fonts uit je website, met Mia die je helpt verfijnen">
+        <div class="zoomshot"><img class="shot" src="../assets/hq/v-brandkit.png" alt="Bedrijfsprofiel in YourFellow HQ: het logo, de website en de merkkleuren die Mia uit de site van bloemenzaak Bloemenpracht haalde"></div><p class="shot-cap">Klik om te vergroten. In dit voorbeeld een bloemenzaak, in jouw HQ staat je eigen bedrijf.</p>
       </div>
     </div>
   </div></section>
@@ -314,11 +323,14 @@
     <h2>Eén profiel. <br><em>
 Vijf modules. Eén Mia.</em></h2>
     <p>De eerste keer instellen kost ongeveer 10 minuten. Daarna draait het.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="../early-access/">Early access <span class="arrow">→</span></a><a class="btn ghost lg" href="../prijzen/">Bekijk prijzen</a></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-wat-doet-het">Begin bij YourFellow HQ <span class="arrow">→</span></a><a class="btn ghost lg" href="../prijzen/">Bekijk prijzen</a></div>
   </div></section>
 </main>
 
 <div id="site-foot"></div>
 <script src="../assets/site-hm.js"></script>
+<script>
+(function(){var laag=document.createElement("div");laag.className="zoomlaag";laag.innerHTML='<button class="sluit" type="button" aria-label="Sluiten">&times;</button><img alt="">';document.body.appendChild(laag);var groot=laag.querySelector("img");document.addEventListener("click",function(e){var z=e.target.closest&&e.target.closest(".zoomshot");if(z){var im=z.querySelector("img");if(im){groot.src=im.src;groot.alt=im.alt;laag.classList.add("on");}return;}if(e.target.closest&&e.target.closest(".zoomlaag"))laag.classList.remove("on");});document.addEventListener("keydown",function(e){if(e.key==="Escape")laag.classList.remove("on");});})();
+</script>
 </body>
 </html>

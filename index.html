@@ -64,39 +64,39 @@
 .mod:nth-child(3n){border-right:0;}
 @media(max-width:980px){.mod:nth-child(3n){border-right:1px solid var(--line);}.mod:nth-child(2n){border-right:0;}}
 @media(max-width:620px){.mod{border-right:0;}}
-.mod .mi{width:40px;height:40px;border-radius:10px;background:rgba(0,255,204,0.08);border:1px solid rgba(0,255,204,0.18);color:var(--accent);display:flex;align-items:center;justify-content:center;}
+.mod .mi{width:40px;height:40px;border-radius:10px;background:rgba(0,255,204,0.08);border:1px solid rgba(0,255,204,0.18);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;}
 .mod h3{font-size:21px;font-weight:600;letter-spacing:-0.02em;line-height:1.2;}
 .mod p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin-top:auto;}
-.mod .go{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent);letter-spacing:0.06em;opacity:0;transform:translateX(-4px);transition:.15s;}
+.mod .go{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent-deep);letter-spacing:0.06em;opacity:0;transform:translateX(-4px);transition:.15s;}
 .mod:hover .go{opacity:1;transform:translateX(0);}
 
 /* ---------- modules: editorial ---------- */
 .mx-head{max-width:32ch;}
 .mx-head h2{font-size:clamp(30px,3.5vw,44px);font-weight:600;letter-spacing:-0.03em;line-height:1.05;}
-.mx-head h2 em{font-style:normal;color:var(--accent);}
+.mx-head h2 em{font-style:normal;color:var(--accent-deep);}
 .mx-lead{margin-top:16px;font-size:17px;color:var(--ink-2);line-height:1.6;max-width:62ch;text-wrap:pretty;}
 .mx-start{display:grid;grid-template-columns:0.4fr 0.6fr;gap:40px;align-items:center;padding:26px 4px;margin-top:30px;border-top:1px solid var(--line-2);}
 @media(max-width:760px){.mx-start{grid-template-columns:1fr;gap:8px;}}
 .mx-start .mx-tt{display:flex;align-items:center;gap:15px;}
 .mx-start .mx-n0{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;}
 .mx-start .mx-n0 svg{width:17px;height:17px;}
-.mx-start .mx-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.mx-start .mx-tag{display:block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:3px;}
 .mx-start h3{font-size:22px;font-weight:600;letter-spacing:-0.02em;line-height:1.1;}
 .mx-start p{font-size:15.5px;color:var(--ink-soft);line-height:1.6;}
 .mx-list{display:flex;flex-direction:column;}
 .mx-row{display:grid;grid-template-columns:0.4fr 0.6fr;gap:40px;align-items:center;padding:20px 4px;border-top:1px solid var(--line);}
 @media(max-width:760px){.mx-row{grid-template-columns:1fr;gap:5px;}}
 .mx-row .mx-tt{display:flex;align-items:center;gap:15px;}
-.mx-row .mx-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums;}
+.mx-row .mx-n{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums;}
 .mx-row h3{font-size:18px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;transition:color .15s;}
 .mx-row p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
 .mx-h{display:flex;align-items:center;gap:11px;flex-wrap:wrap;}
 .mlab{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;white-space:nowrap;}
-.mlab.now{color:var(--accent);background:var(--accent-soft);}
+.mlab.now{color:var(--accent-deep);background:var(--accent-soft);}
 .mlab.soon{color:var(--ink-mute);background:var(--surface-2);border:1px solid var(--line-2);}
 .mx-row.soon .mx-n{background:var(--surface-2);color:var(--ink-mute);}
 .mx-row.soon h3{color:var(--ink-2);}
-.mx-cta{display:flex;align-items:center;gap:9px;padding:22px 4px;border-top:1px solid var(--line);font-size:15px;font-weight:600;color:var(--accent);}
+.mx-cta{display:flex;align-items:center;gap:9px;padding:22px 4px;border-top:1px solid var(--line);font-size:15px;font-weight:600;color:var(--accent-deep);}
 .mx-cta:hover{gap:13px;}
 
 /* ---------- mia teaser ---------- */
@@ -111,7 +111,7 @@
 .miateaser p{font-size:16.5px;color:var(--ink-2);line-height:1.6;margin-bottom:14px;max-width:50ch;}
 .mia-points{list-style:none;display:flex;flex-direction:column;gap:11px;margin:22px 0 28px;}
 .mia-points li{display:flex;gap:12px;font-size:15px;color:var(--ink-2);line-height:1.45;}
-.mia-points li svg{flex:none;width:18px;height:18px;color:var(--accent);margin-top:2px;}
+.mia-points li svg{flex:none;width:18px;height:18px;color:var(--accent-deep);margin-top:2px;}
 
 /* ---------- social proof ---------- */
 .proof{display:grid;grid-template-columns:1fr 0.78fr;gap:54px;align-items:center;}
@@ -122,7 +122,7 @@
 .review-head .av img{width:100%;height:100%;object-fit:cover;}
 .review-head .who b{font-size:14px;font-weight:600;display:block;line-height:1.2;}
 .review-head .who span{font-size:11.5px;color:var(--ink-soft);}
-.review-head .st{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;color:var(--accent);}
+.review-head .st{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;color:var(--accent-deep);}
 .review-head .st i{width:7px;height:7px;border-radius:50%;background:var(--accent);}
 .review-post{padding:16px 18px 0;}
 .post-frame{position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:1px solid var(--line-2);background:#000;}
@@ -140,7 +140,7 @@
 .aud{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 @media(max-width:820px){.aud{grid-template-columns:1fr;}}
 .aud .a{display:flex;flex-direction:column;gap:10px;}
-.aud .a .n{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent);letter-spacing:0.1em;}
+.aud .a .n{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent-deep);letter-spacing:0.1em;}
 .aud .a h3{font-size:19px;font-weight:600;letter-spacing:-0.01em;}
 .aud .a p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
 
@@ -148,34 +148,35 @@
 .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 @media(max-width:880px){.tiers{grid-template-columns:1fr;}}
 .tier{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:30px;display:flex;flex-direction:column;gap:16px;position:relative;}
-.tier.featured{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(0,255,204,0.28);}
+.tier.featured{border-color:var(--accent-deep);box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(0,255,204,0.28);}
 .tier .pbadge{position:absolute;top:-11px;left:30px;background:var(--accent);color:var(--on-accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:0.12em;text-transform:uppercase;}
-.tier .nm{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent);letter-spacing:0.16em;text-transform:uppercase;font-weight:700;}
+.tier .nm{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11.5px;color:var(--accent-deep);letter-spacing:0.16em;text-transform:uppercase;font-weight:700;}
 .tier .price{font-size:46px;font-weight:600;letter-spacing:-0.03em;line-height:1;display:flex;align-items:baseline;gap:6px;}
 .tier .price small{font-size:14px;font-weight:500;color:var(--ink-soft);letter-spacing:0;}
+.tier .price .was{font-size:24px;font-weight:500;color:var(--ink-mute);text-decoration:line-through;letter-spacing:-0.02em;}
 .tier .credits{font-size:14px;color:var(--ink-2);}
 .tier .credits b{color:var(--ink);}
 .tier .who{font-size:14px;color:var(--ink-soft);line-height:1.5;padding-bottom:16px;border-bottom:1px solid var(--line);}
 .tier ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--ink-2);flex:1;}
 .tier ul li{display:flex;gap:10px;line-height:1.45;}
-.tier ul li::before{content:"+";color:var(--accent);font-weight:600;}
+.tier ul li::before{content:"+";color:var(--accent-deep);font-weight:600;}
 .tier .btn{width:100%;}
 /* launch: alleen Starter live */
-.launch-note{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:9px 16px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:13.5px;font-weight:600;}
+.launch-note{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:9px 16px;border-radius:999px;background:var(--accent-soft);color:var(--accent-deep);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:13.5px;font-weight:600;}
 .launch-note::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent);}
 .tier .nowbadge{position:absolute;top:-11px;left:30px;background:var(--accent);color:var(--on-accent);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;}
 .tier .soonbadge{position:absolute;top:-11px;left:30px;background:var(--ink-2);color:#fff;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 11px;border-radius:999px;}
-.tier.live{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(14,156,134,0.22);}
+.tier.live{border-color:var(--accent-deep);box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(0,255,204,0.22);}
 .tier.soon{opacity:0.86;}
 .tier.soon .nm,.tier.soon ul{filter:grayscale(0.5);}
 .tier.soon .price{font-size:30px;font-weight:600;color:var(--ink-mute);}
 .tier.soon .btn{background:transparent;color:var(--ink-2);border:1px solid var(--line-2);box-shadow:none;}
-.tier.soon .btn:hover{border-color:var(--accent);color:var(--accent);}
+.tier.soon .btn:hover{border-color:var(--accent-deep);color:var(--accent-deep);}
 
 /* ---------- faq teaser ---------- */
 .faq{border-top:1px solid var(--line);}
 .faq .q{padding:24px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:20px;}
-.faq .q .n{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--accent);padding-top:3px;}
+.faq .q .n{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--accent-deep);padding-top:3px;}
 .faq .q h4{font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-bottom:7px;}
 .faq .q p{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:60ch;}
 
@@ -184,7 +185,7 @@
 .fc::after{content:"";position:absolute;width:680px;height:680px;border-radius:50%;left:50%;top:40%;transform:translateX(-50%);background:radial-gradient(circle,rgba(0,255,204,0.10),transparent 64%);pointer-events:none;}
 .fc-in{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;}
 .fc-in h2{font-size:clamp(38px,5.4vw,76px);font-weight:600;letter-spacing:-0.035em;line-height:0.98;max-width:none;white-space:nowrap;}
-@media(max-width:560px){.fc-in h2{white-space:normal;max-width:18ch;}}
+@media(max-width:560px){.fc-in h2{white-space:normal;max-width:26ch;}}
 .fc-in p{margin:20px 0 30px;font-size:17px;color:var(--ink-soft);max-width:54ch;line-height:1.6;}
 .fc-in .note{margin-top:18px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);}
 /* placeholder voor een nog te leveren afbeelding */
@@ -214,23 +215,23 @@
   --ink-2:#47433A;
   --ink-soft:#76705F;
   --ink-mute:#6F6957;
-  --accent:#0E9C86;      /* deeper, muted teal — readable on light */
-  --accent-deep:#0A7E6D;
-  --accent-soft:rgba(14,156,134,0.12);
-  --on-accent:#FFFFFF;   /* white text on the teal button */
+  --accent:#00FFCC;      /* deeper, muted teal — readable on light */
+  --accent-deep:#141A18;
+  --accent-soft:rgba(0,255,204,0.12);
+  --on-accent:#062B25;   /* donkere tekst op de mintknop */
 }
 /* sticky nav bar: light translucent instead of dark */
 .topbar{background:rgba(253,251,248,0.85);}
 .nav-links a:hover{background:rgba(0,0,0,0.05);}
 /* hero decorative layers tuned for a light backdrop */
-.hero::before{background:radial-gradient(900px 600px at 50% 24%,rgba(14,156,134,0.07),transparent 60%),radial-gradient(700px 500px at 50% 100%,rgba(14,156,134,0.05),transparent 60%);}
+.hero::before{background:radial-gradient(900px 600px at 50% 24%,rgba(0,255,204,0.07),transparent 60%),radial-gradient(700px 500px at 50% 100%,rgba(0,255,204,0.05),transparent 60%);}
 .hero::after{background-image:linear-gradient(rgba(0,0,0,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.035) 1px,transparent 1px);}
 /* demo screen: neutral soft shadow instead of teal glow */
 .stage{box-shadow:0 0 0 1px var(--line-2),0 40px 90px -40px rgba(40,34,20,0.28);}
 .review{box-shadow:0 30px 70px -45px rgba(40,34,20,0.3);}
-.tier.featured{box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(14,156,134,0.22);}
-.fc::after{background:radial-gradient(circle,rgba(14,156,134,0.07),transparent 64%);}
-.mia-photo::after{box-shadow:inset 0 0 90px rgba(14,156,134,0.10);}
+.tier.featured{box-shadow:0 0 0 1px var(--accent) inset,0 30px 80px -30px rgba(0,255,204,0.22);}
+.fc::after{background:radial-gradient(circle,rgba(0,255,204,0.07),transparent 64%);}
+.mia-photo::after{box-shadow:inset 0 0 90px rgba(0,255,204,0.10);}
 /* typewriter in black for the light version */
 .hero-title h1 .typed-line{color:var(--ink);}
 .hero-title h1 .caret{background:var(--ink);}
@@ -247,16 +248,16 @@
 .wm-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:9px;border:1px solid var(--line-2);
   background:var(--bg);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;
   transition:border-color .15s,color .15s;}
-.wm-close:hover{border-color:var(--accent);color:var(--ink);}
+.wm-close:hover{border-color:var(--accent-deep);color:var(--ink);}
 .wm-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',ui-monospace,monospace;
-  font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);}
+  font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-deep);}
 .wm-eyebrow::before{content:"";width:22px;height:1.5px;background:var(--accent);display:inline-block;}
 .wm-card h2{font-size:26px;font-weight:600;letter-spacing:-0.025em;line-height:1.05;margin:14px 0 0;}
-.wm-card h2 em{font-style:normal;color:var(--accent);}
+.wm-card h2 em{font-style:normal;color:var(--accent-deep);}
 .wm-lead{margin:12px 0 0;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
 .wm-when{margin:20px 0 0;display:flex;align-items:flex-start;gap:13px;padding:15px 16px;
-  background:var(--accent-soft);border:1px solid rgba(14,156,134,0.25);border-radius:12px;}
-.wm-when svg{width:20px;height:20px;color:var(--accent);flex:none;margin-top:1px;}
+  background:var(--accent-soft);border:1px solid rgba(0,255,204,0.25);border-radius:12px;}
+.wm-when svg{width:20px;height:20px;color:var(--accent-deep);flex:none;margin-top:1px;}
 .wm-when b{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;}
 .wm-when small{display:block;margin-top:3px;font-size:12.5px;color:var(--ink-soft);}
 .wm-form{margin:20px 0 0;display:flex;flex-direction:column;gap:11px;}
@@ -265,7 +266,7 @@
 .wm-row input{flex:1;font-family:inherit;font-size:16px;color:var(--ink);background:var(--bg);
   border:1px solid var(--line-2);border-radius:10px;padding:15px 17px;transition:border-color .15s,box-shadow .15s;}
 .wm-row input::placeholder{color:var(--ink-mute);}
-.wm-row input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+.wm-row input:focus{outline:none;border-color:var(--accent-deep);box-shadow:0 0 0 3px var(--accent-soft);}
 .wm-row .btn{padding:15px 24px;font-size:15.5px;white-space:nowrap;}
 .wm-fine{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:2px 0 0;}
 .wm-form .wb-dates{max-height:226px;overflow:auto;margin-bottom:13px;padding-right:3px;}
@@ -273,87 +274,9 @@
   background:var(--bg);border:1px solid var(--line);border-radius:15px;padding:24px 22px;}
 .wm-done.show{display:flex;}
 .wm-done .check{width:42px;height:42px;border-radius:50%;background:var(--accent-soft);
-  display:flex;align-items:center;justify-content:center;color:var(--accent);}
+  display:flex;align-items:center;justify-content:center;color:var(--accent-deep);}
 .wm-done h3{font-size:20px;font-weight:600;letter-spacing:-0.01em;}
 .wm-done p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;max-width:42ch;}
-</style>
-<style>
-/* ===== split hero: links Mia vraagt (1/3), rechts output (2/3) ===== */
-.split{display:grid;grid-template-columns:1fr 2fr;min-height:0;}
-@media(max-width:900px){.split{grid-template-columns:1fr;min-height:0;}}
-
-/* ---- links: Mia vraagt ---- */
-.ask{position:relative;display:flex;flex-direction:column;justify-content:center;gap:22px;
-  padding:48px 52px;border-right:1px solid var(--line);overflow:hidden;}
-@media(max-width:900px){.ask{border-right:0;border-bottom:1px solid var(--line);padding:44px 28px;}}
-.ask::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(560px 460px at 22% 26%,rgba(14,156,134,0.06),transparent 60%);}
-.ask > *{position:relative;z-index:1;}
-
-/* Mia-identiteit */
-.ask .mia-id{display:flex;align-items:center;gap:13px;}
-.ask .mia-id .av{width:50px;height:50px;border-radius:50%;overflow:hidden;flex:none;
-  border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--accent),0 8px 18px -10px rgba(14,156,134,0.5);}
-.ask .mia-id .av img{width:100%;height:100%;object-fit:cover;object-position:center 14%;}
-.ask .mia-id .who b{display:block;font-size:16px;font-weight:700;letter-spacing:-0.01em;line-height:1.15;}
-.ask .mia-id .who .role{font-size:13px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:7px;}
-.ask .mia-id .who .role .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
-
-/* Kop + chat-invoerveld (alsof je Mia een vraag typt) */
-.ask-title{font-size:clamp(24px,2.7vw,36px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;color:var(--ink);}
-.ask-title em{font-style:normal;color:var(--accent);}
-
-.composer{position:relative;display:flex;align-items:center;gap:12px;
-  background:var(--surface);border:1px solid var(--line-2);border-radius:16px;
-  padding:13px 13px 13px 18px;box-shadow:0 10px 26px -20px rgba(40,34,20,0.20);}
-.composer .qwrap{flex:1;min-width:0;}
-.composer .label{display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:4px;}
-.composer .qline{display:block;white-space:normal;word-break:break-word;}
-.composer .q{font-size:clamp(16px,1.5vw,21px);font-weight:600;color:var(--ink);
-  letter-spacing:-0.015em;line-height:1.3;
-  opacity:0;transition:opacity .4s var(--ease,cubic-bezier(.16,1,.3,1));}
-.composer .q.in{opacity:1;}
-.composer .caret{display:inline-block;width:2px;height:1em;vertical-align:-0.14em;margin-left:2px;background:var(--accent);border-radius:2px;animation:cb 1.05s steps(1,end) infinite;}
-@keyframes cb{0%,49%{opacity:1}50%,100%{opacity:0}}
-.composer .send{flex:none;width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;border:0;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -6px rgba(14,156,134,0.55);transition:transform .2s,background .2s;}
-.composer .send:hover{background:var(--accent-deep);transform:translateY(-1px);}
-.composer .send svg{width:19px;height:19px;}
-@media(prefers-reduced-motion:reduce){.composer .caret{animation:none;}}
-
-/* Live status onder de invoer (sluit aan op de rechterkant) */
-.making{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
-  font-size:13.5px;color:var(--ink-soft);font-weight:500;}
-.making .sp{width:14px;height:14px;border:2px solid var(--line-2);border-top-color:var(--accent);
-  border-radius:50%;animation:spin .8s linear infinite;}
-.making b{color:var(--ink-2);font-weight:700;}
-
-.ask .sub{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:36ch;}
-
-/* ---- rechts: wat Mia toont (jouw 2/3-HTML komt hier) ---- */
-.show{position:relative;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--bg-2);}
-@media(max-width:900px){.show{padding:22px;min-height:0;}}
-.show-frame{position:relative;width:100%;max-width:1080px;
-  background:var(--surface);border:1px solid var(--line-2);border-radius:18px;overflow:hidden;
-  box-shadow:0 40px 90px -45px rgba(40,34,20,0.28);}
-.show-bar{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line);background:var(--surface);}
-.show-bar .work{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink-soft);font-weight:500;}
-.show-bar .work .sp{width:14px;height:14px;border:2px solid var(--line-2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg)}}
-.show-bar .tag{margin-left:auto;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:var(--ink-mute);}
-
-/* panels: één tegelijk zichtbaar, wisselt mee met Mia's vraag */
-.panels{position:relative;width:100%;aspect-ratio:16/10;}
-.panel{position:absolute;inset:0;opacity:0;transform:translateY(10px) scale(0.995);
-  transition:opacity .5s var(--ease,cubic-bezier(.16,1,.3,1)),transform .5s cubic-bezier(.16,1,.3,1);
-  pointer-events:none;}
-.panel.active{opacity:1;transform:none;pointer-events:auto;}
-.panel iframe{width:100%;height:100%;border:0;display:block;}
-/* placeholder tot jouw HTML er in komt */
-.ph-out{width:100%;height:100%;display:flex;align-items:flex-end;
-  background:repeating-linear-gradient(135deg,#F3EFE6,#F3EFE6 12px,#EDE8DD 12px,#EDE8DD 24px);}
-.ph-out .lab{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--ink-soft);
-  background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:8px 12px;margin:16px;}
 </style>
 <style id="meet-var">
 /* ===== Maak kennis met Mia — het gesprek loopt door vanuit de hero ===== */
@@ -378,7 +301,7 @@
 /* links: Mia stelt zich voor — zelfde chat-taal als de composer in de hero */
 .meet-say .mia-id{display:flex;align-items:center;gap:13px;margin-bottom:16px;}
 .meet-say .mia-id .av{width:46px;height:46px;border-radius:50%;overflow:hidden;flex:none;
-  border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--accent),0 8px 18px -10px rgba(14,156,134,0.5);}
+  border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--accent),0 8px 18px -10px rgba(0,255,204,0.5);}
 .meet-say .mia-id .av img{width:100%;height:100%;object-fit:cover;object-position:center 14%;}
 .meet-say .mia-id .who b{display:block;font-size:15.5px;font-weight:700;letter-spacing:-0.01em;line-height:1.15;}
 .meet-say .mia-id .who .role{font-size:13px;color:var(--ink-soft);display:inline-flex;align-items:center;gap:7px;}
@@ -391,7 +314,7 @@
   background:var(--surface);border-left:1px solid var(--line-2);border-top:1px solid var(--line-2);
   border-top-left-radius:5px;transform:skew(-12deg) rotate(-2deg);clip-path:polygon(0 0,100% 0,0 100%);}
 .meet-bubble h2{font-size:clamp(27px,3.3vw,42px);font-weight:700;letter-spacing:-0.03em;line-height:1.04;margin-bottom:14px;}
-.meet-bubble h2 em{font-style:normal;color:var(--accent);}
+.meet-bubble h2 em{font-style:normal;color:var(--accent-deep);}
 .meet-bubble p{font-size:16px;color:var(--ink-2);line-height:1.6;}
 .meet-bubble p b{color:var(--ink);font-weight:600;}
 
@@ -402,7 +325,7 @@
 .meet-portrait .frame{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line-2);
   aspect-ratio:4/5;background:#111;box-shadow:0 56px 110px -55px rgba(40,34,20,0.45);}
 .meet-portrait .frame img{width:100%;height:100%;object-fit:cover;}
-.meet-portrait .frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 90px rgba(14,156,134,0.10);pointer-events:none;}
+.meet-portrait .frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 90px rgba(0,255,204,0.10);pointer-events:none;}
 .meet-portrait .badge{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;
   background:rgba(255,255,255,0.86);backdrop-filter:blur(8px);border:1px solid var(--line-2);border-radius:9px;
   padding:8px 13px;font-size:12px;color:var(--ink-2);font-weight:500;}
@@ -422,13 +345,13 @@
 .intro .intro-top{max-width:64ch;margin:0 auto;text-align:center;}
 .intro .kicker{justify-content:center;}
 .intro .intro-h{font-size:clamp(28px,3.6vw,46px);font-weight:600;letter-spacing:-0.03em;line-height:1.06;margin:14px 0 0;text-wrap:balance;}
-.intro .intro-h em{font-style:normal;color:var(--accent);}
+.intro .intro-h em{font-style:normal;color:var(--accent-deep);}
 .intro .intro-lead{margin:18px auto 0;font-size:17.5px;color:var(--ink-2);line-height:1.62;max-width:62ch;text-wrap:pretty;}
 .intro .intro-lead b{color:var(--ink);font-weight:600;}
 .intro .hq-browser{margin:42px auto 0;}
 .intro .intro-steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:20px;align-items:stretch;margin-top:40px;}
 .intro .istep{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 24px 26px;display:flex;flex-direction:column;gap:9px;}
-.intro .istep-n{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--accent);font-weight:500;letter-spacing:0.1em;}
+.intro .istep-n{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--accent-deep);font-weight:500;letter-spacing:0.1em;}
 .intro .istep h3{font-size:18.5px;font-weight:600;letter-spacing:-0.015em;line-height:1.2;}
 .intro .istep p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
 .intro .iarrow{display:flex;align-items:center;justify-content:center;color:var(--ink-mute);}
@@ -441,38 +364,120 @@
 
 <main>
   <!-- HERO -->
-  <section class="split">
-    <!-- LINKS — Mia vraagt -->
-    <div class="ask">
-      <div class="mia-id">
-        <span class="av"><img src="assets/mia-face.jpg" alt="Mia"></span>
-        <span class="who"><b>Mia</b><span class="role"><span class="dot"></span>je AI-collega</span></span>
-      </div>
-      <h1 class="ask-title">Vraag het <em>Mia.</em></h1>
-      <div class="composer live">
-        <div class="qwrap">
-          <span class="label">Hallo Mia,</span>
-          <span class="qline"><span class="q in" id="miaTyped">hoe staan we ervoor?</span><span class="caret"></span></span>
-        </div>
-        <button class="send" aria-label="Verstuur naar Mia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
-      </div>
-      <div class="making"><span class="sp"></span><span>Mia maakt <b id="makeTag">je dashboard</b></span></div>
-      <p class="sub">Jij vraagt, Mia maakt het meteen. Rechts zie je haar voorstel, jij keurt goed.</p>
-    </div>
+<!-- ===== HALLO MIA HERO-BLOK — begin ===== -->
+<style>
+.hm-hero{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#EDEDE6;color:#171717;padding:88px 24px 96px}
+.hm-hero *{margin:0;padding:0;box-sizing:border-box}
+.hm-hero img{max-width:100%;display:block}
+.hm-wrap{max-width:1460px;margin:0 auto;display:grid;grid-template-columns:.68fr 1.6fr;gap:52px;align-items:center}
+@media(max-width:900px){.hm-wrap{grid-template-columns:1fr}}
+.hm-badge{display:inline-flex;align-items:center;gap:.65rem;background:#fff;border:1px solid #E5E5E5;border-radius:999px;padding:.4rem 1rem .4rem .45rem;box-shadow:0 4px 6px -1px rgba(0,0,0,.05);margin-bottom:1.4rem}
+.hm-badge img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+.hm-badge b{font-size:.9rem}
+.hm-badge small{color:#737373;font-size:.78rem;margin-left:.15rem}
+.hm-hero h1{font-size:clamp(2.4rem,5.2vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:1.5rem}
+.hm-hero h1 em{font-style:italic;color:#141A18}
+.hm-chat{background:#fff;border:1px solid #E5E5E5;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,.05);padding:1.1rem 1.25rem;max-width:460px}
+.hm-q{display:flex;align-items:flex-start;gap:.7rem}
+.hm-q img{width:30px;height:30px;border-radius:50%;object-fit:cover;flex-shrink:0;margin-top:.1rem}
+.hm-send{margin-left:auto;flex-shrink:0;width:40px;height:40px;border:0;border-radius:12px;background:#00FFCC;box-shadow:0 0 20px rgba(0,255,204,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s;align-self:center}
+.hm-send:hover{background:#00FFCC;transform:scale(1.05)}
+.hm-send svg{display:block}
+#hmVraag{font-weight:700;font-size:1.05rem;min-height:2.6em;line-height:1.3}
+#hmVraag .hm-caret{display:inline-block;width:2px;height:1.05em;background:#00FFCC;margin-left:2px;vertical-align:text-bottom;animation:hmBlink 1s step-end infinite}
+@keyframes hmBlink{50%{opacity:0}}
+.hm-a{margin-top:.6rem;padding-top:.8rem;border-top:1px dashed #E5E5E5;display:flex;align-items:flex-start;gap:.55rem;color:#525252;font-size:.92rem;line-height:1.5}
+.hm-a span:last-child{min-height:2.9em}
+.hm-dot{width:8px;height:8px;border-radius:50%;background:#00FFCC;box-shadow:0 0 20px rgba(0,255,204,.3);flex-shrink:0;margin-top:.35rem}
+.hm-sub{margin-top:1.3rem;color:#525252;max-width:430px;line-height:1.6}
+.hm-frame{background:#fff;border:1px solid #E5E5E5;border-radius:16px;box-shadow:0 10px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.05);overflow:hidden}
+.hm-imgs{position:relative;aspect-ratio:1918/998;background:#fff}
+.hm-imgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top left;opacity:0;transition:opacity .45s ease}
+.hm-imgs img.hm-on{opacity:1}
+.hm-dots{display:flex;gap:.45rem;justify-content:center;margin-top:1rem}
+.hm-dots button{width:8px;height:8px;border-radius:50%;border:0;background:#d4d4cc;cursor:pointer;padding:0;transition:.2s}
+.hm-dots button.hm-on{background:#00FFCC;transform:scale(1.25)}
+@media(prefers-reduced-motion:reduce){.hm-imgs img{transition:none}#hmVraag .hm-caret{animation:none}}
+</style>
 
-    <!-- RECHTS — wat Mia toont (jouw 2/3-HTML komt hier) -->
-    <div class="show">
-      <div class="show-frame">
-        <div class="panels" id="panels">
-          <div class="panel active" data-out="dash"><iframe data-src="assets/out-dash.html" title="Mia toont het dashboard" scrolling="no"></iframe></div>
-          <div class="panel" data-out="social"><iframe data-src="assets/out-social.html" title="Mia maakt een social post" scrolling="no"></iframe></div>
-          <div class="panel" data-out="ads"><iframe data-src="assets/out-ads.html" title="Mia scherpt een advertentie aan" scrolling="no"></iframe></div>
-          <div class="panel" data-out="seo"><iframe data-src="assets/out-seo.html" title="Mia verbetert een SEO-tekst" scrolling="no"></iframe></div>
-          <div class="panel" data-out="news"><iframe data-src="assets/out-news.html" title="Mia zet de nieuwsbrief klaar" scrolling="no"></iframe></div>
+<section class="hm-hero">
+  <div class="hm-wrap">
+    <div>
+      <div class="hm-badge"><img src="assets/hero/mia-badge.jpg" alt="Mia"><b>Mia</b><small>je AI-collega</small></div>
+      <h1>Vraag het <em>Mia.</em></h1>
+      <div class="hm-chat">
+        <div class="hm-q">
+          <img src="assets/hero/mia-badge.jpg" alt="">
+          <div id="hmVraag" aria-live="polite">Hallo Mia, waar moet ik vandaag op letten?<span class="hm-caret"></span></div>
+          <button class="hm-send" id="hmSend" aria-label="Verstuur, volgende vraag" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3.4 20.6L21.8 12 3.4 3.4l2.9 7.4 9.2 1.2-9.2 1.2-2.9 7.4z" fill="#171717"/></svg></button>
+        </div>
+        <div class="hm-a"><span class="hm-dot"></span><span id="hmAntwoord">Mia zet bovenaan je dashboard wat vandaag aandacht nodig heeft</span></div>
+      </div>
+      <p class="hm-sub">Jij vraagt, Mia maakt het meteen. Rechts zie je haar voorstel, jij keurt goed.</p>
+    </div>
+    <div>
+      <div class="hm-frame">
+        <div class="hm-imgs" id="hmImgs">
+          <img src="assets/hero/scherm-1.png" class="hm-on" alt="Het dashboard van YourFellow HQ met taken, het weekrapport en de groei per kanaal">
+          <img src="assets/hero/scherm-5.png" alt="Het bedrijfsprofiel in YourFellow HQ">
+          <img src="assets/hero/scherm-4.png" alt="De takenpagina van Mia met voorstellen en de knoppen Goed, Inplannen en Direct publiceren">
+          <img src="assets/hero/scherm-2.png" alt="Het social media overzicht met drie klaarstaande posts met tekst en beeld">
+          <img src="assets/hero/scherm-3.png" alt="De content-kalender met ingeplande posts en voorgestelde momenten">
         </div>
       </div>
+      <div class="hm-dots" id="hmDots" aria-label="Voorbeelden"></div>
     </div>
-  </section>
+  </div>
+</section>
+
+<script>
+(function(){
+  var items=[
+    {q:'Hallo Mia, waar moet ik vandaag op letten?', a:'Mia zet bovenaan je dashboard wat vandaag aandacht nodig heeft'},
+    {q:'Hallo Mia, wat weet je van mijn bedrijf?', a:'Alles: je doelgroep, je toon en wat je verkoopt. Elk voorstel komt uit dit profiel'},
+    {q:'Hallo Mia, plan deze maar in', a:'Na jouw akkoord plant Mia de post in. Eerder gebeurt er niks'},
+    {q:'Hallo Mia, staan er nog posts voor me klaar?', a:'Drie posts staan klaar als concept, met tekst en beeld. Jij bepaalt wat er live gaat'},
+    {q:'Hallo Mia, wat staat er deze maand gepland?', a:'Mia opent je kalender: ingeplande posts en momenten die ze alvast voor je zag aankomen'}
+  ];
+  var imgs=document.querySelectorAll('#hmImgs img'),
+      vraag=document.getElementById('hmVraag'),
+      antwoord=document.getElementById('hmAntwoord'),
+      dotsWrap=document.getElementById('hmDots'),
+      idx=0, typeTimer=null, cycleTimer=null,
+      reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  items.forEach(function(_,i){
+    var b=document.createElement('button');
+    b.setAttribute('aria-label','Voorbeeld '+(i+1));
+    if(i===0)b.classList.add('hm-on');
+    b.addEventListener('click',function(){show(i);restart();});
+    dotsWrap.appendChild(b);
+  });
+  var dots=dotsWrap.querySelectorAll('button');
+  var send=document.getElementById('hmSend');
+  if(send)send.addEventListener('click',function(){show((idx+1)%items.length);restart();});
+  function typeText(t){
+    clearInterval(typeTimer);
+    if(reduced){vraag.innerHTML=t+'<span class="hm-caret"></span>';return;}
+    var i=0; vraag.innerHTML='<span class="hm-caret"></span>';
+    typeTimer=setInterval(function(){
+      i++; vraag.innerHTML=t.slice(0,i)+'<span class="hm-caret"></span>';
+      if(i>=t.length)clearInterval(typeTimer);
+    },34);
+  }
+  function show(i){
+    idx=i;
+    imgs.forEach(function(im,k){im.classList.toggle('hm-on',k===i);});
+    dots.forEach(function(d,k){d.classList.toggle('hm-on',k===i);});
+    typeText(items[i].q); antwoord.textContent=items[i].a;
+  }
+  function restart(){
+    clearInterval(cycleTimer);
+    if(!reduced)cycleTimer=setInterval(function(){show((idx+1)%items.length);},5200);
+  }
+  restart();
+})();
+</script>
+<!-- ===== HALLO MIA HERO-BLOK — einde ===== -->
 
   <!-- WAT IS DIT -->
   <section class="section intro" data-screen-label="Wat is dit"><div class="wrap">
@@ -519,11 +524,11 @@
         <span class="mx-n0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
         <div><span class="mx-tag">Eerst &middot; met Mia</span><div class="mx-h"><h3>Bedrijfsprofiel</h3><span class="mlab now">Nu beschikbaar</span></div></div>
       </div>
-      <p>Samen met Mia bouw je je bedrijfsprofiel uit je website: producten, doelgroep en toon. Dit is de basis onder alle modules hieronder.</p>
+      <p>Samen met Mia bouw je je bedrijfsprofiel uit je website: producten, doelgroep en toon. Heb je een brand guide, voeg die dan toe, dan neemt Mia je huisstijl daaruit over. Dit is de basis onder alle modules hieronder.</p>
     </div>
     <div class="mx-list">
       <div class="mx-row"><div class="mx-tt"><span class="mx-n">01</span><div class="mx-h"><h3>Dashboard</h3><span class="mlab now">Nu beschikbaar</span></div></div><p>Je kalender en cijfers op één scherm. Mia zet bovenaan waar je op moet letten.</p></div>
-      <div class="mx-row"><div class="mx-tt"><span class="mx-n">02</span><div class="mx-h"><h3>Social posts</h3><span class="mlab now">Nu beschikbaar</span></div></div><p>Posts en beeld in jouw stijl. Mia zet ze klaar voor Instagram, LinkedIn en Facebook.</p></div>
+      <div class="mx-row"><div class="mx-tt"><span class="mx-n">02</span><div class="mx-h"><h3>Social posts</h3><span class="mlab now">Nu beschikbaar</span></div></div><p>Posts en beeld in jouw stijl, en korte video’s uit je eigen foto’s. Mia zet ze klaar voor Instagram, LinkedIn en Facebook.</p></div>
       <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">03</span><div class="mx-h"><h3>Advertenties</h3><span class="mlab soon">Binnenkort</span></div></div><p>Voor Google en Meta. Mia schrijft de varianten, jij keurt goed.</p></div>
       <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">04</span><div class="mx-h"><h3>SEO &amp; GEO content</h3><span class="mlab soon">Binnenkort</span></div></div><p>Mia schrijft teksten op echte zoekwoorden. Vindbaar in Google én AI.</p></div>
       <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">05</span><div class="mx-h"><h3>Google &amp; Meta ads-beheer</h3><span class="mlab soon">Binnenkort</span></div></div><p>Mia bewaakt je lopende campagnes en stelt bijsturingen voor.</p></div>
@@ -540,7 +545,7 @@
       <div class="tier live">
         <span class="nowbadge">Nu beschikbaar</span>
         <div class="nm">Starter</div>
-        <div class="price">€49 <small>/ maand</small></div>
+        <div class="price"><span class="was">€99</span> €79 <small>/ maand</small></div>
         <div class="who">Samen met Mia je marketing opbouwen.</div>
         <ul><li>Social media posts genereren</li><li>Onbeperkt content maken</li><li>Brand kit + AI-assistent Mia</li></ul>
         <a class="btn acc" href="prijzen/">Bekijk Starter</a>
@@ -551,7 +556,7 @@
         <div class="price">Binnenkort</div>
         <div class="who">Voor wie al bezig is en door wil groeien.</div>
         <ul><li>Alles van Starter</li><li>Website &amp; blog content + SEO</li><li>Search Console + zoekwoorden</li></ul>
-        <a class="btn" href="early-access/?interesse=growth">Hou me op de hoogte</a>
+        <a class="btn" href="contact/?interesse=growth">Hou me op de hoogte</a>
       </div>
       <div class="tier soon">
         <span class="soonbadge">Binnenkort</span>
@@ -559,7 +564,7 @@
         <div class="price">Binnenkort</div>
         <div class="who">Volledig pakket inclusief advertising.</div>
         <ul><li>Alles van Growth</li><li>Meta Ads + Google Ads beheer</li><li>Campaign builder + dashboards</li></ul>
-        <a class="btn" href="early-access/?interesse=pro">Hou me op de hoogte</a>
+        <a class="btn" href="contact/?interesse=pro">Hou me op de hoogte</a>
       </div>
     </div>
     <div style="text-align:center;margin-top:28px;"><a class="txt-link" href="prijzen/">Vergelijk alle functies →</a></div>
@@ -582,8 +587,8 @@
   <!-- FINAL CTA -->
   <section class="fc"><div class="wrap fc-in">
     <h2 style="font-size: 44px">Klaar om met Mia te <em>beginnen?</em></h2>
-    <p>Je start vanaf €49 per maand, maandelijks opzegbaar. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
-    <div class="hero-bottom"><a class="btn acc lg" href="early-access/">Early access <span class="arrow">→</span></a><button type="button" class="btn ghost lg" id="wbOpen">Plan een webinar <span class="arrow">→</span></button></div>
+    <p>Je start vanaf €79 per maand, maandelijks opzegbaar. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
+    <div class="hero-bottom"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-home">Begin bij YourFellow HQ <span class="arrow">→</span></a><button type="button" class="btn ghost lg" id="wbOpen">Plan een webinar <span class="arrow">→</span></button></div>
     <p class="note" id="wbNote">Live webinar, elke woensdag. Eerstvolgende: <b data-webinar-next>…</b>.</p>
   </div></section>
 </main>
@@ -632,75 +637,6 @@
   window.addEventListener('resize', fit);
   if(document.readyState!=='loading') requestAnimationFrame(fit);
   else document.addEventListener('DOMContentLoaded', fit);
-})();
-</script>
-<script>
-(function(){
-  // Mia cyclet door 5 vragen. Links typt ze de vraag, rechts wisselt het
-  // bijbehorende app-scherm mee. Belangrijk: er draait maar één scherm tegelijk.
-  // Het actieve iframe wordt vers geladen (start z'n opbouw gelijk met de vraag);
-  // de andere vier staan op about:blank zodat hun animatie-lussen de pagina niet
-  // afremmen. Alle timing via setTimeout/setInterval (niet rAF) zodat het ook
-  // soepel blijft lopen naast de iframe-animaties.
-  var VARIANTS = [
-    { q:'hoe staan we ervoor?',        make:'je dashboard',    out:'dash'   },
-    { q:'maak een social post.',       make:'een social post', out:'social' },
-    { q:"scherp m'n advertentie aan.", make:'je advertentie',  out:'ads'    },
-    { q:"verbeter m'n SEO-tekst.",     make:'je SEO-tekst',    out:'seo'    },
-    { q:'zet de nieuwsbrief klaar.',   make:'je nieuwsbrief',  out:'news'   }
-  ];
-  var SLOT_MS = 5200, SWAP_MS = 380;
-
-  var qEl    = document.getElementById('miaTyped');
-  var makeEl = document.getElementById('makeTag');
-  var panels = Array.prototype.slice.call(document.querySelectorAll('#panels .panel'));
-  if(!qEl || !panels.length) return;
-
-  // Toon één paneel: laad dat iframe vers, blank de rest (stopt hun rAF-lussen).
-  function activate(name){
-    panels.forEach(function(p){
-      var on = p.getAttribute('data-out') === name;
-      p.classList.toggle('active', on);
-      var fr = p.querySelector('iframe');
-      if(!fr) return;
-      if(on){
-        var src = fr.getAttribute('data-src');
-        if(fr.getAttribute('src') !== src) fr.setAttribute('src', src);
-      } else if(fr.getAttribute('src') && fr.getAttribute('src') !== 'about:blank'){
-        fr.setAttribute('src', 'about:blank');
-      }
-    });
-  }
-
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce){
-    var v0 = VARIANTS[0];
-    qEl.textContent = v0.q; qEl.classList.add('in');
-    if(makeEl) makeEl.textContent = v0.make; activate(v0.out);
-    return;
-  }
-
-  // Toon variant 0 direct; daarna vloeiend wisselen.
-  function show(v){
-    qEl.textContent = v.q;
-    if(makeEl) makeEl.textContent = v.make;
-    activate(v.out);
-  }
-  show(VARIANTS[0]); qEl.classList.add('in');
-
-  var i = 1;
-  function run(){
-    var v = VARIANTS[i];
-    qEl.classList.remove('in');             // vraag uit-faden
-    setTimeout(function(){
-      show(v);                              // tekst + paneel wisselen samen
-      void qEl.offsetWidth;
-      qEl.classList.add('in');              // weer in-faden
-    }, SWAP_MS);
-    i = (i + 1) % VARIANTS.length;
-    setTimeout(run, SLOT_MS);
-  }
-  setTimeout(run, SLOT_MS);
 })();
 </script>
 
