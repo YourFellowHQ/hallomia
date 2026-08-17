@@ -129,7 +129,7 @@
     +     '<div class="about">'
     +       BRAND
     +       '<p class="hq-note">Hallo Mia is onze kennismaking. Het platform heet straks <b>YourFellow HQ</b>, op <a href="https://app.yourfellow.nl/?bron=site-footer" target="_blank" rel="noopener">app.yourfellow.nl</a>, met Mia als je assistent.</p>'
-    +       '<div class="award">Gemaakt door <a class="yflink" href="https://yourfellow.nl/" target="_blank" rel="noopener">YourFellow</a>, performance marketing uit Zevenbergen</div>'
+    +       '<div class="award">Gemaakt door <a class="yflink" href="https://yourfellow.nl/" target="_blank" rel="noopener">YourFellow</a>, performance marketing uit Zevenbergen. <a class="yflink" href="https://www.linkedin.com/company/yourfellow/" target="_blank" rel="noopener">Volg ons op LinkedIn</a></div>'
     +     '</div>'
     +     '<div class="col"><h5>Product</h5>'
     +       '<a href="'+R+'wat-doet-het/">Wat doet het</a>'
@@ -151,7 +151,7 @@
     +     '</div>'
     +   '</div>'
     +   '<div class="bottom">'
-    +     '<div>&copy; 2026 Hallo Mia, vanaf &euro;79 p/m</div>'
+    +     '<div>&copy; 2026 Hallo Mia, vanaf &euro;79,99 p/m</div>'
     +     '<div class="links"><a href="'+R+'vragen/">Privacy</a><a href="'+R+'vragen/">Voorwaarden</a><a href="'+HOME+'">Home</a></div>'
     +   '</div>'
     + '</div></footer>';
@@ -269,5 +269,4 @@
       if(window.gtag) gtag('event','cta_click',{cta_type:type, cta_bron:bron, cta_pagina:location.pathname});
     }, true);
   })();
-
 })();
