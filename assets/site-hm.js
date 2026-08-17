@@ -35,7 +35,11 @@
     loadGTM: false,
     // GA4-property "Hallo Mia". Zet loadGA op false om het meten te stoppen.
     gaId:    'G-QB20D38EG3',
-    loadGA:  true
+    loadGA:  true,
+    // Meta-pixel (gegevensset "Hallo Mia website"). Laadt pas na toestemming
+    // in de cookiemelding. Zet loadPixel op false om het adverteren-meten te stoppen.
+    pixelId:   '1375618640654932',
+    loadPixel: true
   };
   window.CRM_CONFIG = CRM;
   window.dataLayer = window.dataLayer || [];
@@ -51,6 +55,84 @@
     gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});
     gtag('config',CRM.gaId,{anonymize_ip:true,allow_google_signals:false,allow_ad_personalization_signals:false});
   }
+
+  /* ============================================================
+     COOKIEMELDING + META-PIXEL
+     De pixel is een advertentiecookie, dus die laadt alleen na een
+     uitdrukkelijk "ja" in de melding. Keuze staat een jaar vast in
+     localStorage ('hm-cookies'). GA4 hierboven blijft anoniem draaien
+     en valt niet onder deze toestemming.
+     Keuze opnieuw laten kiezen: window.hmCookieVoorkeur() in de console
+     of een link met data-cookie-voorkeur.
+     ============================================================ */
+  (function pixelConsent(){
+    var KEY = 'hm-cookies';
+    function lees(){ try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch(e){ return null; } }
+    function schrijf(ja){ try { localStorage.setItem(KEY, JSON.stringify({ads:!!ja, op:Date.now()})); } catch(e){} }
+
+    function laadPixel(){
+      if(!CRM.pixelId || !CRM.loadPixel || window.fbq) return;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', CRM.pixelId);
+      fbq('track', 'PageView');
+      // Wie de prijzen bekeek is een warme retargeting-groep.
+      if(/\/prijzen\//.test(location.pathname)) fbq('track','ViewContent',{content_name:'Prijzen'});
+      if(window.gtag) gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
+    }
+    window.hmLaadPixel = laadPixel;
+
+    // Pad naar de site-root, want de melding staat ook op pagina's twee mappen diep.
+    function ckRoot(){
+      var d = parseInt((document.body.getAttribute('data-depth') || '1'), 10);
+      if(isNaN(d) || d < 0) d = 1;
+      return d === 0 ? '' : new Array(d + 1).join('../');
+    }
+
+    function melding(){
+      var w = document.createElement('div');
+      w.id = 'hm-cookiebalk';
+      w.setAttribute('role','dialog');
+      w.setAttribute('aria-label','Cookievoorkeur');
+      w.innerHTML = '<div class="hm-ck-card">'
+        + '<div class="hm-ck-txt"><strong>Cookies</strong>We gebruiken cookies om de website te laten werken, het gebruik te analyseren en onze advertenties te verbeteren.</div>'
+        + '<div class="hm-ck-btns">'
+        + '<button type="button" class="hm-ck-nee">Weigeren</button>'
+        + '<button type="button" class="hm-ck-ja">Accepteren</button>'
+        + '</div></div>';
+      var st = document.createElement('style');
+      st.textContent = '#hm-cookiebalk{position:fixed;left:0;right:0;bottom:0;z-index:9000;padding:14px;display:flex;justify-content:center;pointer-events:none;animation:hmCkIn .28s ease-out both}'
+        + '@keyframes hmCkIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}'
+        + '#hm-cookiebalk .hm-ck-card{pointer-events:auto;max-width:600px;width:100%;background:#fff;border:1px solid #E4E7EB;border-radius:12px;box-shadow:0 8px 28px rgba(15,18,22,0.10);padding:12px 14px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}'
+        + '#hm-cookiebalk .hm-ck-txt{flex:1 1 240px;font-size:13.5px;line-height:1.5;color:#4A5058}'
+        + '#hm-cookiebalk .hm-ck-txt strong{display:block;font-size:14.5px;font-weight:600;color:#0F1216;margin-bottom:3px}'
+        + '#hm-cookiebalk .hm-ck-btns{display:flex;gap:8px;flex:0 0 auto}'
+        + '#hm-cookiebalk button{font:inherit;font-size:13.5px;font-weight:600;border-radius:8px;padding:10px 16px;cursor:pointer;border:1px solid transparent;min-height:44px}'
+        + '#hm-cookiebalk .hm-ck-nee{background:#fff;border-color:#D6DAE0;color:#4A5058}'
+        + '#hm-cookiebalk .hm-ck-nee:hover{border-color:#0F1216;color:#0F1216}'
+        + '#hm-cookiebalk .hm-ck-ja{background:#0F1216;color:#fff}'
+        + '#hm-cookiebalk .hm-ck-ja:hover{background:#000}'
+        + '@media(max-width:560px){#hm-cookiebalk .hm-ck-btns{width:100%}#hm-cookiebalk .hm-ck-btns button{flex:1}}';
+      document.head.appendChild(st);
+      document.body.appendChild(w);
+      function sluit(ja){ schrijf(ja); w.remove(); if(ja) laadPixel(); }
+      w.querySelector('.hm-ck-ja').addEventListener('click', function(){ sluit(true); });
+      w.querySelector('.hm-ck-nee').addEventListener('click', function(){ sluit(false); });
+    }
+
+    var keus = lees();
+    if(keus && keus.ads) laadPixel();
+    // Twee tellen wachten: de bezoeker is dan al aan het lezen en de melding
+    // onderbreekt niets. Dat levert merkbaar vaker een keuze op.
+    else if(!keus && CRM.pixelId && CRM.loadPixel) setTimeout(melding, 2000);
+
+    window.hmCookieVoorkeur = function(){ try { localStorage.removeItem(KEY); } catch(e){} melding(); };
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('[data-cookie-voorkeur]');
+      if(a){ e.preventDefault(); window.hmCookieVoorkeur(); }
+    });
+  })();
 
   /* GTM laden, alleen als ingeschakeld (loadGTM:true) */
   if(CRM.gtmId && CRM.loadGTM){
@@ -152,7 +234,7 @@
     +   '</div>'
     +   '<div class="bottom">'
     +     '<div>&copy; 2026 Hallo Mia, vanaf &euro;79,99 p/m</div>'
-    +     '<div class="links"><a href="'+R+'vragen/">Privacy</a><a href="'+R+'vragen/">Voorwaarden</a><a href="'+HOME+'">Home</a></div>'
+    +     '<div class="links"><a href="'+R+'vragen/">Privacy</a><a href="'+R+'vragen/">Voorwaarden</a><a href="#" data-cookie-voorkeur>Cookies</a><a href="'+HOME+'">Home</a></div>'
     +   '</div>'
     + '</div></footer>';
 
@@ -220,6 +302,7 @@
         var list   = form.getAttribute('data-crm-list') || '';
         window.dataLayer.push({event:'crm_signup', crm_source:source, crm_list:list});
         if(window.gtag) gtag('event','crm_signup',{crm_source:source, crm_list:list});
+        if(window.fbq) fbq('track','Lead',{content_name:source || 'formulier'});
         function finish(){ form.style.display='none'; if(done) done.classList.add('show'); }
         if(!CRM.endpoint){ finish(); return; }   // demo-modus tot Paul de gegevens levert
         var fd = new FormData(), map = CRM.fieldMap || {};
@@ -267,6 +350,10 @@
       try { bron = new URL(a.href, location.href).searchParams.get('bron') || ''; } catch(err){}
       window.dataLayer.push({event:'cta_click', cta_type:type, cta_bron:bron, cta_pagina:location.pathname});
       if(window.gtag) gtag('event','cta_click',{cta_type:type, cta_bron:bron, cta_pagina:location.pathname});
+      if(window.fbq){
+        if(type==='aanmelden') fbq('track','StartTrial',{content_name:bron || location.pathname});
+        else fbq('trackCustom','CTAKlik',{cta_type:type, cta_pagina:location.pathname});
+      }
     }, true);
   })();
 })();
