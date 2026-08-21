@@ -153,10 +153,10 @@
   var LIVE_DATE = new Date('2026-07-06T00:00:00');
   var isLive = new Date() >= LIVE_DATE;
   var navCTA = isLive
-    ? '<a class="cta ghost" href="'+R+'webinar/">Webinar</a>'
+    ? '<a class="cta ghost" href="'+R+'webinar/">Plan je demo in</a>'
       + '<a class="cta ghost" href="'+R+'contact/">Contact</a>'
       + '<a class="cta" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>'
-    : '<a class="cta ghost" href="'+R+'webinar/">Webinar</a>'
+    : '<a class="cta ghost" href="'+R+'webinar/">Plan je demo in</a>'
       + '<a class="cta" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>';
 
   var BRAND = '<a class="brand" href="' + HOME + '">'
@@ -356,4 +356,5 @@
       }
     }, true);
   })();
+
 })();
