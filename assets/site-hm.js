@@ -46,22 +46,28 @@
 
   /* GA4 laden, alleen als ingeschakeld (loadGA:true). Anoniem: geen advertentie-
      signalen, IP-adres verkort, en de bezoeker wordt niet over sites gevolgd. */
-  if(CRM.gaId && CRM.loadGA){
+  /* GA4 laadt pas na toestemming in de cookiemelding (Consent Mode v2:
+     alles staat standaard op denied). hmLaadGA() wordt aangeroepen door
+     de melding hieronder, of direct als de keuze al 'ja' was. */
+  window.gtag=function(){window.dataLayer.push(arguments);};
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+  window.hmLaadGA=function(){
+    if(!CRM.gaId || !CRM.loadGA || window.__hmGA) return;
+    window.__hmGA=true;
     var gs=document.createElement('script');
     gs.async=true;gs.src='https://www.googletagmanager.com/gtag/js?id='+CRM.gaId;
     document.head.appendChild(gs);
-    window.gtag=function(){window.dataLayer.push(arguments);};
     gtag('js',new Date());
-    gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});
+    gtag('consent','update',{analytics_storage:'granted'});
     gtag('config',CRM.gaId,{anonymize_ip:true,allow_google_signals:false,allow_ad_personalization_signals:false});
-  }
+  };
 
   /* ============================================================
      COOKIEMELDING + META-PIXEL
      De pixel is een advertentiecookie, dus die laadt alleen na een
      uitdrukkelijk "ja" in de melding. Keuze staat een jaar vast in
-     localStorage ('hm-cookies'). GA4 hierboven blijft anoniem draaien
-     en valt niet onder deze toestemming.
+     localStorage ('hm-cookies'). Ook GA4 laadt pas na een "ja": zonder
+     toestemming wordt er dus niets gemeten.
      Keuze opnieuw laten kiezen: window.hmCookieVoorkeur() in de console
      of een link met data-cookie-voorkeur.
      ============================================================ */
@@ -96,7 +102,7 @@
       w.setAttribute('role','dialog');
       w.setAttribute('aria-label','Cookievoorkeur');
       w.innerHTML = '<div class="hm-ck-card">'
-        + '<div class="hm-ck-txt"><strong>Cookies</strong>We gebruiken cookies om de website te laten werken, het gebruik te analyseren en onze advertenties te verbeteren.</div>'
+        + '<div class="hm-ck-txt"><strong>Cookies</strong>We gebruiken cookies om de website te laten werken. Met jouw toestemming meten we ook hoe de site gebruikt wordt en hoe onze advertenties presteren.</div>'
         + '<div class="hm-ck-btns">'
         + '<button type="button" class="hm-ck-nee">Weigeren</button>'
         + '<button type="button" class="hm-ck-ja">Accepteren</button>'
@@ -116,16 +122,16 @@
         + '@media(max-width:560px){#hm-cookiebalk .hm-ck-btns{width:100%}#hm-cookiebalk .hm-ck-btns button{flex:1}}';
       document.head.appendChild(st);
       document.body.appendChild(w);
-      function sluit(ja){ schrijf(ja); w.remove(); if(ja) laadPixel(); }
+      function sluit(ja){ schrijf(ja); w.remove(); if(ja){ if(window.hmLaadGA) hmLaadGA(); laadPixel(); } }
       w.querySelector('.hm-ck-ja').addEventListener('click', function(){ sluit(true); });
       w.querySelector('.hm-ck-nee').addEventListener('click', function(){ sluit(false); });
     }
 
     var keus = lees();
-    if(keus && keus.ads) laadPixel();
+    if(keus && keus.ads){ if(window.hmLaadGA) hmLaadGA(); laadPixel(); }
     // Twee tellen wachten: de bezoeker is dan al aan het lezen en de melding
     // onderbreekt niets. Dat levert merkbaar vaker een keuze op.
-    else if(!keus && CRM.pixelId && CRM.loadPixel) setTimeout(melding, 2000);
+    else if(!keus) setTimeout(melding, 2000);
 
     window.hmCookieVoorkeur = function(){ try { localStorage.removeItem(KEY); } catch(e){} melding(); };
     document.addEventListener('click', function(e){

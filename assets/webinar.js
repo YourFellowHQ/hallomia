@@ -2,8 +2,8 @@
    Webinar: datumkeuze + aanmelding
    Gedeeld door de homepage (modal) en de /webinar/-pagina.
 
-   1. Genereert de komende woensdag-sessies (elke week, vanaf de
-      week van 20 juli 2026 = woensdag 22 juli).
+   1. Genereert de komende sessies: elke week dinsdag 14:00, woensdag
+      14:00 en donderdag 10:00.
    2. Rendert ze als klikbare datumkeuze in elk element met
       [data-webinar-dates], en vult de eerstvolgende datum in elk
       [data-webinar-next].
@@ -20,22 +20,30 @@
 (function(){
   var NOTIFY_EMAIL = 'JOUW@EMAIL.NL';   // << jouw inbox
 
-  var WB_ANCHOR = new Date('2026-07-22T00:00:00'); // eerste woensdag-sessie
-  var WB_WEEKS  = 8;       // aantal komende sessies om te tonen
-  var WB_TIME   = '14:00'; // starttijd
+  // Vast weekschema: [weekdag 0=zo, starttijd]
+  var WB_SLOTS  = [[2,'14:00'],[3,'14:00'],[4,'10:00']];
+  var WB_WEEKS  = 4;       // aantal weken vooruit om te tonen
+  var WB_TIME   = '14:00'; // fallback-starttijd
   var DAY = 86400000;
 
   function upcoming(){
-    var now = new Date(), d = new Date(WB_ANCHOR), out = [];
-    while(d.getTime() + DAY <= now.getTime()){ d = new Date(d.getTime() + 7 * DAY); }
-    for(var i = 0; i < WB_WEEKS; i++){ out.push(new Date(d.getTime() + i * 7 * DAY)); }
+    var now = new Date(), out = [];
+    for(var w = 0; w <= WB_WEEKS; w++){
+      WB_SLOTS.forEach(function(slot){
+        var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + w * 7, +slot[1].slice(0,2), +slot[1].slice(3));
+        d.setDate(d.getDate() + ((slot[0] - d.getDay() + 7) % 7));
+        d.wbTime = slot[1];
+        if(d.getTime() > now.getTime()) out.push(d);
+      });
+    }
+    out.sort(function(a,b){ return a - b; });
     return out;
   }
   function dayLabel(d){
     var s = d.toLocaleDateString('nl-NL', {weekday:'long', day:'numeric', month:'long'});
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
-  function fullLabel(d){ return dayLabel(d) + ', ' + WB_TIME + ' uur'; }
+  function fullLabel(d){ return dayLabel(d) + ', ' + (d.wbTime || WB_TIME) + ' uur'; }
 
   function renderDates(){
     var dates = upcoming();
@@ -51,7 +59,7 @@
         l.innerHTML =
           '<input type="radio" name="webinar_sessie" value="' + lab + '"' + (i === 0 ? ' checked' : '') + '>' +
           '<span class="wb-date-day">' + dayLabel(d) + '</span>' +
-          '<span class="wb-date-time">' + WB_TIME + ' uur</span>';
+          '<span class="wb-date-time">' + (d.wbTime || WB_TIME) + ' uur</span>';
         box.appendChild(l);
       });
       box.addEventListener('change', function(){
