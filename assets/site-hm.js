@@ -38,7 +38,7 @@
     loadGA:  true,
     // Meta-pixel (gegevensset "Hallo Mia website"). Laadt pas na toestemming
     // in de cookiemelding. Zet loadPixel op false om het adverteren-meten te stoppen.
-    pixelId:   '1375618640654932',
+    pixelId:   '1473984194748715',
     loadPixel: true
   };
   window.CRM_CONFIG = CRM;
@@ -159,10 +159,10 @@
   var LIVE_DATE = new Date('2026-07-06T00:00:00');
   var isLive = new Date() >= LIVE_DATE;
   var navCTA = isLive
-    ? '<a class="cta ghost" href="'+R+'webinar/">Plan je demo in</a>'
+    ? '<a class="cta ghost" href="'+R+'demo/">Plan je demo in</a>'
       + '<a class="cta ghost" href="'+R+'contact/">Contact</a>'
       + '<a class="cta" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>'
-    : '<a class="cta ghost" href="'+R+'webinar/">Plan je demo in</a>'
+    : '<a class="cta ghost" href="'+R+'demo/">Plan je demo in</a>'
       + '<a class="cta" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>';
 
   var BRAND = '<a class="brand" href="' + HOME + '">'
@@ -350,7 +350,7 @@
       var h = a.getAttribute('href') || '';
       var type = h.indexOf('app.yourfellow.nl') > -1 ? 'aanmelden'
                : /\/contact\//.test(h) ? 'demo'
-               : /\/webinar\//.test(h) ? 'webinar' : null;
+               : /\/(demo|webinar)\//.test(h) ? 'webinar' : null;
       if(!type) return;
       var bron = '';
       try { bron = new URL(a.href, location.href).searchParams.get('bron') || ''; } catch(err){}
