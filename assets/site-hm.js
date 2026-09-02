@@ -32,7 +32,7 @@
     // GTM-container (al aangemaakt, zie bouwdoc). Zet loadGTM op true zodra
     // de cookie/consent-afhandeling rond is (AVG-punt in het bouwdoc).
     gtmId:   'GTM-MNL39P7S',
-    loadGTM: false,
+    loadGTM: true,
     // GA4-property "Hallo Mia". Zet loadGA op false om het meten te stoppen.
     gaId:    'G-QB20D38EG3',
     loadGA:  true,
