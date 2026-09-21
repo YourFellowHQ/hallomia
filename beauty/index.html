@@ -175,6 +175,9 @@
 .hD-in li{display:flex;gap:10px;font-size:14.5px;line-height:1.45;color:var(--ink-2);}
 .hD-in li::before{content:"+";color:var(--accent-deep);font-weight:600;flex:none;}
 .hD-card .btn.acc{margin-top:18px;width:100%;justify-content:center;}
+.hD-proof{margin:0 0 18px;display:inline-flex;align-self:flex-start;align-items:center;gap:10px;background:rgba(0,255,204,0.18);border:1px solid rgba(0,255,204,0.65);border-radius:999px;padding:11px 19px 11px 15px;font-size:15.5px;line-height:1.2;color:var(--ink);}
+.hD-proof svg{flex:none;color:var(--ink);}
+.hD-proof b{font-weight:600;color:var(--ink);}
 .hD-card .note{margin-top:11px;font-size:12.5px;line-height:1.55;color:var(--ink-mute);}
 .hD-demo{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;line-height:1.5;color:var(--ink-2);}
 .hD-demo a{font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--accent);padding-bottom:1px;}
@@ -194,6 +197,8 @@
 .vdl li{display:flex;gap:11px;font-size:15.5px;line-height:1.5;color:var(--ink-2);}
 .vdl li::before{content:"+";color:var(--accent-deep);font-weight:600;flex:none;}
 .vbp-fictie{padding:0 18px 16px;font-size:12px;line-height:1.5;color:var(--ink-mute);}
+.hD-kl{display:flex;align-items:center;gap:clamp(11px,1.7vw,17px);flex-wrap:wrap;margin-top:22px;}
+.hD-kl img{width:28px;height:28px;object-fit:contain;display:block;}
 </style>
 </head>
 <body data-depth="1" data-page="voor-beauty">
@@ -211,9 +216,11 @@
       <span class="kicker"><span class="dot"></span>Voor kapsalons, beauty en wellness</span>
       <h1>Jij staat in de salon, niet in de marketing. <em>Mia zet je posts klaar.</em></h1>
       <p class="lead">Mia is een AI-collega die al je socials beheert. Zij weet hoe een salon werkt en schrijft over je behandelingen, je nieuwe kleuren en de plekken die vrijkomen. Ze werkt in YourFellow HQ, jij leest de posts na en keurt goed.</p>
+      <div class="hD-kl"><img src="../assets/socials/instagram.png" alt="Instagram" width="28" height="28"><img src="../assets/socials/facebook.png" alt="Facebook" width="28" height="28"><img src="../assets/socials/linkedin.png" alt="LinkedIn" width="28" height="28"><img src="../assets/socials/tiktok.png" alt="TikTok" width="28" height="28"><img src="../assets/socials/pinterest.png" alt="Pinterest" width="28" height="28"><img src="../assets/socials/youtube.png" alt="YouTube" width="28" height="28"><img src="../assets/socials/twitter.png" alt="X" width="28" height="28"></div>
     </div>
     <div class="hD-r">
       <div class="hD-card">
+        <p class="hD-proof"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><b>50+ ondernemers</b> werken al met YourFellow HQ</span></p>
         <h2>Probeer het <em>7 dagen gratis</em></h2>
         <div class="hD-prow"><span class="e">Daarna</span><span class="n">&euro;79,99</span><span class="p">per maand, incl. btw</span></div>
         <ul class="hD-in">

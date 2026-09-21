@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
-<meta name="description" content="Eerst je bedrijfsprofiel, daarna vier modules: dashboard, social posts, SEO en het beheer van je Google- en Meta-campagnes. Mia loopt er als rode draad doorheen.">
+<meta name="description" content="Eerst je bedrijfsprofiel, daarna vijf modules: dashboard, social posts, SEO en het beheer van je Google- en Meta-campagnes. Mia loopt er als rode draad doorheen.">
 <link rel="canonical" href="https://hallomia.ai/wat-doet-het/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
@@ -70,6 +70,9 @@
 .kw .bar{flex:1;height:7px;border-radius:999px;background:var(--surface-2);overflow:hidden;}
 .kw .bar b{display:block;height:100%;background:var(--accent);border-radius:999px;}
 /* ads-beheer voorbeeld */
+.okrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
+.okq{font-size:12.5px;color:var(--ink-soft);}
+.okb{font-size:12.5px;font-weight:600;color:var(--ink);background:var(--surface-2);border:1px solid var(--line-2);border-radius:999px;padding:6px 13px;}
 .camp{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-right:84px;}
 .camp b{font-size:13.5px;color:var(--ink);display:block;}
 .camp small{font-size:11.5px;color:var(--ink-mute);}
@@ -164,7 +167,7 @@
 <main>
   <section class="wrap phero">
     <h1>Eén platform voor je hele marketing.</h1>
-    <p class="lede">Geen losse tools die elkaar niet kennen. Je begint met je bedrijfsprofiel, dat stel je één keer in. Daarna draaien vier modules op datzelfde profiel, en Mia loopt er als rode draad doorheen.</p>
+    <p class="lede">Geen losse tools die elkaar niet kennen. Je begint met je bedrijfsprofiel, dat stel je één keer in. Daarna draaien vijf modules op datzelfde profiel, en Mia loopt er als rode draad doorheen.</p>
     <div class="acts"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-wat-doet-het">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="#modules">Bekijk de modules</a></div>
   </section>
 
@@ -191,8 +194,8 @@
   <!-- MODULES -->
   <section class="section" id="modules"><div class="wrap">
     <div class="lead-in">
-      <h2>En dit doen de vier modules.</h2>
-      <p>Allemaal gevoed door je bedrijfsprofiel. We beginnen bij het dashboard, je startscherm, en lopen daarna de drie werk-modules langs.</p>
+      <h2>En dit doen de vijf modules.</h2>
+      <p>Allemaal gevoed door je bedrijfsprofiel. We beginnen bij het dashboard, je startscherm, en lopen daarna de vier werk-modules langs.</p>
     </div>
 
     <!-- 1 DASHBOARD -->
@@ -233,10 +236,40 @@
       </div>
     </div>
 
-    <!-- 3 SEO -->
+    <!-- 3 GOOGLE ADS-BEHEER -->
     <div class="row flip">
       <div class="txt">
-        <h2><span class="n">3</span> SEO en GEO content <span class="mlab soon">Binnenkort</span></h2>
+        <h2><span class="n">3</span> Google Ads-beheer <span class="mlab soon">Binnenkort</span></h2>
+        <p class="lead">Je advertenties op Google, voorgesteld en bijgestuurd.</p>
+        <p class="sub">Je koppelt je Google-account, net zoals je Analytics en Search Console koppelt. Adverteer je al, dan kijkt Mia mee en stelt ze verbeteringen voor: zoekwoorden toevoegen of juist uitsluiten, het budget bijstellen, een andere biedstrategie. Adverteer je nog niet, dan zet ze op basis van je bedrijfsprofiel een eerste campagne klaar. Jij keurt goed, en pas dan verandert er iets in je Google Ads-account.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Ook als je nog nooit hebt geadverteerd</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Zoekwoorden, budget en biedstrategie</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Niets verandert zonder jouw goedkeuring</span></li>
+        </ul>
+      </div>
+      <div class="pic">
+        <div class="demo">
+          <span class="demo-tag">Voorbeeld</span>
+          <div class="camp">
+            <div><b>Zoekcampagne, merk</b><small>Google Ads</small></div>
+            <span class="trend">▲ presteert</span>
+          </div>
+          <div class="stat-row">
+            <div class="stat"><b>€2,10</b><small>per klik</small></div>
+            <div class="stat"><b>3,4%</b><small>conversie</small></div>
+            <div class="stat"><b>€420</b><small>besteed</small></div>
+          </div>
+          <div class="tip"><span class="tip-ic">Mia</span><span>Verhoog het budget hier met 15%, deze campagne levert nu het meeste op.</span></div>
+          <div class="okrow"><span class="okq">Wacht op jouw goedkeuring</span><span class="okb">Goedkeuren</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 SEO -->
+    <div class="row">
+      <div class="txt">
+        <h2><span class="n">4</span> SEO en GEO content <span class="mlab soon">Binnenkort</span></h2>
         <p class="lead">Teksten die je vindbaar maken.</p>
         <p class="sub">Mia zoekt de woorden waar jouw klanten écht op zoeken en schrijft of verbetert daar je pagina's mee. Gericht op Google, maar ook op AI-antwoorden zoals ChatGPT, zodat je ook dáár als antwoord naar voren komt. Een score en checklist laten zien wat al goed staat en wat nog beter kan.</p>
         <ul>
@@ -261,15 +294,15 @@
       </div>
     </div>
 
-    <!-- 4 GOOGLE & META ADS-BEHEER -->
-    <div class="row">
+    <!-- 5 META ADS-BEHEER -->
+    <div class="row flip">
       <div class="txt">
-        <h2><span class="n">4</span> Google &amp; Meta ads-beheer <span class="mlab soon">Binnenkort</span></h2>
-        <p class="lead">Je lopende campagnes beheerd en bijgestuurd.</p>
-        <p class="sub">Mia houdt je Google- en Meta-campagnes in de gaten: ze ziet wat oplevert en wat alleen geld kost, en stelt bijsturingen voor. Jij beslist wat er verandert, zodat je budget naar de beste campagnes gaat.</p>
+        <h2><span class="n">5</span> Meta ads-beheer <span class="mlab soon">Binnenkort</span></h2>
+        <p class="lead">Hetzelfde voor Facebook en Instagram.</p>
+        <p class="sub">Mia volgt je Meta-campagnes op dezelfde manier: welke advertentie nog werkt, welke uitgekeken raakt en waar je budget beter naartoe kan. Jij beslist wat er verandert.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Google Ads en Meta Ads op één plek</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Mia signaleert en stelt bijsturing voor</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Facebook en Instagram in één overzicht</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Mia ziet wanneer een advertentie is uitgekeken</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Jij houdt de knoppen in handen</span></li>
         </ul>
       </div>
@@ -277,15 +310,15 @@
         <div class="demo">
           <span class="demo-tag">Voorbeeld</span>
           <div class="camp">
-            <div><b>Zoekcampagne, merk</b><small>Google Ads</small></div>
+            <div><b>Zomeractie, nieuwe klanten</b><small>Meta Ads</small></div>
             <span class="trend">▲ presteert</span>
           </div>
           <div class="stat-row">
-            <div class="stat"><b>€2,10</b><small>per klik</small></div>
-            <div class="stat"><b>3,4%</b><small>conversie</small></div>
-            <div class="stat"><b>€420</b><small>besteed</small></div>
+            <div class="stat"><b>€0,38</b><small>per klik</small></div>
+            <div class="stat"><b>2,7%</b><small>conversie</small></div>
+            <div class="stat"><b>€260</b><small>besteed</small></div>
           </div>
-          <div class="tip"><span class="tip-ic">Mia</span><span>Verhoog het budget hier met 15%, deze campagne levert nu het meeste op.</span></div>
+          <div class="tip"><span class="tip-ic">Mia</span><span>Deze advertentie loopt nu vier weken en wordt minder aangeklikt. Zal ik een nieuwe variant klaarzetten?</span></div>
         </div>
       </div>
     </div>
@@ -296,6 +329,7 @@
   <section class="fc"><div class="wrap fc-in">
     <h2>Eén profiel. <br><em>
 Vijf modules. Eén Mia.</em></h2>
+
     <p>De eerste 7 dagen gratis, zonder betaalgegevens. Instellen kost de eerste keer ongeveer 10 minuten. Daarna draait het.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-wat-doet-het">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="../prijzen/">Bekijk prijzen</a></div>
   </div></section>

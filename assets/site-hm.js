@@ -44,11 +44,12 @@
   window.CRM_CONFIG = CRM;
   window.dataLayer = window.dataLayer || [];
 
-  /* GA4 laden, alleen als ingeschakeld (loadGA:true). Anoniem: geen advertentie-
-     signalen, IP-adres verkort, en de bezoeker wordt niet over sites gevolgd. */
-  /* GA4 laadt pas na toestemming in de cookiemelding (Consent Mode v2:
-     alles staat standaard op denied). hmLaadGA() wordt aangeroepen door
-     de melding hieronder, of direct als de keuze al 'ja' was. */
+  /* GA4 met Consent Mode v2. Alles staat standaard op denied; GA4 laadt
+     wel direct, maar zonder cookie: Google stuurt dan cookieloze pings en
+     modelleert de rest. Zo zie je ook bezoekers die weigeren of niets kiezen.
+     Na een 'ja' in de cookiemelding gaat analytics_storage op granted en
+     wordt er wel een cookie gezet (terugkerende bezoekers herkenbaar).
+     Geen advertentiesignalen, geen cross-site volgen. */
   window.gtag=function(){window.dataLayer.push(arguments);};
   gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
   window.hmLaadGA=function(){
@@ -58,9 +59,10 @@
     gs.async=true;gs.src='https://www.googletagmanager.com/gtag/js?id='+CRM.gaId;
     document.head.appendChild(gs);
     gtag('js',new Date());
-    gtag('consent','update',{analytics_storage:'granted'});
-    gtag('config',CRM.gaId,{anonymize_ip:true,allow_google_signals:false,allow_ad_personalization_signals:false});
+    gtag('config',CRM.gaId,{allow_google_signals:false,allow_ad_personalization_signals:false});
   };
+  /* Meteen laden, ook zonder toestemming (cookieloos). */
+  hmLaadGA();
 
   /* ============================================================
      COOKIEMELDING + META-PIXEL
@@ -122,16 +124,16 @@
         + '@media(max-width:560px){#hm-cookiebalk .hm-ck-btns{width:100%}#hm-cookiebalk .hm-ck-btns button{flex:1}}';
       document.head.appendChild(st);
       document.body.appendChild(w);
-      function sluit(ja){ schrijf(ja); w.remove(); if(ja){ if(window.hmLaadGA) hmLaadGA(); laadPixel(); } }
+      function sluit(ja){ schrijf(ja); w.remove(); if(ja){ gtag('consent','update',{analytics_storage:'granted'}); laadPixel(); } }
       w.querySelector('.hm-ck-ja').addEventListener('click', function(){ sluit(true); });
       w.querySelector('.hm-ck-nee').addEventListener('click', function(){ sluit(false); });
     }
 
     var keus = lees();
-    if(keus && keus.ads){ if(window.hmLaadGA) hmLaadGA(); laadPixel(); }
-    // Twee tellen wachten: de bezoeker is dan al aan het lezen en de melding
-    // onderbreekt niets. Dat levert merkbaar vaker een keuze op.
-    else if(!keus) setTimeout(melding, 2000);
+    if(keus && keus.ads){ gtag('consent','update',{analytics_storage:'granted'}); laadPixel(); }
+    // Meteen tonen: een bezoeker uit een advertentie die binnen een paar tellen
+    // wegklikt moet de keuze ook gehad hebben (en de pixel kan dan nog vuren).
+    else if(!keus) melding();
 
     window.hmCookieVoorkeur = function(){ try { localStorage.removeItem(KEY); } catch(e){} melding(); };
     document.addEventListener('click', function(e){
@@ -349,8 +351,9 @@
       if(!a) return;
       var h = a.getAttribute('href') || '';
       var type = h.indexOf('app.yourfellow.nl') > -1 ? 'aanmelden'
-               : /\/contact\//.test(h) ? 'demo'
-               : /\/(demo|webinar)\//.test(h) ? 'webinar' : null;
+               : /\/demo\//.test(h) ? 'demo'
+               : /\/contact\//.test(h) ? 'contact'
+               : /\/webinar\//.test(h) ? 'webinar' : null;
       if(!type) return;
       var bron = '';
       try { bron = new URL(a.href, location.href).searchParams.get('bron') || ''; } catch(err){}
@@ -358,6 +361,7 @@
       if(window.gtag) gtag('event','cta_click',{cta_type:type, cta_bron:bron, cta_pagina:location.pathname});
       if(window.fbq){
         if(type==='aanmelden') fbq('track','StartTrial',{content_name:bron || location.pathname});
+        else if(type==='demo') fbq('track','Schedule',{content_name:bron || location.pathname});
         else fbq('trackCustom','CTAKlik',{cta_type:type, cta_pagina:location.pathname});
       }
     }, true);

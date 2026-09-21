@@ -195,8 +195,10 @@
 @media(max-width:560px){.fc-in h2{white-space:normal;max-width:26ch;}}
 .fc-in p{margin:20px 0 30px;font-size:17px;color:var(--ink-soft);max-width:54ch;line-height:1.6;}
 .fc-in .note{margin-top:18px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);}
-/* placeholder voor een nog te leveren afbeelding */
-.imgph{aspect-ratio:16/10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;text-align:center;padding:30px;background:repeating-linear-gradient(135deg,#F0EBE1,#F0EBE1 11px,#F7F3EB 11px,#F7F3EB 22px);color:var(--ink-mute);}
+.hm-hero .hm-proof{margin:0 0 18px;display:inline-flex;align-items:center;gap:10px;background:rgba(0,255,204,0.18);border:1px solid rgba(0,255,204,0.65);border-radius:999px;padding:11px 19px 11px 15px;font-size:15.5px;line-height:1.2;color:#171717;}
+.hm-hero .hm-proof svg{flex:none;color:#171717;}
+.hm-hero .hm-proof b{font-weight:600;color:#171717;}
+/* placeholder voor een nog te leveren afbeelding */.imgph{aspect-ratio:16/10;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;text-align:center;padding:30px;background:repeating-linear-gradient(135deg,#F0EBE1,#F0EBE1 11px,#F7F3EB 11px,#F7F3EB 22px);color:var(--ink-mute);}
 .imgph .tag{align-self:center;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft);background:rgba(255,255,255,0.88);border:1px solid var(--line-2);border-radius:6px;padding:6px 11px;}
 .imgph b{font-size:15.5px;color:var(--ink-2);font-weight:600;letter-spacing:-0.01em;}
 .imgph small{font-size:13px;color:var(--ink-mute);max-width:44ch;line-height:1.5;}
@@ -355,6 +357,10 @@
 .intro .intro-h{font-size:clamp(28px,3.6vw,46px);font-weight:600;letter-spacing:-0.03em;line-height:1.06;margin:14px 0 0;text-wrap:balance;}
 .intro .intro-h em{font-style:normal;color:var(--accent-deep);}
 .intro .intro-lead{margin:18px auto 0;font-size:17.5px;color:var(--ink-2);line-height:1.62;max-width:62ch;text-wrap:pretty;}
+.kanalen{margin:clamp(26px,3vw,36px) auto 0;max-width:760px;text-align:center;}
+.kanalen p{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);margin:0 0 15px;}
+.kanalen .kl{display:flex;align-items:center;justify-content:center;gap:clamp(16px,2.6vw,30px);flex-wrap:wrap;}
+.kanalen .kl img{width:clamp(30px,3.4vw,38px);height:clamp(30px,3.4vw,38px);object-fit:contain;display:block;}
 .intro .intro-lead b{color:var(--ink);font-weight:600;}
 .intro .hq-browser{margin:42px auto 0;}
 .intro .intro-steps{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:20px;align-items:stretch;margin-top:40px;}
@@ -411,6 +417,7 @@
 <section class="hm-hero">
   <div class="hm-wrap">
     <div>
+      <p class="hm-proof"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><b>50+ ondernemers</b> werken al met YourFellow HQ</span></p>
       <h1>Vraag het <em>Mia.</em></h1>
       <div class="hm-chat">
         <div class="hm-q">
@@ -494,6 +501,10 @@
  één werkplek voor al je marketing.</h2>
       <p class="intro-lead"><b>Hallo Mia</b> is hoe je kennismaakt met <b>YourFellow HQ</b>: het marketingplatform met Mia, je AI-collega, ingebouwd. Geen losse tools die elkaar niet kennen. Je vult &eacute;&eacute;n keer je bedrijfsprofiel in, en daarna kent het hele platform je bedrijf. Mia werkt vanuit dat profiel: ze kijkt mee in je cijfers en je kalender, komt uit zichzelf met voorstellen en zet het werk klaar. Social posts, advertenties, SEO-teksten en meer. <b>Jij keurt goed, en pas daarna gaat het de deur uit.</b></p>
     </div>
+    <div class="kanalen">
+      <p>Na jouw goedkeuring post Mia op al je kanalen</p>
+      <div class="kl"><img src="assets/socials/instagram.png" alt="Instagram" width="38" height="38"><img src="assets/socials/facebook.png" alt="Facebook" width="38" height="38"><img src="assets/socials/linkedin.png" alt="LinkedIn" width="38" height="38"><img src="assets/socials/tiktok.png" alt="TikTok" width="38" height="38"><img src="assets/socials/pinterest.png" alt="Pinterest" width="38" height="38"><img src="assets/socials/youtube.png" alt="YouTube" width="38" height="38"><img src="assets/socials/twitter.png" alt="X" width="38" height="38"></div>
+    </div>
     <div class="hq-browser" style="width:min(1480px,calc(100vw - 64px));margin-left:50%;transform:translateX(-50%);">
       <div class="hq-screen" style="padding:0;">
         <img src="assets/screenshot-hq.webp" alt="Het YourFellow HQ dashboard: de taken die Mia klaarzette voor review, de chat met Mia, het weekrapport en je Google Analytics-cijfers in één overzicht" style="display:block;width:100%;height:auto;"/>
@@ -535,10 +546,11 @@
       <p>Samen met Mia bouw je je bedrijfsprofiel uit je website: producten, doelgroep en toon. Heb je een brand guide, voeg die dan toe, dan neemt Mia je huisstijl daaruit over. Dit is de basis onder alle modules hieronder.</p>
     </div>
     <div class="mx-list">
-      <div class="mx-row"><div class="mx-tt"><span class="mx-n">01</span><div class="mx-h"><h3>Dashboard</h3><span class="mlab now">Nu beschikbaar</span></div></div><p>Je kalender en cijfers op één scherm. Mia zet bovenaan waar je op moet letten.</p></div>
-      <div class="mx-row"><div class="mx-tt"><span class="mx-n">02</span><div class="mx-h"><h3>Social posts</h3><span class="mlab now">Nu beschikbaar</span></div></div><p>Posts en beeld in jouw stijl, en korte video’s uit je eigen foto’s. Mia zet ze klaar voor al je socials.</p></div>
-      <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">03</span><div class="mx-h"><h3>SEO &amp; GEO content</h3><span class="mlab soon">Binnenkort</span></div></div><p>Mia schrijft teksten op echte zoekwoorden. Vindbaar in Google én AI.</p></div>
-      <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">04</span><div class="mx-h"><h3>Google &amp; Meta ads-beheer</h3><span class="mlab soon">Binnenkort</span></div></div><p>Mia bewaakt je lopende campagnes en stelt bijsturingen voor.</p></div>
+      <div class="mx-row"><div class="mx-tt"><span class="mx-n">01</span><div class="mx-h"><h3>Dashboard</h3><span class="mlab now">Nu beschikbaar</span></div></div><p>Je kalender en cijfers op één scherm, zodat je in één blik ziet of het werkt. Geen vijf tabbladen meer.</p></div>
+      <div class="mx-row"><div class="mx-tt"><span class="mx-n">02</span><div class="mx-h"><h3>Social posts</h3><span class="mlab now">Nu beschikbaar</span></div></div><div><p>Posts en beeld in jouw stijl, en korte video’s uit je eigen foto’s. Je blijft zichtbaar bij je klanten zonder er zelf uren in te steken.</p></div></div>
+      <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">03</span><div class="mx-h"><h3>Google Ads-beheer</h3><span class="mlab soon">Binnenkort</span></div></div><p>Bovenaan in Google staan als iemand zoekt naar wat jij doet. Mia zet de advertentie op en past hem aan, jij keurt goed.</p></div>
+      <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">04</span><div class="mx-h"><h3>SEO &amp; GEO content</h3><span class="mlab soon">Binnenkort</span></div></div><p>Gevonden worden in Google zonder ervoor te betalen. Mia schrijft je teksten zo dat je hoger komt én dat AI je noemt.</p></div>
+      <div class="mx-row soon"><div class="mx-tt"><span class="mx-n">05</span><div class="mx-h"><h3>Meta ads-beheer</h3><span class="mlab soon">Binnenkort</span></div></div><p>Hetzelfde, maar dan de advertenties die mensen op Facebook en Instagram te zien krijgen.</p></div>
       <a class="mx-cta" href="wat-doet-het/">Bekijk wat het doet <span class="arrow">→</span></a>
     </div>
   </div></section>
@@ -610,7 +622,7 @@
     <h2 style="font-size: 44px">Klaar om met Mia te <em>beginnen?</em></h2>
     <p>7 dagen gratis proberen, zonder betaalgegevens en zonder automatische afschrijving. Daarna €79,99 per maand incl. btw, maandelijks opzegbaar. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
     <div class="hero-bottom"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-home">Registreren <span class="arrow">→</span></a><button type="button" class="btn ghost lg" id="wbOpen">Plan je demo in <span class="arrow">→</span></button></div>
-    <p class="note" id="wbNote">Live demo op dinsdag, woensdag en donderdag.</p>
+    <p class="note" id="wbNote">Live demo op dinsdag, woensdag en donderdag. Je bedrijfsdata wordt nooit gebruikt om AI te trainen &mdash; <a href="vragen/#privacy">zo gaan we met je gegevens om</a>.</p>
   </div></section>
 </main>
 
