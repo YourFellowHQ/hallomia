@@ -44,13 +44,13 @@
   window.CRM_CONFIG = CRM;
   window.dataLayer = window.dataLayer || [];
 
-  /* GA4 met Consent Mode v2. Alles staat standaard op denied; GA4 laadt
-     wel direct, maar zonder cookie: Google stuurt dan cookieloze pings en
-     modelleert de rest. Zo zie je ook bezoekers die weigeren of niets kiezen.
-     Na een 'ja' in de cookiemelding gaat analytics_storage op granted en
-     wordt er wel een cookie gezet (terugkerende bezoekers herkenbaar).
-     Geen advertentiesignalen, geen cross-site volgen. */
   window.gtag=function(){window.dataLayer.push(arguments);};
+  /* GA4 met Consent Mode v2. Alles staat standaard op denied; GA4 laadt wel
+     direct, maar zonder cookie: Google stuurt dan cookieloze pings. Die zie je
+     in Realtime, maar zonder client_id vormen ze geen sessie en vallen ze uit de
+     standaardrapporten tenzij Google ze modelleert (vereist volume).
+     Na een 'ja' in de cookiemelding gaat analytics_storage op granted en wordt er
+     wel een cookie gezet. Geen advertentiesignalen, geen cross-site volgen. */
   gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
   window.hmLaadGA=function(){
     if(!CRM.gaId || !CRM.loadGA || window.__hmGA) return;
@@ -68,8 +68,7 @@
      COOKIEMELDING + META-PIXEL
      De pixel is een advertentiecookie, dus die laadt alleen na een
      uitdrukkelijk "ja" in de melding. Keuze staat een jaar vast in
-     localStorage ('hm-cookies'). Ook GA4 laadt pas na een "ja": zonder
-     toestemming wordt er dus niets gemeten.
+     localStorage ('hm-cookies'). Een 'ja' zet ook analytics_storage op granted.
      Keuze opnieuw laten kiezen: window.hmCookieVoorkeur() in de console
      of een link met data-cookie-voorkeur.
      ============================================================ */
@@ -241,7 +240,7 @@
     +     '</div>'
     +   '</div>'
     +   '<div class="bottom">'
-    +     '<div>&copy; 2026 Hallo Mia, vanaf &euro;79,99 p/m</div>'
+    +     '<div>&copy; 2026 Hallo Mia, vanaf &euro;66 p/m</div>'
     +     '<div class="links"><a href="'+R+'vragen/">Privacy</a><a href="'+R+'vragen/">Voorwaarden</a><a href="#" data-cookie-voorkeur>Cookies</a><a href="'+HOME+'">Home</a></div>'
     +   '</div>'
     + '</div></footer>';
@@ -365,6 +364,51 @@
         else fbq('trackCustom','CTAKlik',{cta_type:type, cta_pagina:location.pathname});
       }
     }, true);
+  })();
+
+  /* previewLinkFix — alleen voor het voorvertoningsvenster: clean URL's ("/prijzen/")
+     bestaan daar niet als map, dus maken we er "prijzen/index.html" van.
+     Op GitHub Pages doet dit niks (daar zijn de mappen wel echt).
+     Bij het verversen van _upload/ dit blok weglaten. */
+  (function previewLinkFix(){
+    if (location.hostname.indexOf('hallomia.ai') > -1) return;
+    function fix(){
+      document.querySelectorAll('a[href]').forEach(function(a){
+        var h = a.getAttribute('href') || '';
+        if (/^(https?:|mailto:|tel:|#)/.test(h)) return;
+        if (/\.[a-z0-9]+($|[?#])/i.test(h)) return;
+        var m = h.match(/^([^?#]*)([?#].*)?$/);
+        if (!m) return;
+        var p = m[1], rest = m[2] || '';
+        if (p === '.' || p === './') p = '';
+        if (p !== '' && !/\/$/.test(p)) return;
+        a.setAttribute('href', p + 'index.html' + rest);
+      });
+    }
+    fix();
+    setTimeout(fix, 60);
+    setTimeout(fix, 400);
+  })();
+
+  /* brancheSwitch — knoppenbalk rechtsonder om in het voorvertoningsvenster snel
+     tussen de branchepagina's te wisselen. Doet niks op hallomia.ai.
+     Bij het verversen van _upload/ dit blok weglaten. */
+  (function brancheSwitch(){
+    if (location.hostname.indexOf('hallomia.ai') > -1) return;
+    var depth = parseInt(document.body.getAttribute('data-depth') || '0', 10);
+    var up = depth ? new Array(depth + 1).join('../') : '';
+    var items = [['Home',''],['Horeca','horeca/'],['Beauty','beauty/'],['Bouw','bouw/'],['Fitness','fitness/'],['Lokaal','lokale-ondernemers/']];
+    var bar = document.createElement('div');
+    bar.setAttribute('data-preview-only','');
+    bar.style.cssText = 'position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;max-width:60vw;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border:1px solid rgba(0,0,0,.12);border-radius:10px;padding:7px;box-shadow:0 6px 20px rgba(0,0,0,.12);font:500 12px/1 system-ui,sans-serif';
+    items.forEach(function(it){
+      var a = document.createElement('a');
+      a.textContent = it[0];
+      a.href = up + it[1] + 'index.html';
+      a.style.cssText = 'display:block;padding:6px 10px;border-radius:7px;background:#f2f3f5;color:#111;text-decoration:none';
+      bar.appendChild(a);
+    });
+    document.body.appendChild(bar);
   })();
 
 })();
