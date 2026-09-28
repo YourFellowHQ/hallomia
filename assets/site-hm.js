@@ -84,6 +84,12 @@
       t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', CRM.pixelId);
       fbq('track', 'PageView');
+      // Demoformulier verzonden: de bedankpagina is het enige signaal. Vuurt ook als de
+      // bezoeker pas hier cookies accepteert. sessionStorage voorkomt dubbel tellen bij refresh.
+      if(/\/bedankt-voor-je-interesse\//.test(location.pathname) && !sessionStorage.getItem('hm-demo-lead-fb')){
+        try { sessionStorage.setItem('hm-demo-lead-fb','1'); } catch(e){}
+        fbq('track','Lead',{content_name:'demo'});
+      }
       // Wie de prijzen bekeek is een warme retargeting-groep.
       if(/\/prijzen\//.test(location.pathname)) fbq('track','ViewContent',{content_name:'Prijzen'});
       if(window.gtag) gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
