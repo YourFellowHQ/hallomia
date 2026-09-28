@@ -1,8 +1,7 @@
-/* Opmaak voor het Constant Contact formulier "HQ Demo Aanmelding" (External CSS URL).
-   Alleen de verzendknop is zichtbaar; hij valt precies over de knop op hallomia.ai/demo (52px hoog). */
+/* Opmaak voor het Constant Contact formulier "HQ Demo Aanmelding" (External CSS URL). */
 html,body{background:transparent !important;margin:0 !important;padding:0 !important;overflow:hidden !important}
 body,body *{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif !important}
-form,fieldset,.form-container,.container,.sharpspring_form,ul,li,.field,.form-group,.submit-button-container,.ss-form-button-container{border:0 !important;margin:0 !important;padding:0 !important;background:transparent !important;box-shadow:none !important;max-width:none !important;width:100% !important;min-height:0 !important}
-label,legend,.ss-form-title,h1,h2,h3,p{display:none !important}
-input[type=submit],button[type=submit],button,.ss-form-button,.btn{display:flex !important;align-items:center !important;justify-content:center !important;width:100% !important;height:52px !important;margin:0 !important;padding:0 24px !important;background:#00FFCC !important;color:#062B25 !important;border:0 !important;border-radius:8px !important;font-size:15.5px !important;font-weight:600 !important;line-height:1 !important;letter-spacing:0 !important;text-transform:none !important;box-shadow:none !important;cursor:pointer !important;transition:background .15s !important}
-input[type=submit]:hover,button:hover,.ss-form-button:hover{background:#00E6B8 !important}
+form,fieldset,.form-container,.container{border:0 !important;margin:0 !important;padding:0 !important;background:transparent !important;box-shadow:none !important;max-width:none !important}
+.ss-form-title,legend{display:none !important}
+input[type=submit],button[type=submit],.ss-form-button{width:100% !important;height:52px !important;margin:0 !important;padding:0 24px !important;background:#00FFCC !important;color:#062B25 !important;border:0 !important;border-radius:8px !important;font-size:15.5px !important;font-weight:600 !important;line-height:1 !important;letter-spacing:0 !important;text-transform:none !important;box-shadow:none !important;cursor:pointer !important;-webkit-appearance:none !important;appearance:none !important}
+input[type=submit]:hover,button[type=submit]:hover,.ss-form-button:hover{background:#00E6B8 !important}

@@ -1,6 +1,6 @@
 # Hallo Mia — YourFellow HQ
 
-> YourFellow HQ is een Nederlands marketingplatform voor kleine ondernemers met Mia, een AI-collega, ingebouwd. Mia leert het bedrijf kennen uit het bedrijfsprofiel en de website, kijkt mee in de cijfers en zet elke week social posts en teksten klaar in de toon van de ondernemer. De ondernemer keurt goed; zonder goedkeuring gaat er niets online. "Hallo Mia" (hallomia.ai) is de publieksnaam van het platform; klanten werken in YourFellow HQ op app.yourfellow.nl.
+> YourFellow HQ is een Nederlands marketingplatform voor kleine ondernemers met Mia, een AI-collega, ingebouwd. Mia leert het bedrijf kennen uit het bedrijfsprofiel en de website, kijkt mee in de cijfers en zet elke week social media posts en teksten klaar in de toon van de ondernemer. De ondernemer keurt goed; zonder goedkeuring gaat er niets online. "Hallo Mia" (hallomia.ai) is de publieksnaam van het platform; klanten werken in YourFellow HQ op app.yourfellow.nl.
 
 ## Feiten
 
@@ -8,7 +8,8 @@
 - Product: YourFellow HQ, webplatform. Taal: Nederlands. Markt: Nederland en België.
 - Prijs: €66 per maand voor Dashboard en Social posts. 20% korting bij jaarlijkse betaling. Maandelijks opzegbaar.
 - Proefperiode: 7 dagen gratis, zonder betaalgegevens en zonder automatische afschrijving.
-- Nu beschikbaar: bedrijfsprofiel, dashboard, social posts voor al je socials.
+- Nu beschikbaar: bedrijfsprofiel, dashboard, social media posts voor al je socials.
+- Beeld: AI-beeld maken, of eigen ontwerpen ophalen via de koppeling met Canva.
 - Binnenkort, in deze volgorde: Google Ads-beheer, SEO & GEO content, Meta ads-beheer.
 - Werk voor de ondernemer: posts nalezen en goedkeuren, aanpassen kan altijd.
 - Contact: info@hallomia.ai

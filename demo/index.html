@@ -98,15 +98,16 @@
 .dk-t:hover{border-color:var(--accent)}
 .dk-t.sel{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .dk-velden{margin-top:4px}
-.dk-velden input{min-width:0;width:0}
+.dk-velden input{min-width:0;width:auto;flex:1 1 0}
+@media(max-width:520px){.dk-velden input{flex:none;width:100%}.dk-tl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.dk-t{padding:13px 10px;text-align:center}.dk{padding:16px 12px 14px}.dk-day{max-height:40px}}
 .dk-nep{width:100%;justify-content:center;font-size:15.5px}
 .dk-nep:disabled{opacity:.45;cursor:not-allowed}
 .dk-knop{position:relative;min-height:52px}
-.dk-knop #ssDemoForm{position:absolute;left:0;right:0;top:0;visibility:hidden}
-.dk-knop.klaar #ssDemoForm{position:relative;visibility:visible}
 #ssDemoForm iframe{display:block;width:100% !important;min-height:52px;border:0}
-.dk-knop .dk-nep{position:absolute;left:0;right:0;top:0;z-index:2;width:100%;height:52px;padding:0 24px;border-radius:8px}
+.dk-knop .dk-nep{position:absolute;inset:0;z-index:2;width:100%;height:100%;padding:0;margin:0;border:0;background:transparent;opacity:0;cursor:pointer}
 .dk-knop.klaar .dk-nep{display:none}
+.dk-hint{display:none;margin:-2px 0 0;font-size:13.5px;font-weight:600;color:#B4381F}
+.dk-hint.show{display:block}
 .dk-velden input:-webkit-autofill,.dk-velden input:-webkit-autofill:hover,.dk-velden input:-webkit-autofill:focus{-webkit-text-fill-color:var(--ink);-webkit-box-shadow:0 0 0 40px var(--surface) inset;transition:background-color 9999s}
 .dk-chosen{display:none;margin:6px 0 0;font-size:14.5px;color:var(--ink-2)}
 .dk-chosen.show{display:block}
@@ -152,7 +153,8 @@
         <div class="dk" id="demoKalender" aria-label="Kies een dag en tijd"></div>
         <p class="dk-chosen" id="demoGekozen">Je gekozen moment: <b></b></p>
         <div class="eb-row dk-velden"><input id="dkNaam" type="text" placeholder="Voornaam" autocomplete="given-name" aria-label="Voornaam"><input id="dkMail" type="email" placeholder="E-mailadres" autocomplete="email" aria-label="E-mailadres"></div>
-        <div class="dk-knop"><div id="ssDemoForm"></div><button type="button" class="btn acc dk-nep" id="dkNep" disabled>Bevestig je demo</button></div>
+        <div class="dk-knop"><div id="ssDemoForm"></div><button type="button" class="dk-nep" id="dkNep" aria-label="Bevestig je demo"></button></div>
+        <p class="dk-hint" id="dkHint" role="alert"></p>
         <p class="eb-fine">Je krijgt de deelnamelink per mail.</p>
         <p class="eb-alt">Komen deze dagen je niet uit? <a href="mailto:juup@yourfellow.nl?subject=Demo%20YourFellow%20HQ&amp;body=Hoi%20Juup%2C%0A%0AIk%20wil%20graag%20een%20demo.%20Mij%20komt%20het%20uit%20op%3A%20">Mail Juup</a> met een dag en tijdstip dat jou wél uitkomt.</p>
       </div>
@@ -164,6 +166,7 @@
 
 <div id="site-foot"></div>
 <script src="../assets/site-hm.js"></script>
+<script src="../assets/demo-agenda.js"></script>
 <script src="../assets/demo-kalender.js"></script>
 </body>
 </html>

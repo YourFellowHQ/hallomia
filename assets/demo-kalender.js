@@ -38,9 +38,21 @@
   var DAGEN = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
 
   function slotDate(d, t){ return new Date(d.getFullYear(), d.getMonth(), d.getDate(), +t.slice(0,2), +t.slice(3)); }
+  /* Dichte dagen/tijden uit assets/demo-agenda.js */
+  var DICHT = (window.DEMO_DICHT || []).map(function(r){ return String(r).trim(); });
+  function iso(d){ return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function isDicht(d, t){
+    var dag = iso(d);
+    return DICHT.some(function(r){
+      var m = r.match(/^(\d{4}-\d{2}-\d{2})\s*t\/m\s*(\d{4}-\d{2}-\d{2})$/);
+      if(m) return dag >= m[1] && dag <= m[2];
+      if(r === dag) return true;
+      return r.replace(/\s+/, ' ') === dag + ' ' + t;
+    });
+  }
   function tijdenOp(d){
     return (CFG.tijden[d.getDay()] || []).filter(function(t){
-      var s = slotDate(d, t); return s.getTime() > now.getTime() + CFG.minUren*36e5 && s <= grens;
+      var s = slotDate(d, t); return s.getTime() > now.getTime() + CFG.minUren*36e5 && s <= grens && !isDicht(d, t);
     });
   }
   function label(d, t){ return DAGEN[d.getDay()] + ' ' + d.getDate() + ' ' + MAANDEN[d.getMonth()] + ' ' + d.getFullYear() + ', ' + t + ' uur'; }
@@ -80,7 +92,7 @@
     box.innerHTML = h;
   }
 
-  var geladen = '', timer = null, scriptGeladen = false;
+  var geladen = '', timer = null;
   function waarden(){
     var naam = inNaam ? inNaam.value.trim() : '';
     var mail = inMail ? inMail.value.trim() : '';
@@ -88,47 +100,79 @@
     if(!gekozenTijd || !naam || !okMail) return null;
     return {naam:naam, email:mail, datum:label(gekozenDag, gekozenTijd)};
   }
+  /* Het Constant Contact formulier laadt direct bij het openen van de pagina en blijft
+     staan: je ziet altijd hun knop. Zolang niet alles is ingevuld ligt er een
+     onzichtbare laag over die klikken opvangt en aanwijst wat nog mist. */
+  var zelfGezet = false, bekeken = null;
+  function hiddenVan(w){
+    var h = {};
+    Object.keys(CFG.velden).forEach(function(k){ CFG.velden[k].forEach(function(id){ h[id] = w ? w[k] : ''; }); });
+    return h;
+  }
+  function zetKlaar(aan){ var k = target.parentNode; if(k) k.classList.toggle('klaar', !!aan); }
+  function startFormulier(){
+    window.ss_form = {account:CFG.account, formID:CFG.formID, width:'100%', domain:CFG.domain, target_id:'ssDemoForm', hidden:hiddenVan(null)};
+    var sc = document.createElement('script');
+    sc.src = CFG.script;
+    document.body.appendChild(sc);
+  }
   function laadFormulier(){
     var w = waarden();
-    if(!w){ geladen = ''; if(nep) zetKlaar(false); return; }
+    if(!w){ zetKlaar(false); return; }
     var sleutel = w.naam + '|' + w.email + '|' + w.datum;
-    if(klaar && nep) zetKlaar(true);
-    if(sleutel === geladen) return;
-    geladen = sleutel;
-    var hidden = {};
-    Object.keys(CFG.velden).forEach(function(k){ CFG.velden[k].forEach(function(id){ hidden[id] = w[k]; }); });
-    // form.js rendert maar één keer per pagina: daarna passen we de iframe-URL zelf aan.
     var fr = target.querySelector('iframe');
-    if(fr){
-      var u = new URL(fr.src);
-      Object.keys(hidden).forEach(function(k){ u.searchParams.set(k, hidden[k]); });
-      zelfGezet = true; fr.src = u.toString();
-    } else if(!scriptGeladen){
-      scriptGeladen = true;
-      window.ss_form = {account:CFG.account, formID:CFG.formID, width:'100%', domain:CFG.domain, target_id:'ssDemoForm', hidden:hidden};
-      var sc = document.createElement('script');
-      sc.src = CFG.script;
-      document.body.appendChild(sc);
-    } else {
-      geladen = ''; setTimeout(laadFormulier, 400);
+    if(!fr){ setTimeout(laadFormulier, 300); return; }
+    if(sleutel !== geladen){
+      geladen = sleutel;
+      // Zelf opbouwen met %20: URLSearchParams maakt van spaties een "+", en
+      // Constant Contact zet die "+" letterlijk in de bevestigingsmail.
+      var h = hiddenVan(w), basis = fr.src.split('#')[0], q = basis.indexOf('?');
+      var pad = q < 0 ? basis : basis.slice(0, q), rest = q < 0 ? [] : basis.slice(q + 1).split('&').filter(Boolean);
+      rest = rest.filter(function(kv){ return !h.hasOwnProperty(decodeURIComponent(kv.split('=')[0])); }).map(function(kv){ return kv.replace(/\+/g, '%20'); });
+      Object.keys(h).forEach(function(k){ rest.push(encodeURIComponent(k) + '=' + encodeURIComponent(h[k])); });
+      zelfGezet = true; klik = 0; fr.src = pad + '?' + rest.join('&');
+      try { sessionStorage.setItem('hm-demo-moment', w.datum); } catch(e){}
     }
-    try { sessionStorage.setItem('hm-demo-moment', w.datum); } catch(e){}
+    zetKlaar(true);
   }
-  /* Na verzenden laadt het formulier-iframe opnieuw zonder dat wij de URL veranderden.
-     Dan sturen we zelf de hele pagina door naar de bedankpagina (vangnet als
-     Constant Contact alleen binnen het iframe doorstuurt). */
-  var zelfGezet = false, bekeken = null, klaar = false;
-  function zetKlaar(aan){ var k = target.parentNode; if(k) k.classList.toggle('klaar', !!aan); if(nep) nep.disabled = !aan; }
+  /* Na verzenden laadt het iframe opnieuw zonder dat wij de URL veranderden:
+     dan sturen we de hele pagina door naar de bedankpagina. */
+  /* Doorsturen na verzenden. We zien een klik in het (cross-origin) iframe doordat
+     de pagina focus verliest aan dat iframe. Laadt het iframe daarna opnieuw of
+     verandert het van hoogte (bedankt-melding), dan gaat de hele pagina door. */
+  var klik = 0, weg = false;
+  function naarBedankt(reden){
+    if(weg) return; weg = true;
+    try { console.info('[demo] doorsturen:', reden); } catch(e){}
+    window.location.href = CFG.bedankt;
+  }
+  window.addEventListener('blur', function(){
+    setTimeout(function(){
+      var fr = target.querySelector('iframe');
+      if(fr && document.activeElement === fr && target.parentNode.classList.contains('klaar')) klik = Date.now();
+    }, 0);
+  });
   function volg(fr){
     if(fr === bekeken) return; bekeken = fr;
-    var eerste = true;
     fr.addEventListener('load', function(){
-      if(eerste || zelfGezet){ eerste = false; zelfGezet = false; klaar = true; if(nep && waarden()) zetKlaar(true); return; }
-      window.location.href = CFG.bedankt;
+      if(zelfGezet){ zelfGezet = false; return; }
+      if(klik) naarBedankt('iframe herladen');
     });
+    var h0 = 0;
+    if(window.ResizeObserver) new ResizeObserver(function(){
+      var h = fr.getBoundingClientRect().height;
+      if(klik && h0 && Math.abs(h - h0) > 4 && Date.now() - klik < 20000) naarBedankt('hoogte veranderd');
+      if(!klik) h0 = h;
+    }).observe(fr);
   }
   new MutationObserver(function(){ var fr = target.querySelector('iframe'); if(fr) volg(fr); }).observe(target, {childList:true, subtree:true});
-  function later(){ clearTimeout(timer); timer = setTimeout(laadFormulier, 450); }
+  if(nep) nep.addEventListener('click', function(){
+    var mist = !gekozenTijd ? box.querySelector('.dk-t, .dk-day.av') : (inNaam && !inNaam.value.trim()) ? inNaam : inMail;
+    var hint = document.getElementById('dkHint');
+    if(hint){ hint.textContent = !gekozenTijd ? 'Kies eerst een dag en tijd.' : (inNaam && !inNaam.value.trim()) ? 'Vul je voornaam in.' : 'Vul een geldig e-mailadres in.'; hint.classList.add('show'); }
+    if(mist && mist.focus) mist.focus();
+  });
+  function later(){ var hint = document.getElementById('dkHint'); if(hint) hint.classList.remove('show'); clearTimeout(timer); timer = setTimeout(laadFormulier, 450); }
 
   box.addEventListener('click', function(e){
     var b = e.target.closest('button'); if(!b) return;
@@ -144,4 +188,5 @@
   });
   [inNaam, inMail].forEach(function(el){ if(el){ el.addEventListener('input', later); el.addEventListener('blur', laadFormulier); } });
   render();
+  startFormulier();
 })();

@@ -381,126 +381,129 @@
   <!-- HERO -->
 <!-- ===== HALLO MIA HERO-BLOK — begin ===== -->
 <style>
-.hm-hero{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#EDEDE6;color:#171717;padding:88px 24px 96px}
-.hm-hero *{margin:0;padding:0;box-sizing:border-box}
-.hm-hero img{max-width:100%;display:block}
-.hm-wrap{max-width:1460px;margin:0 auto;display:grid;grid-template-columns:.68fr 1.6fr;gap:52px;align-items:center}
-@media(max-width:900px){.hm-wrap{grid-template-columns:1fr}}
-.hm-badge{display:inline-flex;align-items:center;gap:.65rem;background:#fff;border:1px solid #E5E5E5;border-radius:999px;padding:.4rem 1rem .4rem .45rem;box-shadow:0 4px 6px -1px rgba(0,0,0,.05);margin-bottom:1.4rem}
-.hm-badge img{width:34px;height:34px;border-radius:50%;object-fit:cover}
-.hm-badge b{font-size:.9rem}
-.hm-badge small{color:#737373;font-size:.78rem;margin-left:.15rem}
-.hm-hero h1{font-size:clamp(2.4rem,5.2vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:1.5rem}
-.hm-hero h1 em{font-style:italic;color:#141A18}
-.hm-chat{background:#fff;border:1px solid #E5E5E5;border-radius:16px;box-shadow:0 4px 6px -1px rgba(0,0,0,.05);padding:1.1rem 1.25rem;max-width:460px}
-.hm-q{display:flex;align-items:flex-start;gap:.7rem}
-.hm-q img{width:30px;height:30px;border-radius:50%;object-fit:cover;flex-shrink:0;margin-top:.1rem}
-.hm-send{margin-left:auto;flex-shrink:0;width:40px;height:40px;border:0;border-radius:12px;background:#00FFCC;box-shadow:0 0 20px rgba(0,255,204,.3);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s;align-self:center}
-.hm-send:hover{background:#00FFCC;transform:scale(1.05)}
-.hm-send svg{display:block}
-#hmVraag{font-weight:700;font-size:1.05rem;min-height:2.6em;line-height:1.3}
-#hmVraag .hm-caret{display:inline-block;width:2px;height:1.05em;background:#00FFCC;margin-left:2px;vertical-align:text-bottom;animation:hmBlink 1s step-end infinite}
-@keyframes hmBlink{50%{opacity:0}}
-.hm-a{margin-top:.6rem;padding-top:.8rem;border-top:1px dashed #E5E5E5;display:flex;align-items:flex-start;gap:.55rem;color:#525252;font-size:.92rem;line-height:1.5}
-.hm-a span:last-child{min-height:2.9em}
-.hm-dot{width:8px;height:8px;border-radius:50%;background:#00FFCC;box-shadow:0 0 20px rgba(0,255,204,.3);flex-shrink:0;margin-top:.35rem}
-.hm-sub{margin-top:1.3rem;color:#525252;max-width:430px;line-height:1.6}
-.hm-frame{background:#fff;border:1px solid #E5E5E5;border-radius:16px;box-shadow:0 10px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.05);overflow:hidden}
-.hm-imgs{position:relative;aspect-ratio:1918/998;background:#fff}
-.hm-imgs img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top left;opacity:0;transition:opacity .45s ease}
-.hm-imgs img.hm-on{opacity:1}
-.hm-dots{display:flex;gap:.45rem;justify-content:center;margin-top:1rem}
-.hm-dots button{width:8px;height:8px;border-radius:50%;border:0;background:#d4d4cc;cursor:pointer;padding:0;transition:.2s}
-.hm-dots button.hm-on{background:#00FFCC;transform:scale(1.25)}
-@media(prefers-reduced-motion:reduce){.hm-imgs img{transition:none}#hmVraag .hm-caret{animation:none}}
+.hx{position:relative;overflow:hidden;background:#F1F0EA;color:#171717;padding:clamp(48px,6vw,84px) 24px clamp(64px,7vw,96px)}
+.hx::before{content:"";position:absolute;right:-220px;top:-260px;width:820px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(0,255,204,.16),transparent 62%);pointer-events:none}
+.hx-wrap{position:relative;max-width:1440px;margin:0 auto;display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.3fr);gap:clamp(32px,4vw,60px);align-items:center}
+@media(max-width:980px){.hx-wrap{grid-template-columns:minmax(0,1fr)}}
+.hx-pill{display:inline-flex;align-items:center;gap:10px;background:rgba(0,255,204,.14);border:1px solid rgba(0,255,204,.6);border-radius:999px;padding:9px 18px 9px 14px;font-size:14.5px;font-weight:600;color:#171717}
+.hx-pill i{width:9px;height:9px;border-radius:50%;background:#00D9AE;box-shadow:0 0 0 4px rgba(0,255,204,.25)}
+.hx h1{margin:22px 0 0;font-size:clamp(42px,5vw,72px);font-weight:700;line-height:1.0;letter-spacing:-.045em;text-wrap:balance}
+.hx h1 em{font-style:normal;color:#00B393}
+.hx-lead{margin:22px 0 0;font-size:clamp(17px,1.5vw,19.5px);line-height:1.6;color:#47433A;max-width:52ch;text-wrap:pretty}
+.hx-kan{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:24px 0 0}
+.hx-kan>b{font-size:15px;font-weight:700;margin-right:4px}
+.hx-kan span{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #E5E2D8;border-radius:10px;padding:8px 13px;font-size:14px;font-weight:700}
+.hx-kan img{width:18px;height:18px;object-fit:contain}
+.hx-kan .fb{color:#1877F2}.hx-kan .ig{color:#D62976}.hx-kan .tt{color:#171717}
+.hx-kan small{font-size:13.5px;color:#76705F;font-weight:500}
+.hx-cta{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0}
+.hx-cta a{display:inline-flex;align-items:center;gap:10px;padding:17px 26px;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;transition:transform .15s,box-shadow .15s,border-color .15s}
+.hx-cta .go{background:#00FFCC;color:#062B25;box-shadow:0 10px 28px -12px rgba(0,200,160,.7)}
+.hx-cta .go:hover{transform:translateY(-1px);box-shadow:0 14px 32px -12px rgba(0,200,160,.8)}
+.hx-cta .alt{background:#fff;color:#171717;border:1px solid #DED7C9}
+.hx-cta .alt:hover{border-color:#171717}
+.hx-checks{display:flex;flex-wrap:wrap;gap:6px 14px;margin:16px 0 0;font-size:14px;color:#76705F}
+.hx-proof{display:flex;align-items:center;gap:14px;margin:30px 0 0;font-size:15px;color:#47433A}
+.hx-proof .avs{display:flex}
+.hx-proof .avs img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid #F1F0EA;margin-left:-9px;background:#fff}
+.hx-proof .avs img:first-child{margin-left:0}
+.hx-proof b{color:#171717}
+/* app-venster */
+.hx-app{position:relative}
+.hx-win{background:#fff;border:1px solid #E5E2D8;border-radius:18px;box-shadow:0 50px 100px -40px rgba(40,34,20,.35),0 0 0 1px rgba(0,0,0,.02);overflow:hidden;transform:rotate(.8deg)}
+.hx-bar{display:flex;align-items:center;gap:7px;padding:13px 18px;border-bottom:1px solid #EDEAE2}
+.hx-bar i{width:11px;height:11px;border-radius:50%;background:#F4A6A0}.hx-bar i:nth-child(2){background:#F5D38A}.hx-bar i:nth-child(3){background:#9FDDB2}
+.hx-bar b{margin-left:auto;font-size:12.5px;font-weight:700;color:#47433A}
+.hx-in{display:grid;grid-template-columns:170px minmax(0,1fr)}
+@media(max-width:600px){.hx-in{grid-template-columns:minmax(0,1fr)}.hx-side{display:none}}
+.hx-side{border-right:1px solid #EDEAE2;padding:20px 12px;display:flex;flex-direction:column;gap:4px;background:#FCFBF8}
+.hx-side .logo{font-size:17px;font-weight:800;padding:0 10px 14px}
+.hx-side span{font-size:12.5px;color:#76705F;padding:8px 10px;border-radius:8px}
+.hx-side span.on{background:rgba(0,255,204,.16);color:#171717;font-weight:700}
+.hx-main{padding:26px 28px 24px}
+.hx-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.hx-top small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#00A386}
+.hx-top h2{font-size:clamp(19px,1.9vw,24px);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:6px 0 0}
+.hx-top p{font-size:12.5px;color:#76705F;margin:6px 0 0}
+.hx-ok{flex:none;font-size:11.5px;font-weight:700;color:#00755F;background:rgba(0,255,204,.16);border:1px solid rgba(0,255,204,.5);border-radius:999px;padding:6px 11px}
+.hx-post{margin:16px 0 0;border:1px solid #EDEAE2;border-radius:14px;overflow:hidden}
+.hx-ph{display:flex;justify-content:space-between;padding:11px 15px;border-bottom:1px solid #EDEAE2;font-size:12.5px;font-weight:700}
+.hx-ph span{font-weight:500;color:#76705F}
+.hx-pb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;padding:15px}
+@media(max-width:600px){.hx-pb{grid-template-columns:minmax(0,1fr)}}
+.hx-img{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/5;background:#ddd}
+.hx-img img{width:100%;height:100%;object-fit:cover;object-position:38% 50%}
+.hx-img b{position:absolute;left:12px;right:12px;bottom:12px;color:#fff;font-size:14px;font-weight:700;line-height:1.25;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.hx-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5),transparent 45%)}
+.hx-img b{z-index:1}
+.hx-txt .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B0306A;background:#FBE6F0;border-radius:5px;padding:4px 8px}
+.hx-txt h3{font-size:15px;font-weight:700;line-height:1.3;margin:10px 0 0}
+.hx-txt p{font-size:12.5px;line-height:1.55;color:#47433A;margin:8px 0 0}
+.hx-txt .ht{color:#76705F}
+.hx-score{padding:12px 15px;border-top:1px solid #EDEAE2}
+.hx-score .h{display:flex;justify-content:space-between;font-size:12px;font-weight:700}
+.hx-score .h span{font-weight:500;color:#76705F}
+.hx-bars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:9px}
+.hx-bars div{font-size:11.5px;font-weight:700;display:flex;flex-direction:column;gap:6px}
+.hx-bars div p{display:flex;justify-content:space-between;align-items:center;margin:0}
+.hx-bars div p span{display:inline-flex;align-items:center;gap:5px}
+.hx-bars img{width:13px;height:13px}
+.hx-bars u{display:block;height:5px;border-radius:9px;background:#EDEAE2;text-decoration:none;overflow:hidden}
+.hx-bars u s{display:block;height:100%;background:#00E0B4;text-decoration:none}
+.hx-acts{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 15px;border-top:1px solid #EDEAE2}
+.hx-acts span{font-size:12px;font-weight:700;border-radius:8px;padding:8px 12px;border:1px solid #E5E2D8;background:#fff}
+.hx-acts .ai{background:rgba(0,255,204,.12);border-color:rgba(0,255,204,.5)}
+.hx-acts .gk{background:#00FFCC;border-color:#00FFCC;color:#062B25}
+.hx-acts small{margin-left:auto;font-size:11px;color:#76705F}
+.hx-note{position:absolute;left:-28px;bottom:-26px;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #E5E2D8;border-radius:14px;padding:13px 18px 13px 13px;box-shadow:0 24px 50px -24px rgba(40,34,20,.4);font-size:14px;font-weight:700;max-width:340px;line-height:1.35}
+.hx-note i{flex:none;width:30px;height:30px;border-radius:9px;background:rgba(0,255,204,.2);display:flex;align-items:center;justify-content:center;color:#00755F;font-style:normal}
+@media(max-width:980px){.hx-note{left:12px}}
+@media(max-width:600px){.hx-note{position:relative;left:0;bottom:0;margin-top:14px;max-width:none}.hx-win{transform:none}.hx-main{padding:18px 14px 14px}.hx-ok{display:none}.hx-pb{padding:12px}.hx-img{aspect-ratio:16/10}.hx-bars{gap:10px}.hx-bars div p span{font-size:0;gap:0}.hx-bars img{width:15px;height:15px}.hx-score .h span{display:none}.hx-acts{gap:6px;padding:12px}.hx-acts small{flex-basis:100%;margin:2px 0 0}.hx-proof{align-items:flex-start}.hx-proof .avs{flex:none}.hx-cta a{width:100%;justify-content:center}}
 </style>
-
-<section class="hm-hero">
-  <div class="hm-wrap">
+<section class="hx" data-screen-label="Hero">
+  <div class="hx-wrap">
     <div>
-      <p class="hm-proof"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><b>50+ ondernemers</b> werken al met YourFellow HQ</span></p>
-      <h1>Vraag het <em>Mia.</em></h1>
-      <div class="hm-chat">
-        <div class="hm-q">
-          <img src="assets/hero/mia-badge.jpg" alt="">
-          <div id="hmVraag" aria-live="polite">Hallo Mia, waar moet ik vandaag op letten?<span class="hm-caret"></span></div>
-          <button class="hm-send" id="hmSend" aria-label="Verstuur, volgende vraag" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3.4 20.6L21.8 12 3.4 3.4l2.9 7.4 9.2 1.2-9.2 1.2-2.9 7.4z" fill="#171717"/></svg></button>
-        </div>
-        <div class="hm-a"><span class="hm-dot"></span><span id="hmAntwoord">Mia zet bovenaan je dashboard wat vandaag aandacht nodig heeft</span></div>
-      </div>
-      <p class="hm-sub">Jij vraagt, Mia maakt het meteen. Rechts zie je haar voorstel, jij keurt goed.</p>
-      <p class="hm-trial">7 dagen gratis proberen, zonder betaalgegevens.</p>
+      <span class="hx-pill"><i></i>De marketingcollega voor ondernemers</span>
+      <h1>Je Facebook, Instagram en TikTok <em>gevuld binnen minuten.</em></h1>
+      <p class="hx-lead">Mia maakt social media posts die bij jouw bedrijf passen. Gebruik AI-beeld of je ontwerpen uit Canva, verbeter elke post met een score per platform en plan hem na jouw goedkeuring in.</p>
+      <div class="hx-kan"><b>Jouw kanalen</b><span class="fb"><img src="assets/socials/facebook.png" alt="">Facebook</span><span class="ig"><img src="assets/socials/instagram.png" alt="">Instagram</span><span class="tt"><img src="assets/socials/tiktok.png" alt="">TikTok</span><small>en nog 4 meer</small></div>
+      <div class="hx-cta"><a class="go" href="https://app.yourfellow.nl/?bron=site-home-hero">Probeer Mia 7 dagen gratis <span aria-hidden="true">↗</span></a><a class="alt" href="#wat-is-dit">Bekijk een echt voorbeeld <span aria-hidden="true">↓</span></a></div>
+      <div class="hx-checks"><span>✓ Zonder betaalgegevens</span><span>✓ In 10 minuten gestart</span><span>✓ Daarna €66 per maand</span></div>
+      <div class="hx-proof"><span class="avs"><img src="assets/avatars/horeca.png" alt=""><img src="assets/avatars/beauty.png" alt=""><img src="assets/avatars/bouw.png" alt=""></span><span><b>50+ ondernemers</b> werken al met YourFellow HQ</span></div>
     </div>
-    <div>
-      <div class="hm-frame">
-        <div class="hm-imgs" id="hmImgs">
-          <img src="assets/hero/scherm-1.webp" class="hm-on" alt="Het dashboard van YourFellow HQ met taken, het weekrapport en de groei per kanaal">
-          <img src="assets/hero/scherm-5.webp" alt="Het bedrijfsprofiel in YourFellow HQ">
-          <img src="assets/hero/scherm-4.webp" alt="De takenpagina van Mia met voorstellen en de knoppen Goed, Inplannen en Direct publiceren">
-          <img src="assets/hero/scherm-2.webp" alt="Het social media overzicht met drie klaarstaande posts met tekst en beeld">
-          <img src="assets/hero/scherm-3.webp" alt="De content-kalender met ingeplande posts en voorgestelde momenten">
+    <div class="hx-app" aria-label="Voorbeeld van YourFellow HQ: Mia heeft social media posts klaargezet">
+      <div class="hx-win">
+        <div class="hx-bar"><i></i><i></i><i></i><b>YourFellow HQ · Mia</b></div>
+        <div class="hx-in">
+          <div class="hx-side"><div class="logo">Mia ✳</div><span>Dashboard</span><span>Mijn bedrijf</span><span>Mia</span><span class="on">Voorstellen 3</span><span>Kalender</span></div>
+          <div class="hx-main">
+            <div class="hx-top"><div><small>Jouw marketingweek</small><h2>Mia heeft 3 social media posts klaargezet</h2><p>Gebaseerd op jouw bedrijf, klanten en kalender.</p></div><span class="hx-ok">● Klaar om na te kijken</span></div>
+            <div class="hx-post">
+              <div class="hx-ph">Post voor Instagram &amp; Facebook<span>Vrijdag · 12:30</span></div>
+              <div class="hx-pb">
+                <div class="hx-img"><img src="assets/horeca/terras.png" alt=""><b>Het terras is open</b></div>
+                <div class="hx-txt"><span class="tag">Zonnig weekend</span><h3>Zon op het terras, tafel voor je klaar.</h3><p>Dit weekend wordt het 24 graden. Schuif aan voor een lunch in de zon of een borrel na het werk. Reserveren hoeft niet, gewoon langskomen.</p><p class="ht">#terras #weekend #lokaal</p></div>
+              </div>
+              <div class="hx-score"><div class="h">Content score per platform<span>Tips om je post te verbeteren ↗</span></div>
+                <div class="hx-bars"><div><p><span><img src="assets/socials/facebook.png" alt="">Facebook</span>86</p><u><s style="width:86%"></s></u></div><div><p><span><img src="assets/socials/instagram.png" alt="">Instagram</span>78</p><u><s style="width:78%"></s></u></div><div><p><span><img src="assets/socials/tiktok.png" alt="">TikTok</span>72</p><u><s style="width:72%"></s></u></div></div>
+              </div>
+              <div class="hx-acts"><span class="ai">✦ AI-beeld maken</span><span>Ontwerp uit Canva</span><span class="gk">✓ Goedkeuren</span><span>Aanpassen</span><small>Jij bepaalt wat er online gaat</small></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hm-dots" id="hmDots" aria-label="Voorbeelden"></div>
+      <div class="hx-note"><i>✓</i>Van idee naar een social media post die jij alleen nog hoeft goed te keuren</div>
     </div>
   </div>
 </section>
-
-<script>
-(function(){
-  var items=[
-    {q:'Hallo Mia, waar moet ik vandaag op letten?', a:'Mia zet bovenaan je dashboard wat vandaag aandacht nodig heeft'},
-    {q:'Hallo Mia, wat weet je van mijn bedrijf?', a:'Alles: je doelgroep, je toon en wat je verkoopt. Elk voorstel komt uit dit profiel'},
-    {q:'Hallo Mia, plan deze maar in', a:'Na jouw akkoord plant Mia de post in. Eerder gebeurt er niks'},
-    {q:'Hallo Mia, staan er nog posts voor me klaar?', a:'Drie posts staan klaar als concept, met tekst en beeld. Jij bepaalt wat er live gaat'},
-    {q:'Hallo Mia, wat staat er deze maand gepland?', a:'Mia opent je kalender: ingeplande posts en momenten die ze alvast voor je zag aankomen'}
-  ];
-  var imgs=document.querySelectorAll('#hmImgs img'),
-      vraag=document.getElementById('hmVraag'),
-      antwoord=document.getElementById('hmAntwoord'),
-      dotsWrap=document.getElementById('hmDots'),
-      idx=0, typeTimer=null, cycleTimer=null,
-      reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  items.forEach(function(_,i){
-    var b=document.createElement('button');
-    b.setAttribute('aria-label','Voorbeeld '+(i+1));
-    if(i===0)b.classList.add('hm-on');
-    b.addEventListener('click',function(){show(i);restart();});
-    dotsWrap.appendChild(b);
-  });
-  var dots=dotsWrap.querySelectorAll('button');
-  var send=document.getElementById('hmSend');
-  if(send)send.addEventListener('click',function(){show((idx+1)%items.length);restart();});
-  function typeText(t){
-    clearInterval(typeTimer);
-    if(reduced){vraag.innerHTML=t+'<span class="hm-caret"></span>';return;}
-    var i=0; vraag.innerHTML='<span class="hm-caret"></span>';
-    typeTimer=setInterval(function(){
-      i++; vraag.innerHTML=t.slice(0,i)+'<span class="hm-caret"></span>';
-      if(i>=t.length)clearInterval(typeTimer);
-    },34);
-  }
-  function show(i){
-    idx=i;
-    imgs.forEach(function(im,k){im.classList.toggle('hm-on',k===i);});
-    dots.forEach(function(d,k){d.classList.toggle('hm-on',k===i);});
-    typeText(items[i].q); antwoord.textContent=items[i].a;
-  }
-  function restart(){
-    clearInterval(cycleTimer);
-    if(!reduced)cycleTimer=setInterval(function(){show((idx+1)%items.length);},5200);
-  }
-  restart();
-})();
-</script>
 <!-- ===== HALLO MIA HERO-BLOK — einde ===== -->
 
   <!-- WAT IS DIT -->
-  <section class="section intro" data-screen-label="Wat is dit"><div class="wrap">
+  <section class="section intro" id="wat-is-dit" data-screen-label="Wat is dit"><div class="wrap">
     <div class="intro-top">
       <h2 class="intro-h">Dit is YourFellow HQ,
  één werkplek voor al je marketing.</h2>
-      <p class="intro-lead"><b>Hallo Mia</b> is hoe je kennismaakt met <b>YourFellow HQ</b>: het marketingplatform met Mia, je AI-collega, ingebouwd. Geen losse tools die elkaar niet kennen. Je vult &eacute;&eacute;n keer je bedrijfsprofiel in, en daarna kent het hele platform je bedrijf. Mia werkt vanuit dat profiel: ze kijkt mee in je cijfers en je kalender, komt uit zichzelf met voorstellen en zet het werk klaar. Social posts, advertenties, SEO-teksten en meer. <b>Jij keurt goed, en pas daarna gaat het de deur uit.</b></p>
+      <p class="intro-lead"><b>Hallo Mia</b> is hoe je kennismaakt met <b>YourFellow HQ</b>: het marketingplatform met Mia, je AI-collega, ingebouwd. Geen losse tools die elkaar niet kennen. Je vult &eacute;&eacute;n keer je bedrijfsprofiel in, en daarna kent het hele platform je bedrijf. Mia werkt vanuit dat profiel: ze kijkt mee in je cijfers en je kalender, komt uit zichzelf met voorstellen en zet het werk klaar. Social media posts, advertenties, SEO-teksten en meer. <b>Jij keurt goed, en pas daarna gaat het de deur uit.</b></p>
     </div>
     <div class="kanalen">
       <p>Na jouw goedkeuring post Mia op al je kanalen</p>
@@ -568,7 +571,7 @@
         <div class="price">€66 <small>/ maand</small></div>
         <div class="trialline">De eerste 7 dagen gratis, zonder betaalgegevens.</div>
         <div class="who">Al je kanalen op één plek, met Mia als marketingcollega.</div>
-        <ul><li>Mia zet social media posts voor je klaar</li><li>Zelf social media posts en video’s maken</li><li>Contentkalender, goedkeuren en inplannen</li><li>Bedrijfsprofiel en brand kit</li><li>7 kanalen, van Instagram tot YouTube</li><li>100 AI-credits per maand voor beelden</li></ul>
+        <ul><li>Mia zet social media posts voor je klaar</li><li>Zelf social media posts en video’s maken</li><li>Je ontwerpen uit Canva gebruiken</li><li>Contentkalender, goedkeuren en inplannen</li><li>Bedrijfsprofiel en brand kit</li><li>7 kanalen, van Instagram tot YouTube</li><li>100 AI-credits per maand voor beelden</li></ul>
         <a class="btn acc" href="prijzen/">Bekijk wat erin zit</a>
       </div>
       <div class="tier soon">
@@ -613,79 +616,11 @@
   <section class="fc"><div class="wrap fc-in">
     <h2 style="font-size: 44px">Klaar om met Mia te <em>beginnen?</em></h2>
     <p>7 dagen gratis proberen, zonder betaalgegevens en zonder automatische afschrijving. Daarna €66 per maand, maandelijks opzegbaar. We zetten je bedrijfsprofiel klaar en Mia opent het eerste gesprek. Eerste keer instellen kost ongeveer 10 minuten, daarna draait het.</p>
-    <div class="hero-bottom"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-home">Registreren <span class="arrow">→</span></a><button type="button" class="btn ghost lg" id="wbOpen">Plan je demo in <span class="arrow">→</span></button></div>
-    <p class="note" id="wbNote">Live demo op dinsdag, woensdag en donderdag. Je bedrijfsdata wordt nooit gebruikt om AI te trainen &mdash; <a href="vragen/#privacy">zo gaan we met je gegevens om</a>.</p>
+    <div class="hero-bottom"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-home">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="demo/">Plan je demo in <span class="arrow">→</span></a></div>
+    <p class="note">Live demo van 20 minuten met Juup, elke werkdag. Je bedrijfsdata wordt nooit gebruikt om AI te trainen &mdash; <a href="vragen/#privacy">zo gaan we met je gegevens om</a>.</p>
   </div></section>
 </main>
-
-<!-- WEBINAR-AANMELDVENSTER -->
-<div class="wm-overlay" id="wbModal" aria-hidden="true">
-  <div class="wm-card" role="dialog" aria-modal="true" aria-labelledby="wbTitle">
-    <button class="wm-close" id="wbClose" type="button" aria-label="Sluiten">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <span class="wm-eyebrow">Live demo</span>
-    <h2 id="wbTitle">Kijk <em>live</em> mee.</h2>
-    <p class="wm-lead">In ongeveer 20 minuten laten we je zien hoe Mia met je meekijkt en voorstellen voor je klaarzet. Elke werkdag om 10:00, 11:00, 14:00 of 15:00 uur. Kies hieronder het moment dat jou uitkomt.</p>
-
-    <div class="wm-form" id="wbForm">
-      <!-- SharpSpring Form for HQ demo-aanmelding -->
-      <script type="text/javascript">
-          var ss_form = {'account': 'MzawMLE0MTGzAAA', 'formID': 'szS0NEszMzXQNTYzTNM1MTJI1bU0SkzTtUgxSEw1N001MEkxBAA'};
-          ss_form.width = '100%';
-          ss_form.domain = 'app-3QNTLCGLQ4.marketingautomation.services';
-          // ss_form.hidden = {'field_id': 'value'}; // Modify this for sending hidden variables, or overriding values
-          // ss_form.target_id = 'target'; // Optional parameter: forms will be placed inside the element with the specified id
-          // ss_form.polling = true; // Optional parameter: set to true ONLY if your page loads dynamically and the id needs to be polled continually.
-      </script>
-      <script type="text/javascript" src="https://koi-3QNTLCGLQ4.marketingautomation.services/client/form.js?ver=2.0.1"></script>
-      <p class="wm-fine">Je krijgt de deelnamelink per mail. </p>
-    </div>
-  </div>
-</div>
-
 <div id="site-foot"></div>
-
 <script src="assets/site-hm.js"></script>
-<script>
-// scale embedded animation iframes to their container
-(function(){
-  function fit(){
-    document.querySelectorAll('.stage iframe').forEach(function(f){
-      var w = f.parentElement.clientWidth; if(w) f.style.transform='scale('+(w/1920)+')';
-    });
-    document.querySelectorAll('.post-frame iframe').forEach(function(f){
-      var w = f.parentElement.clientWidth; if(w) f.style.transform='scale('+(w/1080)+')';
-    });
-  }
-  window.addEventListener('load', fit);
-  window.addEventListener('resize', fit);
-  if(document.readyState!=='loading') requestAnimationFrame(fit);
-  else document.addEventListener('DOMContentLoaded', fit);
-})();
-</script>
-
-<script>
-(function(){
-  /* Modal open/sluiten. Datumkeuze + verzenden gebeurt in assets/webinar.js. */
-  var modal = document.getElementById('wbModal'),
-      open  = document.getElementById('wbOpen'),
-      close = document.getElementById('wbClose');
-  function setOpen(on){
-    if(!modal) return;
-    modal.classList.toggle('open', on);
-    modal.setAttribute('aria-hidden', on ? 'false' : 'true');
-    document.body.style.overflow = on ? 'hidden' : '';
-    if(on){ var inp = modal.querySelector('input[type=email]'); if(inp) inp.focus(); }
-  }
-  if(open)  open.addEventListener('click', function(){ setOpen(true); });
-  if(close) close.addEventListener('click', function(){ setOpen(false); });
-  if(modal) modal.addEventListener('click', function(e){ if(e.target === modal) setOpen(false); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setOpen(false); });
-})();
-</script>
-<script src="assets/webinar.js"></script>
-
-
 </body>
 </html>
