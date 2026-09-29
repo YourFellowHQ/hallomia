@@ -38,7 +38,7 @@
   var DAGEN = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
 
   function slotDate(d, t){ return new Date(d.getFullYear(), d.getMonth(), d.getDate(), +t.slice(0,2), +t.slice(3)); }
-  /* Dichte dagen/tijden uit assets/demo-agenda.js */
+  /* Dichte dagen/tijden uit assets/demo-agenda.js, aangevuld met de Google Sheet (onderaan) */
   var DICHT = (window.DEMO_DICHT || []).map(function(r){ return String(r).trim(); });
   function iso(d){ return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
   function isDicht(d, t){
@@ -189,4 +189,43 @@
   [inNaam, inMail].forEach(function(el){ if(el){ el.addEventListener('input', later); el.addEventListener('blur', laadFormulier); } });
   render();
   startFormulier();
+
+  /* Google Sheet (live): kolom A = datum, B = tijd (leeg = hele dag), C = t/m-datum (optioneel). */
+  function naarIso(s){
+    s = String(s || '').trim(); var m;
+    if((m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/))) return m[1] + '-' + ('0' + m[2]).slice(-2) + '-' + ('0' + m[3]).slice(-2);
+    if((m = s.match(/^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})/))) return m[3] + '-' + ('0' + m[2]).slice(-2) + '-' + ('0' + m[1]).slice(-2);
+    return null;
+  }
+  function naarTijd(s){ var m = String(s || '').match(/(\d{1,2})[:.](\d{2})/); return m ? ('0' + m[1]).slice(-2) + ':' + m[2] : ''; }
+  function csvRijen(txt){
+    return txt.split(/\r?\n/).map(function(r){
+      var cel = [], cur = '', q = false;
+      for(var i = 0; i < r.length; i++){ var c = r[i];
+        if(c === '"'){ if(q && r[i+1] === '"'){ cur += '"'; i++; } else q = !q; }
+        else if(c === ',' && !q){ cel.push(cur); cur = ''; } else cur += c; }
+      cel.push(cur); return cel;
+    });
+  }
+  if(window.DEMO_SHEET_CSV && window.fetch){
+    var url = window.DEMO_SHEET_CSV + (window.DEMO_SHEET_CSV.indexOf('?') < 0 ? '?' : '&') + 't=' + Date.now();
+    fetch(url, {cache:'no-store'}).then(function(r){ return r.ok ? r.text() : ''; }).then(function(txt){
+      if(!txt) return;
+      csvRijen(txt).forEach(function(c){
+        var van = naarIso(c[0]); if(!van) return;
+        var tot = naarIso(c[2]), tijd = naarTijd(c[1]);
+        DICHT.push(tot ? van + ' t/m ' + tot : (tijd ? van + ' ' + tijd : van));
+      });
+      if(gekozenDag && gekozenTijd && isDicht(gekozenDag, gekozenTijd)) gekozenTijd = null;
+      if(!gekozenDag || !tijdenOp(gekozenDag).length){
+        gekozenDag = null;
+        for(var i = 0; i < CFG.wekenVooruit*7 + 1 && !gekozenDag; i++){
+          var d1 = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+          if(tijdenOp(d1).length) gekozenDag = d1;
+        }
+        if(gekozenDag) view = new Date(gekozenDag.getFullYear(), gekozenDag.getMonth(), 1);
+      }
+      render();
+    }).catch(function(){});
+  }
 })();
