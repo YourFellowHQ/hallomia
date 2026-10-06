@@ -11,19 +11,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
-<meta name="description" content="Mia kijkt de hele dag met je mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst: social, webteksten, SEO en meer vanuit één bedrijfsprofiel.">
+<meta name="description" content="Mia kijkt met je mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst: social, webteksten, SEO en ads vanuit één bedrijfsprofiel.">
 <link rel="canonical" href="https://hallomia.ai/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hallo Mia">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:title" content="Hallo Mia, je marketing-collega">
-<meta property="og:description" content="Mia kijkt de hele dag met je mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst: social, webteksten, SEO en meer vanuit één bedrijfsprofiel.">
+<meta property="og:description" content="Mia kijkt met je mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst: social, webteksten, SEO en ads vanuit één bedrijfsprofiel.">
 <meta property="og:url" content="https://hallomia.ai/">
 <meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hallo Mia, je marketing-collega">
-<meta name="twitter:description" content="Mia kijkt de hele dag met je mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst: social, webteksten, SEO en meer vanuit één bedrijfsprofiel.">
+<meta name="twitter:description" content="Mia kijkt met je mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst: social, webteksten, SEO en ads vanuit één bedrijfsprofiel.">
 <meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"YourFellow HQ","alternateName":"Hallo Mia","url":"https://hallomia.ai/","logo":"https://hallomia.ai/assets/logo.png","image":"https://hallomia.ai/assets/og-image.png","description":"Mia is je AI-marketingcollega in YourFellow HQ: ze kijkt mee, doet voorstellen en zet je marketing klaar. Jij keurt goed, zij plaatst social, advertenties en SEO vanuit één bedrijfsprofiel.","slogan":"Je marketing-collega die meekijkt en voorstelt.","email":"info@hallomia.ai","address":{"@type":"PostalAddress","addressLocality":"Zevenbergen","addressCountry":"NL"},"areaServed":[{"@type":"Country","name":"Nederland"},{"@type":"Country","name":"België"}],"knowsLanguage":["nl-NL"],"knowsAbout":["AI-marketing voor mkb","Social media voor lokale ondernemers","Google Mijn Bedrijf","Zoekmachineoptimalisatie","Generative Engine Optimization (GEO)","Google Ads","Meta Ads"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"info@hallomia.ai","availableLanguage":["Dutch"],"areaServed":["NL","BE"]}],"parentOrganization":{"@type":"Organization","name":"YourFellow","url":"https://yourfellow.nl/"},"sameAs":["https://www.linkedin.com/company/yourfellow/","https://yourfellow.nl/"]}
@@ -246,48 +246,6 @@
 /* typewriter in black for the light version */
 .hero-title h1 .typed-line{color:var(--ink);}
 .hero-title h1 .caret{background:var(--ink);}
-</style>
-<style>
-/* ===== webinar-aanmeldvenster (modal) ===== */
-.wm-overlay{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
-  padding:24px;background:rgba(20,17,12,0.55);backdrop-filter:blur(3px);}
-.wm-overlay.open{display:flex;}
-.wm-card{position:relative;width:100%;max-width:460px;background:var(--surface);border:1px solid var(--line);
-  border-radius:18px;padding:36px 34px;box-shadow:0 40px 90px -40px rgba(40,34,20,0.5);
-  max-height:calc(100vh - 48px);overflow:auto;}
-@media(max-width:520px){.wm-card{padding:30px 22px;}}
-.wm-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:9px;border:1px solid var(--line-2);
-  background:var(--bg);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;cursor:pointer;
-  transition:border-color .15s,color .15s;}
-.wm-close:hover{border-color:var(--accent-deep);color:var(--ink);}
-.wm-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',ui-monospace,monospace;
-  font-size:11.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-deep);}
-.wm-eyebrow::before{content:"";width:22px;height:1.5px;background:var(--accent);display:inline-block;}
-.wm-card h2{font-size:26px;font-weight:600;letter-spacing:-0.025em;line-height:1.05;margin:14px 0 0;}
-.wm-card h2 em{font-style:normal;color:var(--accent-deep);}
-.wm-lead{margin:12px 0 0;font-size:14.5px;color:var(--ink-2);line-height:1.6;}
-.wm-when{margin:20px 0 0;display:flex;align-items:flex-start;gap:13px;padding:15px 16px;
-  background:var(--accent-soft);border:1px solid rgba(0,255,204,0.25);border-radius:12px;}
-.wm-when svg{width:20px;height:20px;color:var(--accent-deep);flex:none;margin-top:1px;}
-.wm-when b{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;}
-.wm-when small{display:block;margin-top:3px;font-size:12.5px;color:var(--ink-soft);}
-.wm-form{margin:20px 0 0;display:flex;flex-direction:column;gap:11px;}
-.wm-row{display:flex;gap:10px;}
-@media(max-width:520px){.wm-row{flex-direction:column;}}
-.wm-row input{flex:1;font-family:inherit;font-size:16px;color:var(--ink);background:var(--bg);
-  border:1px solid var(--line-2);border-radius:10px;padding:15px 17px;transition:border-color .15s,box-shadow .15s;}
-.wm-row input::placeholder{color:var(--ink-mute);}
-.wm-row input:focus{outline:none;border-color:var(--accent-deep);box-shadow:0 0 0 3px var(--accent-soft);}
-.wm-row .btn{padding:15px 24px;font-size:15.5px;white-space:nowrap;}
-.wm-fine{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:2px 0 0;}
-.wm-form .wb-dates{max-height:226px;overflow:auto;margin-bottom:13px;padding-right:3px;}
-.wm-done{margin:18px 0 0;display:none;flex-direction:column;gap:10px;
-  background:var(--bg);border:1px solid var(--line);border-radius:15px;padding:24px 22px;}
-.wm-done.show{display:flex;}
-.wm-done .check{width:42px;height:42px;border-radius:50%;background:var(--accent-soft);
-  display:flex;align-items:center;justify-content:center;color:var(--accent-deep);}
-.wm-done h3{font-size:20px;font-weight:600;letter-spacing:-0.01em;}
-.wm-done p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;max-width:42ch;}
 </style>
 <style id="meet-var">
 /* ===== Maak kennis met Mia — het gesprek loopt door vanuit de hero ===== */

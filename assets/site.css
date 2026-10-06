@@ -91,7 +91,18 @@ html{overflow-x:clip;}
   .nav-links a{padding:13px 14px;font-size:15px;}
   .nav-r .ghost{display:none;}
   .nav-burger{display:inline-flex;}
+  .nav-links .nav-m-cta{display:grid;}
+  .nav-r .cta-reg{display:none;}
+  .topbar .nav-r .cta-m-demo{display:inline-flex;}
 }
+.nav-r .cta-m-demo{display:none;}
+.nav-m-cta{display:none;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;padding:12px 6px 4px;border-top:1px solid var(--line);}
+.nav-links .nav-m-cta a{display:flex;align-items:center;justify-content:center;gap:8px;padding:13px 14px;border-radius:9px;font-size:15px;font-weight:600;}
+.nav-links .nav-m-cta .nmc-demo{background:var(--ink);color:#fff;}
+.nav-links .nav-m-cta .nmc-demo:hover{background:#000;color:#fff;}
+.nav-links .nav-m-cta .nmc-contact{border:1px solid var(--line-2);color:var(--ink);background:transparent;}
+.nav-links .nav-m-cta .nmc-contact:hover{border-color:var(--accent-deep);background:transparent;}
+@media(max-width:380px){.nav-m-cta{grid-template-columns:1fr;}}
 
 /* ---------- breadcrumb ---------- */
 .crumb{padding-top:26px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;color:var(--ink-mute);letter-spacing:0.04em;}

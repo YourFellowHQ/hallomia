@@ -168,9 +168,11 @@
   var navCTA = isLive
     ? '<a class="cta ghost" href="'+R+'demo/">Plan je demo in</a>'
       + '<a class="cta ghost" href="'+R+'contact/">Contact</a>'
-      + '<a class="cta" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>'
+      + '<a class="cta cta-reg" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>'
+      + '<a class="cta cta-m-demo" href="'+R+'demo/">Plan je demo in</a>'
     : '<a class="cta ghost" href="'+R+'demo/">Plan je demo in</a>'
-      + '<a class="cta" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>';
+      + '<a class="cta cta-reg" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>'
+      + '<a class="cta cta-m-demo" href="'+R+'demo/">Plan je demo in</a>';
 
   var BRAND = '<a class="brand" href="' + HOME + '">'
     + '<span class="mk">HQ</span>'
@@ -209,6 +211,10 @@
               +   '<span class="nav-dd-soon">Meer branches volgen</span>'
               + '</div></div>';
           }).join('')
+    +   '<div class="nav-m-cta">'
+    +     '<a class="nmc-demo" href="https://app.yourfellow.nl/?bron=site-menu">Registreren<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>'
+    +     '<a class="nmc-contact" href="'+R+'contact/">Contact</a>'
+    +   '</div>'
     +   '</nav>'
     +   '<div class="nav-r">'
     +     navCTA

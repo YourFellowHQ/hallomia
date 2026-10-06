@@ -50,6 +50,7 @@ Praktische uitleg voor ondernemers zonder marketingachtergrond, geschreven met M
 - [Wat kost een social media bureau in Nederland?](https://hallomia.ai/blog/wat-kost-social-media-bureau/)
 - [Wat speelt er in 2026 voor de kleine lokale ondernemer?](https://hallomia.ai/blog/lokale-ondernemer-2026/)
 - [Zo richt je Google Mijn Bedrijf goed in](https://hallomia.ai/blog/google-mijn-bedrijf/)
+- [Gevonden worden in ChatGPT: zo raadt AI jouw zaak aan](https://hallomia.ai/blog/gevonden-worden-in-chatgpt/)
 - [Wat is GEO?](https://hallomia.ai/blog/wat-is-geo/)
 - [Wat is de AI-modus van Google?](https://hallomia.ai/blog/ai-modus-google/)
 - [Wat post je als bedrijf op social media?](https://hallomia.ai/blog/social-media-bedrijf/)
