@@ -174,6 +174,8 @@
       + '<a class="cta cta-reg" href="https://app.yourfellow.nl/?bron=site-header">Registreren</a>'
       + '<a class="cta cta-m-demo" href="'+R+'demo/">Plan je demo in</a>';
 
+  (function(){var s=document.createElement('style');s.id='hm-nav-m';s.textContent='.nav-r .cta-m-demo,.nav-m-cta{display:none}@media(max-width:1280px){.topbar .nav-r .cta-reg{display:none}.topbar .nav-r .cta-m-demo{display:inline-flex}.topbar .nav-links .nav-m-cta{display:grid}}';document.head.appendChild(s);})();
+
   var BRAND = '<a class="brand" href="' + HOME + '">'
     + '<span class="mk">HQ</span>'
     + '<span class="wordmark">YourFellow</span></a>';
