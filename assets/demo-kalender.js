@@ -22,7 +22,7 @@
       datum: ['field_400000049720322','date_hq_webinar_400000049720322']
     },
     tijden:(function(){ var t=['10:00','11:00','14:00','15:00'], o={}; [1,2,3,4,5].forEach(function(d){ o[d]=t; }); return o; })(),
-    wekenVooruit:6,
+    wekenVooruit:26,
     minUren:2,
     bedankt:'../bedankt-voor-je-interesse/'
   };
