@@ -26,6 +26,10 @@
     minUren:2,
     bedankt:'../bedankt-voor-je-interesse/'
   };
+  /* Een pagina kan via window.DEMO_CFG eigen instellingen meegeven (bv. /demo/team/:
+     ander formulier en geen doorsturen, maar window.DEMO_KLAAR aanroepen). */
+  if(window.DEMO_CFG) Object.keys(window.DEMO_CFG).forEach(function(k){ CFG[k] = window.DEMO_CFG[k]; });
+  var laatste = null;
   var box = document.getElementById('demoKalender');
   var target = document.getElementById('ssDemoForm');
   var inNaam = document.getElementById('dkNaam');
@@ -98,7 +102,7 @@
     var mail = inMail ? inMail.value.trim() : '';
     var okMail = inMail ? (inMail.checkValidity() && /@.+\./.test(mail)) : false;
     if(!gekozenTijd || !naam || !okMail) return null;
-    return {naam:naam, email:mail, datum:label(gekozenDag, gekozenTijd)};
+    return laatste = {naam:naam, email:mail, datum:label(gekozenDag, gekozenTijd)};
   }
   /* Het Constant Contact formulier laadt direct bij het openen van de pagina en blijft
      staan: je ziet altijd hun knop. Zolang niet alles is ingevuld ligt er een
@@ -111,12 +115,14 @@
   }
   function zetKlaar(aan){ var k = target.parentNode; if(k) k.classList.toggle('klaar', !!aan); }
   function startFormulier(){
+    if(CFG.native) return;
     window.ss_form = {account:CFG.account, formID:CFG.formID, width:'100%', domain:CFG.domain, target_id:'ssDemoForm', hidden:hiddenVan(null)};
     var sc = document.createElement('script');
     sc.src = CFG.script;
     document.body.appendChild(sc);
   }
   function laadFormulier(){
+    if(CFG.native) return;
     var w = waarden();
     if(!w){ zetKlaar(false); return; }
     var sleutel = w.naam + '|' + w.email + '|' + w.datum;
@@ -144,12 +150,17 @@
   function naarBedankt(reden){
     if(weg) return; weg = true;
     try { console.info('[demo] doorsturen:', reden); } catch(e){}
+    if(!CFG.bedankt && typeof window.DEMO_KLAAR === 'function'){ window.DEMO_KLAAR(laatste); return; }
     window.location.href = CFG.bedankt;
   }
   window.addEventListener('blur', function(){
     setTimeout(function(){
       var fr = target.querySelector('iframe');
-      if(fr && document.activeElement === fr && target.parentNode.classList.contains('klaar')) klik = Date.now();
+      if(fr && document.activeElement === fr && target.parentNode.classList.contains('klaar')){
+        klik = Date.now();
+        /* Vangnet: laat de knop geen herlaad- of hoogtesignaal zien, dan na X ms toch door. */
+        if(CFG.naKlikMs) setTimeout(function(){ naarBedankt('na klik'); }, CFG.naKlikMs);
+      }
     }, 0);
   });
   function volg(fr){
@@ -166,7 +177,28 @@
     }).observe(fr);
   }
   new MutationObserver(function(){ var fr = target.querySelector('iframe'); if(fr) volg(fr); }).observe(target, {childList:true, subtree:true});
+  /* Native form: zelf versturen naar de SharpSpring-postback, zonder iframe en zonder
+     cookies (credentials omit). Zo koppelt SharpSpring elke inzending aan het
+     e-mailadres en niet aan de browser. */
+  var bezig = false;
+  function verstuurNative(w){
+    if(bezig) return; bezig = true;
+    if(nep) nep.disabled = true;
+    var n = CFG.native, p = [];
+    Object.keys(n.velden).forEach(function(k){ p.push(encodeURIComponent(n.velden[k]) + '=' + encodeURIComponent(w[k])); });
+    Object.keys(n.extra || {}).forEach(function(k){ p.push(encodeURIComponent(k) + '=' + encodeURIComponent(n.extra[k])); });
+    p.push('callback=hqTeam' + Date.now());
+    var url = n.baseURI + n.endpoint + '/jsonp/?' + p.join('&');
+    fetch(url, {method:'GET', mode:'no-cors', credentials:'omit', cache:'no-store'}).then(function(){
+      if(typeof window.DEMO_KLAAR === 'function') window.DEMO_KLAAR(w);
+    }).catch(function(){
+      bezig = false; if(nep) nep.disabled = false;
+      var hint = document.getElementById('dkHint');
+      if(hint){ hint.textContent = 'Versturen lukte niet. Check je internet en probeer het opnieuw.'; hint.classList.add('show'); }
+    });
+  }
   if(nep) nep.addEventListener('click', function(){
+    if(CFG.native){ var w = waarden(); if(w){ verstuurNative(w); return; } }
     var mist = !gekozenTijd ? box.querySelector('.dk-t, .dk-day.av') : (inNaam && !inNaam.value.trim()) ? inNaam : inMail;
     var hint = document.getElementById('dkHint');
     if(hint){ hint.textContent = !gekozenTijd ? 'Kies eerst een dag en tijd.' : (inNaam && !inNaam.value.trim()) ? 'Vul je voornaam in.' : 'Vul een geldig e-mailadres in.'; hint.classList.add('show'); }

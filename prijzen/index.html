@@ -5,24 +5,24 @@
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
 <link rel="apple-touch-icon" sizes="512x512" href="../assets/favicon-512.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prijzen, €66 per maand | YourFellow HQ</title>
+<title>Prijzen: drie pakketten, vanaf €66 excl. btw | YourFellow HQ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/site.css">
-<meta name="description" content="YourFellow HQ kost €66 per maand of €633,60 per jaar (20% korting). 7 dagen gratis proberen zonder betaalgegevens, maandelijks opzegbaar.">
+<meta name="description" content="Social €66 per maand excl. btw. Google Ads €149 en Social + Google Ads €189 per maand, excl. btw. 7 dagen gratis proberen zonder betaalgegevens, maandelijks opzegbaar.">
 <link rel="canonical" href="https://hallomia.ai/prijzen/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hallo Mia">
 <meta property="og:locale" content="nl_NL">
-<meta property="og:title" content="Prijzen &middot; €66 per maand">
-<meta property="og:description" content="YourFellow HQ kost €66 per maand, of €633,60 per jaar met 20% korting. 7 dagen gratis proberen zonder betaalgegevens.">
+<meta property="og:title" content="Prijzen &middot; drie pakketten, vanaf €66 excl. btw">
+<meta property="og:description" content="Social voor €66 per maand excl. btw, Google Ads voor €149 en Social + Google Ads voor €189 per maand excl. btw. 7 dagen gratis proberen zonder betaalgegevens.">
 <meta property="og:url" content="https://hallomia.ai/prijzen/">
 <meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Prijzen &middot; €66 per maand">
-<meta name="twitter:description" content="YourFellow HQ kost €66 per maand, of €633,60 per jaar met 20% korting. 7 dagen gratis proberen zonder betaalgegevens.">
+<meta name="twitter:title" content="Prijzen &middot; drie pakketten, vanaf €66 excl. btw">
+<meta name="twitter:description" content="Social voor €66 per maand excl. btw, Google Ads voor €149 en Social + Google Ads voor €189 per maand excl. btw. 7 dagen gratis proberen zonder betaalgegevens.">
 <meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
 <style>
 .beta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:rgba(0,255,204,0.06);border:1px solid rgba(0,255,204,0.22);border-radius:12px;padding:16px 20px;margin-top:28px;}
@@ -31,7 +31,10 @@
 .beta span{font-size:14px;color:var(--ink-soft);}
 .beta .b-tag{margin-left:auto;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:11px;color:var(--accent-deep);letter-spacing:0.06em;}
 
-.tiers{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;max-width:980px;margin:0 auto;}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1180px;margin:0 auto;}
+.tier .price{flex-wrap:wrap;white-space:normal;row-gap:4px;font-size:44px;}
+.tier .price span{white-space:nowrap;}
+@media(max-width:1080px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr));}}
 .tier .mods-soon{list-style:none;display:flex;flex-direction:column;gap:14px;}
 .tier .mods-soon li{display:block;padding:0;}
 .tier .mods-soon li::before{display:none;}
@@ -84,7 +87,7 @@
 /* comparison — grouped & column-highlighted */
 .cmp-wrap{border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:8px 16px 16px;box-shadow:0 30px 70px -50px rgba(40,34,20,0.30);}
 .cmp{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed;}
-.cmp col.cfeat{width:40%;}
+.cmp col.cfeat{width:34%;}
 .cmp th,.cmp td{padding:14px 16px;text-align:center;vertical-align:middle;}
 .cmp th.feat-h,.cmp td.feat-h{text-align:left;}
 /* header */
@@ -111,7 +114,7 @@
 .cmp .v{display:inline-flex;align-items:center;justify-content:center;}
 .cmp .v.y{width:23px;height:23px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:12px;font-weight:800;}
 .cmp .v.n{width:14px;height:2px;border-radius:2px;background:var(--line-2);}
-@media(max-width:760px){.cmp-wrap{padding:4px 6px 10px;}.cmp{min-width:0;}.cmp col.cfeat{width:62%;}.cmp th,.cmp td{padding:12px 8px;}.cmp thead th{padding:14px 6px 14px;}.cmp .pname{font-size:14px;}.cmp .frow th{font-size:14px;}.cmp .grp th{padding:22px 8px 9px;}.cmp .grp .gs{display:block;margin:6px 0 0;}.cmp .grp .gl{white-space:nowrap;}.cmp col:not(.cfeat){width:19%;}}
+@media(max-width:760px){.cmp-wrap{padding:4px 6px 10px;}.cmp{min-width:0;}.cmp col.cfeat{width:46%;}.cmp th,.cmp td{padding:12px 8px;}.cmp thead th{padding:14px 6px 14px;}.cmp .pname{font-size:14px;}.cmp .frow th{font-size:14px;}.cmp .grp th{padding:22px 8px 9px;}.cmp .grp .gs{display:block;margin:6px 0 0;}.cmp .grp .gl{white-space:nowrap;}.cmp col:not(.cfeat){width:18%;}}
 .billing button{white-space:nowrap;}
 @media(max-width:420px){.billing button{font-size:13px;padding-left:12px;padding-right:12px;}}
 .shead .l{max-width:none;}
@@ -145,13 +148,14 @@
 .tip .bub::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--line-2);}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YourFellow HQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://hallomia.ai/","offers":[{"@type":"Offer","name":"YourFellow HQ, per maand","price":"66.00","priceCurrency":"EUR","url":"https://hallomia.ai/prijzen/"},{"@type":"Offer","name":"YourFellow HQ, per jaar","price":"633.60","priceCurrency":"EUR","url":"https://hallomia.ai/prijzen/"}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YourFellow HQ","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://hallomia.ai/","offers":[{"@type":"Offer","name":"Social, per maand","price":"66.00","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"66.00","priceCurrency":"EUR","valueAddedTaxIncluded":false},"url":"https://hallomia.ai/prijzen/"},{"@type":"Offer","name":"Social, per jaar","price":"633.60","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"633.60","priceCurrency":"EUR","valueAddedTaxIncluded":false},"url":"https://hallomia.ai/prijzen/"},{"@type":"Offer","name":"Google Ads, per maand","price":"129.00","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"129.00","priceCurrency":"EUR","valueAddedTaxIncluded":false},"url":"https://hallomia.ai/prijzen/"},{"@type":"Offer","name":"Social + Google Ads, per maand","price":"199.00","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"199.00","priceCurrency":"EUR","valueAddedTaxIncluded":false},"url":"https://hallomia.ai/prijzen/"}]}
 </script>
 <link rel="stylesheet" href="../assets/site-light.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hallomia.ai/"},{"@type":"ListItem","position":2,"name":"Prijzen","item":"https://hallomia.ai/prijzen/"}]}
 </script>
 <style>.rv{display:flex;flex-direction:column;gap:14px;background:#fff;border:1px solid var(--line-2,#E5E2D8);border-radius:16px;padding:22px 24px}.rv blockquote{margin:0;font-size:17px;line-height:1.5;font-weight:600;color:var(--ink,#171717);text-wrap:pretty}.rv .who{display:flex;align-items:center;gap:12px}.rv .who img{width:40px;height:40px;border-radius:50%;object-fit:cover}.rv .who b{display:block;font-size:14px;color:var(--ink,#171717)}.rv .who small{font-size:12.5px;color:var(--ink-mute,#76705F)}.rv .st{margin-left:auto;color:#F5A623;font-size:13px;letter-spacing:2px}.rv-sec{max-width:760px;margin:0 auto}.rv-sec .rv{text-align:center;padding:32px 34px}.rv-sec .rv blockquote{font-size:clamp(19px,1.8vw,23px)}.rv-sec .who{justify-content:center;text-align:left}.rv-sec .st{margin-left:8px}.aw-photo{margin:0 0 28px;border-radius:18px;overflow:hidden;aspect-ratio:21/9;box-shadow:0 40px 90px -40px rgba(40,34,20,.35);position:relative}.aw-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}.aw-photo figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);border-radius:10px;padding:8px 12px;font-size:12.5px;font-weight:700;color:#171717}@media(max-width:600px){.aw-photo{aspect-ratio:3/2}}</style>
+<script src="../assets/prijzen.js"></script>
 </head>
 <body data-depth="1" data-page="prijzen">
 <div id="site-nav"></div>
@@ -178,15 +182,12 @@
   .ph .soon-tag::before{content:"";width:11px;height:11px;flex:none;background:var(--ink-mute);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpolyline points='12 7 12 12 15 14'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpolyline points='12 7 12 12 15 14'/%3E%3C/svg%3E") center/contain no-repeat;}
   /* tabel: Growth & Pro kolommen gedimd (binnenkort) */
   .cmp .soon-lbl{font-size:12px;font-weight:600;color:var(--ink-mute);}
-  .cmp thead th:nth-child(3) .pname,.cmp thead th:nth-child(4) .pname,
-  .cmp thead th:nth-child(3) .pprice,.cmp thead th:nth-child(4) .pprice{color:var(--ink-mute);}
-  .cmp .frow td:nth-child(3),.cmp .frow td:nth-child(4){opacity:0.55;}
-  .cmp .frow td:nth-child(3) .v.y,.cmp .frow td:nth-child(4) .v.y{background:var(--ink-mute);color:#fff;}
+  .cmp .g-soon .gl{color:var(--ink-mute);background:var(--surface-2);}
   </style>
   <section class="wrap phero" style="padding-bottom:50px;">
-    <h1>Eén helder bedrag. <em>Geen verrassingen.</em></h1>
-    <p class="lede">Eén pakket, één vast bedrag. Per maand of per jaar, niet per gebruiker. Nieuwe modules komen erbij zodra ze klaar zijn, en dan kies je zelf of je ze wilt.</p>
-    <div class="launch-note">Nu live: Dashboard en Social posts. Google Ads, SEO &amp; GEO en Meta ads volgen.</div>
+    <h1>Drie pakketten. <em>Geen verrassingen.</em></h1>
+    <p class="lede">Drie pakketten, elk met een vast bedrag. Per maand of per jaar, niet per gebruiker. Alle prijzen zijn exclusief btw. SEO &amp; GEO en Meta ads komen erbij zodra ze klaar zijn, en dan kies je zelf of je ze wilt.</p>
+    <div class="launch-note">Nu live: Dashboard, Social posts en Google Ads. SEO &amp; GEO en Meta ads volgen.</div>
     </section>
 
   <section class="wrap" style="padding-bottom:90px;">
@@ -200,9 +201,9 @@
       <div class="tier tier-starter live">
         <span class="nowbadge">Nu beschikbaar</span>
         <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
-        <div class="nm">Dashboard + Social posts</div>
+        <div class="nm">Social</div>
         <div class="wasboven" id="stWas"></div>
-        <div class="price"><span id="stNu">€66</span> <small id="stPer">per maand</small></div>
+        <div class="price"><span id="stNu">€66</span> <small id="stPer">per maand excl. btw</small></div>
         <div class="trial">7 dagen gratis proberen, zonder betaalgegevens.</div>
         <div class="who">Al je kanalen op één plek, met Mia als marketingcollega.</div>
         <ul>
@@ -219,50 +220,80 @@
         </ul>
         <a class="btn acc" href="https://app.yourfellow.nl/?bron=site-prijzen">Start 7 dagen gratis</a>
       </div>
-      <div class="tier tier-growth soon">
-        <span class="soonbadge">Binnenkort</span>
+      <div class="tier tier-growth live">
+        <span class="nowbadge">Nu beschikbaar</span>
         <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
-        <div class="nm">Nieuwe modules</div>
-        <div class="price">Binnenkort</div>
-        <div class="who">Bij te boeken zodra ze klaar zijn. Ze werken op hetzelfde bedrijfsprofiel.</div>
-        <ul class="mods-soon">
-          <li><b>Google Ads</b><span>Mia kijkt mee met je campagnes en stelt verbeteringen voor, of zet je eerste campagne klaar.</span></li>
-          <li><b>SEO &amp; GEO</b><span>Teksten op echte zoekwoorden, vindbaar in Google en in AI-antwoorden zoals ChatGPT.</span></li>
-          <li><b>Meta ads</b><span>Mia ziet welke advertentie op Facebook en Instagram werkt en waar je budget beter naartoe kan.</span></li>
+        <div class="nm">Google Ads</div>
+        <div class="wasboven" id="gaWas"></div>
+        <div class="price"><span id="gaNu">€149</span> <small id="gaPer">per maand excl. btw</small></div>
+        <div class="trial">7 dagen gratis proberen, zonder betaalgegevens.</div>
+        <div class="who">Voor wie al op Google adverteert. Je advertentiebudget betaal je apart, rechtstreeks aan Google. <a href="../wat-doet-het/google-ads/">Meer over Google Ads</a></div>
+        <ul>
+          <li><span class="ft">Mia kijkt mee in je Google Ads en stelt verbeteringen voor</span></li>
+          <li><span class="ft">Nog niet adverteren? Mia zet je eerste advertenties klaar</span></li>
+          <li><span class="ft">Je cijfers in gewone taal, afgezet tegen je eigen doel</span></li>
+          <li><span class="ft">Je fundament: een check van je account in 27 punten</span></li>
+          <li><span class="ft">Elke dag meekijken, met nieuwe voorstellen</span></li>
+          <li><span class="ft">Logboek van elke wijziging</span></li>
+          <li><span class="ft">Er verandert niets zonder jouw akkoord</span></li>
         </ul>
-        <a class="btn" href="../contact/?interesse=modules">Hou me op de hoogte</a>
+        <a class="btn acc" href="https://app.yourfellow.nl/?bron=site-prijzen-google-ads">Start 7 dagen gratis</a>
+      </div>
+      <div class="tier tier-pro featured">
+        <span class="pbadge">Meest gekozen</span>
+        <span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+        <div class="nm">Social + Google Ads</div>
+        <div class="wasboven" id="bnWas"></div>
+        <div class="price"><span id="bnNu">€189</span> <small id="bnPer">per maand excl. btw</small></div>
+        <div class="trial">7 dagen gratis proberen, zonder betaalgegevens.</div>
+        <div class="who">Social en Google Ads samen. Mia beheert al je kanalen op één plek.</div>
+        <ul>
+          <li class="allof"><span class="ft">Alles uit Social</span></li>
+          <li class="allof"><span class="ft">Alles uit Google Ads</span></li>
+          <li><span class="ft">Je posts en je advertenties in hetzelfde dashboard</span></li>
+          <li><span class="ft">Eén bedrijfsprofiel en brand kit voor alles</span></li>
+          <li><span class="ft">Er verandert niets zonder jouw akkoord</span></li>
+        </ul>
+        <a class="btn acc" href="https://app.yourfellow.nl/?bron=site-prijzen-bundel">Start 7 dagen gratis</a>
       </div>
     </div>
   </section>
 
   <!-- COMPARISON -->
   <section class="section"><div class="wrap">
-    <div class="shead"><div class="l"><h2>Wat zit erin?</h2><p class="sh-sub">Alles wat je nu krijgt voor €66 per maand, en welke modules er nog bij komen.</p></div></div>
+    <div class="shead"><div class="l"><h2>Wat zit erin?</h2><p class="sh-sub">Wat er in Social (€66 per maand excl. btw), Google Ads (€149 per maand excl. btw) en Social + Google Ads (€189 per maand excl. btw) zit, en welke modules er nog bij komen.</p></div></div>
     <div class="cmp-wrap">
       <table class="cmp">
-        <colgroup><col class="cfeat"><col><col></colgroup>
+        <colgroup><col class="cfeat"><col><col><col></colgroup>
         <thead><tr>
           <th class="feat-h"></th>
-          <th class="hl lead-h"><div class="ph"><span class="pname">Nu inbegrepen</span><span class="pprice">€66 / mnd</span></div></th>
-          <th><div class="ph"><span class="pname">Binnenkort erbij</span><span class="soon-tag">Prijs volgt</span></div></th>
+          <th class="hl lead-h"><div class="ph"><span class="pname">Social</span><span class="pprice"><span data-prijs="social.maand">€66</span> / mnd excl. btw</span></div></th>
+          <th><div class="ph"><span class="pname">Google Ads</span><span class="pprice"><span data-prijs="ga.maand">€149</span> / mnd excl. btw</span></div></th>
+          <th><div class="ph"><span class="pname">Social + Google Ads</span><span class="pprice"><span data-prijs="combo.maand">€189</span> / mnd excl. btw</span></div></th>
         </tr></thead>
         <tbody>
-          <tr class="grp g-content"><th class="feat-h"><span class="gl">Social posts</span></th><td class="hl"></td><td></td></tr>
-          <tr class="frow"><th class="feat-h">Mia zet social media posts klaar <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia kijkt mee met je bedrijf en je kalender en stelt posts voor, met tekst en beeld in jouw stijl.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td></tr>
-          <tr class="frow"><th class="feat-h">Zelf social media posts en video’s maken <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Liever zelf aan de slag? Je eigen posts en video’s maak je gewoon in HQ, met je huisstijl erbij.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td></tr>
-          <tr class="frow"><th class="feat-h">Koppeling met Canva <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Maak je ontwerpen liever in Canva? Koppel je account en haal je ontwerp met één klik in je post.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td></tr>
-          <tr class="frow"><th class="feat-h">Korte video’s van je eigen foto’s <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Van een paar foto’s maakt Mia een korte video, klaar voor je socials.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td></tr>
-          <tr class="frow"><th class="feat-h">Contentkalender <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Een overzicht van wat er wanneer gepost wordt, met feestdagen, acties en vaste momenten erin.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td></tr>
-          <tr class="frow"><th class="feat-h">Goedkeuren en automatisch inplannen <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Keur je een post goed, dan plant Mia hem in en publiceert hem op het juiste moment. Zonder jouw akkoord gaat er niets live.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td></tr>
-          <tr class="frow"><th class="feat-h">Onbeperkt teksten <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Laat zoveel teksten en posts maken als je wilt. Voor beelden heb je 100 AI-credits per maand.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td></tr>
-          <tr class="grp g-web"><th class="feat-h"><span class="gl">Je bedrijf en je kanalen</span></th><td class="hl"></td><td></td></tr>
-          <tr class="frow"><th class="feat-h">Bedrijfsprofiel, brand kit en brand guide <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia leest je website uit en onthoudt wat je verkoopt, voor wie en in welke toon. Je kleuren, logo en lettertype staan erbij.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td></tr>
-          <tr class="frow"><th class="feat-h">7 social kanalen <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Instagram, Facebook, LinkedIn, TikTok, Pinterest, X en YouTube, allemaal vanuit één platform.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td></tr>
-          <tr class="frow"><th class="feat-h">Dashboard <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Je website, socials en webshop op één scherm. Mia zet bovenaan waar je vandaag op moet letten.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td></tr>
-          <tr class="grp g-ads"><th class="feat-h"><span class="gl">Nieuwe modules</span></th><td class="hl"></td><td></td></tr>
-          <tr class="frow"><th class="feat-h">Google Ads <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia kijkt mee met je campagnes en stelt verbeteringen voor, of zet je eerste campagne klaar.</span></span></th><td class="hl"><span class="v n"></span></td><td><span class="soon-lbl">Binnenkort</span></td></tr>
-          <tr class="frow"><th class="feat-h">SEO &amp; GEO <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Teksten op echte zoekwoorden, zodat je beter gevonden wordt in Google en in AI-antwoorden zoals ChatGPT.</span></span></th><td class="hl"><span class="v n"></span></td><td><span class="soon-lbl">Binnenkort</span></td></tr>
-          <tr class="frow"><th class="feat-h">Meta ads <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia ziet welke advertentie op Facebook en Instagram nog werkt en waar je budget beter naartoe kan.</span></span></th><td class="hl"><span class="v n"></span></td><td><span class="soon-lbl">Binnenkort</span></td></tr>
+          <tr class="grp g-content"><th class="feat-h"><span class="gl">Social posts</span></th><td class="hl"></td><td></td><td></td></tr>
+          <tr class="frow"><th class="feat-h">Mia zet social media posts klaar <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia kijkt mee met je bedrijf en je kalender en stelt posts voor, met tekst en beeld in jouw stijl.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Zelf social media posts en video’s maken <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Liever zelf aan de slag? Je eigen posts en video’s maak je gewoon in HQ, met je huisstijl erbij.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Koppeling met Canva <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Maak je ontwerpen liever in Canva? Koppel je account en haal je ontwerp met één klik in je post.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Korte video’s van je eigen foto’s <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Van een paar foto’s maakt Mia een korte video, klaar voor je socials.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Contentkalender <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Een overzicht van wat er wanneer gepost wordt, met feestdagen, acties en vaste momenten erin.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Goedkeuren en automatisch inplannen <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Keur je een post goed, dan plant Mia hem in en publiceert hem op het juiste moment. Zonder jouw akkoord gaat er niets live.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Onbeperkt teksten <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Laat zoveel teksten en posts maken als je wilt. Voor beelden heb je 100 AI-credits per maand.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="grp g-web"><th class="feat-h"><span class="gl">Je bedrijf en je kanalen</span></th><td class="hl"></td><td></td><td></td></tr>
+          <tr class="frow"><th class="feat-h">Bedrijfsprofiel, brand kit en brand guide <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia leest je website uit en onthoudt wat je verkoopt, voor wie en in welke toon. Je kleuren, logo en lettertype staan erbij.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">7 social kanalen <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Instagram, Facebook, LinkedIn, TikTok, Pinterest, X en YouTube, allemaal vanuit één platform.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Dashboard <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Je website, socials en webshop op één scherm. Mia zet bovenaan waar je vandaag op moet letten.</span></span></th><td class="hl"><span class="v y">✓</span></td><td><span class="v n"></span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="grp g-ads"><th class="feat-h"><span class="gl">Google Ads</span></th><td class="hl"></td><td></td><td></td></tr>
+          <tr class="frow"><th class="feat-h">Mia kijkt mee en stelt voor <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Zoekwoorden toevoegen of uitsluiten, verspilling stoppen. Elk voorstel met de uitleg en de cijfers erbij.</span></span></th><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+                    <tr class="frow"><th class="feat-h">Je cijfers in gewone taal <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Vertoningen, klikken, kosten en aanvragen of aankopen van de laatste 14 dagen, met een samenvatting van Mia erbij.</span></span></th><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Je fundament: check in 27 punten <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Een check van de basis van je account, verdeeld over Meten, Structuur en Uitbreiding.</span></span></th><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Je doel <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Bijvoorbeeld minstens 3 euro omzet per euro die je uitgeeft. Dat pas je zelf aan.</span></span></th><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Elke dag meekijken <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia checkt je account dagelijks en zet nieuwe voorstellen klaar.</span></span></th><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="frow"><th class="feat-h">Logboek van alle wijzigingen <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Elke doorgevoerde wijziging, met wie hem voorstelde, wie goedkeurde en wanneer. Er verandert niets zonder jouw akkoord.</span></span></th><td class="hl"><span class="v n"></span></td><td><span class="v y">✓</span></td><td><span class="v y">✓</span></td></tr>
+          <tr class="grp g-soon"><th class="feat-h"><span class="gl">Binnenkort</span></th><td class="hl"></td><td></td><td></td></tr>
+          <tr class="frow"><th class="feat-h">SEO &amp; GEO <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Teksten op echte zoekwoorden, zodat je beter gevonden wordt in Google en in AI-antwoorden zoals ChatGPT.</span></span></th><td class="hl"><span class="soon-lbl">Binnenkort</span></td><td><span class="soon-lbl">Binnenkort</span></td><td><span class="soon-lbl">Binnenkort</span></td></tr>
+          <tr class="frow"><th class="feat-h">Meta ads <span class="tip"><span class="q" tabindex="0" role="img" aria-label="Uitleg">?</span><span class="bub">Mia ziet welke advertentie op Facebook en Instagram nog werkt en waar je budget beter naartoe kan.</span></span></th><td class="hl"><span class="soon-lbl">Binnenkort</span></td><td><span class="soon-lbl">Binnenkort</span></td><td><span class="soon-lbl">Binnenkort</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -276,16 +307,17 @@
     <div class="shead" style="margin-bottom:30px;"><div class="l"><h2>Over de prijzen.</h2></div><div class="r"><a class="txt-link" href="../vragen/">Alle vragen →</a></div></div>
     <div class="pfaq">
       <div class="q"><h4>Wat betekent onbeperkt teksten en posts?</h4><p>Je kunt zoveel posts, teksten en concepten laten maken als je wilt, daar zit geen limiet op. Mia zet de voorstellen klaar; jij bepaalt wat je goedkeurt en wat er daadwerkelijk uitgaat. Voor beelden geldt wel een grens: 100 AI-credits per maand.</p></div>
-      <div class="q"><h4>Kan ik maandelijks of per jaar afrekenen?</h4><p>Allebei kan. Per maand kost YourFellow HQ €66 en ben je maandelijks opzegbaar, zonder lange opzegtermijn. Betaal je per jaar, dan kost het €633,60 in plaats van €792,00: 20% korting. Ook dan zit je niet aan een contract vast, je betaalt alleen vooruit.</p></div>
-      <div class="q"><h4>Wat kost het om te starten?</h4><p>Je begint met 7 dagen gratis proberen, zonder betaalgegevens. De proefperiode loopt automatisch af en er wordt niets afgeschreven; je kiest daarna zelf een abonnement: €66 per maand of €633,60 per jaar. Opzeggen kan altijd.</p></div>
+      <div class="q"><h4>Kan ik maandelijks of per jaar afrekenen?</h4><p>Allebei kan. Per maand kost Social €66 excl. btw en ben je maandelijks opzegbaar, zonder lange opzegtermijn. Betaal je per jaar, dan kost het €633,60 excl. btw in plaats van €792,00: 20% korting. Google Ads kost €149 per maand of €1.428 per jaar, Social + Google Ads €189 per maand of €1.812 per jaar, excl. btw. Ook dan zit je niet aan een contract vast, je betaalt alleen vooruit.</p></div>
+      <div class="q"><h4>Wat kost het om te starten?</h4><p>Je begint met 7 dagen gratis proberen, zonder betaalgegevens. De proefperiode loopt automatisch af en er wordt niets afgeschreven; je kiest daarna zelf een abonnement. Social kost €66 per maand of €633,60 per jaar, excl. btw. Google Ads kost €149 per maand of €1.428 per jaar, Social + Google Ads €189 per maand of €1.812 per jaar, beide excl. btw. Opzeggen kan altijd.</p></div>
       <div class="q"><h4>Reken ik per gebruiker af?</h4><p>Nee. Je betaalt één vast bedrag per maand voor het pakket, niet per gebruiker en niet per los gebruik.</p></div>
-      <div class="q"><h4>Wat kosten de nieuwe modules?</h4><p>Google Ads, SEO &amp; GEO en Meta ads komen erbij zodra ze klaar zijn. De prijs maken we dan bekend. Je beslist zelf of je ze erbij wilt, je huidige abonnement verandert daar niet door.</p></div>
+      <div class="q"><h4>Wat kosten de nieuwe modules?</h4><p>Google Ads is nu beschikbaar voor €149 per maand excl. btw, los of samen met Social voor €189 per maand excl. btw. SEO &amp; GEO en Meta ads volgen. De prijs daarvan maken we bekend zodra ze klaar zijn. Je beslist zelf of je ze erbij wilt, je huidige abonnement verandert daar niet door.</p></div>
+      <div class="q"><h4>Zit mijn advertentiebudget in de prijs?</h4><p>Nee. Je advertentiebudget betaal je rechtstreeks aan Google, via je eigen Google Ads-account. YourFellow komt niet aan je advertentiebudget. Het abonnement betaal je aan YourFellow.</p></div>
     </div>
   </div></section>
 
   <section class="fc"><div class="wrap fc-in">
     <h2 style="font-size: 44px">Klaar om te <em>beginnen?</em></h2>
-    <p>Eerst 7 dagen gratis proberen, zonder betaalgegevens en zonder automatische afschrijving. Daarna €66 per maand, maandelijks opzegbaar.</p>
+    <p>Eerst 7 dagen gratis proberen, zonder betaalgegevens en zonder automatische afschrijving. Daarna vanaf €66 per maand excl. btw, maandelijks opzegbaar.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-prijzen">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="../wat-doet-het/">Bekijk de modules</a></div>
   </div></section>
 </main>
@@ -295,10 +327,13 @@
 (function(){
   var btns=document.querySelectorAll('.billing button'),was=document.getElementById('stWas'),nu=document.getElementById('stNu'),per=document.getElementById('stPer');
   if(!btns.length||!nu)return;
-  var data={maand:{was:'',nu:'€66',per:'per maand'},jaar:{was:'€792,00',nu:'€633,60',per:'per jaar'}};
+  var P=window.HM_PRIJZEN,LBL={maand:'per maand excl. btw',jaar:'per jaar excl. btw'};
+  var bw=document.getElementById('bnWas'),bn=document.getElementById('bnNu'),bp=document.getElementById('bnPer');
+  var gw=document.getElementById('gaWas'),gn=document.getElementById('gaNu'),gp=document.getElementById('gaPer');
+  function zet(w,n,p,d,c){if(!n)return;if(d){w.textContent=d.was;n.textContent=d.nu;p.textContent=LBL[c];n.style.fontSize='';}else{w.textContent='';n.textContent='Jaarprijs volgt binnenkort';n.style.fontSize='24px';p.textContent='';}}
   btns.forEach(function(b){b.addEventListener('click',function(){
     btns.forEach(function(o){o.classList.remove('on');});b.classList.add('on');
-    var d=data[b.getAttribute('data-cyclus')];was.textContent=d.was;nu.textContent=d.nu;per.textContent=d.per;
+    var c=b.getAttribute('data-cyclus');zet(was,nu,per,P.social[c],c);zet(gw,gn,gp,P.ga[c],c);zet(bw,bn,bp,P.combo[c],c);
   });});
 })();
 </script>

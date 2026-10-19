@@ -236,6 +236,8 @@
     +     '</div>'
     +     '<div class="col"><h5>Product</h5>'
     +       '<a href="'+R+'wat-doet-het/">Wat doet het</a>'
+    +       '<a href="'+R+'wat-doet-het/social-posts/">Social posts</a>'
+    +       '<a href="'+R+'wat-doet-het/google-ads/">Google Ads</a>'
     +       '<a href="'+R+'mia/">Mia</a>'
     +       '<a href="'+R+'voor-wie/">Voor wie</a>'
     +     '</div>'

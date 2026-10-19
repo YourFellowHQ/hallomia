@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="192x192" href="../../assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="../../assets/favicon-512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads: Mia kijkt mee, jij keurt goed | YourFellow HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site.css">
+<meta name="description" content="Adverteer je al op Google? Dan kijkt Mia mee in je Google Ads en stelt ze verbeteringen voor. Jij keurt goed. €149 per maand excl. btw.">
+<link rel="canonical" href="https://hallomia.ai/wat-doet-het/google-ads/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hallo Mia">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Google Ads &middot; Mia kijkt mee, jij keurt goed">
+<meta property="og:description" content="Adverteer je al op Google? Dan kijkt Mia mee in je Google Ads en stelt ze verbeteringen voor. Er verandert niets zonder jouw akkoord.">
+<meta property="og:url" content="https://hallomia.ai/wat-doet-het/google-ads/">
+<meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Google Ads &middot; Mia kijkt mee, jij keurt goed">
+<meta name="twitter:description" content="Adverteer je al op Google? Dan kijkt Mia mee in je Google Ads en stelt ze verbeteringen voor. Er verandert niets zonder jouw akkoord.">
+<meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
+<style>
+.mkick{display:inline-flex;align-items:center;gap:9px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--accent);}
+.mkick::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);}
+.phold{aspect-ratio:4/3;border:1.5px dashed var(--line-2);border-radius:18px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;font-size:15px;font-weight:600;color:var(--ink-mute);}
+.pic{aspect-ratio:4/3;border:1px solid var(--line-2);border-radius:18px;overflow:hidden;background:var(--surface-2);display:flex;align-items:center;justify-content:center;padding:18px;box-shadow:0 30px 60px -42px rgba(40,34,20,0.45);transition:transform .2s ease, box-shadow .2s ease;}
+.row:hover .pic{transform:translateY(-3px);box-shadow:0 36px 70px -38px rgba(40,34,20,0.5);}
+.shot{max-width:100%;max-height:100%;width:auto;height:auto;display:block;border-radius:8px;}
+.zoomshot{position:relative;cursor:zoom-in;display:flex;max-width:100%;max-height:100%;}
+.zoomshot::after{content:"Klik om te vergroten";position:absolute;top:9px;right:9px;font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.06em;color:#fff;background:rgba(20,17,12,.72);padding:5px 9px;border-radius:99px;opacity:0;transition:.15s;pointer-events:none;}
+.zoomshot:hover::after{opacity:1;}
+.zoomlaag{position:fixed;inset:0;z-index:200;background:rgba(20,17,12,.86);display:none;align-items:center;justify-content:center;padding:32px;cursor:zoom-out;}
+.zoomlaag.on{display:flex;}
+.zoomlaag img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);}
+.zoomlaag .sluit{position:absolute;top:18px;right:22px;font-size:26px;line-height:1;color:#fff;background:none;border:0;cursor:pointer;font-family:inherit;}
+.row{display:grid;grid-template-columns:0.78fr 1.32fr;gap:48px;align-items:center;padding:54px 0;border-top:1px solid var(--line);}
+.row:first-child{border-top:0;}
+.row.flip{grid-template-columns:1.32fr 0.78fr;}
+.row.flip .txt{order:2;}
+@media(max-width:860px){.row,.row.flip{grid-template-columns:1fr;gap:26px;padding:38px 0;}.row.flip .txt{order:0;}}
+.row .txt{max-width:46ch;}
+.row h2{font-size:clamp(24px,2.8vw,34px);font-weight:700;letter-spacing:-0.03em;line-height:1.08;display:flex;align-items:center;gap:13px;}
+.row h2 .n{flex:none;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.row .lead{margin-top:14px;font-size:18px;color:var(--ink);line-height:1.5;font-weight:500;text-wrap:pretty;}
+.row .sub{margin-top:10px;font-size:16px;color:var(--ink-soft);line-height:1.6;text-wrap:pretty;}
+.row ul{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.row li{display:flex;align-items:flex-start;gap:11px;font-size:15.5px;color:var(--ink-2);line-height:1.45;}
+.row li::before{content:"\2713";flex:none;width:19px;height:19px;border-radius:50%;background:var(--accent-soft);color:var(--accent-deep);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.note{margin-top:14px;font-size:14.5px;line-height:1.6;color:var(--ink-mute);max-width:58ch;}
+.kost{border-top:1px solid var(--line);padding:54px 0;}
+.kost h2{font-size:clamp(24px,2.8vw,34px);font-weight:700;letter-spacing:-0.03em;line-height:1.08;}
+.kost .intro{margin-top:12px;font-size:16px;color:var(--ink-soft);line-height:1.6;max-width:60ch;}
+.pay{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px;}
+@media(max-width:760px){.pay{grid-template-columns:1fr;}}
+.pay .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:12px;}
+.pay .card.yf{border-color:var(--accent-deep);box-shadow:0 0 0 1px var(--accent) inset;}
+.pay .to{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);}
+.pay .amt{font-size:40px;font-weight:600;letter-spacing:-0.03em;line-height:1;}
+.pay .was{font-size:14px;font-weight:500;color:var(--ink-mute);text-decoration:line-through;}
+.pay .amt small{font-size:15px;font-weight:500;color:var(--ink-soft);letter-spacing:0;}
+.pay p{font-size:15px;color:var(--ink-soft);line-height:1.6;}
+.erbij{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:18px;padding:20px 24px;border:1px solid var(--line-2);border-radius:14px;background:var(--bg-2);}
+.erbij b{font-size:15.5px;color:var(--ink);}
+.erbij span{font-size:15px;color:var(--ink-soft);line-height:1.55;}
+.erbij > div{max-width:62ch;}
+.erbij .txt-link{flex:none;}
+.erbij .txt-link span{color:inherit;font-size:inherit;}
+.gfaq{border-top:1px solid var(--line);padding:54px 0;}
+.gfaq h2{font-size:clamp(24px,2.8vw,34px);font-weight:700;letter-spacing:-0.03em;line-height:1.08;margin-bottom:22px;}
+.gfaq .q{padding:22px 0;border-bottom:1px solid var(--line);}
+.gfaq .q:first-of-type{border-top:1px solid var(--line);}
+.gfaq .q h3{font-size:18px;font-weight:600;letter-spacing:-0.01em;margin-bottom:7px;}
+.gfaq .q p{font-size:15px;color:var(--ink-soft);line-height:1.6;max-width:66ch;}
+.fc{padding:64px 0 72px;border-top:1px solid var(--line);text-align:center;}
+.fc-in{display:flex;flex-direction:column;align-items:center;}
+.fc-in h2{font-size:clamp(30px,4vw,52px);font-weight:600;letter-spacing:-0.035em;line-height:1.04;max-width:28ch;}
+.fc-in h2 em{font-style:normal;color:var(--accent);}
+.fc-in p{margin:18px 0 26px;font-size:17px;color:var(--ink-soft);max-width:52ch;line-height:1.6;}
+</style>
+<link rel="stylesheet" href="../../assets/site-light.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hallomia.ai/"},{"@type":"ListItem","position":2,"name":"Wat doet het","item":"https://hallomia.ai/wat-doet-het/"},{"@type":"ListItem","position":3,"name":"Google Ads","item":"https://hallomia.ai/wat-doet-het/google-ads/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"nl-NL","mainEntity":[{"@type":"Question","name":"Heb ik een eigen Google Ads-account nodig?","acceptedAnswer":{"@type":"Answer","text":"Ja, met campagnes die al lopen. Je koppelt het door in te loggen met je eigen Google-account. De Google Ads-module is bedoeld voor wie al op Google adverteert: we zetten geen nieuw account of eerste campagne voor je op."}},{"@type":"Question","name":"Wat kost Google Ads in HQ?","acceptedAnswer":{"@type":"Answer","text":"€149 per maand of €1.428 per jaar (20% korting), excl. btw. Wil je Social erbij, dan kost Social + Google Ads samen €189 per maand of €1.812 per jaar, excl. btw. Je advertentiebudget betaal je apart en rechtstreeks aan Google."}},{"@type":"Question","name":"Zit mijn advertentiebudget in de prijs?","acceptedAnswer":{"@type":"Answer","text":"Nee. Je advertentiebudget betaal je rechtstreeks aan Google, via je eigen Google Ads-account. YourFellow komt niet aan je advertentiebudget."}},{"@type":"Question","name":"Verandert Mia iets in mijn account zonder mij?","acceptedAnswer":{"@type":"Answer","text":"Nee. Elk voorstel wacht op jouw keuze: Ja, doen of Nee, laat maar. Pas als jij ja zegt, wordt de wijziging doorgevoerd. Onder Wat er is aangepast zie je daarna wie hem voorstelde, wie goedkeurde en wanneer."}},{"@type":"Question","name":"Wat gebeurt er met mijn bestaande campagnes?","acceptedAnswer":{"@type":"Answer","text":"Die lopen na het koppelen gewoon door. Mia kijkt mee en doet er voorstellen voor."}}]}
+</script>
+<script src="../../assets/prijzen.js"></script>
+</head>
+<body data-depth="2" data-page="wat">
+<div id="site-nav"></div>
+
+<div class="wrap crumb"><a href="../../">home</a> / <a href="../">wat doet het</a> / google ads</div>
+
+<main>
+  <section class="wrap phero">
+    <span class="mkick">Module 03</span>
+    <h1>Google Ads, met Mia die meekijkt.</h1>
+    <p class="lede">Voor webwinkels en ondernemers die al op Google adverteren. Mia kijkt mee in je account, legt in gewone taal uit hoe het gaat en zet voorstellen klaar. <b>Jij keurt goed</b>, en pas dan verandert er iets.</p>
+    <p class="note">Je hebt een eigen Google Ads-account nodig, met campagnes die al lopen. Adverteer je nog niet op Google? Dan past <a href="../social-posts/" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Social</a> beter bij je.</p>
+    <div class="acts"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-google-ads">Probeer 7 dagen gratis <span class="arrow">→</span></a><a class="btn ghost lg" href="../../demo/">Plan je demo in</a></div>
+  </section>
+
+  <section class="section"><div class="wrap">
+
+    <div class="row">
+      <div class="txt">
+        <h2><span class="n">1</span> Mia kijkt mee in je campagnes</h2>
+        <p class="lead">En stelt verbeteringen voor.</p>
+        <p class="sub">Je campagnes lopen na het koppelen gewoon door. Een campagne is een set advertenties met een eigen doel en budget. Mia kijkt waar het beter kan: een zoekwoord dat erbij mag, een zoekwoord dat je beter uitsluit, of geld dat weglekt aan klikken die niets opleveren.</p>
+        <p class="sub">Elk voorstel krijgt een label, zoals "Nieuwe kans", "Verspilling stoppen" of "Meer klikken", met de uitleg en de cijfers erbij. Is het bewijs nog mager, dan zegt Mia dat eerlijk. Jij kiest: "Ja, doen" of "Nee, laat maar".</p>
+      </div>
+      <div class="pic"><div class="zoomshot"><img class="shot" src="../../assets/hq/ga-voorstellen.png" alt="Voorstellen in YourFellow HQ: Mia stelt voor een zoekwoord toe te voegen en een woord uit te sluiten, met de knoppen Ja, doen en Nee, laat maar" loading="lazy"></div></div>
+    </div>
+
+    <div class="row flip">
+      <div class="txt">
+        <h2><span class="n">2</span> Je cijfers in gewone taal</h2>
+        <p class="lead">Hoe gaat het ten opzichte van je doel?</p>
+        <p class="sub">In het overzicht vat Mia in gewone taal samen hoe het gaat. Onder "Mia's prioriteiten" staan de drie voorstellen die ze als eerste zou oppakken.</p>
+        <p class="sub">Daaronder staan je cijfers van de laatste 14 dagen: vertoningen, klikken, kosten, aanvragen of aankopen, en wat elke aanvraag of aankoop kost.</p>
+      </div>
+      <div class="pic"><div class="zoomshot"><img class="shot" src="../../assets/hq/ga-overzicht.png" alt="Google Ads-overzicht in YourFellow HQ: Mia vat samen hoe het gaat ten opzichte van je doel, met Mia's prioriteiten en je cijfers van de laatste 14 dagen" loading="lazy"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="txt">
+        <h2><span class="n">3</span> Je basis, je doel en elke dag meekijken</h2>
+        <p class="lead">Met een logboek van alles wat er is aangepast.</p>
+        <ul>
+          <li><span>"Je fundament": een check van de basis van je account in 27 punten, verdeeld over Meten, Structuur en Uitbreiding</span></li>
+          <li><span>"Je doel", bijvoorbeeld minstens 4 euro omzet per euro die je uitgeeft. Dat pas je zelf aan</span></li>
+        </ul>
+        <p class="sub">Die 27 punten zijn dezelfde checklist waarmee wij bij YourFellow, als marketingbureau, de Google Ads-accounts van onze klanten doorlichten. De kennis van YourFellow zit dus in HQ zelf: Mia bekijkt jouw account zoals onze specialisten dat doen.</p>
+        <p class="sub">Zet "Laat Mia elke dag meekijken" aan en Mia checkt je account dagelijks. Ziet ze iets, dan zet ze een nieuw voorstel voor je klaar.</p>
+        <p class="sub">Onder "Wat er is aangepast" staat elke wijziging die is doorgevoerd: wie hem voorstelde, wie hem goedkeurde en wanneer. Zo weet je altijd wat er in je account is gebeurd.</p>
+      </div>
+      <div class="pic"><div class="zoomshot"><img class="shot" src="../../assets/hq/ga-fundament.png" alt="Je fundament, Laat Mia elke dag meekijken en Wat er is aangepast in YourFellow HQ" loading="lazy"></div></div>
+    </div>
+
+  </div></section>
+
+  <section class="kost"><div class="wrap">
+    <h2>Wat het kost: twee betalingen.</h2>
+    <p class="intro">Je betaalt het abonnement aan YourFellow. Je advertentiebudget betaal je apart, rechtstreeks aan Google.</p>
+    <div class="pay">
+      <div class="card yf">
+        <span class="to">Aan YourFellow</span>
+        
+        <div class="amt"><span data-prijs="ga.maand">€149</span> <small>per maand excl. btw</small></div>
+        <p>Per jaar betaal je €1.428 excl. btw, 20% korting. De eerste 7 dagen zijn gratis, zonder betaalgegevens, en je bent maandelijks opzegbaar.</p>
+      </div>
+      <div class="card">
+        <span class="to">Aan Google</span>
+        <div class="amt">Je advertentiebudget</div>
+        <p>Dat betaal je rechtstreeks aan Google, via je eigen Google Ads-account. YourFellow komt niet aan je advertentiebudget.</p>
+      </div>
+    </div>
+    <div class="erbij"><div><b>Ook Social erbij?</b> <span>Met Social + Google Ads, voor €189 per maand excl. btw, zet Mia ook je social media posts klaar in jouw merkstijl, voor al je kanalen. Jij keurt goed en Mia plant ze in.</span></div><a class="txt-link" href="../../prijzen/">Bekijk de pakketten <span class="arrow">→</span></a></div>
+  </div></section>
+
+  <section class="gfaq"><div class="wrap">
+    <h2>Vragen over Google Ads.</h2>
+    <div class="q"><h3>Heb ik een eigen Google Ads-account nodig?</h3><p>Ja, met campagnes die al lopen. Je koppelt het door in te loggen met je eigen Google-account. De Google Ads-module is bedoeld voor wie al op Google adverteert: we zetten geen nieuw account of eerste campagne voor je op.</p></div>
+    <div class="q"><h3>Wat kost Google Ads in HQ?</h3><p>€149 per maand of €1.428 per jaar (20% korting), excl. btw. Wil je Social erbij, dan kost Social + Google Ads samen €189 per maand of €1.812 per jaar, excl. btw. Je advertentiebudget betaal je apart en rechtstreeks aan Google.</p></div>
+    <div class="q"><h3>Zit mijn advertentiebudget in de prijs?</h3><p>Nee. Je advertentiebudget betaal je rechtstreeks aan Google, via je eigen Google Ads-account. YourFellow komt niet aan je advertentiebudget.</p></div>
+    <div class="q"><h3>Verandert Mia iets in mijn account zonder mij?</h3><p>Nee. Elk voorstel wacht op jouw keuze: "Ja, doen" of "Nee, laat maar". Pas als jij ja zegt, wordt de wijziging doorgevoerd. Onder "Wat er is aangepast" zie je daarna wie hem voorstelde, wie goedkeurde en wanneer.</p></div>
+    <div class="q"><h3>Wat gebeurt er met mijn bestaande campagnes?</h3><p>Die lopen na het koppelen gewoon door. Mia kijkt mee en doet er voorstellen voor.</p></div>
+  </div></section>
+
+  <section class="fc"><div class="wrap fc-in">
+    <h2>Mia kijkt mee met je advertenties. <em>Jij keurt goed.</em></h2>
+    <p>7 dagen gratis proberen, zonder betaalgegevens. Daarna €149 per maand excl. btw. Maandelijks opzegbaar.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-google-ads">Probeer 7 dagen gratis <span class="arrow">→</span></a><a class="btn ghost lg" href="../../demo/">Plan je demo in</a></div>
+  </div></section>
+</main>
+
+<div id="site-foot"></div>
+<script src="../../assets/site-hm.js"></script>
+<script>
+(function(){var laag=document.createElement("div");laag.className="zoomlaag";laag.innerHTML='<button class="sluit" type="button" aria-label="Sluiten">&times;</button><img alt="">';document.body.appendChild(laag);var groot=laag.querySelector("img");document.addEventListener("click",function(e){var z=e.target.closest&&e.target.closest(".zoomshot");if(z){var im=z.querySelector("img");if(im){groot.src=im.src;groot.alt=im.alt;laag.classList.add("on");}return;}if(e.target.closest&&e.target.closest(".zoomlaag"))laag.classList.remove("on");});document.addEventListener("keydown",function(e){if(e.key==="Escape")laag.classList.remove("on");});})();
+</script>
+</body>
+</html>

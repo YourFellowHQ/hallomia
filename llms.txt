@@ -6,11 +6,14 @@
 
 - Aanbieder: YourFellow, performance-marketingbureau uit Zevenbergen (Nederland).
 - Product: YourFellow HQ, webplatform. Taal: Nederlands. Markt: Nederland en België.
-- Prijs: €66 per maand voor Dashboard en Social posts. 20% korting bij jaarlijkse betaling. Maandelijks opzegbaar.
+- Prijs Social: €66 per maand excl. btw (Dashboard en Social posts), of €633,60 per jaar excl. btw.
+- Prijs Google Ads: €149 per maand of €1.428 per jaar excl. btw.
+- Prijs Social + Google Ads: €189 per maand of €1.812 per jaar excl. btw. Het advertentiebudget betaalt de klant apart en rechtstreeks aan Google, via een eigen Google Ads-account.
+- Alle prijzen excl. btw. 20% korting bij jaarlijkse betaling. Maandelijks opzegbaar.
 - Proefperiode: 7 dagen gratis, zonder betaalgegevens en zonder automatische afschrijving.
-- Nu beschikbaar: bedrijfsprofiel, dashboard, social media posts voor al je socials.
+- Nu beschikbaar: bedrijfsprofiel, dashboard, social media posts voor al je socials, Google Ads-beheer (alleen voor wie al op Google adverteert: Mia kijkt mee in lopende campagnes en stelt voor; niets verandert zonder akkoord; we zetten geen nieuw account of eerste campagne op).
 - Beeld: AI-beeld maken, of eigen ontwerpen ophalen via de koppeling met Canva.
-- Binnenkort, in deze volgorde: Google Ads-beheer, SEO & GEO content, Meta ads-beheer.
+- Binnenkort: SEO & GEO content, Meta ads-beheer.
 - Werk voor de ondernemer: posts nalezen en goedkeuren, aanpassen kan altijd.
 - Contact: info@hallomia.ai
 - Demo: live demo van 20 minuten, elke werkdag om 10:00, 11:00, 14:00 of 15:00 uur.
@@ -28,6 +31,7 @@ Kleine lokale ondernemers en mkb-bedrijven zonder eigen marketeer: horeca, retai
 
 - [Home](https://hallomia.ai/): wat Hallo Mia en YourFellow HQ zijn.
 - [Wat doet het](https://hallomia.ai/wat-doet-het/): de modules en hoe de werkweek eruitziet.
+- [Google Ads](https://hallomia.ai/wat-doet-het/google-ads/): hoe Mia meekijkt in je Google Ads en wat het kost.
 - [Mia](https://hallomia.ai/mia/): wie Mia is en hoe je met haar werkt.
 - [Prijzen](https://hallomia.ai/prijzen/): tarieven, proefperiode en voorwaarden.
 - [Voor wie](https://hallomia.ai/voor-wie/): doelgroepen en branches.
