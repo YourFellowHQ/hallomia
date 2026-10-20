@@ -186,7 +186,7 @@
     if(nep) nep.disabled = true;
     var n = CFG.native, p = [];
     Object.keys(n.velden).forEach(function(k){ p.push(encodeURIComponent(n.velden[k]) + '=' + encodeURIComponent(w[k])); });
-    Object.keys(n.extra || {}).forEach(function(k){ p.push(encodeURIComponent(k) + '=' + encodeURIComponent(n.extra[k])); });
+    Object.keys(n.extra || {}).forEach(function(k){ p.push(encodeURIComponent(k) + '=' + encodeURIComponent(n.extra[k] === '__DATUM__' ? w.datum : n.extra[k])); });
     p.push('callback=hqTeam' + Date.now());
     var url = n.baseURI + n.endpoint + '/jsonp/?' + p.join('&');
     fetch(url, {method:'GET', mode:'no-cors', credentials:'omit', cache:'no-store'}).then(function(){
