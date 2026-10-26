@@ -61,8 +61,10 @@
     gtag('js',new Date());
     gtag('config',CRM.gaId,{allow_google_signals:false,allow_ad_personalization_signals:false});
   };
-  /* Meteen laden, ook zonder toestemming (cookieloos). */
-  hmLaadGA();
+  /* Laden zodra de pagina zichtbaar is (na 'load'), cookieloos zonder toestemming.
+     Zo strijdt het niet met tekst en beeld om de verbinding. */
+  window.hmNaLaden=function(fn){ if(document.readyState==='complete') setTimeout(fn,0); else window.addEventListener('load',function(){ setTimeout(fn,0); }); };
+  hmNaLaden(hmLaadGA);
 
   /* ============================================================
      COOKIEMELDING + META-PIXEL
@@ -116,7 +118,7 @@
         + '</div></div>';
       var st = document.createElement('style');
       st.textContent = '#hm-cookiebalk{position:fixed;left:0;right:0;bottom:0;z-index:9000;padding:14px;display:flex;justify-content:center;pointer-events:none;animation:hmCkIn .28s ease-out both}'
-        + '@keyframes hmCkIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}'
+        + '@keyframes hmCkIn{from{transform:translateY(12px)}to{transform:none}}'
         + '#hm-cookiebalk .hm-ck-card{pointer-events:auto;max-width:600px;width:100%;background:#fff;border:1px solid #E4E7EB;border-radius:12px;box-shadow:0 8px 28px rgba(15,18,22,0.10);padding:12px 14px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}'
         + '#hm-cookiebalk .hm-ck-txt{flex:1 1 240px;font-size:13.5px;line-height:1.5;color:#4A5058}'
         + '#hm-cookiebalk .hm-ck-txt strong{display:block;font-size:14.5px;font-weight:600;color:#0F1216;margin-bottom:3px}'
@@ -148,12 +150,12 @@
   })();
 
   /* GTM laden, alleen als ingeschakeld (loadGTM:true) */
-  if(CRM.gtmId && CRM.loadGTM){
+  if(CRM.gtmId && CRM.loadGTM) hmNaLaden(function(){
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
     var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
     j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
     f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',CRM.gtmId);
-  }
+  });
 
   var body = document.body;
   var page = body.getAttribute('data-page') || '';
