@@ -258,7 +258,7 @@
     +     '</div>'
     +   '</div>'
     +   '<div class="bottom">'
-    +     '<div>&copy; 2026 Hallo Mia, vanaf &euro;66 p/m</div>'
+    +     '<div>&copy; 2026 Hallo Mia, vanaf &euro;66 p/m excl. btw</div>'
     +     '<div class="links"><a href="'+R+'vragen/">Privacy</a><a href="'+R+'vragen/">Voorwaarden</a><a href="#" data-cookie-voorkeur>Cookies</a><a href="'+HOME+'">Home</a></div>'
     +   '</div>'
     + '</div></footer>';
@@ -384,49 +384,14 @@
     }, true);
   })();
 
-  /* previewLinkFix — alleen voor het voorvertoningsvenster: clean URL's ("/prijzen/")
-     bestaan daar niet als map, dus maken we er "prijzen/index.html" van.
-     Op GitHub Pages doet dit niks (daar zijn de mappen wel echt).
-     Bij het verversen van _upload/ dit blok weglaten. */
-  (function previewLinkFix(){
-    if (location.hostname.indexOf('hallomia.ai') > -1) return;
-    function fix(){
-      document.querySelectorAll('a[href]').forEach(function(a){
-        var h = a.getAttribute('href') || '';
-        if (/^(https?:|mailto:|tel:|#)/.test(h)) return;
-        if (/\.[a-z0-9]+($|[?#])/i.test(h)) return;
-        var m = h.match(/^([^?#]*)([?#].*)?$/);
-        if (!m) return;
-        var p = m[1], rest = m[2] || '';
-        if (p === '.' || p === './') p = '';
-        if (p !== '' && !/\/$/.test(p)) return;
-        a.setAttribute('href', p + 'index.html' + rest);
-      });
-    }
-    fix();
-    setTimeout(fix, 60);
-    setTimeout(fix, 400);
-  })();
+})();
 
-  /* brancheSwitch — knoppenbalk rechtsonder om in het voorvertoningsvenster snel
-     tussen de branchepagina's te wisselen. Doet niks op hallomia.ai.
-     Bij het verversen van _upload/ dit blok weglaten. */
-  (function brancheSwitch(){
-    if (location.hostname.indexOf('hallomia.ai') > -1) return;
-    var depth = parseInt(document.body.getAttribute('data-depth') || '0', 10);
-    var up = depth ? new Array(depth + 1).join('../') : '';
-    var items = [['Home',''],['Horeca','horeca/'],['Beauty','beauty/'],['Bouw','bouw/'],['Fitness','fitness/'],['Lokaal','lokale-ondernemers/']];
-    var bar = document.createElement('div');
-    bar.setAttribute('data-preview-only','');
-    bar.style.cssText = 'position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;max-width:60vw;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border:1px solid rgba(0,0,0,.12);border-radius:10px;padding:7px;box-shadow:0 6px 20px rgba(0,0,0,.12);font:500 12px/1 system-ui,sans-serif';
-    items.forEach(function(it){
-      var a = document.createElement('a');
-      a.textContent = it[0];
-      a.href = up + it[1] + 'index.html';
-      a.style.cssText = 'display:block;padding:6px 10px;border-radius:7px;background:#f2f3f5;color:#111;text-decoration:none';
-      bar.appendChild(a);
-    });
-    document.body.appendChild(bar);
-  })();
-
+/* woord-uitleg: tikken op telefoon + binnen beeld houden */
+(function(){
+  function fit(t){var b=t.querySelector('.wt-bub');if(!b)return;b.style.marginLeft='0';var r=b.getBoundingClientRect(),w=window.innerWidth;if(r.right>w-12)b.style.marginLeft=(w-12-r.right)+'px';else if(r.left<12)b.style.marginLeft=(12-r.left)+'px';}
+  function closeAll(x){document.querySelectorAll('.wt.open').forEach(function(t){if(t!==x){t.classList.remove('open');var w=t.querySelector('.wt-w');if(w)w.setAttribute('aria-expanded','false');}});}
+  document.addEventListener('mouseover',function(e){var t=e.target.closest&&e.target.closest('.wt');if(t)fit(t);});
+  document.addEventListener('focusin',function(e){var t=e.target.closest&&e.target.closest('.wt');if(t)fit(t);});
+  document.addEventListener('click',function(e){var w=e.target.closest&&e.target.closest('.wt-w');if(w){e.preventDefault();var t=w.parentNode,o=!t.classList.contains('open');closeAll(t);t.classList.toggle('open',o);w.setAttribute('aria-expanded',String(o));if(o)fit(t);return;}if(!(e.target.closest&&e.target.closest('.wt-bub')))closeAll(null);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll(null);});
 })();

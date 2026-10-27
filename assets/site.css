@@ -285,3 +285,14 @@ h2,h3,h4{text-wrap:pretty;}
 
 /* ---------- proefperiode-regel bij een prijs ---------- */
 .trialline{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-size:12.5px;font-weight:600;color:var(--accent-deep);margin:6px 0 2px;}
+
+/* woord-uitleg (stippellijn) */
+.wt{position:relative;display:inline;white-space:nowrap;}
+.wt-w{border:0;background:none;font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;padding:0;margin:0;cursor:help;border-bottom:2px dotted #00B894;line-height:inherit;}
+.wt-w:focus-visible{outline:2px solid #00B894;outline-offset:2px;border-radius:2px;}
+.wt-bub{position:absolute;bottom:calc(100% + 10px);left:0;width:270px;max-width:calc(100vw - 24px);background:#FFFFFF;color:#47433A;border:1px solid #DED7C9;border-radius:12px;padding:13px 15px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:13.5px;font-weight:400;line-height:1.45;letter-spacing:0;text-transform:none;text-align:left;white-space:normal;opacity:0;visibility:hidden;transition:opacity .15s,visibility .15s;z-index:60;box-shadow:0 18px 40px -18px rgba(33,30,24,.35);}
+.wt-bub strong{display:block;color:#211E18;font-size:14px;font-weight:700;margin-bottom:3px;}
+.wt-bub a{display:block;margin-top:7px;font-size:13px;font-weight:600;color:#211E18;text-decoration:underline;text-underline-offset:3px;}
+.wt-bub a:hover{color:#00A887;}
+.wt:hover .wt-bub,.wt:focus-within .wt-bub,.wt.open .wt-bub{opacity:1;visibility:visible;}
+@media(hover:none){.wt:hover:not(.open) .wt-bub{opacity:0;visibility:hidden;}}

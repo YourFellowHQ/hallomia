@@ -73,9 +73,10 @@ a{color:var(--ink);text-decoration-color:var(--accent)}a:hover{color:var(--accen
 <p class="dk-chosen" id="demoGekozen">Gekozen moment: <b></b></p>
 <p class="tm-stap">2. Gegevens van de klant</p>
 <div class="eb-row"><input id="dkNaam" type="text" placeholder="Voornaam klant" autocomplete="off" aria-label="Voornaam klant"><input id="dkMail" type="email" placeholder="E-mailadres klant" autocomplete="off" aria-label="E-mailadres klant"></div>
+<div class="eb-row"><input id="dkTel" type="tel" placeholder="Telefoonnummer klant" autocomplete="off" inputmode="tel" aria-label="Telefoonnummer klant"></div>
 <div class="dk-knop"><div id="ssDemoForm"></div><button type="button" class="btn acc dk-nep" id="dkNep">Demo inplannen</button></div>
 <p class="dk-hint" id="dkHint" role="alert"></p>
-<p class="tm-fine">Vul hier nooit je eigen naam of e-mailadres in. Gebruik altijd die van de klant.</p>
+<p class="tm-fine">Vul hier nooit je eigen naam, e-mailadres of telefoonnummer in. Gebruik altijd die van de klant.</p>
 </div>
 <div class="tm-done" id="tmDone" role="status">
 <h2>Demo ingepland</h2>
@@ -87,7 +88,7 @@ a{color:var(--ink);text-decoration-color:var(--accent)}a:hover{color:var(--accen
 window.DEMO_CFG = {bedankt:null, native:{
   baseURI:'https://app-3QNTLCGLQ4.marketingautomation.services/webforms/receivePostback/MzawMLE0MTGzAAA/',
   endpoint:'495afad7-af69-451e-9491-26d77bcf7491',
-  velden:{naam:'firstName', email:'emailAddress', datum:'datumHqDemo'},
+  velden:{naam:'firstName', email:'emailAddress', tel:'phoneNumber', datum:'datumHqDemo'},
   extra:{bron:'SYK', date_hq_webinar_400000049720322:'__DATUM__'}
 }};
 window.DEMO_KLAAR = function(w){

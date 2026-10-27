@@ -1,6 +1,6 @@
 /* ============================================================
    Demo-aanmelding op /demo/.
-   Bezoeker kiest dag + tijd en vult naam + e-mail in, allemaal in de
+   Bezoeker kiest dag + tijd en vult naam, e-mail en telefoon in, allemaal in de
    huisstijl. Daarna laadt hetzelfde Constant Contact (SharpSpring)
    formulier met alle drie de velden als verborgen waarde; van dat
    formulier blijft alleen de verzendknop zichtbaar.
@@ -19,6 +19,7 @@
     velden:{
       naam:  ['field_4560407554','firstName'],
       email: ['field_4560409602','emailAddress'],
+      tel:   ['phoneNumber'],
       datum: ['field_400000049720322','date_hq_webinar_400000049720322']
     },
     tijden:(function(){ var t=['10:00','11:00','14:00','15:00'], o={}; [1,2,3,4,5].forEach(function(d){ o[d]=t; }); return o; })(),
@@ -34,6 +35,8 @@
   var target = document.getElementById('ssDemoForm');
   var inNaam = document.getElementById('dkNaam');
   var inMail = document.getElementById('dkMail');
+  var inTel = document.getElementById('dkTel');
+  function telOk(v){ var c = v.replace(/[\s\-().]/g, ''); return /^\+?\d{9,15}$/.test(c); }
   var nep = document.getElementById('dkNep');
   if(!box || !target) return;
 
@@ -101,8 +104,9 @@
     var naam = inNaam ? inNaam.value.trim() : '';
     var mail = inMail ? inMail.value.trim() : '';
     var okMail = inMail ? (inMail.checkValidity() && /@.+\./.test(mail)) : false;
-    if(!gekozenTijd || !naam || !okMail) return null;
-    return laatste = {naam:naam, email:mail, datum:label(gekozenDag, gekozenTijd)};
+    var tel = inTel ? inTel.value.trim() : '';
+    if(!gekozenTijd || !naam || !okMail || (inTel && !telOk(tel))) return null;
+    return laatste = {naam:naam, email:mail, tel:tel, datum:label(gekozenDag, gekozenTijd)};
   }
   /* Het Constant Contact formulier laadt direct bij het openen van de pagina en blijft
      staan: je ziet altijd hun knop. Zolang niet alles is ingevuld ligt er een
@@ -125,7 +129,7 @@
     if(CFG.native) return;
     var w = waarden();
     if(!w){ zetKlaar(false); return; }
-    var sleutel = w.naam + '|' + w.email + '|' + w.datum;
+    var sleutel = w.naam + '|' + w.email + '|' + w.tel + '|' + w.datum;
     var fr = target.querySelector('iframe');
     if(!fr){ setTimeout(laadFormulier, 300); return; }
     if(sleutel !== geladen){
@@ -199,9 +203,11 @@
   }
   if(nep) nep.addEventListener('click', function(){
     if(CFG.native){ var w = waarden(); if(w){ verstuurNative(w); return; } }
-    var mist = !gekozenTijd ? box.querySelector('.dk-t, .dk-day.av') : (inNaam && !inNaam.value.trim()) ? inNaam : inMail;
+    var geenNaam = inNaam && !inNaam.value.trim();
+    var mailFout = inMail && !(inMail.checkValidity() && /@.+\./.test(inMail.value.trim()));
+    var mist = !gekozenTijd ? box.querySelector('.dk-t, .dk-day.av') : geenNaam ? inNaam : mailFout ? inMail : inTel;
     var hint = document.getElementById('dkHint');
-    if(hint){ hint.textContent = !gekozenTijd ? 'Kies eerst een dag en tijd.' : (inNaam && !inNaam.value.trim()) ? 'Vul je voornaam in.' : 'Vul een geldig e-mailadres in.'; hint.classList.add('show'); }
+    if(hint){ hint.textContent = !gekozenTijd ? 'Kies eerst een dag en tijd.' : geenNaam ? 'Vul je voornaam in.' : mailFout ? 'Vul een geldig e-mailadres in.' : 'Vul een geldig telefoonnummer in, bijvoorbeeld 06 12345678.'; hint.classList.add('show'); }
     if(mist && mist.focus) mist.focus();
   });
   function later(){ var hint = document.getElementById('dkHint'); if(hint) hint.classList.remove('show'); clearTimeout(timer); timer = setTimeout(laadFormulier, 450); }
@@ -218,7 +224,7 @@
       if(inNaam && !inNaam.value) inNaam.focus();
     }
   });
-  [inNaam, inMail].forEach(function(el){ if(el){ el.addEventListener('input', later); el.addEventListener('blur', laadFormulier); } });
+  [inNaam, inMail, inTel].forEach(function(el){ if(el){ el.addEventListener('input', later); el.addEventListener('blur', laadFormulier); } });
   render();
   startFormulier();
 
