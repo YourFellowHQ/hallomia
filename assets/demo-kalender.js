@@ -104,7 +104,10 @@
     var naam = inNaam ? inNaam.value.trim() : '';
     var mail = inMail ? inMail.value.trim() : '';
     var okMail = inMail ? (inMail.checkValidity() && /@.+\./.test(mail)) : false;
-    var tel = inTel ? inTel.value.trim() : '';
+    var tel = inTel ? inTel.value.trim().replace(/[\s\-().]/g, '') : '';
+    /* Internationaal formaat (+31...), anders toont Constant Contact het als Amerikaans nummer. */
+    if(/^00\d/.test(tel)) tel = '+' + tel.slice(2);
+    else if(/^0\d/.test(tel)) tel = '+31' + tel.slice(1);
     if(!gekozenTijd || !naam || !okMail || (inTel && !telOk(tel))) return null;
     return laatste = {naam:naam, email:mail, tel:tel, datum:label(gekozenDag, gekozenTijd)};
   }
