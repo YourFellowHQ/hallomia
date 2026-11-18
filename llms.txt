@@ -1,4 +1,4 @@
-# Hallo Mia — YourFellow HQ
+# Hallo Mia: YourFellow HQ
 
 > YourFellow HQ is een Nederlands marketingplatform voor kleine ondernemers met Mia, een AI-collega, ingebouwd. Mia leert het bedrijf kennen uit het bedrijfsprofiel en de website, kijkt mee in de cijfers en zet elke week social media posts en teksten klaar in de toon van de ondernemer. De ondernemer keurt goed; zonder goedkeuring gaat er niets online. "Hallo Mia" (hallomia.ai) is de publieksnaam van het platform; klanten werken in YourFellow HQ op app.yourfellow.nl.
 
@@ -6,14 +6,19 @@
 
 - Aanbieder: YourFellow, performance-marketingbureau uit Zevenbergen (Nederland).
 - Product: YourFellow HQ, webplatform. Taal: Nederlands. Markt: Nederland en België.
-- Prijs Social: €66 per maand excl. btw (Dashboard en Social posts), of €633,60 per jaar excl. btw.
+- Prijs Organic: €66 per maand excl. btw (Social posts en SEO), of €633,60 per jaar excl. btw.
 - Prijs Google Ads: €149 per maand of €1.428 per jaar excl. btw.
-- Prijs Social + Google Ads: €189 per maand of €1.812 per jaar excl. btw. Het advertentiebudget betaalt de klant apart en rechtstreeks aan Google, via een eigen Google Ads-account.
+- Prijs Organic + Google Ads: €189 per maand of €1.812 per jaar excl. btw. Het advertentiebudget betaalt de klant apart en rechtstreeks aan Google, via een eigen Google Ads-account.
 - Alle prijzen excl. btw. 20% korting bij jaarlijkse betaling. Maandelijks opzegbaar.
 - Proefperiode: 14 dagen gratis, zonder betaalgegevens en zonder automatische afschrijving.
-- Nu beschikbaar: bedrijfsprofiel, dashboard, social media posts voor al je socials, Google Ads-beheer (alleen voor wie al op Google adverteert: Mia kijkt mee in lopende campagnes en stelt voor; niets verandert zonder akkoord; we zetten geen nieuw account of eerste campagne op).
+- Nu beschikbaar: bedrijfsprofiel, dashboard, social media posts voor al je socials, Google Ads-beheer (werkend Google Ads-account nodig: Mia kijkt mee in lopende campagnes, stelt voor en kan ook nieuwe campagnes bouwen; niets verandert zonder akkoord; we zetten geen nieuw Google Ads-account op).
 - Beeld: AI-beeld maken, of eigen ontwerpen ophalen via de koppeling met Canva.
-- Binnenkort: SEO & GEO content, Meta ads-beheer.
+- SEO (nu beschikbaar): koppeling met Google Search Console. SEO-score van 0 tot 100, opgebouwd uit techniek, snelheid en autoriteit, met per onderdeel wat het betekent en wat je doet. Overzicht van klikken, keer gezien en gemiddelde plek; zoekwoorden op plek 8 tot 20 (bijna op de eerste pagina); merk of overig; vragen, kopen en vergelijken. Voor een nieuwe pagina laat HQ eerst zien hoe groot de kans is om bovenaan te komen. Mia schrijft de pagina met een live score, de ondernemer keurt goed en publiceert naar WordPress of kopieert de tekst. Techniek: techniekscore met vier controles (snelheid, Google, AI-assistenten, bedrijfsgegevens), elk met een advies. Autoriteit: Mia zoekt bestaande artikelen op passende sites waarin een link naar je site kan komen; je betaalt de prijs die erbij staat. AI-zichtbaarheid: meet of ChatGPT en Claude het bedrijf noemen op vragen van klanten. Data wordt elke nacht bijgewerkt.
+- Organic betekent: gevonden worden zonder te betalen voor advertenties, via social media en Google.
+- Pakketten: Organic (social media posts en SEO), Google Ads, en Organic + Google Ads samen.
+- Credits (Organic): 100 per maand inbegrepen, vullen elke maand aan tot 100, ongebruikte credits vervallen. Proefperiode: 25 credits. Kosten: AI-afbeelding 1, AI-video 10, artikel door Mia 5, uitgelichte afbeelding 1, tekst van een social post 0. Mislukt het maken, dan komen de credits terug. Gratis: content planner, opzet van een artikel en voorbeeld in Google, publiceren naar WordPress, SEO-score, techniekcheck, autoriteit, AI-zichtbaarheid (2 metingen per maand). Bijkopen (eenmalig, incl. btw): 50 credits €15, 150 credits €39, 500 credits €99.
+- Gesponsorde artikelen met link (los van credits): vanaf €66 excl. btw per artikel, meestal €200 tot €500. Mia stelt passende Nederlandse sites voor, je ziet vooraf welke site, je betaalt in de app.
+- Binnenkort: Meta ads-beheer.
 - Werk voor de ondernemer: posts nalezen en goedkeuren, aanpassen kan altijd.
 - Contact: info@hallomia.ai
 - Demo: live demo van 20 minuten, elke werkdag om 10:00, 11:00, 14:00 of 15:00 uur.
@@ -51,6 +56,8 @@ Kleine lokale ondernemers en mkb-bedrijven zonder eigen marketeer: horeca, retai
 
 Praktische uitleg voor ondernemers zonder marketingachtergrond, geschreven met Mia. Onder meer:
 
+- [SEO uitbesteden of zelf doen: wat kost het?](https://hallomia.ai/blog/seo-uitbesteden/)
+- [Wat kost Google Ads voor een kleine ondernemer?](https://hallomia.ai/blog/google-ads-kosten/)
 - [Black Friday 2026: wat je nu regelt in Google Ads en Meta](https://hallomia.ai/blog/black-friday-2026-google-ads-meta/)
 - [Wat kost een social media bureau in Nederland?](https://hallomia.ai/blog/wat-kost-social-media-bureau/)
 - [Wat speelt er in 2026 voor de kleine lokale ondernemer?](https://hallomia.ai/blog/lokale-ondernemer-2026/)

@@ -238,7 +238,7 @@
     +     '</div>'
     +     '<div class="col"><h5>Product</h5>'
     +       '<a href="'+R+'wat-doet-het/">Wat doet het</a>'
-    +       '<a href="'+R+'wat-doet-het/social-posts/">Social posts</a>'
+    +       '<a href="'+R+'wat-doet-het/organic/">Organic</a>'
     +       '<a href="'+R+'wat-doet-het/google-ads/">Google Ads</a>'
     +       '<a href="'+R+'mia/">Mia</a>'
     +       '<a href="'+R+'voor-wie/">Voor wie</a>'
@@ -382,6 +382,51 @@
         else fbq('trackCustom','CTAKlik',{cta_type:type, cta_pagina:location.pathname});
       }
     }, true);
+  })();
+
+  /* previewLinkFix — alleen voor het voorvertoningsvenster: clean URL's ("/prijzen/")
+     bestaan daar niet als map, dus maken we er "prijzen/index.html" van.
+     Op GitHub Pages doet dit niks (daar zijn de mappen wel echt).
+     Bij het verversen van _upload/ dit blok weglaten. */
+  (function previewLinkFix(){
+    if (location.hostname.indexOf('hallomia.ai') > -1) return;
+    function fix(){
+      document.querySelectorAll('a[href]').forEach(function(a){
+        var h = a.getAttribute('href') || '';
+        if (/^(https?:|mailto:|tel:|#)/.test(h)) return;
+        if (/\.[a-z0-9]+($|[?#])/i.test(h)) return;
+        var m = h.match(/^([^?#]*)([?#].*)?$/);
+        if (!m) return;
+        var p = m[1], rest = m[2] || '';
+        if (p === '.' || p === './') p = '';
+        if (p !== '' && !/\/$/.test(p)) return;
+        a.setAttribute('href', p + 'index.html' + rest);
+      });
+    }
+    fix();
+    setTimeout(fix, 60);
+    setTimeout(fix, 400);
+  })();
+
+  /* brancheSwitch — knoppenbalk rechtsonder om in het voorvertoningsvenster snel
+     tussen de branchepagina's te wisselen. Doet niks op hallomia.ai.
+     Bij het verversen van _upload/ dit blok weglaten. */
+  (function brancheSwitch(){
+    if (location.hostname.indexOf('hallomia.ai') > -1) return;
+    var depth = parseInt(document.body.getAttribute('data-depth') || '0', 10);
+    var up = depth ? new Array(depth + 1).join('../') : '';
+    var items = [['Home',''],['Horeca','horeca/'],['Beauty','beauty/'],['Bouw','bouw/'],['Fitness','fitness/'],['Lokaal','lokale-ondernemers/']];
+    var bar = document.createElement('div');
+    bar.setAttribute('data-preview-only','');
+    bar.style.cssText = 'position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;max-width:60vw;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border:1px solid rgba(0,0,0,.12);border-radius:10px;padding:7px;box-shadow:0 6px 20px rgba(0,0,0,.12);font:500 12px/1 system-ui,sans-serif';
+    items.forEach(function(it){
+      var a = document.createElement('a');
+      a.textContent = it[0];
+      a.href = up + it[1] + 'index.html';
+      a.style.cssText = 'display:block;padding:6px 10px;border-radius:7px;background:#f2f3f5;color:#111;text-decoration:none';
+      bar.appendChild(a);
+    });
+    document.body.appendChild(bar);
   })();
 
 })();

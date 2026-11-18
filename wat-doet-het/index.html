@@ -10,19 +10,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/site.css">
-<meta name="description" content="Eén bedrijfsprofiel, vijf modules: dashboard, social posts, SEO en je Google- en Meta-campagnes. Mia loopt er als rode draad doorheen.">
+<meta name="description" content="Eén bedrijfsprofiel, vier modules: dashboard, Organic (social posts en SEO), Google Ads en Meta ads. Mia loopt er als rode draad doorheen.">
 <link rel="canonical" href="https://hallomia.ai/wat-doet-het/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hallo Mia">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:title" content="Wat doet Hallo Mia &middot; het bedrijfsprofiel en de modules">
-<meta property="og:description" content="Eerst je bedrijfsprofiel als opstart, daarna vijf modules die het werk doen. Mia loopt er als rode draad doorheen.">
+<meta property="og:description" content="Eerst je bedrijfsprofiel als opstart, daarna vier modules die het werk doen. Mia loopt er als rode draad doorheen.">
 <meta property="og:url" content="https://hallomia.ai/wat-doet-het/">
 <meta property="og:image" content="https://hallomia.ai/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Wat doet Hallo Mia &middot; het bedrijfsprofiel en de modules">
-<meta name="twitter:description" content="Eerst je bedrijfsprofiel als opstart, daarna vijf modules die het werk doen. Mia loopt er als rode draad doorheen.">
+<meta name="twitter:description" content="Eerst je bedrijfsprofiel als opstart, daarna vier modules die het werk doen. Mia loopt er als rode draad doorheen.">
 <meta name="twitter:image" content="https://hallomia.ai/assets/og-image.png">
 <style>
 /* ============================================================
@@ -153,8 +153,102 @@
 .zoomlaag.on{display:flex;}
 .zoomlaag img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);}
 .zoomlaag .sluit{position:absolute;top:18px;right:22px;font-size:26px;line-height:1;color:#fff;background:none;border:0;cursor:pointer;font-family:inherit;}
+.svx{display:flex;flex-direction:column;gap:12px}
+.sx-top{display:flex;gap:16px;align-items:center}
+.sx-num{font-size:46px;font-weight:700;letter-spacing:-.04em;line-height:.9;color:var(--a-org)}
+.sx-top b{display:block;font-size:14px;font-weight:600}.sx-top div>span,.sx-top b>span{font-size:12px;color:#55544F}
+.sx-parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media(max-width:560px){.sx-parts{grid-template-columns:minmax(0,1fr)}}
+.sx-p{border:1px solid var(--a-line);border-radius:8px;padding:10px 11px;display:flex;flex-direction:column;gap:4px;font-size:11.5px;color:#55544F;line-height:1.45}
+.sx-p.weak{border-color:#F1CE96;background:#FFFBF2}
+.sx-p b{font-size:12px;color:var(--a-ink);font-weight:600;display:flex;align-items:center;gap:6px}.sx-p b i{width:7px;height:7px;border-radius:50%}
+.sx-p strong{font-size:19px;font-weight:700;color:var(--a-ink)}.sx-p strong small{font-size:10.5px;font-weight:500;color:var(--a-mute)}
+.sx-m{height:5px;border-radius:999px;background:#EFEEEA;overflow:hidden}.sx-m i{display:block;height:100%;border-radius:999px}
+.sx-p a,.sx-a{color:#0E9F84;font-weight:600;font-size:11.5px;text-decoration:none}
+.sx-next{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#E3FBF4;border-radius:8px;padding:9px 12px;font-size:12px;color:var(--a-2)}
+.sx-next .p{margin-left:auto;font-size:11.5px;font-weight:600;padding:6px 12px;border-radius:7px;background:#00D9B0;color:#0B2B25}
+.sx-in{border:1px solid #DCDAD4;border-radius:7px;padding:8px 11px;font-size:13px}
+.sx-lbl{font-size:11.5px;font-weight:600;color:var(--a-ink);margin-bottom:5px}
+.sx-kans{border:1px solid #F1CE96;background:#FFFBF2;border-radius:8px;padding:12px 13px;display:flex;flex-direction:column;gap:9px}
+.sx-kans h6{margin:0;font-size:13px;font-weight:600;display:flex;align-items:center;gap:7px;flex-wrap:wrap}.sx-kans h6 i{width:8px;height:8px;border-radius:50%;background:var(--a-org)}.sx-kans h6 small{font-weight:400;font-size:11px;color:var(--a-mute)}
+.sx-vs{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:5px 10px;align-items:center;font-size:11px;color:#55544F}.sx-vs b{font-size:11.5px;color:var(--a-ink)}
+.sx-kans p,.sx-txt{margin:0;font-size:11.5px;line-height:1.5;color:var(--a-2);text-wrap:pretty}
+.sx-chips{display:flex;flex-wrap:wrap;gap:5px}.sx-chips span{font-size:11px;background:#fff;border:1px solid #DCDAD4;border-radius:6px;padding:3px 8px}
+.sx-mia{display:flex;align-items:center;gap:7px;font-size:10.5px;color:var(--a-mute)}.sx-mia img{width:18px;height:18px;border-radius:50%;object-fit:cover;object-position:center 14%}
+.sx-ed{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px}
+@media(max-width:560px){.sx-ed{grid-template-columns:minmax(0,1fr)}}
+.sx-art{display:flex;flex-direction:column;gap:8px}.sx-art h6{margin:0;font-size:15px;font-weight:700;line-height:1.25}
+.sx-kort{border-left:2.5px solid #0E9F84;background:#E3FBF4;border-radius:0 6px 6px 0;padding:8px 10px;font-size:11px;color:var(--a-2);line-height:1.5}.sx-kort b{display:block;font-size:10px;color:#0E9F84}
+.sx-ln{height:7px;border-radius:4px;background:#EFEEEA}
+.sx-side{display:flex;flex-direction:column;gap:9px;border-left:1px solid var(--a-line);padding-left:14px}
+@media(max-width:560px){.sx-side{border-left:0;padding-left:0;border-top:1px solid var(--a-line);padding-top:12px}}
+.sx-ring{display:flex;align-items:center;gap:10px}.sx-ring>span{width:46px;height:46px;border-radius:50%;border:4px solid #00D9B0;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex:none}.sx-ring b{font-size:12.5px;display:block}.sx-ring small{font-size:10.5px;color:var(--a-mute)}
+.sx-row{font-size:10.5px;color:#55544F;display:flex;flex-direction:column;gap:3px}.sx-row p{margin:0;display:flex;justify-content:space-between}
+.sx-todo{border:1px solid #F1CE96;background:#FFFBF2;border-radius:7px;padding:8px 9px;font-size:11px;line-height:1.4}.sx-todo span{display:block;color:var(--a-mute);font-size:10.5px}
+.sx-bar{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}.sx-bar span{font-size:11px;font-weight:500;padding:6px 10px;border-radius:7px;border:1px solid var(--a-bd);background:#fff}.sx-bar span.p{background:#00D9B0;border-color:#00D9B0;color:#0B2B25;font-weight:600}
+.sx-get{display:flex;flex-wrap:wrap;gap:5px}.sx-get span{font-size:11px;background:#F7F6F2;border:1px solid var(--a-line);border-radius:999px;padding:3px 9px}.sx-get span::before{content:"✓ ";color:#0E9F84;font-weight:700}
+.sx-prop{display:grid;grid-template-columns:minmax(0,1.5fr) auto auto;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--a-line)}
+@media(max-width:560px){.sx-prop{grid-template-columns:minmax(0,1fr) auto}.sx-prop .sx-why{grid-column:1/-1}}
+.sx-badge{display:inline-block;font-size:10px;font-weight:700;border-radius:5px;padding:1px 7px;margin-bottom:4px;background:#EEF3FD;color:#2856B8}.sx-badge.b{background:#00D9B0;color:#0B2B25}
+.sx-why b{display:block;font-size:12.5px;font-weight:600}.sx-why span:not(.sx-badge){font-size:11px;color:#55544F;line-height:1.45;display:block}
+.sx-st{font-size:11px;color:var(--a-mute);line-height:1.35}.sx-st b{display:block;font-size:13px;color:var(--a-ink)}
+.sx-pr{text-align:right;font-size:10.5px;color:var(--a-mute)}.sx-pr b{display:block;font-size:14px;color:var(--a-ink)}
+.sx-first{display:flex;gap:14px;align-items:center}
+.sx-zero{width:62px;height:62px;border-radius:50%;border:2px dashed #CFCDC6;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none}.sx-zero b{font-size:20px;line-height:1;color:var(--a-2)}.sx-zero span{font-size:9.5px;color:var(--a-mute)}
+.sx-first h6{margin:0 0 3px;font-size:13.5px;font-weight:600}
+.sx-step{border:1.5px solid #0E9F84;border-radius:8px;padding:11px 13px;display:flex;flex-direction:column;gap:6px}
+.sx-step small{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0E9F84}.sx-step b{font-size:13.5px}
+.sx-lst div{display:flex;justify-content:space-between;gap:8px;font-size:11.5px;padding:6px 0;border-bottom:1px solid var(--a-line)}.sx-lst div:last-child{border-bottom:0}.sx-lst div span{color:var(--a-mute);font-size:10.5px;white-space:nowrap}.sx-lst div.me{font-weight:600}
+.sx-h{font-size:12.5px;font-weight:600;margin:0 0 4px}
+.sx-leg{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11px;color:#55544F}.sx-leg span{display:flex;align-items:center;gap:5px}.sx-leg i{width:7px;height:7px;border-radius:50%}
+.sx-ctl{display:flex;flex-direction:column;gap:5px}
+.sx-ctl-h{display:flex;align-items:center;gap:8px}.sx-ctl-h i{width:8px;height:8px;border-radius:50%;flex:none}.sx-ctl-h b{font-size:13px;font-weight:600;margin-right:auto}
+.sx-st-ok,.sx-st-kb{font-size:10.5px;font-weight:600;border-radius:5px;padding:2px 7px;white-space:nowrap}.sx-st-ok{background:#E2F5EC;color:#13805D}.sx-st-kb{background:#FEF3C7;color:#B45309}
+.sx-adv{margin:0;font-size:12px;line-height:1.5;color:var(--a-ink)}.sx-adv b{font-weight:600}
+.sx-ctl .sx-txt,.sx-ctl .sx-adv,.sx-ctl .sx-a{padding-left:16px}
+.car{min-width:0;}
+.car-tabs{display:flex;gap:6px;margin-bottom:12px;}
+.car-tabs button{all:unset;cursor:pointer;font-size:13.5px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink-soft);background:var(--surface);}
+.car-tabs button.on{border-color:var(--accent);color:var(--ink);background:var(--accent-soft,rgba(0,255,204,.12));}
+.car-track{display:flex;align-items:stretch;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:16px;border-radius:18px;scrollbar-width:none;outline:none;}
+.car-track::-webkit-scrollbar{display:none;}
+.car-s{flex:0 0 100%;scroll-snap-align:start;min-width:0;min-height:320px;border:1px solid var(--line-2);border-radius:18px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;padding:22px 18px 18px;overflow:visible;}
+.car-s .shot{max-width:100%;max-height:100%;width:auto;height:auto;display:block;border-radius:8px;}
+.car-s.car-mk{align-items:center;}
+.car-s.car-mk .sv{width:100%;margin-top:6px;}
+@media(max-width:560px){.car-s{min-height:280px;}}
+.car-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px;}
+.car-nav button{all:unset;cursor:pointer;width:34px;height:34px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink);background:var(--surface);}
+.car-nav button:hover{border-color:var(--accent);}
+.car-nav button:disabled{opacity:.35;cursor:default;}
+.car-dots{display:flex;gap:7px;}
+.car-dots button{width:8px;height:8px;padding:0;border-radius:50%;background:var(--line-2);border:0;}
+.car-dots button.on{background:var(--accent);width:22px;border-radius:999px;}
+
+.org-duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:30px;}
+@media(max-width:760px){.org-duo{grid-template-columns:minmax(0,1fr);}}
+.org-dc{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;}
+.org-dc .im{background:var(--surface-2);padding:18px;}
+.org-dc .tx{padding:16px 20px 20px;display:flex;flex-direction:column;gap:8px;}
+.org-dc .tx h3{font-size:18px;font-weight:700;letter-spacing:-.01em;}
+.org-dc .tx p{font-size:14.5px;color:var(--ink-soft);line-height:1.55;}
+.fl{display:flex;flex-direction:column;gap:0;position:relative;min-width:0}
+.fl-h{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6b6b6b;margin-bottom:8px;display:flex;align-items:center;gap:7px}.fl-h i{width:8px;height:8px;border-radius:50%;background:#00D9B0}
+.st{position:relative;display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;padding-bottom:10px}
+.st:not(:last-child)::before{content:"";position:absolute;left:11px;top:26px;bottom:0;width:2px;background:#D9F5EC}
+.st .nm{width:24px;height:24px;border-radius:50%;background:#00F5C8;color:#062b23;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.st .c{background:#fff;border-radius:10px;padding:10px 12px;box-shadow:0 14px 30px -22px rgba(40,34,20,.5);display:flex;flex-direction:column;gap:6px;min-width:0}
+.st .who{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0B8F74}
+.st .who.me{color:#B45309}
+.st p{font-size:12px;line-height:1.45;color:#3a3a3a}.st p b{color:#141414}
+.st .bt{display:flex;gap:6px;flex-wrap:wrap}.st .bt span{font-size:10.5px;font-weight:600;border:1px solid #DDD8CE;border-radius:6px;padding:4px 8px;background:#fff}.st .bt span.p{background:#00D9B0;border-color:#00D9B0;color:#0B2B25}
+.st .pv{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:9px;align-items:center}
+.st .pv img{width:52px;height:52px;object-fit:cover;border-radius:7px}
+.st .sc{width:36px;height:36px;border-radius:50%;border:3px solid #00D9B0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.st .ok{font-size:11.5px;font-weight:600;color:#13805D;background:#E2F5EC;border-radius:6px;padding:4px 8px;align-self:flex-start}
 </style>
 <link rel="stylesheet" href="../assets/site-light.css">
+<link rel="stylesheet" href="../assets/seo-voorbeeld.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hallomia.ai/"},{"@type":"ListItem","position":2,"name":"Wat doet het","item":"https://hallomia.ai/wat-doet-het/"}]}
 </script>
@@ -167,7 +261,7 @@
 <main>
   <section class="wrap phero">
     <h1>Eén platform voor je hele marketing.</h1>
-    <p class="lede">Geen losse tools die elkaar niet kennen. Je begint met je bedrijfsprofiel, dat stel je één keer in. Daarna draaien vijf modules op datzelfde profiel, en Mia loopt er als rode draad doorheen. Achter elke module zit de kennis van marketingbureau YourFellow. Mia werkt met de AI van ChatGPT, Claude en Gemini.</p>
+    <p class="lede">Geen losse tools die elkaar niet kennen. Je begint met je bedrijfsprofiel, dat stel je één keer in. Daarna draaien vier modules op datzelfde profiel, en Mia loopt er als rode draad doorheen. Achter elke module zit de kennis van marketingbureau YourFellow. Mia werkt met de AI van ChatGPT, Claude en Gemini.</p>
     <div class="acts"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-wat-doet-het">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="#modules">Bekijk de modules</a></div>
   </section>
 
@@ -194,14 +288,14 @@
   <!-- MODULES -->
   <section class="section" id="modules"><div class="wrap">
     <div class="lead-in">
-      <h2>En dit doen de vijf modules.</h2>
+      <h2>En dit doen de vier modules.</h2>
       <p>Allemaal gevoed door je bedrijfsprofiel. We beginnen bij het dashboard, je startscherm, en lopen daarna de vier werk-modules langs.</p>
     </div>
 
     <!-- 1 DASHBOARD -->
     <div class="row full">
       <div class="txt">
-        <h2><span class="n">1</span> Dashboard <span class="mlab now">Nu beschikbaar</span></h2>
+        <h2><span class="n">1</span> Dashboard</h2>
         <p class="lead">Je startscherm met al je cijfers op één plek.</p>
         <p class="sub">Geen vijf tabbladen meer. Je website, je socials en je webshop staan bij elkaar, plus wat er op dit moment loopt. Mia houdt het scherm voor je bij en zet bovenaan waar je vandaag op moet letten.</p>
         <ul>
@@ -218,21 +312,29 @@
       </div>
     </div>
 
-    <!-- 2 SOCIAL -->
-    <div class="row">
+    <!-- 2 ORGANIC -->
+    <div class="row full">
       <div class="txt">
-        <h2><span class="n">2</span> Social posts <span class="mlab now">Nu beschikbaar</span></h2>
-        <p class="lead">Mia kijkt in je kalender en zet de posts klaar. Jij keurt goed.</p>
-        <p class="sub">Mia kijkt naar je agenda (feestdagen, acties, vaste momenten) en komt uit zichzelf met postvoorstellen in jouw merkstijl, met tekst én beeld er al bij. Jij keurt goed, en Mia plant ze voor je in. Wil je iets aanpassen, zelf een post maken met je eigen foto's of Canva-ontwerpen, of Mia een eigen idee geven? Dat kan ook. En heb je een moment dat Mia niet kent, dan zet je het zelf in de kalender.</p>
+        <h2><span class="n">2</span> Organic:<br>social posts en SEO <span class="mlab now">Nu beschikbaar</span></h2>
+        <p class="lead">Gevonden worden, zonder advertenties.</p>
+        <p class="sub">Organic betekent gevonden worden zonder te betalen voor advertenties: via social media en via Google. Mia zet je social posts klaar in jouw merkstijl en plant ze in na jouw akkoord. En ze laat zien hoe je gevonden wordt in Google, waar je klikken laat liggen en of ChatGPT je noemt.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Voorstellen op basis van je kalender</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Goedgekeurd? Dan plant Mia ze in</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Voor al je socials</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Social posts op basis van je kalender, voor al je socials</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Je SEO-score, met per onderdeel wat je nu doet</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Mia schrijft pagina's die je hoger brengen</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Zie of ChatGPT je bedrijf noemt</span></li>
         </ul>
-        <div style="margin-top:22px;"><a class="txt-link" href="social-posts/">Meer over social posts <span class="arrow">→</span></a></div>
+        <div style="margin-top:22px;"><a class="txt-link" href="organic/">Meer over Organic <span class="arrow">→</span></a></div>
       </div>
-      <div class="pic">
-        <img class="shot" src="../assets/social-live.png" alt="Een gepubliceerde Facebook-post in jouw merkstijl: een vader en kind op de fiets, met tekst en hashtags">
+      <div class="org-duo">
+        <div class="org-dc"><div class="im"><div class="fl"><p class="fl-h"><i></i>Social posts</p>
+<div class="st"><span class="nm">1</span><div class="c"><span class="who">Mia stelt voor</span><p><b>Facebook-post: handgebonden seizoensboeket.</b> Past bij de veilingweek. Invalshoek: elk boeket is uniek.</p></div></div>
+<div class="st"><span class="nm">2</span><div class="c"><span class="who">Mia maakt de post</span><div class="pv"><img src="../assets/social-live.png" alt=""><p>Tekst en beeld in jouw stijl, met hashtags.</p><span class="sc">86</span></div></div></div>
+<div class="st"><span class="nm">3</span><div class="c"><span class="who me">Jij keurt goed</span><div class="bt"><span class="p">👍 Goed</span><span>Afkeuren</span></div><span class="ok">✓ Ingepland: donderdag 09:00</span></div></div></div></div><div class="tx"><h3>Social posts</h3><p>Mia zet posts klaar in jouw merkstijl en plant ze in na jouw akkoord.</p><a class="txt-link" href="organic/#social">Meer over social posts <span class="arrow">→</span></a></div></div>
+        <div class="org-dc"><div class="im"><div class="fl"><p class="fl-h"><i></i>SEO</p>
+<div class="st"><span class="nm">1</span><div class="c"><span class="who">Mia ziet een kans</span><p>Op <b>"bruidsboeket utrecht"</b> word je 1.420 keer gezien, maar je staat op plek 11. Bijna niemand klikt.</p></div></div>
+<div class="st"><span class="nm">2</span><div class="c"><span class="who">Mia schrijft de pagina</span><div class="pv" style="grid-template-columns:minmax(0,1fr) auto"><p><b>Bruidsboeket in Utrecht: zo kies je het mooiste</b><br>Met een kort antwoord bovenaan, voor Google en ChatGPT.</p><span class="sc">91</span></div></div></div>
+<div class="st"><span class="nm">3</span><div class="c"><span class="who me">Jij keurt goed</span><div class="bt"><span class="p">Bijwerken in WordPress</span><span>Aanpassen</span></div><span class="ok">✓ Live op je site</span></div></div></div></div><div class="tx"><h3>SEO</h3><p>Mia ziet waar je klikken laat liggen en schrijft de pagina die je hoger brengt.</p><a class="txt-link" href="organic/#seo">Meer over SEO <span class="arrow">→</span></a></div></div>
       </div>
     </div>
 
@@ -241,9 +343,9 @@
       <div class="txt">
         <h2><span class="n">3</span> Google Ads-beheer <span class="mlab now">Nu beschikbaar</span></h2>
         <p class="lead">Je advertenties op Google, voorgesteld en bijgestuurd.</p>
-        <p class="sub">Je koppelt je Google-account, net zoals je Analytics en Search Console koppelt. Adverteer je al, dan kijkt Mia mee en stelt ze verbeteringen voor: zoekwoorden toevoegen of juist uitsluiten, en verspilling stoppen. Jij keurt goed, en pas dan verandert er iets in je Google Ads-account.</p>
+        <p class="sub">Je koppelt je Google-account, net zoals je Analytics en Search Console koppelt. Adverteer je al, dan kijkt Mia mee en stelt ze verbeteringen voor: zoekwoorden toevoegen of juist uitsluiten, en verspilling stoppen. Nog geen campagnes? Dan bouwt Mia ze voor je. Jij keurt goed, en pas dan verandert er iets in je Google Ads-account.</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Voor wie al op Google adverteert</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Werkend Google Ads-account nodig</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Zoekwoorden toevoegen of uitsluiten, verspilling stoppen</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Niets verandert zonder jouw goedkeuring</span></li>
         </ul>
@@ -254,27 +356,10 @@
       </div>
     </div>
 
-    <!-- 4 SEO -->
+    <!-- 4 META ADS-BEHEER -->
     <div class="row">
       <div class="txt">
-        <h2><span class="n">4</span> <span class="wt"><button class="wt-w" type="button" aria-expanded="false">SEO en GEO</button><span class="wt-bub" role="tooltip"><strong>SEO en GEO</strong>SEO: hoger in Google komen zonder ervoor te betalen. GEO: genoemd worden in de antwoorden van ChatGPT en andere AI.<a href="../begrippenlijst/#t-seo">Meer in de begrippenlijst</a></span></span> content <span class="mlab soon">Binnenkort</span></h2>
-        <p class="lead">Teksten die je vindbaar maken.</p>
-        <p class="sub">Mia zoekt de woorden waar jouw klanten écht op zoeken en schrijft of verbetert daar je pagina's mee. Gericht op Google, maar ook op AI-antwoorden zoals ChatGPT, zodat je ook dáár als antwoord naar voren komt. Een score en checklist laten zien wat al goed staat en wat nog beter kan.</p>
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Op echte zoekwoorden</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Vindbaar in Google én AI</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Met score en checklist erbij</span></li>
-        </ul>
-      </div>
-      <div class="pic">
-        <div class="zoomshot"><span class="demo-tag" style="right:auto;left:14px;top:14px;z-index:2;font-size:11px;background:#fff">Voorbeeld</span><img class="shot" src="../assets/hq/seo-overzicht.png" alt="Voorbeeld van de SEO- en GEO-module in YourFellow HQ: een vindbaarheidsscore van 64, de zoekwoorden waar klanten op zoeken met je plek in Google, een voorstel voor een betere paginatitel en een check of ChatGPT je bedrijf noemt" loading="lazy" width="1440" height="1241"></div><p class="shot-cap">Voorbeeld. Zo gaat de module eruitzien, klik om te vergroten. In dit voorbeeld bloemenzaak Bloemenpracht, een verzonnen bedrijf met zelf bedachte cijfers.</p>
-      </div>
-    </div>
-
-    <!-- 5 META ADS-BEHEER -->
-    <div class="row flip">
-      <div class="txt">
-        <h2><span class="n">5</span> Meta ads-beheer <span class="mlab soon">Binnenkort</span></h2>
+        <h2><span class="n">4</span> Meta ads-beheer <span class="mlab soon">Binnenkort</span></h2>
         <p class="lead">Hetzelfde voor Facebook en Instagram.</p>
         <p class="sub">Mia volgt je Meta-campagnes op dezelfde manier: welke advertentie nog werkt, welke uitgekeken raakt en waar je budget beter naartoe kan. Jij beslist wat er verandert.</p>
         <ul>
@@ -316,9 +401,38 @@
     </div>
 </div></section>
 
+<style>.kp-l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}.kp-l li{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid #E5E2D8;border-radius:12px;background:#fff}.kp-l li.on{border-color:#00CCA3;box-shadow:0 0 0 3px rgba(0,255,204,.18)}.kp-av{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;flex:none}.kp-l b{display:block;font-size:15px;color:#171717}.kp-l small{display:block;font-size:13px;color:#76705F}.kp-l em{margin-left:auto;font-style:normal;font-size:12.5px;color:#76705F;white-space:nowrap}</style>
+<section class="section" id="klantprofielen" data-screen-label="Meerdere klantprofielen"><div class="wrap">
+    <div class="row">
+      <div class="txt">
+        <h2>Werk je voor meerdere klanten? <span class="mlab soon">Binnenkort</span></h2>
+        <p class="lead">Straks beheer je meerdere klantprofielen onder één account.</p>
+        <p class="sub">Voor marketingbureaus, freelance marketeers en ondernemers met meerdere merken. Elk profiel heeft zijn eigen bedrijfsprofiel, en Mia werkt per klant in de juiste stijl. Je wisselt met één klik, zonder opnieuw in te loggen.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Eigen huisstijl en tone of voice per klant</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Eigen kanalen gekoppeld en een eigen contentkalender</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Eigen rapportages per klant</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Bepaal per klant welke teamleden toegang hebben</span></li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px"><a class="btn acc" href="../demo/?bron=site-klantprofielen">Plan een demo <span class="arrow">→</span></a></div>
+      </div>
+      <div class="pic">
+        <div class="demo">
+          <span class="demo-tag">Voorbeeld</span>
+          <ul class="kp-l">
+            <li class="on"><span class="kp-av" style="background:#171717">BK</span><div><b>Bakkerij Koster</b><small>Instagram, Facebook, Google Ads</small></div><em>3 posts klaar</em></li>
+            <li><span class="kp-av" style="background:#00755F">FS</span><div><b>FitStudio Noord</b><small>Instagram, Google Ads</small></div><em>Rapportage klaar</em></li>
+            <li><span class="kp-av" style="background:#B5562E">HV</span><div><b>Hoveniers Vos</b><small>Facebook, website</small></div><em>2 posts klaar</em></li>
+          </ul>
+          <div class="tip"><span class="tip-ic">Mia</span><span>Voor Bakkerij Koster staan drie posts voor volgende week klaar, in hun eigen stijl. Wil je ze bekijken?</span></div>
+        </div>
+      </div>
+    </div>
+</div></section>
+
 <section class="fc"><div class="wrap fc-in">
     <h2>Eén profiel. <br><em>
-Vijf modules. Eén Mia.</em></h2>
+Vier modules. Eén Mia.</em></h2>
 
     <p>De eerste 14 dagen gratis, zonder betaalgegevens. Instellen kost de eerste keer ongeveer 10 minuten. Daarna draait het.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;"><a class="btn acc lg" href="https://app.yourfellow.nl/?bron=site-wat-doet-het">Registreren <span class="arrow">→</span></a><a class="btn ghost lg" href="../prijzen/">Bekijk prijzen</a></div>
@@ -330,5 +444,6 @@ Vijf modules. Eén Mia.</em></h2>
 <script>
 (function(){var laag=document.createElement("div");laag.className="zoomlaag";laag.innerHTML='<button class="sluit" type="button" aria-label="Sluiten">&times;</button><img alt="">';document.body.appendChild(laag);var groot=laag.querySelector("img");document.addEventListener("click",function(e){var z=e.target.closest&&e.target.closest(".zoomshot");if(z){var im=z.querySelector("img");if(im){groot.src=im.src;groot.alt=im.alt;laag.classList.add("on");}return;}if(e.target.closest&&e.target.closest(".zoomlaag"))laag.classList.remove("on");});document.addEventListener("keydown",function(e){if(e.key==="Escape")laag.classList.remove("on");});})();
 </script>
+<script src="../assets/seo-voorbeeld.js"></script>
 </body>
 </html>
